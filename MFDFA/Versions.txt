@@ -1,0 +1,8 @@
+Version 1:	03.04.2012
+Version 2:	24.04.2012
+Version 3:	08.06.2012
+Version 4:	20.09.2012
+		erratum in "introduction to MFDFA". 
+		The last line of Matlab code 14 should be change to
+		Dh=1-(log(Ph_norm)./log(mean(diff(Htbin))));
+		This has been corrected in version 4

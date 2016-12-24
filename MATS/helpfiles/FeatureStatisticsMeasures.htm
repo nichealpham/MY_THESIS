@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Feature Statistics</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%" height="1496">
+    <tr>
+      <td align="center" height="1"><font size="5">
+      Feature Statistic<span lang="en-us">s</span></font><p>
+      <img border="0" src="featurestatistics.jpg" width="715" height="550"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td height="1"></td>
+    </tr>
+    <tr>
+      <td height="20" align="justify"><span lang="en-us">The features in this 
+		group are oscillation characteristics and are meaningful for oscillating 
+		time series. Each oscillation can be roughly, but often sufficiently, 
+		described by four features, the peak (local maximum) and trough 
+		(local minimum) of the oscillation, the time duration of the oscillation 
+		(e.g. from one peak to the next) and the time from peak to trough (or 
+		equivalently from trough to peak). A fifth feature that can be 
+		useful at cases, especially in the presence of drifts in the time 
+		series, is formed by the difference of the peaks from the corresponding 
+		troughs. The first two features constitute the turning points of 
+		the time series and have been used in the analysis of other 
+		non-oscillating time series, e.g. in finance.</span><p>
+		<span lang="en-us">For the computation of the features the turning 
+		points have to be identified first. A sample point of the time 
+		series is a turning point, i.e. local minimum (maximum), if it is the smallest (largest) of 
+		the samples of the time series in a data window centered in this sample 
+		point. The <i>data window size</i> is given as 2<i>w</i>+1 for a given offset 
+		value <i>w</i>. For noisy time series, smoothing prior to the turning point 
+		detection is suggested and this is implemented here with a <i>moving 
+		average filter </i>of a given order. Standard descriptive statistics are 
+		given as measures from each of the five oscillating features.</span></p>
+		<p><span lang="en-us">The use of statistics of oscillating features as 
+		measures of time series analysis is rather new and it has been suggested 
+		in </span></p>
+		<p><span lang="en-us">Kugiumtzis D., Papana A., Tsimpiris A., Vlachos I. and Larsson P.G. 
+		(2006), </span>Time Series Feature Evaluation in Discriminating Preictal 
+		EEG States<span lang="en-us">, <i>Lecture Notes in Computer Science</i>,
+		</span>Vol 4345<span lang="en-us">, pp </span>298-310<span lang="en-us">.
+		</span></p>
+		<p>Kugiumtzis<span lang="en-us"> D., </span>Vlachos<span lang="en-us"> 
+		I., </span>Papana<span lang="en-us"> A. and</span><span lang="en-us">
+		</span>Larsson<span lang="en-us">, P.G. (2007), Assessment of Measures of 
+		Scalar Time Series Analysis in Discriminating Preictal States, <i>
+		International Journal of Bioelectromagnetism</i>, </span>Vol 9,
+		<span lang="en-us">No</span> 3, <span lang="en-us">134-145.</span></p>
+		<p><span lang="en-us">The measure names for the 5 features are</span></p>
+		<p><b>Local Maxima (LocalMaxim)</b></p>
+		<p><b>Local M<span lang="en-us">in</span>ima (LocalM<span lang="en-us">in</span>im)</b></p>
+		<p><b>Minimum to Maximum Time&nbsp; (MinMaxTime)</b></p>
+		<p><b>Minimum to Minimum Time (MaxMaxTime)</b></p>
+		<p><b>Difference Minimum from Maximum (DiffMinMax)</b></p>
+		<p><span lang="en-us">The following parameter can be specified for all 
+		five features:</span></p>
+		<p><span lang="en-us">- <b>
+		moving average filter order (a)</b>: any valid matlab format denoting an 
+		array of positive integers or a single positive integer. The default is 
+		'1' meaning that no filter is applied as there is only the target point 
+		in the moving window for averaging. The moving average filter runs 
+		through the time series (forward direction), then the filtered time 
+		series is reversed and the same moving average filter runs through it 
+		(backward direction). In this way, there is no phase distortion. Note 
+		that a change of the value of <i>a</i> in the first feature of Local 
+		Maxima is passed to the parameter <i>a</i> of the other four features.</span></p><p><span lang="en-us">
+		- <b>offset for local window (w)</b>: any valid matlab format denoting 
+		an array of positive integers or a single positive integer. The default 
+		is '1' meaning that the local window is comprised of the target sample 
+		point in the center, the preceding sample point and the succeeding 
+		sample point. The length of the local window is 2<i>w</i>+1. A sample point <i>
+		x<sub>i</sub></i> is a local maximum (minimum) if it is the maximum 
+		(minimum) of the samples {<i>x<sub>i-w</sub></i>,...,<i>x<sub>i</sub></i>,...,<i>x<sub>i+w</sub></i>}. 
+		Note that a change of the value of <i>w</i> in the first feature of 
+		Local Maxima is passed to the parameter <i>w</i> of the other four 
+		features.</span></p>
+		<p><span lang="en-us">The following statistics can be selected for each 
+		of the five features: <i>mean</i>,<i> median</i>,<i> standard deviation
+		</i>and<i> inter-quartile range</i>. If none of the four statistics is 
+		selected, then all statistics of the feature are considered as measures. 
+		Note that if a statistic is activated or deactivated for the first 
+		feature of Local Maxima the status for this statistic is passed to the 
+		same statistic of the other four features.</span></p>
+		<p><span lang="en-us"><i>Example</i>: If the user selects the measure 
+		Local Maxima by activating the check box in the beginning of the measure line and 
+		sets for moving average filter order (a) '3 5', for offset for local 
+		window (w) '2 4 6', and checks only median, then the median of Local 
+		Maxima is computed 
+		for the combinations of the 2 values of <i>a</i> and the 3 values of <i>
+		w</i> and in the measure list the following measure names 
+		will appear&nbsp; </span><p><span lang="en-us">LocalMaximMEDIANa3w2<br>
+		LocalMaximMEDIANa3w4<br>
+		LocalMaximMEDIANa3w6<br>
+		LocalMaximMEDIANa5w2<br>
+		LocalMaximMEDIANa5w4<br>
+		LocalMaximMEDIANa5w6</span></td>
+    </tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>

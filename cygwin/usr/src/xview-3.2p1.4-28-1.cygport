@@ -1,0 +1,76 @@
+# cygport file for XView toolkit
+#
+# Clients from contrib are not built, olvwm is not built (More work is needed to get them to build)
+# No configuration files are provided for olwm, so it's probably not much use.
+# A lot more work could be done on this package, but practically the only reason anyone would want
+# it is for the xview library, so it should be fine as is.
+#
+
+CATEGORY="X11"
+
+PKG_NAMES="xview xview-devel"
+xview_CONTENTS="usr/openwin/bin/ usr/openwin/include/images/ usr/openwin/include/bitmaps/ usr/openwin/man/ usr/openwin/lib/ --exclude=usr/openwin/lib/*.a usr/share/ etc/profile.d"
+xview_devel_CONTENTS="usr/openwin/include/ --exclude=usr/openwin/include/images --exclude=usr/openwin/include/bitmaps usr/openwin/lib/*.a"
+
+xview_SUMMARY="XView toolkit"
+xview_DESCRIPTION="XView is a user interface toolkit with the look and feel of Sun's pre-X11 SunView.
+
+This package contains the shared libraries for running XView programs, a few basic XView clients
+and the OpenLook window manager olwm"
+xview_REQUIRES="font-sun-misc font-bh-dpi75 font-bh-lucidatypewriter-dpi75"
+
+xview_devel_SUMMARY="XView toolkit (devel)"
+xview_devel_DESCRIPTION="XView is a user interface toolkit with the look and feel of Sun's pre-X11 SunView.
+
+This package contains headers and libraries for compiling XView programs"
+xview_devel_REQUIRES="xview libX11-devel libtirpc-devel"
+
+HOMEPAGE="http://www.physionet.org/physiotools/xview/"
+LICENSE="Sun OpenLook"
+
+SRC_URI="http://ftp.debian.org/debian/pool/main/x/xview/xview_3.2p1.4.orig.tar.gz"
+PATCH_URI="http://patch-tracker.debian.org/patch/series/dl/xview/3.2p1.4-28.1/debian-changes-3.2p1.4-26
+           http://patch-tracker.debian.org/patch/series/dl/xview/3.2p1.4-28.1/display_setting
+           cygwin.patch
+           imake-wrapper-path.patch
+           cygwin-tirpc.patch
+           cygwin-dll-destdir.patch
+           cygwin-helpdir.patch
+           README.WINDOWS.patch"
+
+SRC_DIR="xview-3.2p1.4"
+
+export OPENWINHOME="/usr/openwin"
+export X11DIR="/usr"
+export MANDIR="/usr/share/man"
+
+src_compile() {
+        lndirs
+        cd ${B}
+
+	bash Build-LinuxXView.bash libs
+	bash Build-LinuxXView.bash clients
+}
+
+src_install() {
+        cd ${B}
+
+        export DESTDIR="${D}"
+
+	bash Build-LinuxXView.bash instlibs
+	bash Build-LinuxXView.bash instclients
+
+        # Rename xgettext, msgfmt to xview_xgettext, xview_msgfmt to avoid collision with gettext package
+        for file in xgettext msgfmt; do
+          mv ${D}${OPENWINHOME}/bin/$file.exe ${D}${OPENWINHOME}/bin/xview_$file.exe
+        done;
+
+        cd ${S}
+        dodoc README.*
+        cd ${S}/doc
+        newdoc README README.doc
+        dodoc xview-info olgx_api.txt olgx_api.ps sel_api.txt dnd_api.txt whats_new.ps
+
+        doenv MANPATH "\${MANPATH}:/usr/openwin/man"
+        doenv PATH "\${PATH}:/usr/openwin/bin"
+}

@@ -1,0 +1,11 @@
+--- origsrc/xview-3.2p1.4/imake	2013-02-22 13:17:48.406250000 +0000
++++ src/xview-3.2p1.4/imake	2013-02-22 14:02:44.156250000 +0000
+@@ -3,7 +3,7 @@
+ set -e
+ 
+ echo "imake-wrapper: running imake $* in directory `pwd`"
+-/usr/bin/X11/imake "$@"
++/usr/bin/imake "$@"
+ if [ -f "$IMAKEAPPEND" ]; then
+   cat "$IMAKEAPPEND" >> Makefile
+ fi

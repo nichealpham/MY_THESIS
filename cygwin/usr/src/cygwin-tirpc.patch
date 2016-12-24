@@ -1,0 +1,22 @@
+--- origsrc/xview-3.2p1.4/Build-LinuxXView.bash	2013-02-23 14:48:50.640625000 +0000
++++ src/xview-3.2p1.4/Build-LinuxXView.bash	2013-02-23 14:50:31.828125000 +0000
+@@ -39,7 +39,7 @@ cat > imake.append <<EOF
+   XVDESTDIR      = $OWDEST
+   EXTRA_DEFINES  = -DOPENWINHOME_DEFAULT=\"$OPENWINHOME\" -D_GNU_SOURCE
+   CONFIGDIR      = $X11DEST
+-  INCLUDES      := -I`pwd`/build/include $IMAKE_EXTRA_INCLUDES -I$OWDEST/include \$(INCLUDES)
++  INCLUDES      := -I`pwd`/build/include $IMAKE_EXTRA_INCLUDES -I$OWDEST/include -I/usr/include/tirpc \$(INCLUDES)
+   LOCAL_LDFLAGS := -L`pwd`/lib/libolgx -L`pwd`/lib/libxview $IMAKE_EXTRA_LOCAL_LDFLAGS -L$OWDEST/lib \$(LOCAL_LDFLAGS)
+   MAKEOVERRIDES  =
+   CFLAGS        += \$(EXTRA_CFLAGS)
+--- origsrc/xview-3.2p1.4/config/XView.rules	2013-02-23 14:48:50.718750000 +0000
++++ src/xview-3.2p1.4/config/XView.rules	2013-02-23 14:50:33.937500000 +0000
+@@ -210,7 +210,7 @@ AllTarget(cyg/**/libname-rev.dll)
+ 											@@\
+ cyg/**/libname-rev.dll:: solist 							@@\
+ 	$(RM) $@									@@\
+-	(cd sodir; $(CC) -shared -o $@ ?*.o $(XVIEW_DEPLIBS) -lrpc -Wl,--out-implib=lib/**/libname-rev.dll.a)	@@\
++	(cd sodir; $(CC) -shared -o $@ ?*.o $(XVIEW_DEPLIBS) -ltirpc -Wl,--out-implib=lib/**/libname-rev.dll.a)	@@\
+ 	$(MV) sodir/$@ $@ @@\
+ 	$(MV) sodir/lib/**/libname-rev.dll.a lib/**/libname-rev.dll.a @@\
+ 	$(LN) lib/**/libname-rev.dll.a lib/**/libname.a

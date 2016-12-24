@@ -1,0 +1,172 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>View Time Series 1D</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">View time 
+      series histogram</font></span><p>
+      <img border="0" src="viewhisttimeseries.jpg" width="518" height="517"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">Multiple time series 
+		can be selected and the histogram for each of them is plotted, either 
+		superimposing all in one plot or plotting them separately in figures 
+		containing matrix plots of a given size (subplots organized in rows and 
+		columns in each figure). </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">Select one or more time 
+      series</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Multiple time series 
+		names can be selected from this list. This can be done by standard use 
+		of the mouse: a click on the first name and Shift^click on the last name 
+		selects all names between the first and the last name; a click on the 
+		first name and subsequent Ctrl^clicks on other names select these names 
+		including the first name; Ctrl^a selects the whole list.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Number of bins</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">For the histograms the 
+		equidistant binning method is used and the number of bins is given here. 
+		If the default value 0 is selected, then the number of bins is set to 
+		sqrt(n/5), where n is the length of each selected time series. </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Superimposed in one plot</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">One plot is drawn 
+		having 
+		the lines of the histograms of all selected time series superimposed with different 
+		line type, as shown in the 
+		figure below. If up to 5 time series are selected, they are shown in a 
+		legend along with their respective line type, otherwise a 
+		list of the time series names prefixed by the line type (in matlab syntax) is displayed in the text box of &quot;Running messages&quot;. Note 
+		that the y-axis shows the frequencies, so if the selected time series 
+		vary significantly in their length, the lines are not at the same level 
+		and may not be comparable. </span><p align="center">
+      <img border="0" src="hist_superimposed.JPG" width="663" height="507"></p>
+      <p><font size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><p>&nbsp;<p><b><span lang="en-us">
+		<font size="4">One subplot per 
+      </font></span></b><span lang="en-us"><font size="4"><b>histogram</b></font></span></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">When using this option, 
+		one histogram will be displayed at each subplot for each of the selected 
+		time series. The subplots are organized in rows and columns, which are 
+		determined by the user (see below). Depending on the number of selected 
+		time series and the given rows and columns, more than one figure may be 
+		generated. The histogram at each subplot can be displayed as bars or 
+		line and the normal curve can be selected to be superimposed on it. See 
+		the figure below for an example on 6 histograms in 2 x 3 matrix plot. If 
+		the user chooses to display a normal curve also the p-value of the 
+		Kolmogorov-Smirnov test for normality is shown in the label of the 
+		horizontal axis.</span><p align="center"><font size="2">&nbsp;</font><img border="0" src="hist_subplots.JPG" width="523" height="476"><p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;</td>
+    	</tr>
+		<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us"><font size="4"><b>
+		Subplots per row<br>
+		</b></font>Th</span>e<span lang="en-us"> number of rows for the subplots 
+		in each figure.</span></td>
+    	</tr>
+		<tr>
+      <td colspan="2" align="justify">&nbsp;</td>
+    		</tr>
+			<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us"><font size="4"><b>
+		Subplots per column<br>
+		</b></font>Th</span>e<span lang="en-us"> number of columns for the 
+		subplots in each figure.</span></td>
+    		</tr>
+			<tr>
+      <td colspan="2" align="justify">&nbsp;</td>
+    			</tr>
+				<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">
+		<font size="4"><b>Display normal curve<br>
+		</b></font>If selected a red line of the bell-shaped normal curve (with 
+		the same mean and standard deviation as the selected time series) will 
+		be superimposed on the histogram. </span>
+      </td>
+    			</tr>
+				<tr>
+      <td colspan="2" align="justify">&nbsp;</td>
+    				</tr>
+					<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">
+		<font size="4"><b>Draw type<br>
+		</b></font>The drawing type 
+		to be used in the histogram plots: bars or line. </span>
+      </td>
+    				</tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Running Messages</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Messages about the 
+		histograms being plotted are displayed here. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Exit</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The window is closed.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">This page is displayed.</span></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

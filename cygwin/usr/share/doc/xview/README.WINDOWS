@@ -1,0 +1,117 @@
+file: README.WINDOWS		G. Moody (george@mit.edu)	1 February 2005
+					Last revised:		 8 April 2005
+
+Building, installing, and using XView under MS-Windows
+
+1. Install the Cygwin development environment (freely available from
+   http://cygwin.com/), inlcuding the gcc, make, sunrpc, and libX11-devel
+   packages.  This step is not optional -- XView cannot be built
+   or used under MS-Windows without Cygwin.  Specifically, mingw gcc and
+   other C compilers that do not use the Cygwin library will not work, because
+   XView is heavily dependent on the POSIX emulation provided by the Cygwin
+   library.
+
+   Illustrated instructions for installing Cygwin are available from
+	http://physionet.org/physiotools/cygwin/
+   An abbreviated version of these instructions can be found at the end
+   of this README.
+
+2. Click on the Cygwin icon to open a terminal window.  Perform
+   the remaining steps by typing commands in this window.
+
+3. If you have not already done so, download and unpack the tarball of
+   XView sources:
+	tar xfvz xview-3.2p1.4-19c.tar.gz
+
+4. Compile and install the XView libraries and clients:
+	cd xview-3.2p1.4-18c
+	bash Build-XView.bash libs instlibs clients instclients
+   
+   This procedure will take a long time and will generate thousands of lines
+   of progress and warning messages.  When it is complete, the libraries,
+   *.h files, and xview clients will all have been installed in subdirectories
+   of /usr/openwin (i.e., c:\cygwin\usr\openwin).  If you wish to copy the
+   binaries to another system, it is sufficient to copy the contents of
+   /usr/openwin.
+
+5. Add /usr/openwin/bin to your PATH before attempting to compile or run
+   any other XView applications.  To simplify running XView (and other X11
+   clients), it may be helpful to create a .bashrc file in your Cygwin home
+   directory containing these lines:
+	export PATH=/usr/openwin/bin:$PATH
+	export DISPLAY=:0.0
+
+6. Before attempting to run any XView application, start the X server if it
+   is not running already.  One way to do this is via
+	/usr/bin/startxwin
+   The version of this script that comes with Cygwin's xorg package runs the
+   X server with backing store disabled, which causes XView applications to
+   open with blank (solid white) windows.
+
+   To avoid this problem, start the X server with the option "+bs" added via
+	/usr/bin/startxwin -- +bs
+
+  If you have a two-button mouse, you will be able to simulate a middle button
+  click by "chording" (clicking both buttons at approximately the same time)
+  by adding "--emulate3buttons"
+	/usr/bin/startxwin -- +bs -emulate3buttons
+
+   If you make a desktop shortcut to run this command, you can click on it to
+   launch the X server and an xterm window.
+
+7. Start any X applications using the appropriate commands in the xterm
+   window, or (if you have set DISPLAY as shown above) in the Cygwin terminal
+   window.  For example, the XView-based text editor can be launched by
+   typing
+	textedit
+
+------------------------------------------------------------------------------
+Installing Cygwin
+
+Cygwin is a free and open source GNU/Linux-like environment for all modern
+versions of MS-Windows (95/98/NT/2000/ME/XP) except for Windows CE. A vast
+number of optional packages can be installed as components of Cygwin, including
+everything necessary to compile and use XView, notably:
+    - gcc (the GNU compiler collection)
+    - make
+    - a high-quality X11 server, libraries, and clients
+    - sunrpc (interprocess communications used by XView)
+   
+1. Click on "Install Cygwin now" at http://cygwin.com/ to download
+   the Cygwin Net Release Setup Program (setup.exe), and run it.
+   Use the default answers for its initial questions ("Install from Internet",
+   root directory C:\cygwin, install for all users, and default text file type:
+   Unix).  Select your connection type, choose a download site from the list of
+   mirrors, and continue.
+
+2. At this point, the "Select Packages" dialog appears.  Click on
+   View to change from Category view to Full view.  Scroll through
+   the list of optional packages, selecting the packages to be installed
+   by clicking on the indicators in the "New" column until a package
+   version number appears. Be sure to select the gcc, make, sunrpc, and
+   libX11-devel packages (the additional packages needed to satisfy the
+   dependencies of these packages will be installed automatically).
+
+   Select any other desired Cygwin packages, then click "Next" to
+   begin downloading and installing them.  Allow the installer to
+   create an icon on the desktop when it asks if you want one.
+
+   Clicking on the icon opens a Cygwin terminal emulator window.
+   Within the Cygwin window, you are running the bash shell, with
+   POSIX syntax (directory separators are '/', not '\').  The root
+   directory is visible to other MS-Windows applications as c:\cygwin.
+   The Cygwin installer will create a POSIX directory hierarchy
+   (containing, e.g., /bin, /etc, /home, and /usr directories) beneath
+   the root directory, and it will create subdirectories of /home as
+   home directories for each user.  To avoid problems, it is strongly
+   recommended that you avoid using directory names containing embedded
+   spaces.
+
+   If you wish to navigate through the rest of the Windows filesystem
+   from the Cygwin terminal, you may do so by starting at the special
+   directory named /cygdrive, like this:
+	cd /cygdrive
+   Within this directory, you will find a 'c' directory corresponding
+   to the Windows C drive, and additional directories for any other
+   drives that may be present.
+

@@ -1,0 +1,166 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Frequency-Based Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="925" height="1155">
+    <tr>
+      <td align="center" colspan="2" height="1" width="919"><span lang="en-us">
+		<font size="5">
+		Frequency-Based Measures</font></span><p>
+      <img border="0" src="Frequencymeasures.JPG" width="566" height="372"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" height="1" width="919"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">The power spectrum is a 
+		basic tool of time series analysis in the frequency domain. It is 
+		defined as the square of the amplitude of the Fourier transform of the 
+		time series and estimates how the total variance of the signal (time 
+		series) is distributed in the spectrum of frequencies. Among different 
+		power spectrum estimates we use here the standard <i>periodogram estimate</i>. 
+		The frequency ranges from 0 to 1/2 since an implicit sampling time of 
+		one is assumed for all time series. The power spectrum is a function of 
+		frequency and thus it does not constitute a measure, but measures can be 
+		derived from this function. In some applications, such as 
+		EEG analysis, the interest is in the <i>energy at specific frequency bands</i>. 
+		Here up to five frequency bands can be specified. The default frequency 
+		limits for the five bands correspond to the theta (</span><i>θ</i><span lang="en-us">), alpha</span> 
+		(<i>α</i>)<span lang="en-us">, beta</span> (<i>β</i>)<span lang="en-us">, gamma 
+		</span>(<i>γ</i>) <span lang="en-us">and delta </span>(<i>δ</i>) <span lang="en-us">bands. Also, the 
+		<i>median frequency</i> can be computed giving the 
+		frequency at which the energy is halved.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">Energy Band 
+      A (EnergyBndA)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="90" align="justify"></td>
+      <td width="849" height="90" align="justify"><span lang="en-us">Energy Band 
+		A is </span>t<span lang="en-us">he energy in a given frequency band. The 
+		band is specified by the lower and upper frequency limits. </span>The standard periodogram is called to 
+      compute the power spectrum assuming&nbsp; frequency=1, so that the largest 
+      frequency the power spectrum is computed&nbsp; for is 0.5. The frequency&nbsp; resolution is 
+      given by the length of the time series. The energy in the&nbsp;given 
+      frequency band is simply the fraction of the sum of the values of&nbsp;the power spectrum at the discrete frequencies within the band to the&nbsp;energy over the entire frequency
+		<span lang="en-us">range</span>.<p>
+		<span lang="en-us">The following parameters can be specified:</span></p>
+      <p>- <span lang="en-us"><b>lower band frequency (l)</b> : the lower 
+		frequency limit for the frequency band. A single value for <i>l</i> should be 
+		given and it should hold 0 &lt; <i>l</i> &lt; 0.5.&nbsp; </span> </p>
+      <p>- <span lang="en-us"><b>upper band frequency (u)</b> : the upper 
+		frequency limit for the frequency band. A single value for <i>u</i> should be 
+		given and it should hold <i>l</i> &lt; <i>u</i> &lt; 0.5.</span></p><p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for lower band frequency (l) '0.003' and for the upper band 
+		frequency (u) '0.05', then Energy Band A is computed for the specified 
+		frequency interval [<i>l</i>,<i> u</i>] in the measure list the following 
+		measure name will appear (the frequency values are multiplied by 1000 
+		and rounded)</span><p><span lang="en-us">EnergyBndAl3u50</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="50" width="919" align="justify">
+  &nbsp;<p><b><span lang="en-us"><font size="4">Energy Band B (EnergyBndB)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="21" align="justify"></td>
+      <td width="849" height="21" align="justify">The same <span lang="en-us">
+      as for Energy Band 
+      A (EnergyBndA) holds for another selection of frequency band.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Energy Band 
+      C (EnergyBndC)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="25" align="justify"></td>
+      <td width="849" height="25" align="justify">The same <span lang="en-us">
+      as for Energy Band 
+      A (EnergyBndA) holds for another selection of frequency band.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Energy Band 
+      D (EnergyBndD)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="21" align="justify"></td>
+      <td width="849" height="21" align="justify">The same <span lang="en-us">
+      as for Energy Band 
+      A (EnergyBndA) holds for another selection of frequency band.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Energy Band 
+      E (EnergyBndE)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="31" align="justify"></td>
+      <td width="849" height="31" align="justify">The same <span lang="en-us">
+      as for Energy Band 
+      A (EnergyBndA) holds for another selection of frequency band.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Median 
+      Frequency (MedianFreq)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="30" align="justify"></td>
+      <td width="849" height="30" align="justify"><span lang="en-us">Median 
+		Frequency </span>i<span lang="en-us">s </span>t<span lang="en-us">he 
+		frequency at which the energy is halved, i.e. the frequency <i>f<sup>*</sup>
+		</i>for which the </span>fraction of the sum of the values of&nbsp;the power spectrum at the discrete frequencies
+		<span lang="en-us">in [0,<i>f<sup>*</sup></i>] </span>to the&nbsp;energy over the entire frequency
+		<span lang="en-us">range is 1/2</span>.<span lang="en-us"> The rest is as described for 
+		the Energy Band A (EnergyBndA)</span>.</td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>OK</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Frequency-based Measures&quot; will disappear and the user 
+		will be moved to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be stored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be ignored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    		</tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>

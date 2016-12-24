@@ -1,0 +1,4629 @@
+%!PS-Adobe-3.0
+%%Creator: (Apache FOP Version 1.0)
+%%CreationDate: 2014-08-10T15:01:45
+%%LanguageLevel: 3
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%HiResBoundingBox: (atend)
+%%DocumentSuppliedResources: (atend)
+%%EndComments
+%%BeginDefaults
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Version: 1.1 0
+%%Copyright: (Copyright 2001-2003,2010 The Apache Software Foundation. License terms: http://www.apache.org/licenses/LICENSE-2.0)
+%%Title: (Basic set of procedures used by the XML Graphics project \(Batik and FOP\))
+/bd{bind def}bind def
+/ld{load def}bd
+/M/moveto ld
+/L/lineto ld
+/S/stroke ld
+/CC/setcmykcolor ld
+/CT/concat ld
+/GS/gsave ld
+/LJ/setlinejoin ld
+/C/curveto ld
+/RM/rmoveto ld
+/cp/closepath ld
+/GR/grestore ld
+/f/fill ld
+/A/ashow ld
+/N/newpath ld
+/ML/setmiterlimit ld
+/GC/setgray ld
+/t/show ld
+/LW/setlinewidth ld
+/RC/setrgbcolor ld
+/re {4 2 roll M
+1 index 0 rlineto
+0 exch rlineto
+neg 0 rlineto
+cp } bd
+/_ctm matrix def
+/_tm matrix def
+/BT { _ctm currentmatrix pop matrix _tm copy pop 0 0 moveto } bd
+/ET { _ctm setmatrix } bd
+/iTm { _ctm setmatrix _tm concat } bd
+/Tm { _tm astore pop iTm 0 0 moveto } bd
+/ux 0.0 def
+/uy 0.0 def
+/F {
+  /Tp exch def
+  /Tf exch def
+  Tf findfont Tp scalefont setfont
+  /cf Tf def  /cs Tp def  /cw ( ) stringwidth pop def
+} bd
+/ULS {currentpoint /uy exch def /ux exch def} bd
+/ULE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add moveto  Tcx uy To add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/OLE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add cs add moveto Tcx uy To add cs add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/SOE {
+  /Tcx currentpoint pop def
+  gsave
+  newpath
+  cf findfont cs scalefont dup
+  /FontMatrix get 0 get /Ts exch def /FontInfo get dup
+  /UnderlinePosition get Ts mul /To exch def
+  /UnderlineThickness get Ts mul /Tt exch def
+  ux uy To add cs 10 mul 26 idiv add moveto Tcx uy To add cs 10 mul 26 idiv add lineto
+  Tt setlinewidth stroke
+  grestore
+} bd
+/QT {
+/Y22 exch store
+/X22 exch store
+/Y21 exch store
+/X21 exch store
+currentpoint
+/Y21 load 2 mul add 3 div exch
+/X21 load 2 mul add 3 div exch
+/X21 load 2 mul /X22 load add 3 div
+/Y21 load 2 mul /Y22 load add 3 div
+/X22 load /Y22 load curveto
+} bd
+/SSPD {
+dup length /d exch dict def
+{
+/v exch def
+/k exch def
+currentpagedevice k known {
+/cpdv currentpagedevice k get def
+v cpdv ne {
+/upd false def
+/nullv v type /nulltype eq def
+/nullcpdv cpdv type /nulltype eq def
+nullv nullcpdv or
+{
+/upd true def
+} {
+/sametype v type cpdv type eq def
+sametype {
+v type /arraytype eq {
+/vlen v length def
+/cpdvlen cpdv length def
+vlen cpdvlen eq {
+0 1 vlen 1 sub {
+/i exch def
+/obj v i get def
+/cpdobj cpdv i get def
+obj cpdobj ne {
+/upd true def
+exit
+} if
+} for
+} {
+/upd true def
+} ifelse
+} {
+v type /dicttype eq {
+v {
+/dv exch def
+/dk exch def
+/cpddv cpdv dk get def
+dv cpddv ne {
+/upd true def
+exit
+} if
+} forall
+} {
+/upd true def
+} ifelse
+} ifelse
+} if
+} ifelse
+upd true eq {
+d k v put
+} if
+} if
+} if
+} forall
+d length 0 gt {
+d setpagedevice
+} if
+} bd
+%%EndResource
+%%BeginResource: procset (Apache XML Graphics EPS ProcSet) 1.0 0
+%%Version: 1.0 0
+%%Copyright: (Copyright 2002-2003 The Apache Software Foundation. License terms: http://www.apache.org/licenses/LICENSE-2.0)
+%%Title: (EPS procedures used by the Apache XML Graphics project \(Batik and FOP\))
+/BeginEPSF { %def
+/b4_Inc_state save def         % Save state for cleanup
+/dict_count countdictstack def % Count objects on dict stack
+/op_count count 1 sub def      % Count objects on operand stack
+userdict begin                 % Push userdict on dict stack
+/showpage { } def              % Redefine showpage, { } = null proc
+0 setgray 0 setlinecap         % Prepare graphics state
+1 setlinewidth 0 setlinejoin
+10 setmiterlimit [ ] 0 setdash newpath
+/languagelevel where           % If level not equal to 1 then
+{pop languagelevel             % set strokeadjust and
+1 ne                           % overprint to their defaults.
+{false setstrokeadjust false setoverprint
+} if
+} if
+} bd
+/EndEPSF { %def
+count op_count sub {pop} repeat            % Clean up stacks
+countdictstack dict_count sub {end} repeat
+b4_Inc_state restore
+} bd
+%%EndResource
+%%BeginResource: procset (Apache FOP Std ProcSet) 1.0 0
+%%Version: 1.0 0
+%%Copyright: (Copyright 2009 The Apache Software Foundation. License terms: http://www.apache.org/licenses/LICENSE-2.0)
+%%Title: (Basic set of procedures used by Apache FOP)
+/TJ { % Similar but not equal to PDF's TJ operator
+  {
+    dup type /stringtype eq
+    { show }
+    { neg 1000 div 0 rmoveto }
+    ifelse
+  } forall
+} bd
+/ATJ { % As TJ but adds letter-spacing
+  /ATJls exch def
+  {
+    dup type /stringtype eq
+    { ATJls 0 3 2 roll ashow }
+    { neg 1000 div 0 rmoveto }
+    ifelse
+  } forall
+} bd
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%FOPBeginFontDict
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier-Oblique
+%%IncludeResource: font Courier
+%%IncludeResource: font Times-BoldItalic
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Italic
+%%IncludeResource: font Times-Roman
+%%IncludeResource: font Helvetica-BoldOblique
+%%IncludeResource: font Helvetica-Bold
+%%IncludeResource: font Helvetica-Oblique
+%%IncludeResource: font Helvetica
+%%IncludeResource: font ZapfDingbats
+%%IncludeResource: font Symbol
+%%IncludeResource: font Courier-BoldOblique
+%FOPEndFontDict
+%%BeginResource: encoding WinAnsiEncoding
+/WinAnsiEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle
+/parenleft /parenright /asterisk /plus /comma
+/hyphen /period /slash /zero /one
+/two /three /four /five /six
+/seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at
+/A /B /C /D /E
+/F /G /H /I /J
+/K /L /M /N /O
+/P /Q /R /S /T
+/U /V /W /X /Y
+/Z /bracketleft /backslash /bracketright /asciicircum
+/underscore /quoteleft /a /b /c
+/d /e /f /g /h
+/i /j /k /l /m
+/n /o /p /q /r
+/s /t /u /v /w
+/x /y /z /braceleft /bar
+/braceright /asciitilde /bullet /Euro /bullet
+/quotesinglbase /florin /quotedblbase /ellipsis /dagger
+/daggerdbl /circumflex /perthousand /Scaron /guilsinglleft
+/OE /bullet /Zcaron /bullet /bullet
+/quoteleft /quoteright /quotedblleft /quotedblright /bullet
+/endash /emdash /asciitilde /trademark /scaron
+/guilsinglright /oe /bullet /zcaron /Ydieresis
+/space /exclamdown /cent /sterling /currency
+/yen /brokenbar /section /dieresis /copyright
+/ordfeminine /guillemotleft /logicalnot /sfthyphen /registered
+/macron /degree /plusminus /twosuperior /threesuperior
+/acute /mu /paragraph /middot /cedilla
+/onesuperior /ordmasculine /guillemotright /onequarter /onehalf
+/threequarters /questiondown /Agrave /Aacute /Acircumflex
+/Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave
+/Iacute /Icircumflex /Idieresis /Eth /Ntilde
+/Ograve /Oacute /Ocircumflex /Otilde /Odieresis
+/multiply /Oslash /Ugrave /Uacute /Ucircumflex
+/Udieresis /Yacute /Thorn /germandbls /agrave
+/aacute /acircumflex /atilde /adieresis /aring
+/ae /ccedilla /egrave /eacute /ecircumflex
+/edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex
+/otilde /odieresis /divide /oslash /ugrave
+/uacute /ucircumflex /udieresis /yacute /thorn
+/ydieresis
+] def
+%%EndResource
+%FOPBeginFontReencode
+/Courier-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Courier-Bold exch definefont pop
+/Courier-Oblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Courier-Oblique exch definefont pop
+/Courier findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Courier exch definefont pop
+/Times-BoldItalic findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Times-BoldItalic exch definefont pop
+/Times-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Times-Bold exch definefont pop
+/Times-Italic findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Times-Italic exch definefont pop
+/Times-Roman findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Times-Roman exch definefont pop
+/Helvetica-BoldOblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Helvetica-BoldOblique exch definefont pop
+/Helvetica-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Helvetica-Bold exch definefont pop
+/Helvetica-Oblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Helvetica-Oblique exch definefont pop
+/Helvetica findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Helvetica exch definefont pop
+/Courier-BoldOblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding WinAnsiEncoding def
+  currentdict
+end
+/Courier-BoldOblique exch definefont pop
+%FOPEndFontReencode
+%%EndSetup
+%%Page: 1 1
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-first
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 14.25 M
+156 14.5 lineto
+0 14.5 lineto
+0 14.25 lineto
+0 14 lineto
+156 14 lineto
+cp
+clip newpath
+0.5 LW
+0 14.25 M 156 14.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 14.25 M
+156 14.5 lineto
+0 14.5 lineto
+0 14.25 lineto
+0 14 lineto
+156 14 lineto
+cp
+clip newpath
+0.5 LW
+0 14.25 M 156 14.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 14.25 M
+156 14.5 lineto
+0 14.5 lineto
+0 14.25 lineto
+0 14 lineto
+156 14 lineto
+cp
+clip newpath
+0.5 LW
+0 14.25 M 156 14.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(1) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Helvetica-Bold 24.883 F
+1 0 0 -1 97.113 21.287 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 88.827 51.146 Tm
+(EXTENSION PROPOSAL) show
+/Helvetica 10 F
+1 0 0 -1 182.035 68.273 Tm
+(X Consortium Standard) show
+/Helvetica 14.4 F
+1 0 0 -1 124.774 108.517 Tm
+(Larry Woestman, Hewlett Packard) show
+/Helvetica 10 F
+1 0 0 -1 208.71 127.033 Tm
+(Version 1.0) show
+1 0 0 -1 163.23 144.033 Tm
+(Copyright ) show
+/Times-Roman 10 F
+1 0 0 -1 208.8 144.033 Tm
+(\251) show
+/Helvetica 10 F
+1 0 0 -1 216.4 144.033 Tm
+( 1993 X Consortium) show
+/Times-Roman 10 F
+1 0 0 -1 36 165.908 Tm
+(Permission is hereby granted, free of charge, to any person obtaining a copy of this software and) show
+1 0 0 -1 36 177.908 Tm
+(associated documentation files \(the "Software"\), to deal in the Software without restriction, includ-) show
+1 0 0 -1 36 189.908 Tm
+(ing without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/) show
+1 0 0 -1 36 201.908 Tm
+(or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,) show
+1 0 0 -1 36 213.908 Tm
+(subject to the following conditions:) show
+1 0 0 -1 36 235.908 Tm
+(The above copyright notice and this permission notice shall be included in all copies or substantial) show
+1 0 0 -1 36 247.908 Tm
+(portions of the Software.) show
+1 0 0 -1 36 269.908 Tm
+(THE SOFTWARE IS PROVIDED \223AS IS\224, WITHOUT WARRANTY OF ANY KIND, EX-) show
+1 0 0 -1 36 281.908 Tm
+(PRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MER-) show
+1 0 0 -1 36 293.908 Tm
+(CHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.) show
+1 0 0 -1 36 305.908 Tm
+(IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES) show
+1 0 0 -1 36 317.908 Tm
+(OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHER-) show
+1 0 0 -1 36 329.908 Tm
+(WISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE) show
+1 0 0 -1 36 341.908 Tm
+(USE OR OTHER DEALINGS IN THE SOFTWARE.) show
+1 0 0 -1 36 363.908 Tm
+(Except as contained in this notice, the name of the X Consortium shall not be used in advertising) show
+1 0 0 -1 36 375.908 Tm
+(or otherwise to promote the sale, use or other dealings in this Software without prior written au-) show
+1 0 0 -1 36 387.908 Tm
+(thorization from the X Consortium.) show
+1 0 0 -1 36 409.908 Tm
+(X Window System is a trademark of The Open Group.) show
+/Helvetica-Bold 10 F
+1 0 0 -1 213.72 432.133 Tm
+(Abstract) show
+/Times-Roman 10 F
+1 0 0 -1 0 453.908 Tm
+(This is a proposal for an extension to the X11 server and Xlib.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 2 2
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(2) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Helvetica-Bold 17.28 F
+1 0 0 -1 48 14.783 Tm
+(Table of Contents) show
+/Times-Roman 10 F
+1 0 0 -1 48 37.706 Tm
+(Introduction) show
+1 0 0 -1 97.44 37.706 Tm
+[( ) -1127 ] TJ
+1 0 0 -1 101.067 37.706 Tm
+(.) show
+1 0 0 -1 104.067 37.706 Tm
+(.) show
+1 0 0 -1 107.067 37.706 Tm
+(.) show
+1 0 0 -1 110.067 37.706 Tm
+(.) show
+1 0 0 -1 113.067 37.706 Tm
+(.) show
+1 0 0 -1 116.067 37.706 Tm
+(.) show
+1 0 0 -1 119.067 37.706 Tm
+(.) show
+1 0 0 -1 122.067 37.706 Tm
+(.) show
+1 0 0 -1 125.067 37.706 Tm
+(.) show
+1 0 0 -1 128.067 37.706 Tm
+(.) show
+1 0 0 -1 131.067 37.706 Tm
+(.) show
+1 0 0 -1 134.067 37.706 Tm
+(.) show
+1 0 0 -1 137.067 37.706 Tm
+(.) show
+1 0 0 -1 140.067 37.706 Tm
+(.) show
+1 0 0 -1 143.067 37.706 Tm
+(.) show
+1 0 0 -1 146.067 37.706 Tm
+(.) show
+1 0 0 -1 149.067 37.706 Tm
+(.) show
+1 0 0 -1 152.067 37.706 Tm
+(.) show
+1 0 0 -1 155.067 37.706 Tm
+(.) show
+1 0 0 -1 158.067 37.706 Tm
+(.) show
+1 0 0 -1 161.067 37.706 Tm
+(.) show
+1 0 0 -1 164.067 37.706 Tm
+(.) show
+1 0 0 -1 167.067 37.706 Tm
+(.) show
+1 0 0 -1 170.067 37.706 Tm
+(.) show
+1 0 0 -1 173.067 37.706 Tm
+(.) show
+1 0 0 -1 176.067 37.706 Tm
+(.) show
+1 0 0 -1 179.067 37.706 Tm
+(.) show
+1 0 0 -1 182.067 37.706 Tm
+(.) show
+1 0 0 -1 185.067 37.706 Tm
+(.) show
+1 0 0 -1 188.067 37.706 Tm
+(.) show
+1 0 0 -1 191.067 37.706 Tm
+(.) show
+1 0 0 -1 194.067 37.706 Tm
+(.) show
+1 0 0 -1 197.067 37.706 Tm
+(.) show
+1 0 0 -1 200.067 37.706 Tm
+(.) show
+1 0 0 -1 203.067 37.706 Tm
+(.) show
+1 0 0 -1 206.067 37.706 Tm
+(.) show
+1 0 0 -1 209.067 37.706 Tm
+(.) show
+1 0 0 -1 212.067 37.706 Tm
+(.) show
+1 0 0 -1 215.067 37.706 Tm
+(.) show
+1 0 0 -1 218.067 37.706 Tm
+(.) show
+1 0 0 -1 221.067 37.706 Tm
+(.) show
+1 0 0 -1 224.067 37.706 Tm
+(.) show
+1 0 0 -1 227.067 37.706 Tm
+(.) show
+1 0 0 -1 230.067 37.706 Tm
+(.) show
+1 0 0 -1 233.067 37.706 Tm
+(.) show
+1 0 0 -1 236.067 37.706 Tm
+(.) show
+1 0 0 -1 239.067 37.706 Tm
+(.) show
+1 0 0 -1 242.067 37.706 Tm
+(.) show
+1 0 0 -1 245.067 37.706 Tm
+(.) show
+1 0 0 -1 248.067 37.706 Tm
+(.) show
+1 0 0 -1 251.067 37.706 Tm
+(.) show
+1 0 0 -1 254.067 37.706 Tm
+(.) show
+1 0 0 -1 257.067 37.706 Tm
+(.) show
+1 0 0 -1 260.067 37.706 Tm
+(.) show
+1 0 0 -1 263.067 37.706 Tm
+(.) show
+1 0 0 -1 266.067 37.706 Tm
+(.) show
+1 0 0 -1 269.067 37.706 Tm
+(.) show
+1 0 0 -1 272.067 37.706 Tm
+(.) show
+1 0 0 -1 275.067 37.706 Tm
+(.) show
+1 0 0 -1 278.067 37.706 Tm
+(.) show
+1 0 0 -1 281.067 37.706 Tm
+(.) show
+1 0 0 -1 284.067 37.706 Tm
+(.) show
+1 0 0 -1 287.067 37.706 Tm
+(.) show
+1 0 0 -1 290.067 37.706 Tm
+(.) show
+1 0 0 -1 293.067 37.706 Tm
+(.) show
+1 0 0 -1 296.067 37.706 Tm
+(.) show
+1 0 0 -1 299.067 37.706 Tm
+(.) show
+1 0 0 -1 302.067 37.706 Tm
+(.) show
+1 0 0 -1 305.067 37.706 Tm
+(.) show
+1 0 0 -1 308.067 37.706 Tm
+(.) show
+1 0 0 -1 311.067 37.706 Tm
+(.) show
+1 0 0 -1 314.067 37.706 Tm
+(.) show
+1 0 0 -1 317.067 37.706 Tm
+(.) show
+1 0 0 -1 320.067 37.706 Tm
+(.) show
+1 0 0 -1 323.067 37.706 Tm
+(.) show
+1 0 0 -1 326.067 37.706 Tm
+(.) show
+1 0 0 -1 329.067 37.706 Tm
+(.) show
+1 0 0 -1 332.067 37.706 Tm
+(.) show
+1 0 0 -1 335.067 37.706 Tm
+(.) show
+1 0 0 -1 338.067 37.706 Tm
+(.) show
+1 0 0 -1 341.067 37.706 Tm
+(.) show
+1 0 0 -1 344.067 37.706 Tm
+(.) show
+1 0 0 -1 347.067 37.706 Tm
+(.) show
+1 0 0 -1 350.067 37.706 Tm
+(.) show
+1 0 0 -1 353.067 37.706 Tm
+(.) show
+1 0 0 -1 356.067 37.706 Tm
+(.) show
+1 0 0 -1 359.067 37.706 Tm
+(.) show
+1 0 0 -1 362.067 37.706 Tm
+(.) show
+1 0 0 -1 365.067 37.706 Tm
+(.) show
+1 0 0 -1 368.067 37.706 Tm
+(.) show
+1 0 0 -1 371.067 37.706 Tm
+(.) show
+1 0 0 -1 374.067 37.706 Tm
+(.) show
+1 0 0 -1 377.067 37.706 Tm
+(.) show
+1 0 0 -1 380.067 37.706 Tm
+(.) show
+1 0 0 -1 383.067 37.706 Tm
+(.) show
+1 0 0 -1 386.067 37.706 Tm
+(.) show
+1 0 0 -1 389.067 37.706 Tm
+(.) show
+1 0 0 -1 392.067 37.706 Tm
+(.) show
+1 0 0 -1 395.067 37.706 Tm
+(.) show
+1 0 0 -1 398.067 37.706 Tm
+(.) show
+1 0 0 -1 401.067 37.706 Tm
+(.) show
+1 0 0 -1 404.067 37.706 Tm
+(.) show
+1 0 0 -1 407.067 37.706 Tm
+(.) show
+1 0 0 -1 410.067 37.706 Tm
+(.) show
+1 0 0 -1 413.067 37.706 Tm
+(.) show
+1 0 0 -1 416.067 37.706 Tm
+(.) show
+1 0 0 -1 419.067 37.706 Tm
+(.) show
+1 0 0 -1 422.067 37.706 Tm
+(.) show
+1 0 0 -1 425.067 37.706 Tm
+(.) show
+1 0 0 -1 428.067 37.706 Tm
+(.) show
+1 0 0 -1 431.067 37.706 Tm
+(.) show
+1 0 0 -1 434.067 37.706 Tm
+(.) show
+1 0 0 -1 437.067 37.706 Tm
+(.) show
+1 0 0 -1 440.067 37.706 Tm
+(.) show
+1 0 0 -1 443.067 37.706 Tm
+(.) show
+1 0 0 -1 446.067 37.706 Tm
+(.) show
+1 0 0 -1 449.067 37.706 Tm
+(.) show
+1 0 0 -1 452.067 37.706 Tm
+(.) show
+1 0 0 -1 455.067 37.706 Tm
+(.) show
+1 0 0 -1 459.371 37.706 Tm
+[( ) -1127 ] TJ
+1 0 0 -1 462.998 37.706 Tm
+(3) show
+1 0 0 -1 48 49.706 Tm
+[(Conventions ) -795 (Used ) -795 (In ) -795 (This ) -795 (Document)] TJ
+1 0 0 -1 199.784 49.706 Tm
+[( ) -795 ] TJ
+1 0 0 -1 203.079 49.706 Tm
+(.) show
+1 0 0 -1 206.079 49.706 Tm
+(.) show
+1 0 0 -1 209.079 49.706 Tm
+(.) show
+1 0 0 -1 212.079 49.706 Tm
+(.) show
+1 0 0 -1 215.079 49.706 Tm
+(.) show
+1 0 0 -1 218.079 49.706 Tm
+(.) show
+1 0 0 -1 221.079 49.706 Tm
+(.) show
+1 0 0 -1 224.079 49.706 Tm
+(.) show
+1 0 0 -1 227.079 49.706 Tm
+(.) show
+1 0 0 -1 230.079 49.706 Tm
+(.) show
+1 0 0 -1 233.079 49.706 Tm
+(.) show
+1 0 0 -1 236.079 49.706 Tm
+(.) show
+1 0 0 -1 239.079 49.706 Tm
+(.) show
+1 0 0 -1 242.079 49.706 Tm
+(.) show
+1 0 0 -1 245.079 49.706 Tm
+(.) show
+1 0 0 -1 248.079 49.706 Tm
+(.) show
+1 0 0 -1 251.079 49.706 Tm
+(.) show
+1 0 0 -1 254.079 49.706 Tm
+(.) show
+1 0 0 -1 257.079 49.706 Tm
+(.) show
+1 0 0 -1 260.079 49.706 Tm
+(.) show
+1 0 0 -1 263.079 49.706 Tm
+(.) show
+1 0 0 -1 266.079 49.706 Tm
+(.) show
+1 0 0 -1 269.079 49.706 Tm
+(.) show
+1 0 0 -1 272.079 49.706 Tm
+(.) show
+1 0 0 -1 275.079 49.706 Tm
+(.) show
+1 0 0 -1 278.079 49.706 Tm
+(.) show
+1 0 0 -1 281.079 49.706 Tm
+(.) show
+1 0 0 -1 284.079 49.706 Tm
+(.) show
+1 0 0 -1 287.079 49.706 Tm
+(.) show
+1 0 0 -1 290.079 49.706 Tm
+(.) show
+1 0 0 -1 293.079 49.706 Tm
+(.) show
+1 0 0 -1 296.079 49.706 Tm
+(.) show
+1 0 0 -1 299.079 49.706 Tm
+(.) show
+1 0 0 -1 302.079 49.706 Tm
+(.) show
+1 0 0 -1 305.079 49.706 Tm
+(.) show
+1 0 0 -1 308.079 49.706 Tm
+(.) show
+1 0 0 -1 311.079 49.706 Tm
+(.) show
+1 0 0 -1 314.079 49.706 Tm
+(.) show
+1 0 0 -1 317.079 49.706 Tm
+(.) show
+1 0 0 -1 320.079 49.706 Tm
+(.) show
+1 0 0 -1 323.079 49.706 Tm
+(.) show
+1 0 0 -1 326.079 49.706 Tm
+(.) show
+1 0 0 -1 329.079 49.706 Tm
+(.) show
+1 0 0 -1 332.079 49.706 Tm
+(.) show
+1 0 0 -1 335.079 49.706 Tm
+(.) show
+1 0 0 -1 338.079 49.706 Tm
+(.) show
+1 0 0 -1 341.079 49.706 Tm
+(.) show
+1 0 0 -1 344.079 49.706 Tm
+(.) show
+1 0 0 -1 347.079 49.706 Tm
+(.) show
+1 0 0 -1 350.079 49.706 Tm
+(.) show
+1 0 0 -1 353.079 49.706 Tm
+(.) show
+1 0 0 -1 356.079 49.706 Tm
+(.) show
+1 0 0 -1 359.079 49.706 Tm
+(.) show
+1 0 0 -1 362.079 49.706 Tm
+(.) show
+1 0 0 -1 365.079 49.706 Tm
+(.) show
+1 0 0 -1 368.079 49.706 Tm
+(.) show
+1 0 0 -1 371.079 49.706 Tm
+(.) show
+1 0 0 -1 374.079 49.706 Tm
+(.) show
+1 0 0 -1 377.079 49.706 Tm
+(.) show
+1 0 0 -1 380.079 49.706 Tm
+(.) show
+1 0 0 -1 383.079 49.706 Tm
+(.) show
+1 0 0 -1 386.079 49.706 Tm
+(.) show
+1 0 0 -1 389.079 49.706 Tm
+(.) show
+1 0 0 -1 392.079 49.706 Tm
+(.) show
+1 0 0 -1 395.079 49.706 Tm
+(.) show
+1 0 0 -1 398.079 49.706 Tm
+(.) show
+1 0 0 -1 401.079 49.706 Tm
+(.) show
+1 0 0 -1 404.079 49.706 Tm
+(.) show
+1 0 0 -1 407.079 49.706 Tm
+(.) show
+1 0 0 -1 410.079 49.706 Tm
+(.) show
+1 0 0 -1 413.079 49.706 Tm
+(.) show
+1 0 0 -1 416.079 49.706 Tm
+(.) show
+1 0 0 -1 419.079 49.706 Tm
+(.) show
+1 0 0 -1 422.079 49.706 Tm
+(.) show
+1 0 0 -1 425.079 49.706 Tm
+(.) show
+1 0 0 -1 428.079 49.706 Tm
+(.) show
+1 0 0 -1 431.079 49.706 Tm
+(.) show
+1 0 0 -1 434.079 49.706 Tm
+(.) show
+1 0 0 -1 437.079 49.706 Tm
+(.) show
+1 0 0 -1 440.079 49.706 Tm
+(.) show
+1 0 0 -1 443.079 49.706 Tm
+(.) show
+1 0 0 -1 446.079 49.706 Tm
+(.) show
+1 0 0 -1 449.079 49.706 Tm
+(.) show
+1 0 0 -1 452.079 49.706 Tm
+(.) show
+1 0 0 -1 455.079 49.706 Tm
+(.) show
+1 0 0 -1 459.425 49.706 Tm
+[( ) -795 ] TJ
+1 0 0 -1 462.72 49.706 Tm
+(3) show
+1 0 0 -1 48 61.706 Tm
+[(Definition ) -1014 (Of ) -1014 (Terms)] TJ
+1 0 0 -1 132.1 61.706 Tm
+[( ) -1014 ] TJ
+1 0 0 -1 135.614 61.706 Tm
+(.) show
+1 0 0 -1 138.614 61.706 Tm
+(.) show
+1 0 0 -1 141.614 61.706 Tm
+(.) show
+1 0 0 -1 144.614 61.706 Tm
+(.) show
+1 0 0 -1 147.614 61.706 Tm
+(.) show
+1 0 0 -1 150.614 61.706 Tm
+(.) show
+1 0 0 -1 153.614 61.706 Tm
+(.) show
+1 0 0 -1 156.614 61.706 Tm
+(.) show
+1 0 0 -1 159.614 61.706 Tm
+(.) show
+1 0 0 -1 162.614 61.706 Tm
+(.) show
+1 0 0 -1 165.614 61.706 Tm
+(.) show
+1 0 0 -1 168.614 61.706 Tm
+(.) show
+1 0 0 -1 171.614 61.706 Tm
+(.) show
+1 0 0 -1 174.614 61.706 Tm
+(.) show
+1 0 0 -1 177.614 61.706 Tm
+(.) show
+1 0 0 -1 180.614 61.706 Tm
+(.) show
+1 0 0 -1 183.614 61.706 Tm
+(.) show
+1 0 0 -1 186.614 61.706 Tm
+(.) show
+1 0 0 -1 189.614 61.706 Tm
+(.) show
+1 0 0 -1 192.614 61.706 Tm
+(.) show
+1 0 0 -1 195.614 61.706 Tm
+(.) show
+1 0 0 -1 198.614 61.706 Tm
+(.) show
+1 0 0 -1 201.614 61.706 Tm
+(.) show
+1 0 0 -1 204.614 61.706 Tm
+(.) show
+1 0 0 -1 207.614 61.706 Tm
+(.) show
+1 0 0 -1 210.614 61.706 Tm
+(.) show
+1 0 0 -1 213.614 61.706 Tm
+(.) show
+1 0 0 -1 216.614 61.706 Tm
+(.) show
+1 0 0 -1 219.614 61.706 Tm
+(.) show
+1 0 0 -1 222.614 61.706 Tm
+(.) show
+1 0 0 -1 225.614 61.706 Tm
+(.) show
+1 0 0 -1 228.614 61.706 Tm
+(.) show
+1 0 0 -1 231.614 61.706 Tm
+(.) show
+1 0 0 -1 234.614 61.706 Tm
+(.) show
+1 0 0 -1 237.614 61.706 Tm
+(.) show
+1 0 0 -1 240.614 61.706 Tm
+(.) show
+1 0 0 -1 243.614 61.706 Tm
+(.) show
+1 0 0 -1 246.614 61.706 Tm
+(.) show
+1 0 0 -1 249.614 61.706 Tm
+(.) show
+1 0 0 -1 252.614 61.706 Tm
+(.) show
+1 0 0 -1 255.614 61.706 Tm
+(.) show
+1 0 0 -1 258.614 61.706 Tm
+(.) show
+1 0 0 -1 261.614 61.706 Tm
+(.) show
+1 0 0 -1 264.614 61.706 Tm
+(.) show
+1 0 0 -1 267.614 61.706 Tm
+(.) show
+1 0 0 -1 270.614 61.706 Tm
+(.) show
+1 0 0 -1 273.614 61.706 Tm
+(.) show
+1 0 0 -1 276.614 61.706 Tm
+(.) show
+1 0 0 -1 279.614 61.706 Tm
+(.) show
+1 0 0 -1 282.614 61.706 Tm
+(.) show
+1 0 0 -1 285.614 61.706 Tm
+(.) show
+1 0 0 -1 288.614 61.706 Tm
+(.) show
+1 0 0 -1 291.614 61.706 Tm
+(.) show
+1 0 0 -1 294.614 61.706 Tm
+(.) show
+1 0 0 -1 297.614 61.706 Tm
+(.) show
+1 0 0 -1 300.614 61.706 Tm
+(.) show
+1 0 0 -1 303.614 61.706 Tm
+(.) show
+1 0 0 -1 306.614 61.706 Tm
+(.) show
+1 0 0 -1 309.614 61.706 Tm
+(.) show
+1 0 0 -1 312.614 61.706 Tm
+(.) show
+1 0 0 -1 315.614 61.706 Tm
+(.) show
+1 0 0 -1 318.614 61.706 Tm
+(.) show
+1 0 0 -1 321.614 61.706 Tm
+(.) show
+1 0 0 -1 324.614 61.706 Tm
+(.) show
+1 0 0 -1 327.614 61.706 Tm
+(.) show
+1 0 0 -1 330.614 61.706 Tm
+(.) show
+1 0 0 -1 333.614 61.706 Tm
+(.) show
+1 0 0 -1 336.614 61.706 Tm
+(.) show
+1 0 0 -1 339.614 61.706 Tm
+(.) show
+1 0 0 -1 342.614 61.706 Tm
+(.) show
+1 0 0 -1 345.614 61.706 Tm
+(.) show
+1 0 0 -1 348.614 61.706 Tm
+(.) show
+1 0 0 -1 351.614 61.706 Tm
+(.) show
+1 0 0 -1 354.614 61.706 Tm
+(.) show
+1 0 0 -1 357.614 61.706 Tm
+(.) show
+1 0 0 -1 360.614 61.706 Tm
+(.) show
+1 0 0 -1 363.614 61.706 Tm
+(.) show
+1 0 0 -1 366.614 61.706 Tm
+(.) show
+1 0 0 -1 369.614 61.706 Tm
+(.) show
+1 0 0 -1 372.614 61.706 Tm
+(.) show
+1 0 0 -1 375.614 61.706 Tm
+(.) show
+1 0 0 -1 378.614 61.706 Tm
+(.) show
+1 0 0 -1 381.614 61.706 Tm
+(.) show
+1 0 0 -1 384.614 61.706 Tm
+(.) show
+1 0 0 -1 387.614 61.706 Tm
+(.) show
+1 0 0 -1 390.614 61.706 Tm
+(.) show
+1 0 0 -1 393.614 61.706 Tm
+(.) show
+1 0 0 -1 396.614 61.706 Tm
+(.) show
+1 0 0 -1 399.614 61.706 Tm
+(.) show
+1 0 0 -1 402.614 61.706 Tm
+(.) show
+1 0 0 -1 405.614 61.706 Tm
+(.) show
+1 0 0 -1 408.614 61.706 Tm
+(.) show
+1 0 0 -1 411.614 61.706 Tm
+(.) show
+1 0 0 -1 414.614 61.706 Tm
+(.) show
+1 0 0 -1 417.614 61.706 Tm
+(.) show
+1 0 0 -1 420.614 61.706 Tm
+(.) show
+1 0 0 -1 423.614 61.706 Tm
+(.) show
+1 0 0 -1 426.614 61.706 Tm
+(.) show
+1 0 0 -1 429.614 61.706 Tm
+(.) show
+1 0 0 -1 432.614 61.706 Tm
+(.) show
+1 0 0 -1 435.614 61.706 Tm
+(.) show
+1 0 0 -1 438.614 61.706 Tm
+(.) show
+1 0 0 -1 441.614 61.706 Tm
+(.) show
+1 0 0 -1 444.614 61.706 Tm
+(.) show
+1 0 0 -1 447.614 61.706 Tm
+(.) show
+1 0 0 -1 450.614 61.706 Tm
+(.) show
+1 0 0 -1 453.614 61.706 Tm
+(.) show
+1 0 0 -1 459.344 61.706 Tm
+[( ) -1014 ] TJ
+1 0 0 -1 462.858 61.706 Tm
+(3) show
+1 0 0 -1 72 73.706 Tm
+[(Input ) -1096 (Actions)] TJ
+1 0 0 -1 127.742 73.706 Tm
+[( ) -1096 ] TJ
+1 0 0 -1 131.338 73.706 Tm
+(.) show
+1 0 0 -1 134.338 73.706 Tm
+(.) show
+1 0 0 -1 137.338 73.706 Tm
+(.) show
+1 0 0 -1 140.338 73.706 Tm
+(.) show
+1 0 0 -1 143.338 73.706 Tm
+(.) show
+1 0 0 -1 146.338 73.706 Tm
+(.) show
+1 0 0 -1 149.338 73.706 Tm
+(.) show
+1 0 0 -1 152.338 73.706 Tm
+(.) show
+1 0 0 -1 155.338 73.706 Tm
+(.) show
+1 0 0 -1 158.338 73.706 Tm
+(.) show
+1 0 0 -1 161.338 73.706 Tm
+(.) show
+1 0 0 -1 164.338 73.706 Tm
+(.) show
+1 0 0 -1 167.338 73.706 Tm
+(.) show
+1 0 0 -1 170.338 73.706 Tm
+(.) show
+1 0 0 -1 173.338 73.706 Tm
+(.) show
+1 0 0 -1 176.338 73.706 Tm
+(.) show
+1 0 0 -1 179.338 73.706 Tm
+(.) show
+1 0 0 -1 182.338 73.706 Tm
+(.) show
+1 0 0 -1 185.338 73.706 Tm
+(.) show
+1 0 0 -1 188.338 73.706 Tm
+(.) show
+1 0 0 -1 191.338 73.706 Tm
+(.) show
+1 0 0 -1 194.338 73.706 Tm
+(.) show
+1 0 0 -1 197.338 73.706 Tm
+(.) show
+1 0 0 -1 200.338 73.706 Tm
+(.) show
+1 0 0 -1 203.338 73.706 Tm
+(.) show
+1 0 0 -1 206.338 73.706 Tm
+(.) show
+1 0 0 -1 209.338 73.706 Tm
+(.) show
+1 0 0 -1 212.338 73.706 Tm
+(.) show
+1 0 0 -1 215.338 73.706 Tm
+(.) show
+1 0 0 -1 218.338 73.706 Tm
+(.) show
+1 0 0 -1 221.338 73.706 Tm
+(.) show
+1 0 0 -1 224.338 73.706 Tm
+(.) show
+1 0 0 -1 227.338 73.706 Tm
+(.) show
+1 0 0 -1 230.338 73.706 Tm
+(.) show
+1 0 0 -1 233.338 73.706 Tm
+(.) show
+1 0 0 -1 236.338 73.706 Tm
+(.) show
+1 0 0 -1 239.338 73.706 Tm
+(.) show
+1 0 0 -1 242.338 73.706 Tm
+(.) show
+1 0 0 -1 245.338 73.706 Tm
+(.) show
+1 0 0 -1 248.338 73.706 Tm
+(.) show
+1 0 0 -1 251.338 73.706 Tm
+(.) show
+1 0 0 -1 254.338 73.706 Tm
+(.) show
+1 0 0 -1 257.338 73.706 Tm
+(.) show
+1 0 0 -1 260.338 73.706 Tm
+(.) show
+1 0 0 -1 263.338 73.706 Tm
+(.) show
+1 0 0 -1 266.338 73.706 Tm
+(.) show
+1 0 0 -1 269.338 73.706 Tm
+(.) show
+1 0 0 -1 272.338 73.706 Tm
+(.) show
+1 0 0 -1 275.338 73.706 Tm
+(.) show
+1 0 0 -1 278.338 73.706 Tm
+(.) show
+1 0 0 -1 281.338 73.706 Tm
+(.) show
+1 0 0 -1 284.338 73.706 Tm
+(.) show
+1 0 0 -1 287.338 73.706 Tm
+(.) show
+1 0 0 -1 290.338 73.706 Tm
+(.) show
+1 0 0 -1 293.338 73.706 Tm
+(.) show
+1 0 0 -1 296.338 73.706 Tm
+(.) show
+1 0 0 -1 299.338 73.706 Tm
+(.) show
+1 0 0 -1 302.338 73.706 Tm
+(.) show
+1 0 0 -1 305.338 73.706 Tm
+(.) show
+1 0 0 -1 308.338 73.706 Tm
+(.) show
+1 0 0 -1 311.338 73.706 Tm
+(.) show
+1 0 0 -1 314.338 73.706 Tm
+(.) show
+1 0 0 -1 317.338 73.706 Tm
+(.) show
+1 0 0 -1 320.338 73.706 Tm
+(.) show
+1 0 0 -1 323.338 73.706 Tm
+(.) show
+1 0 0 -1 326.338 73.706 Tm
+(.) show
+1 0 0 -1 329.338 73.706 Tm
+(.) show
+1 0 0 -1 332.338 73.706 Tm
+(.) show
+1 0 0 -1 335.338 73.706 Tm
+(.) show
+1 0 0 -1 338.338 73.706 Tm
+(.) show
+1 0 0 -1 341.338 73.706 Tm
+(.) show
+1 0 0 -1 344.338 73.706 Tm
+(.) show
+1 0 0 -1 347.338 73.706 Tm
+(.) show
+1 0 0 -1 350.338 73.706 Tm
+(.) show
+1 0 0 -1 353.338 73.706 Tm
+(.) show
+1 0 0 -1 356.338 73.706 Tm
+(.) show
+1 0 0 -1 359.338 73.706 Tm
+(.) show
+1 0 0 -1 362.338 73.706 Tm
+(.) show
+1 0 0 -1 365.338 73.706 Tm
+(.) show
+1 0 0 -1 368.338 73.706 Tm
+(.) show
+1 0 0 -1 371.338 73.706 Tm
+(.) show
+1 0 0 -1 374.338 73.706 Tm
+(.) show
+1 0 0 -1 377.338 73.706 Tm
+(.) show
+1 0 0 -1 380.338 73.706 Tm
+(.) show
+1 0 0 -1 383.338 73.706 Tm
+(.) show
+1 0 0 -1 386.338 73.706 Tm
+(.) show
+1 0 0 -1 389.338 73.706 Tm
+(.) show
+1 0 0 -1 392.338 73.706 Tm
+(.) show
+1 0 0 -1 395.338 73.706 Tm
+(.) show
+1 0 0 -1 398.338 73.706 Tm
+(.) show
+1 0 0 -1 401.338 73.706 Tm
+(.) show
+1 0 0 -1 404.338 73.706 Tm
+(.) show
+1 0 0 -1 407.338 73.706 Tm
+(.) show
+1 0 0 -1 410.338 73.706 Tm
+(.) show
+1 0 0 -1 413.338 73.706 Tm
+(.) show
+1 0 0 -1 416.338 73.706 Tm
+(.) show
+1 0 0 -1 419.338 73.706 Tm
+(.) show
+1 0 0 -1 422.338 73.706 Tm
+(.) show
+1 0 0 -1 425.338 73.706 Tm
+(.) show
+1 0 0 -1 428.338 73.706 Tm
+(.) show
+1 0 0 -1 431.338 73.706 Tm
+(.) show
+1 0 0 -1 434.338 73.706 Tm
+(.) show
+1 0 0 -1 437.338 73.706 Tm
+(.) show
+1 0 0 -1 440.338 73.706 Tm
+(.) show
+1 0 0 -1 443.338 73.706 Tm
+(.) show
+1 0 0 -1 446.338 73.706 Tm
+(.) show
+1 0 0 -1 449.338 73.706 Tm
+(.) show
+1 0 0 -1 452.338 73.706 Tm
+(.) show
+1 0 0 -1 455.338 73.706 Tm
+(.) show
+1 0 0 -1 459.325 73.706 Tm
+[( ) -1096 ] TJ
+1 0 0 -1 462.921 73.706 Tm
+(3) show
+1 0 0 -1 72 85.706 Tm
+[(User ) -1019 (Input ) -1019 (Actions)] TJ
+1 0 0 -1 149.991 85.706 Tm
+[( ) -1019 ] TJ
+1 0 0 -1 153.51 85.706 Tm
+(.) show
+1 0 0 -1 156.51 85.706 Tm
+(.) show
+1 0 0 -1 159.51 85.706 Tm
+(.) show
+1 0 0 -1 162.51 85.706 Tm
+(.) show
+1 0 0 -1 165.51 85.706 Tm
+(.) show
+1 0 0 -1 168.51 85.706 Tm
+(.) show
+1 0 0 -1 171.51 85.706 Tm
+(.) show
+1 0 0 -1 174.51 85.706 Tm
+(.) show
+1 0 0 -1 177.51 85.706 Tm
+(.) show
+1 0 0 -1 180.51 85.706 Tm
+(.) show
+1 0 0 -1 183.51 85.706 Tm
+(.) show
+1 0 0 -1 186.51 85.706 Tm
+(.) show
+1 0 0 -1 189.51 85.706 Tm
+(.) show
+1 0 0 -1 192.51 85.706 Tm
+(.) show
+1 0 0 -1 195.51 85.706 Tm
+(.) show
+1 0 0 -1 198.51 85.706 Tm
+(.) show
+1 0 0 -1 201.51 85.706 Tm
+(.) show
+1 0 0 -1 204.51 85.706 Tm
+(.) show
+1 0 0 -1 207.51 85.706 Tm
+(.) show
+1 0 0 -1 210.51 85.706 Tm
+(.) show
+1 0 0 -1 213.51 85.706 Tm
+(.) show
+1 0 0 -1 216.51 85.706 Tm
+(.) show
+1 0 0 -1 219.51 85.706 Tm
+(.) show
+1 0 0 -1 222.51 85.706 Tm
+(.) show
+1 0 0 -1 225.51 85.706 Tm
+(.) show
+1 0 0 -1 228.51 85.706 Tm
+(.) show
+1 0 0 -1 231.51 85.706 Tm
+(.) show
+1 0 0 -1 234.51 85.706 Tm
+(.) show
+1 0 0 -1 237.51 85.706 Tm
+(.) show
+1 0 0 -1 240.51 85.706 Tm
+(.) show
+1 0 0 -1 243.51 85.706 Tm
+(.) show
+1 0 0 -1 246.51 85.706 Tm
+(.) show
+1 0 0 -1 249.51 85.706 Tm
+(.) show
+1 0 0 -1 252.51 85.706 Tm
+(.) show
+1 0 0 -1 255.51 85.706 Tm
+(.) show
+1 0 0 -1 258.51 85.706 Tm
+(.) show
+1 0 0 -1 261.51 85.706 Tm
+(.) show
+1 0 0 -1 264.51 85.706 Tm
+(.) show
+1 0 0 -1 267.51 85.706 Tm
+(.) show
+1 0 0 -1 270.51 85.706 Tm
+(.) show
+1 0 0 -1 273.51 85.706 Tm
+(.) show
+1 0 0 -1 276.51 85.706 Tm
+(.) show
+1 0 0 -1 279.51 85.706 Tm
+(.) show
+1 0 0 -1 282.51 85.706 Tm
+(.) show
+1 0 0 -1 285.51 85.706 Tm
+(.) show
+1 0 0 -1 288.51 85.706 Tm
+(.) show
+1 0 0 -1 291.51 85.706 Tm
+(.) show
+1 0 0 -1 294.51 85.706 Tm
+(.) show
+1 0 0 -1 297.51 85.706 Tm
+(.) show
+1 0 0 -1 300.51 85.706 Tm
+(.) show
+1 0 0 -1 303.51 85.706 Tm
+(.) show
+1 0 0 -1 306.51 85.706 Tm
+(.) show
+1 0 0 -1 309.51 85.706 Tm
+(.) show
+1 0 0 -1 312.51 85.706 Tm
+(.) show
+1 0 0 -1 315.51 85.706 Tm
+(.) show
+1 0 0 -1 318.51 85.706 Tm
+(.) show
+1 0 0 -1 321.51 85.706 Tm
+(.) show
+1 0 0 -1 324.51 85.706 Tm
+(.) show
+1 0 0 -1 327.51 85.706 Tm
+(.) show
+1 0 0 -1 330.51 85.706 Tm
+(.) show
+1 0 0 -1 333.51 85.706 Tm
+(.) show
+1 0 0 -1 336.51 85.706 Tm
+(.) show
+1 0 0 -1 339.51 85.706 Tm
+(.) show
+1 0 0 -1 342.51 85.706 Tm
+(.) show
+1 0 0 -1 345.51 85.706 Tm
+(.) show
+1 0 0 -1 348.51 85.706 Tm
+(.) show
+1 0 0 -1 351.51 85.706 Tm
+(.) show
+1 0 0 -1 354.51 85.706 Tm
+(.) show
+1 0 0 -1 357.51 85.706 Tm
+(.) show
+1 0 0 -1 360.51 85.706 Tm
+(.) show
+1 0 0 -1 363.51 85.706 Tm
+(.) show
+1 0 0 -1 366.51 85.706 Tm
+(.) show
+1 0 0 -1 369.51 85.706 Tm
+(.) show
+1 0 0 -1 372.51 85.706 Tm
+(.) show
+1 0 0 -1 375.51 85.706 Tm
+(.) show
+1 0 0 -1 378.51 85.706 Tm
+(.) show
+1 0 0 -1 381.51 85.706 Tm
+(.) show
+1 0 0 -1 384.51 85.706 Tm
+(.) show
+1 0 0 -1 387.51 85.706 Tm
+(.) show
+1 0 0 -1 390.51 85.706 Tm
+(.) show
+1 0 0 -1 393.51 85.706 Tm
+(.) show
+1 0 0 -1 396.51 85.706 Tm
+(.) show
+1 0 0 -1 399.51 85.706 Tm
+(.) show
+1 0 0 -1 402.51 85.706 Tm
+(.) show
+1 0 0 -1 405.51 85.706 Tm
+(.) show
+1 0 0 -1 408.51 85.706 Tm
+(.) show
+1 0 0 -1 411.51 85.706 Tm
+(.) show
+1 0 0 -1 414.51 85.706 Tm
+(.) show
+1 0 0 -1 417.51 85.706 Tm
+(.) show
+1 0 0 -1 420.51 85.706 Tm
+(.) show
+1 0 0 -1 423.51 85.706 Tm
+(.) show
+1 0 0 -1 426.51 85.706 Tm
+(.) show
+1 0 0 -1 429.51 85.706 Tm
+(.) show
+1 0 0 -1 432.51 85.706 Tm
+(.) show
+1 0 0 -1 435.51 85.706 Tm
+(.) show
+1 0 0 -1 438.51 85.706 Tm
+(.) show
+1 0 0 -1 441.51 85.706 Tm
+(.) show
+1 0 0 -1 444.51 85.706 Tm
+(.) show
+1 0 0 -1 447.51 85.706 Tm
+(.) show
+1 0 0 -1 450.51 85.706 Tm
+(.) show
+1 0 0 -1 453.51 85.706 Tm
+(.) show
+1 0 0 -1 459.329 85.706 Tm
+[( ) -1019 ] TJ
+1 0 0 -1 462.848 85.706 Tm
+(3) show
+1 0 0 -1 48 97.706 Tm
+[(What ) -866 (Does ) -866 (This ) -866 (Extension ) -866 (Do?)] TJ
+1 0 0 -1 177.838 97.706 Tm
+[( ) -866 ] TJ
+1 0 0 -1 181.204 97.706 Tm
+(.) show
+1 0 0 -1 184.204 97.706 Tm
+(.) show
+1 0 0 -1 187.204 97.706 Tm
+(.) show
+1 0 0 -1 190.204 97.706 Tm
+(.) show
+1 0 0 -1 193.204 97.706 Tm
+(.) show
+1 0 0 -1 196.204 97.706 Tm
+(.) show
+1 0 0 -1 199.204 97.706 Tm
+(.) show
+1 0 0 -1 202.204 97.706 Tm
+(.) show
+1 0 0 -1 205.204 97.706 Tm
+(.) show
+1 0 0 -1 208.204 97.706 Tm
+(.) show
+1 0 0 -1 211.204 97.706 Tm
+(.) show
+1 0 0 -1 214.204 97.706 Tm
+(.) show
+1 0 0 -1 217.204 97.706 Tm
+(.) show
+1 0 0 -1 220.204 97.706 Tm
+(.) show
+1 0 0 -1 223.204 97.706 Tm
+(.) show
+1 0 0 -1 226.204 97.706 Tm
+(.) show
+1 0 0 -1 229.204 97.706 Tm
+(.) show
+1 0 0 -1 232.204 97.706 Tm
+(.) show
+1 0 0 -1 235.204 97.706 Tm
+(.) show
+1 0 0 -1 238.204 97.706 Tm
+(.) show
+1 0 0 -1 241.204 97.706 Tm
+(.) show
+1 0 0 -1 244.204 97.706 Tm
+(.) show
+1 0 0 -1 247.204 97.706 Tm
+(.) show
+1 0 0 -1 250.204 97.706 Tm
+(.) show
+1 0 0 -1 253.204 97.706 Tm
+(.) show
+1 0 0 -1 256.204 97.706 Tm
+(.) show
+1 0 0 -1 259.204 97.706 Tm
+(.) show
+1 0 0 -1 262.204 97.706 Tm
+(.) show
+1 0 0 -1 265.204 97.706 Tm
+(.) show
+1 0 0 -1 268.204 97.706 Tm
+(.) show
+1 0 0 -1 271.204 97.706 Tm
+(.) show
+1 0 0 -1 274.204 97.706 Tm
+(.) show
+1 0 0 -1 277.204 97.706 Tm
+(.) show
+1 0 0 -1 280.204 97.706 Tm
+(.) show
+1 0 0 -1 283.204 97.706 Tm
+(.) show
+1 0 0 -1 286.204 97.706 Tm
+(.) show
+1 0 0 -1 289.204 97.706 Tm
+(.) show
+1 0 0 -1 292.204 97.706 Tm
+(.) show
+1 0 0 -1 295.204 97.706 Tm
+(.) show
+1 0 0 -1 298.204 97.706 Tm
+(.) show
+1 0 0 -1 301.204 97.706 Tm
+(.) show
+1 0 0 -1 304.204 97.706 Tm
+(.) show
+1 0 0 -1 307.204 97.706 Tm
+(.) show
+1 0 0 -1 310.204 97.706 Tm
+(.) show
+1 0 0 -1 313.204 97.706 Tm
+(.) show
+1 0 0 -1 316.204 97.706 Tm
+(.) show
+1 0 0 -1 319.204 97.706 Tm
+(.) show
+1 0 0 -1 322.204 97.706 Tm
+(.) show
+1 0 0 -1 325.204 97.706 Tm
+(.) show
+1 0 0 -1 328.204 97.706 Tm
+(.) show
+1 0 0 -1 331.204 97.706 Tm
+(.) show
+1 0 0 -1 334.204 97.706 Tm
+(.) show
+1 0 0 -1 337.204 97.706 Tm
+(.) show
+1 0 0 -1 340.204 97.706 Tm
+(.) show
+1 0 0 -1 343.204 97.706 Tm
+(.) show
+1 0 0 -1 346.204 97.706 Tm
+(.) show
+1 0 0 -1 349.204 97.706 Tm
+(.) show
+1 0 0 -1 352.204 97.706 Tm
+(.) show
+1 0 0 -1 355.204 97.706 Tm
+(.) show
+1 0 0 -1 358.204 97.706 Tm
+(.) show
+1 0 0 -1 361.204 97.706 Tm
+(.) show
+1 0 0 -1 364.204 97.706 Tm
+(.) show
+1 0 0 -1 367.204 97.706 Tm
+(.) show
+1 0 0 -1 370.204 97.706 Tm
+(.) show
+1 0 0 -1 373.204 97.706 Tm
+(.) show
+1 0 0 -1 376.204 97.706 Tm
+(.) show
+1 0 0 -1 379.204 97.706 Tm
+(.) show
+1 0 0 -1 382.204 97.706 Tm
+(.) show
+1 0 0 -1 385.204 97.706 Tm
+(.) show
+1 0 0 -1 388.204 97.706 Tm
+(.) show
+1 0 0 -1 391.204 97.706 Tm
+(.) show
+1 0 0 -1 394.204 97.706 Tm
+(.) show
+1 0 0 -1 397.204 97.706 Tm
+(.) show
+1 0 0 -1 400.204 97.706 Tm
+(.) show
+1 0 0 -1 403.204 97.706 Tm
+(.) show
+1 0 0 -1 406.204 97.706 Tm
+(.) show
+1 0 0 -1 409.204 97.706 Tm
+(.) show
+1 0 0 -1 412.204 97.706 Tm
+(.) show
+1 0 0 -1 415.204 97.706 Tm
+(.) show
+1 0 0 -1 418.204 97.706 Tm
+(.) show
+1 0 0 -1 421.204 97.706 Tm
+(.) show
+1 0 0 -1 424.204 97.706 Tm
+(.) show
+1 0 0 -1 427.204 97.706 Tm
+(.) show
+1 0 0 -1 430.204 97.706 Tm
+(.) show
+1 0 0 -1 433.204 97.706 Tm
+(.) show
+1 0 0 -1 436.204 97.706 Tm
+(.) show
+1 0 0 -1 439.204 97.706 Tm
+(.) show
+1 0 0 -1 442.204 97.706 Tm
+(.) show
+1 0 0 -1 445.204 97.706 Tm
+(.) show
+1 0 0 -1 448.204 97.706 Tm
+(.) show
+1 0 0 -1 451.204 97.706 Tm
+(.) show
+1 0 0 -1 454.204 97.706 Tm
+(.) show
+1 0 0 -1 459.354 97.706 Tm
+[( ) -866 ] TJ
+1 0 0 -1 462.72 97.706 Tm
+(3) show
+1 0 0 -1 48 109.706 Tm
+[(Functions ) -912 (In ) -912 (This ) -912 (Extension)] TJ
+1 0 0 -1 163.589 109.706 Tm
+[( ) -912 ] TJ
+1 0 0 -1 167.001 109.706 Tm
+(.) show
+1 0 0 -1 170.001 109.706 Tm
+(.) show
+1 0 0 -1 173.001 109.706 Tm
+(.) show
+1 0 0 -1 176.001 109.706 Tm
+(.) show
+1 0 0 -1 179.001 109.706 Tm
+(.) show
+1 0 0 -1 182.001 109.706 Tm
+(.) show
+1 0 0 -1 185.001 109.706 Tm
+(.) show
+1 0 0 -1 188.001 109.706 Tm
+(.) show
+1 0 0 -1 191.001 109.706 Tm
+(.) show
+1 0 0 -1 194.001 109.706 Tm
+(.) show
+1 0 0 -1 197.001 109.706 Tm
+(.) show
+1 0 0 -1 200.001 109.706 Tm
+(.) show
+1 0 0 -1 203.001 109.706 Tm
+(.) show
+1 0 0 -1 206.001 109.706 Tm
+(.) show
+1 0 0 -1 209.001 109.706 Tm
+(.) show
+1 0 0 -1 212.001 109.706 Tm
+(.) show
+1 0 0 -1 215.001 109.706 Tm
+(.) show
+1 0 0 -1 218.001 109.706 Tm
+(.) show
+1 0 0 -1 221.001 109.706 Tm
+(.) show
+1 0 0 -1 224.001 109.706 Tm
+(.) show
+1 0 0 -1 227.001 109.706 Tm
+(.) show
+1 0 0 -1 230.001 109.706 Tm
+(.) show
+1 0 0 -1 233.001 109.706 Tm
+(.) show
+1 0 0 -1 236.001 109.706 Tm
+(.) show
+1 0 0 -1 239.001 109.706 Tm
+(.) show
+1 0 0 -1 242.001 109.706 Tm
+(.) show
+1 0 0 -1 245.001 109.706 Tm
+(.) show
+1 0 0 -1 248.001 109.706 Tm
+(.) show
+1 0 0 -1 251.001 109.706 Tm
+(.) show
+1 0 0 -1 254.001 109.706 Tm
+(.) show
+1 0 0 -1 257.001 109.706 Tm
+(.) show
+1 0 0 -1 260.001 109.706 Tm
+(.) show
+1 0 0 -1 263.001 109.706 Tm
+(.) show
+1 0 0 -1 266.001 109.706 Tm
+(.) show
+1 0 0 -1 269.001 109.706 Tm
+(.) show
+1 0 0 -1 272.001 109.706 Tm
+(.) show
+1 0 0 -1 275.001 109.706 Tm
+(.) show
+1 0 0 -1 278.001 109.706 Tm
+(.) show
+1 0 0 -1 281.001 109.706 Tm
+(.) show
+1 0 0 -1 284.001 109.706 Tm
+(.) show
+1 0 0 -1 287.001 109.706 Tm
+(.) show
+1 0 0 -1 290.001 109.706 Tm
+(.) show
+1 0 0 -1 293.001 109.706 Tm
+(.) show
+1 0 0 -1 296.001 109.706 Tm
+(.) show
+1 0 0 -1 299.001 109.706 Tm
+(.) show
+1 0 0 -1 302.001 109.706 Tm
+(.) show
+1 0 0 -1 305.001 109.706 Tm
+(.) show
+1 0 0 -1 308.001 109.706 Tm
+(.) show
+1 0 0 -1 311.001 109.706 Tm
+(.) show
+1 0 0 -1 314.001 109.706 Tm
+(.) show
+1 0 0 -1 317.001 109.706 Tm
+(.) show
+1 0 0 -1 320.001 109.706 Tm
+(.) show
+1 0 0 -1 323.001 109.706 Tm
+(.) show
+1 0 0 -1 326.001 109.706 Tm
+(.) show
+1 0 0 -1 329.001 109.706 Tm
+(.) show
+1 0 0 -1 332.001 109.706 Tm
+(.) show
+1 0 0 -1 335.001 109.706 Tm
+(.) show
+1 0 0 -1 338.001 109.706 Tm
+(.) show
+1 0 0 -1 341.001 109.706 Tm
+(.) show
+1 0 0 -1 344.001 109.706 Tm
+(.) show
+1 0 0 -1 347.001 109.706 Tm
+(.) show
+1 0 0 -1 350.001 109.706 Tm
+(.) show
+1 0 0 -1 353.001 109.706 Tm
+(.) show
+1 0 0 -1 356.001 109.706 Tm
+(.) show
+1 0 0 -1 359.001 109.706 Tm
+(.) show
+1 0 0 -1 362.001 109.706 Tm
+(.) show
+1 0 0 -1 365.001 109.706 Tm
+(.) show
+1 0 0 -1 368.001 109.706 Tm
+(.) show
+1 0 0 -1 371.001 109.706 Tm
+(.) show
+1 0 0 -1 374.001 109.706 Tm
+(.) show
+1 0 0 -1 377.001 109.706 Tm
+(.) show
+1 0 0 -1 380.001 109.706 Tm
+(.) show
+1 0 0 -1 383.001 109.706 Tm
+(.) show
+1 0 0 -1 386.001 109.706 Tm
+(.) show
+1 0 0 -1 389.001 109.706 Tm
+(.) show
+1 0 0 -1 392.001 109.706 Tm
+(.) show
+1 0 0 -1 395.001 109.706 Tm
+(.) show
+1 0 0 -1 398.001 109.706 Tm
+(.) show
+1 0 0 -1 401.001 109.706 Tm
+(.) show
+1 0 0 -1 404.001 109.706 Tm
+(.) show
+1 0 0 -1 407.001 109.706 Tm
+(.) show
+1 0 0 -1 410.001 109.706 Tm
+(.) show
+1 0 0 -1 413.001 109.706 Tm
+(.) show
+1 0 0 -1 416.001 109.706 Tm
+(.) show
+1 0 0 -1 419.001 109.706 Tm
+(.) show
+1 0 0 -1 422.001 109.706 Tm
+(.) show
+1 0 0 -1 425.001 109.706 Tm
+(.) show
+1 0 0 -1 428.001 109.706 Tm
+(.) show
+1 0 0 -1 431.001 109.706 Tm
+(.) show
+1 0 0 -1 434.001 109.706 Tm
+(.) show
+1 0 0 -1 437.001 109.706 Tm
+(.) show
+1 0 0 -1 440.001 109.706 Tm
+(.) show
+1 0 0 -1 443.001 109.706 Tm
+(.) show
+1 0 0 -1 446.001 109.706 Tm
+(.) show
+1 0 0 -1 449.001 109.706 Tm
+(.) show
+1 0 0 -1 452.001 109.706 Tm
+(.) show
+1 0 0 -1 455.001 109.706 Tm
+(.) show
+1 0 0 -1 459.376 109.706 Tm
+[( ) -912 ] TJ
+1 0 0 -1 462.788 109.706 Tm
+(4) show
+1 0 0 -1 72 121.706 Tm
+[(High ) -981 (Level ) -981 (Functions)] TJ
+1 0 0 -1 161.035 121.706 Tm
+[( ) -981 ] TJ
+1 0 0 -1 164.516 121.706 Tm
+(.) show
+1 0 0 -1 167.516 121.706 Tm
+(.) show
+1 0 0 -1 170.516 121.706 Tm
+(.) show
+1 0 0 -1 173.516 121.706 Tm
+(.) show
+1 0 0 -1 176.516 121.706 Tm
+(.) show
+1 0 0 -1 179.516 121.706 Tm
+(.) show
+1 0 0 -1 182.516 121.706 Tm
+(.) show
+1 0 0 -1 185.516 121.706 Tm
+(.) show
+1 0 0 -1 188.516 121.706 Tm
+(.) show
+1 0 0 -1 191.516 121.706 Tm
+(.) show
+1 0 0 -1 194.516 121.706 Tm
+(.) show
+1 0 0 -1 197.516 121.706 Tm
+(.) show
+1 0 0 -1 200.516 121.706 Tm
+(.) show
+1 0 0 -1 203.516 121.706 Tm
+(.) show
+1 0 0 -1 206.516 121.706 Tm
+(.) show
+1 0 0 -1 209.516 121.706 Tm
+(.) show
+1 0 0 -1 212.516 121.706 Tm
+(.) show
+1 0 0 -1 215.516 121.706 Tm
+(.) show
+1 0 0 -1 218.516 121.706 Tm
+(.) show
+1 0 0 -1 221.516 121.706 Tm
+(.) show
+1 0 0 -1 224.516 121.706 Tm
+(.) show
+1 0 0 -1 227.516 121.706 Tm
+(.) show
+1 0 0 -1 230.516 121.706 Tm
+(.) show
+1 0 0 -1 233.516 121.706 Tm
+(.) show
+1 0 0 -1 236.516 121.706 Tm
+(.) show
+1 0 0 -1 239.516 121.706 Tm
+(.) show
+1 0 0 -1 242.516 121.706 Tm
+(.) show
+1 0 0 -1 245.516 121.706 Tm
+(.) show
+1 0 0 -1 248.516 121.706 Tm
+(.) show
+1 0 0 -1 251.516 121.706 Tm
+(.) show
+1 0 0 -1 254.516 121.706 Tm
+(.) show
+1 0 0 -1 257.516 121.706 Tm
+(.) show
+1 0 0 -1 260.516 121.706 Tm
+(.) show
+1 0 0 -1 263.516 121.706 Tm
+(.) show
+1 0 0 -1 266.516 121.706 Tm
+(.) show
+1 0 0 -1 269.516 121.706 Tm
+(.) show
+1 0 0 -1 272.516 121.706 Tm
+(.) show
+1 0 0 -1 275.516 121.706 Tm
+(.) show
+1 0 0 -1 278.516 121.706 Tm
+(.) show
+1 0 0 -1 281.516 121.706 Tm
+(.) show
+1 0 0 -1 284.516 121.706 Tm
+(.) show
+1 0 0 -1 287.516 121.706 Tm
+(.) show
+1 0 0 -1 290.516 121.706 Tm
+(.) show
+1 0 0 -1 293.516 121.706 Tm
+(.) show
+1 0 0 -1 296.516 121.706 Tm
+(.) show
+1 0 0 -1 299.516 121.706 Tm
+(.) show
+1 0 0 -1 302.516 121.706 Tm
+(.) show
+1 0 0 -1 305.516 121.706 Tm
+(.) show
+1 0 0 -1 308.516 121.706 Tm
+(.) show
+1 0 0 -1 311.516 121.706 Tm
+(.) show
+1 0 0 -1 314.516 121.706 Tm
+(.) show
+1 0 0 -1 317.516 121.706 Tm
+(.) show
+1 0 0 -1 320.516 121.706 Tm
+(.) show
+1 0 0 -1 323.516 121.706 Tm
+(.) show
+1 0 0 -1 326.516 121.706 Tm
+(.) show
+1 0 0 -1 329.516 121.706 Tm
+(.) show
+1 0 0 -1 332.516 121.706 Tm
+(.) show
+1 0 0 -1 335.516 121.706 Tm
+(.) show
+1 0 0 -1 338.516 121.706 Tm
+(.) show
+1 0 0 -1 341.516 121.706 Tm
+(.) show
+1 0 0 -1 344.516 121.706 Tm
+(.) show
+1 0 0 -1 347.516 121.706 Tm
+(.) show
+1 0 0 -1 350.516 121.706 Tm
+(.) show
+1 0 0 -1 353.516 121.706 Tm
+(.) show
+1 0 0 -1 356.516 121.706 Tm
+(.) show
+1 0 0 -1 359.516 121.706 Tm
+(.) show
+1 0 0 -1 362.516 121.706 Tm
+(.) show
+1 0 0 -1 365.516 121.706 Tm
+(.) show
+1 0 0 -1 368.516 121.706 Tm
+(.) show
+1 0 0 -1 371.516 121.706 Tm
+(.) show
+1 0 0 -1 374.516 121.706 Tm
+(.) show
+1 0 0 -1 377.516 121.706 Tm
+(.) show
+1 0 0 -1 380.516 121.706 Tm
+(.) show
+1 0 0 -1 383.516 121.706 Tm
+(.) show
+1 0 0 -1 386.516 121.706 Tm
+(.) show
+1 0 0 -1 389.516 121.706 Tm
+(.) show
+1 0 0 -1 392.516 121.706 Tm
+(.) show
+1 0 0 -1 395.516 121.706 Tm
+(.) show
+1 0 0 -1 398.516 121.706 Tm
+(.) show
+1 0 0 -1 401.516 121.706 Tm
+(.) show
+1 0 0 -1 404.516 121.706 Tm
+(.) show
+1 0 0 -1 407.516 121.706 Tm
+(.) show
+1 0 0 -1 410.516 121.706 Tm
+(.) show
+1 0 0 -1 413.516 121.706 Tm
+(.) show
+1 0 0 -1 416.516 121.706 Tm
+(.) show
+1 0 0 -1 419.516 121.706 Tm
+(.) show
+1 0 0 -1 422.516 121.706 Tm
+(.) show
+1 0 0 -1 425.516 121.706 Tm
+(.) show
+1 0 0 -1 428.516 121.706 Tm
+(.) show
+1 0 0 -1 431.516 121.706 Tm
+(.) show
+1 0 0 -1 434.516 121.706 Tm
+(.) show
+1 0 0 -1 437.516 121.706 Tm
+(.) show
+1 0 0 -1 440.516 121.706 Tm
+(.) show
+1 0 0 -1 443.516 121.706 Tm
+(.) show
+1 0 0 -1 446.516 121.706 Tm
+(.) show
+1 0 0 -1 449.516 121.706 Tm
+(.) show
+1 0 0 -1 452.516 121.706 Tm
+(.) show
+1 0 0 -1 455.516 121.706 Tm
+(.) show
+1 0 0 -1 459.367 121.706 Tm
+[( ) -981 ] TJ
+1 0 0 -1 462.848 121.706 Tm
+(4) show
+1 0 0 -1 72 133.706 Tm
+[(Low ) -987 (Level ) -987 (Functions)] TJ
+1 0 0 -1 159.377 133.706 Tm
+[( ) -987 ] TJ
+1 0 0 -1 162.864 133.706 Tm
+(.) show
+1 0 0 -1 165.864 133.706 Tm
+(.) show
+1 0 0 -1 168.864 133.706 Tm
+(.) show
+1 0 0 -1 171.864 133.706 Tm
+(.) show
+1 0 0 -1 174.864 133.706 Tm
+(.) show
+1 0 0 -1 177.864 133.706 Tm
+(.) show
+1 0 0 -1 180.864 133.706 Tm
+(.) show
+1 0 0 -1 183.864 133.706 Tm
+(.) show
+1 0 0 -1 186.864 133.706 Tm
+(.) show
+1 0 0 -1 189.864 133.706 Tm
+(.) show
+1 0 0 -1 192.864 133.706 Tm
+(.) show
+1 0 0 -1 195.864 133.706 Tm
+(.) show
+1 0 0 -1 198.864 133.706 Tm
+(.) show
+1 0 0 -1 201.864 133.706 Tm
+(.) show
+1 0 0 -1 204.864 133.706 Tm
+(.) show
+1 0 0 -1 207.864 133.706 Tm
+(.) show
+1 0 0 -1 210.864 133.706 Tm
+(.) show
+1 0 0 -1 213.864 133.706 Tm
+(.) show
+1 0 0 -1 216.864 133.706 Tm
+(.) show
+1 0 0 -1 219.864 133.706 Tm
+(.) show
+1 0 0 -1 222.864 133.706 Tm
+(.) show
+1 0 0 -1 225.864 133.706 Tm
+(.) show
+1 0 0 -1 228.864 133.706 Tm
+(.) show
+1 0 0 -1 231.864 133.706 Tm
+(.) show
+1 0 0 -1 234.864 133.706 Tm
+(.) show
+1 0 0 -1 237.864 133.706 Tm
+(.) show
+1 0 0 -1 240.864 133.706 Tm
+(.) show
+1 0 0 -1 243.864 133.706 Tm
+(.) show
+1 0 0 -1 246.864 133.706 Tm
+(.) show
+1 0 0 -1 249.864 133.706 Tm
+(.) show
+1 0 0 -1 252.864 133.706 Tm
+(.) show
+1 0 0 -1 255.864 133.706 Tm
+(.) show
+1 0 0 -1 258.864 133.706 Tm
+(.) show
+1 0 0 -1 261.864 133.706 Tm
+(.) show
+1 0 0 -1 264.864 133.706 Tm
+(.) show
+1 0 0 -1 267.864 133.706 Tm
+(.) show
+1 0 0 -1 270.864 133.706 Tm
+(.) show
+1 0 0 -1 273.864 133.706 Tm
+(.) show
+1 0 0 -1 276.864 133.706 Tm
+(.) show
+1 0 0 -1 279.864 133.706 Tm
+(.) show
+1 0 0 -1 282.864 133.706 Tm
+(.) show
+1 0 0 -1 285.864 133.706 Tm
+(.) show
+1 0 0 -1 288.864 133.706 Tm
+(.) show
+1 0 0 -1 291.864 133.706 Tm
+(.) show
+1 0 0 -1 294.864 133.706 Tm
+(.) show
+1 0 0 -1 297.864 133.706 Tm
+(.) show
+1 0 0 -1 300.864 133.706 Tm
+(.) show
+1 0 0 -1 303.864 133.706 Tm
+(.) show
+1 0 0 -1 306.864 133.706 Tm
+(.) show
+1 0 0 -1 309.864 133.706 Tm
+(.) show
+1 0 0 -1 312.864 133.706 Tm
+(.) show
+1 0 0 -1 315.864 133.706 Tm
+(.) show
+1 0 0 -1 318.864 133.706 Tm
+(.) show
+1 0 0 -1 321.864 133.706 Tm
+(.) show
+1 0 0 -1 324.864 133.706 Tm
+(.) show
+1 0 0 -1 327.864 133.706 Tm
+(.) show
+1 0 0 -1 330.864 133.706 Tm
+(.) show
+1 0 0 -1 333.864 133.706 Tm
+(.) show
+1 0 0 -1 336.864 133.706 Tm
+(.) show
+1 0 0 -1 339.864 133.706 Tm
+(.) show
+1 0 0 -1 342.864 133.706 Tm
+(.) show
+1 0 0 -1 345.864 133.706 Tm
+(.) show
+1 0 0 -1 348.864 133.706 Tm
+(.) show
+1 0 0 -1 351.864 133.706 Tm
+(.) show
+1 0 0 -1 354.864 133.706 Tm
+(.) show
+1 0 0 -1 357.864 133.706 Tm
+(.) show
+1 0 0 -1 360.864 133.706 Tm
+(.) show
+1 0 0 -1 363.864 133.706 Tm
+(.) show
+1 0 0 -1 366.864 133.706 Tm
+(.) show
+1 0 0 -1 369.864 133.706 Tm
+(.) show
+1 0 0 -1 372.864 133.706 Tm
+(.) show
+1 0 0 -1 375.864 133.706 Tm
+(.) show
+1 0 0 -1 378.864 133.706 Tm
+(.) show
+1 0 0 -1 381.864 133.706 Tm
+(.) show
+1 0 0 -1 384.864 133.706 Tm
+(.) show
+1 0 0 -1 387.864 133.706 Tm
+(.) show
+1 0 0 -1 390.864 133.706 Tm
+(.) show
+1 0 0 -1 393.864 133.706 Tm
+(.) show
+1 0 0 -1 396.864 133.706 Tm
+(.) show
+1 0 0 -1 399.864 133.706 Tm
+(.) show
+1 0 0 -1 402.864 133.706 Tm
+(.) show
+1 0 0 -1 405.864 133.706 Tm
+(.) show
+1 0 0 -1 408.864 133.706 Tm
+(.) show
+1 0 0 -1 411.864 133.706 Tm
+(.) show
+1 0 0 -1 414.864 133.706 Tm
+(.) show
+1 0 0 -1 417.864 133.706 Tm
+(.) show
+1 0 0 -1 420.864 133.706 Tm
+(.) show
+1 0 0 -1 423.864 133.706 Tm
+(.) show
+1 0 0 -1 426.864 133.706 Tm
+(.) show
+1 0 0 -1 429.864 133.706 Tm
+(.) show
+1 0 0 -1 432.864 133.706 Tm
+(.) show
+1 0 0 -1 435.864 133.706 Tm
+(.) show
+1 0 0 -1 438.864 133.706 Tm
+(.) show
+1 0 0 -1 441.864 133.706 Tm
+(.) show
+1 0 0 -1 444.864 133.706 Tm
+(.) show
+1 0 0 -1 447.864 133.706 Tm
+(.) show
+1 0 0 -1 450.864 133.706 Tm
+(.) show
+1 0 0 -1 453.864 133.706 Tm
+(.) show
+1 0 0 -1 459.362 133.706 Tm
+[( ) -987 ] TJ
+1 0 0 -1 462.849 133.706 Tm
+(5) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Helvetica-Bold
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 3 3
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(3) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Helvetica-Bold 20.736 F
+1 0 0 -1 0 17.739 Tm
+(Introduction) show
+/Times-Roman 10 F
+1 0 0 -1 48 44.107 Tm
+(This is a proposal for an extension to the X11 server and Xlib. It provides two capabilities:) show
+1 0 0 -1 48 67.001 Tm
+(\225) show
+1 0 0 -1 58 67.001 Tm
+(It allows a client to generate user input actions in the server without requiring a user to be present.) show
+1 0 0 -1 48 89.895 Tm
+(\225) show
+1 0 0 -1 58 89.895 Tm
+(It also allows a client to control the handling of user input actions by the server.) show
+1 0 0 -1 48 112.789 Tm
+[(The ) -95 (capability ) -95 (to ) -95 (allow ) -95 (a ) -95 (client ) -95 (to ) -95 (generate ) -95 (user ) -95 (input ) -95 (actions ) -95 (in ) -95 (the ) -95 (server ) -95 (will ) -95 (be ) -95 
+(used ) -95 (by ) -95 (some ) -95 (of ) -95 (the ) -95 (X)] TJ
+1 0 0 -1 48 124.789 Tm
+[(Testing ) 406 (Consortium ) 406 (Xlib ) 406 (tests. ) 406 (Both ) 406 (capabilities ) 406 (will ) 406 (be ) 406 (used ) 406 (by ) 406 (the ) 406 (X ) 406 (Testing ) 406 (Consortium ) 406 (client ) 406 (exerciser)] TJ
+1 0 0 -1 48 136.789 Tm
+(program. These capabilities may also be useful in other programs.) show
+1 0 0 -1 48 159.683 Tm
+[(This ) 419 (extension ) 419 (requires ) 419 (modification ) 419 (to ) 419 (device-dependent ) 419 (code ) 419 (in ) 419 (the ) 419 (server. ) 419 (Therefore ) 419 (it ) 419 (is ) 419 (not ) 419 (a ) 419 ('portable')] TJ
+1 0 0 -1 48 171.683 Tm
+[(extension ) -1023 (as ) -1023 (defined ) -1023 (by ) -1023 (the ) -1023 (X11 ) -1023 (Server ) -1023 (Extensions ) -1023 (document. ) -1023 (However, ) -1023 (the ) -1023 (majority ) -1023 (of ) -1023 
+(the ) -1023 (code ) -1023 (and)] TJ
+1 0 0 -1 48 183.683 Tm
+(functionality of this extension will be implementation-independent.) show
+/Helvetica-Bold 20.736 F
+1 0 0 -1 0 215.986 Tm
+(Conventions Used In This Document) show
+/Times-Roman 10 F
+1 0 0 -1 48 242.354 Tm
+(The naming conventions used in the Xlib documentation are followed with these additions:) show
+1 0 0 -1 48 265.248 Tm
+(\225) show
+1 0 0 -1 58 265.248 Tm
+[(The ) -967 (names ) -967 (of ) -967 (all ) -967 (functions ) -967 (defined ) -967 (in ) -967 (this ) -967 (extension ) -967 (begin ) -967 (with ) -967 ('XTest', ) -967 (with ) -967 (the ) -967 
+(first ) -967 (letter ) -967 (of ) -967 (each)] TJ
+1 0 0 -1 58 277.248 Tm
+(additional word capitalized.) show
+1 0 0 -1 48 300.142 Tm
+(\225) show
+1 0 0 -1 58 300.142 Tm
+(The names of the protocol request structures follow the Xlib convention of 'x<name>Req'.) show
+1 0 0 -1 48 323.036 Tm
+(\225) show
+1 0 0 -1 58 323.036 Tm
+(The names of the protocol request minor type codes follow the Xlib convention of 'X_<name>'.) show
+1 0 0 -1 48 345.93 Tm
+(\225) show
+1 0 0 -1 58 345.93 Tm
+[(The ) -3 (names ) -3 (of ) -3 (all ) -3 (other ) -3 (constants ) -3 (defined ) -3 (in ) -3 (this ) -3 (extension ) -3 (begin ) -3 (with ) -3 ('XTest', ) -3 (with ) -3 (the ) -3 (rest ) -3 (of ) -3 
+(the ) -3 (name)] TJ
+1 0 0 -1 58 357.93 Tm
+(in upper case letters.) show
+1 0 0 -1 48 380.824 Tm
+(\225) show
+1 0 0 -1 58 380.824 Tm
+[(All ) 200 (constants ) 200 (and ) 200 (structures ) 200 (defined ) 200 (in ) 200 (this ) 200 (extension ) 200 (will ) 200 (have ) 200 (their ) 200 (values ) 200 (specified ) 200 (in ) 200 (the ) 200 ('xtestext1.h')] TJ
+1 0 0 -1 58 392.824 Tm
+(file \(listed in section 5\).) show
+/Helvetica-Bold 20.736 F
+1 0 0 -1 0 425.127 Tm
+(Definition Of Terms) show
+/Helvetica-Bold 17.28 F
+1 0 0 -1 0 457.948 Tm
+(Input Actions) show
+/Times-Roman 10 F
+1 0 0 -1 48 483.125 Tm
+[(Input ) -6 (actions ) -6 (are ) -6 (pointer ) -6 (movements, ) -6 (button ) -6 (presses ) -6 (and ) -6 (releases, ) -6 (and ) -6 (key ) -6 (presses ) -6 (and ) -6 (releases. ) -6 (They ) -6 (can)] TJ
+1 0 0 -1 48 495.125 Tm
+(be generated by a user or by a client \(using functions in this extension\).) show
+/Helvetica-Bold 17.28 F
+1 0 0 -1 0 524.472 Tm
+(User Input Actions) show
+/Times-Roman 10 F
+1 0 0 -1 48 549.649 Tm
+[(User ) -837 (input ) -837 (actions ) -837 (are ) -837 (input ) -837 (actions ) -837 (that ) -837 (are ) -837 (generated ) -837 (by ) -837 (the ) -837 (user ) -837 (moving ) -837 (a ) -837 (pointing ) -837 
+(device ) -837 (\(typically)] TJ
+1 0 0 -1 48 561.649 Tm
+[(a ) -455 (mouse\), ) -455 (pressing ) -455 (and ) -455 (releasing ) -455 (buttons ) -455 (on ) -455 (the ) -455 (pointing ) -455 (device, ) -455 (and ) -455 (pressing ) -455 (and ) -455 (releasing ) -455 
+(keys ) -455 (on ) -455 (the)] TJ
+1 0 0 -1 48 573.649 Tm
+(keyboard.) show
+/Helvetica-Bold 20.736 F
+1 0 0 -1 0 605.952 Tm
+(What Does This Extension Do?) show
+/Times-Roman 10 F
+1 0 0 -1 48 632.32 Tm
+[(Without ) -525 (this ) -525 (extension, ) -525 (user ) -525 (input ) -525 (actions ) -525 (are ) -525 (processed ) -525 (by ) -525 (the ) -525 (server, ) -525 (and ) -525 (are ) -525 (converted ) -525 
+(into ) -525 (normal ) -525 (X)] TJ
+1 0 0 -1 48 644.32 Tm
+(events that are sent to the appropriate client or clients.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Helvetica-Bold
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 4 4
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(4) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 48 8.33 Tm
+(This extension adds the following capabilities:) show
+1 0 0 -1 48 31.208 Tm
+(\225) show
+1 0 0 -1 58 31.208 Tm
+[(Input ) -364 (actions ) -364 (may ) -364 (be ) -364 (sent ) -364 (from ) -364 (a ) -364 (client ) -364 (to ) -364 (the ) -364 (server ) -364 (to ) -364 (be ) -364 (processed ) -364 (just ) -364 (as ) -364 
+(if ) -364 (the ) -364 (user ) -364 (had ) -364 (physically)] TJ
+1 0 0 -1 58 43.208 Tm
+[(performed ) 256 (them. ) 256 (The ) 256 (input ) 256 (actions ) 256 (are ) 256 (provided ) 256 (to ) 256 (the ) 256 (server ) 256 (in ) 256 (the ) 256 (form ) 256 (of ) 256 (X ) 256 (protocol ) 256 
+(requests ) 256 (defined)] TJ
+1 0 0 -1 58 55.208 Tm
+[(by ) -678 (this ) -678 (extension. ) -678 (The ) -678 (information ) -678 (provided ) -678 (to ) -678 (the ) -678 (server ) -678 (includes ) -678 (what ) -678 (action ) -678 (should ) -678 (be ) -678 (performed,)] TJ
+1 0 0 -1 58 67.208 Tm
+(and how long to delay before processing the action in the server.) show
+1 0 0 -1 48 90.086 Tm
+(\225) show
+1 0 0 -1 58 90.086 Tm
+[(User ) -360 (input ) -360 (actions ) -360 (may ) -360 (be ) -360 (diverted ) -360 (to ) -360 (a ) -360 (client ) -360 (before ) -360 (being ) -360 (processed ) -360 (by ) -360 (the ) -360 (server. ) -360 
+(The ) -360 (effect ) -360 (on ) -360 (the)] TJ
+1 0 0 -1 58 102.086 Tm
+[(server ) 343 (is ) 343 (as ) 343 (if ) 343 (the ) 343 (user ) 343 (had ) 343 (performed ) 343 (no ) 343 (input ) 343 (action. ) 343 (The ) 343 (user ) 343 (input ) 343 (actions ) 343 (are ) 343 
+(provided ) 343 (to ) 343 (the ) 343 (client ) 343 (in)] TJ
+1 0 0 -1 58 114.086 Tm
+[(the ) 617 (form ) 617 (of ) 617 (X ) 617 (events ) 617 (defined ) 617 (by ) 617 (this ) 617 (extension. ) 617 (The ) 617 (information ) 617 (provided ) 617 (to ) 617 (the ) 617 (client ) 617 
+(includes ) 617 (what ) 617 (user)] TJ
+1 0 0 -1 58 126.086 Tm
+[(input ) -438 (action ) -438 (occurred ) -438 (and ) -438 (the ) -438 (delay ) -438 (between ) -438 (this ) -438 (user ) -438 (input ) -438 (action ) -438 (and ) -438 (the ) -438 (previous ) -438 
+(user ) -438 (input ) -438 (action.)] TJ
+1 0 0 -1 58 138.086 Tm
+(The client may then do anything it wishes with this information.) show
+1 0 0 -1 48 160.964 Tm
+(\225) show
+1 0 0 -1 58 160.964 Tm
+[(User ) -281 (input ) -281 (actions ) -281 (may ) -281 (be ) -281 (copied, ) -281 (with ) -281 (one ) -281 (copy ) -281 (going ) -281 (to ) -281 (the ) -281 (server ) -281 (in ) -281 (the ) -281 
+(normal ) -281 (way, ) -281 (and ) -281 (the ) -281 (other)] TJ
+1 0 0 -1 58 172.964 Tm
+(copy being sent to a client as described above.) show
+/Helvetica-Bold 20.736 F
+1 0 0 -1 0 205.251 Tm
+(Functions In This Extension) show
+/Helvetica-Bold 17.28 F
+1 0 0 -1 0 238.056 Tm
+(High Level Functions) show
+/Times-Roman 10 F
+1 0 0 -1 48 263.217 Tm
+(These functions are built on top of the low level functions described later.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 290.084 Tm
+(XTestMovePointer) show
+/Courier 10 F
+1 0 0 -1 48 314.283 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 314.283 Tm
+(XTestMovePointer) show
+/Courier 10 F
+1 0 0 -1 168 314.283 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 174 314.283 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 222 314.283 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 234 314.283 Tm
+(device_id) show
+/Courier 10 F
+1 0 0 -1 288 314.283 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 300 314.283 Tm
+(delay) show
+/Courier 10 F
+1 0 0 -1 330 314.283 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 342 314.283 Tm
+(x) show
+/Courier 10 F
+1 0 0 -1 348 314.283 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 360 314.283 Tm
+(y) show
+/Courier 10 F
+1 0 0 -1 366 314.283 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 378 314.283 Tm
+(count) show
+/Courier 10 F
+1 0 0 -1 408 314.283 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 337.131 Tm
+(display) show
+1 0 0 -1 112 337.131 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 360.009 Tm
+(device_id) show
+1 0 0 -1 112 360.009 Tm
+[(Specifies ) -730 (which ) -730 (pointer ) -730 (device ) -730 (was ) -730 (supposed ) -730 (to ) -730 (have ) -730 (caused ) -730 (the ) -730 (input ) -730 (action. ) -730 (This ) -730 (is ) -730 (a)] TJ
+1 0 0 -1 112 372.009 Tm
+[(provision ) -346 (for ) -346 (future ) -346 (support ) -346 (of ) -346 (multiple ) -346 (\(distinguishable\) ) -346 (pointer ) -346 (devices, ) -346 (and ) -346 (should ) -346 (al-)] TJ
+1 0 0 -1 112 384.009 Tm
+(ways be set to 0 for now.) show
+1 0 0 -1 48 406.887 Tm
+(delay) show
+1 0 0 -1 112 406.887 Tm
+(Specifies the time \(in milliseconds\) to wait before each movement of the pointer.) show
+1 0 0 -1 48 429.765 Tm
+(x, y) show
+1 0 0 -1 112 429.765 Tm
+[(Specifies ) -516 (the ) -516 (x ) -516 (and ) -516 (y ) -516 (coordinates ) -516 (to ) -516 (move ) -516 (the ) -516 (pointer ) -516 (to ) -516 (relative ) -516 (to ) -516 (the ) -516 (root ) -516 
+(window ) -516 (for)] TJ
+1 0 0 -1 112 441.765 Tm
+(the specified display.) show
+1 0 0 -1 48 464.643 Tm
+(count) show
+1 0 0 -1 112 464.643 Tm
+(Specifies the number of 'delay, x, y' triplets contained in the ) show
+/Times-Italic 10 F
+1 0 0 -1 354.18 464.643 Tm
+(delay) show
+/Times-Roman 10 F
+1 0 0 -1 375.84 464.643 Tm
+(, ) show
+/Times-Italic 10 F
+1 0 0 -1 380.84 464.643 Tm
+(x) show
+/Times-Roman 10 F
+1 0 0 -1 385.28 464.643 Tm
+( and ) show
+/Times-Italic 10 F
+1 0 0 -1 404.72 464.643 Tm
+(y) show
+/Times-Roman 10 F
+1 0 0 -1 409.16 464.643 Tm
+( arrays.) show
+1 0 0 -1 48 487.521 Tm
+[(The ) -270 ] TJ
+/Courier 10 F
+1 0 0 -1 66.32 487.521 Tm
+(XTestMovePointer) show
+/Times-Roman 10 F
+1 0 0 -1 162.32 487.521 Tm
+[( ) -270 (function ) -270 (creates ) -270 (input ) -270 (actions ) -270 (to ) -270 (be ) -270 (sent ) -270 (to ) -270 (the ) -270 (the ) -270 (server. ) -270 (The ) -270 (input ) -270 (actions)] TJ
+1 0 0 -1 48 499.521 Tm
+[(will ) -1227 (be ) -1227 (accumulated ) -1227 (in ) -1227 (a ) -1227 (request ) -1227 (defined ) -1227 (by ) -1227 (this ) -1227 (extension ) -1227 (until ) -1227 (the ) -1227 (request ) -1227 (is ) -1227 
+(full ) -1227 (or ) -1227 (the ) -1227 (XTestFlush)] TJ
+1 0 0 -1 48 511.521 Tm
+[(function ) -267 (is ) -267 (called. ) -267 (They ) -267 (will ) -267 (then ) -267 (be ) -267 (sent ) -267 (to ) -267 (the ) -267 (server. ) -267 (When ) -267 (the ) -267 (input ) -267 (actions ) -267 
+(are ) -267 (sent ) -267 (to ) -267 (the ) -267 (server, ) -267 (the)] TJ
+1 0 0 -1 48 523.521 Tm
+[(input ) -492 (actions ) -492 (will ) -492 (cause ) -492 (the ) -492 (server ) -492 (to ) -492 (think ) -492 (that ) -492 (the ) -492 (pointer ) -492 (was ) -492 (moved ) -492 (to ) -492 (the ) -492 
+(specified ) -492 (position\(s\), ) -492 (with)] TJ
+1 0 0 -1 48 535.521 Tm
+(the specified delay before each input action.) show
+1 0 0 -1 48 558.399 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 558.399 Tm
+(XTestMovePointer) show
+/Times-Roman 10 F
+1 0 0 -1 162.05 558.399 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 585.266 Tm
+(XTestPressButton) show
+/Courier 10 F
+1 0 0 -1 48 609.465 Tm
+[(int ) -10500 ] TJ
+/Courier-Bold 10 F
+1 0 0 -1 82.5 609.465 Tm
+(XTestPressButton) show
+/Courier 10 F
+1 0 0 -1 178.5 609.465 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 184.5 609.465 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 232.5 609.465 Tm
+[(, ) -10500 ] TJ
+/Courier-Oblique 10 F
+1 0 0 -1 255 609.465 Tm
+(device_id) show
+/Courier 10 F
+1 0 0 -1 309 609.465 Tm
+[(, ) -10500 ] TJ
+/Courier-Oblique 10 F
+1 0 0 -1 331.5 609.465 Tm
+(delay) show
+/Courier 10 F
+1 0 0 -1 361.5 609.465 Tm
+[(, ) -10500 ] TJ
+/Courier-Oblique 10 F
+1 0 0 -1 384 609.465 Tm
+(button_number) show
+/Courier 10 F
+1 0 0 -1 462 609.465 Tm
+(,) show
+/Courier-Oblique 10 F
+1 0 0 -1 48 621.465 Tm
+(button_action) show
+/Courier 10 F
+1 0 0 -1 126 621.465 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 644.313 Tm
+(display) show
+1 0 0 -1 136 644.313 Tm
+(Specifies the connection to the X server.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Helvetica-Bold
+%%+ font Times-Italic
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 5 5
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(5) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 48 8.33 Tm
+(device_id) show
+1 0 0 -1 136 8.33 Tm
+[(Specifies ) -425 (which ) -425 (button ) -425 (device ) -425 (was ) -425 (supposed ) -425 (to ) -425 (have ) -425 (caused ) -425 (the ) -425 (input ) -425 (action. ) -425 (This)] TJ
+1 0 0 -1 136 20.33 Tm
+[(is ) -790 (a ) -790 (provision ) -790 (for ) -790 (future ) -790 (support ) -790 (of ) -790 (multiple ) -790 (\(distinguishable\) ) -790 (button ) -790 (devices, ) -790 (and)] TJ
+1 0 0 -1 136 32.33 Tm
+(should always be set to 0 for now.) show
+1 0 0 -1 48 53.577 Tm
+(delay) show
+1 0 0 -1 136 53.577 Tm
+(Specifies the time \(in milliseconds\) to wait before the input action.) show
+1 0 0 -1 48 74.824 Tm
+(button_number) show
+1 0 0 -1 136 74.824 Tm
+(Specifies which button is being acted upon.) show
+1 0 0 -1 48 96.071 Tm
+(button_action) show
+1 0 0 -1 136 96.071 Tm
+[(Specifies ) 748 (the ) 748 (action ) 748 (to ) 748 (be ) 748 (performed ) 748 (\(one ) 748 (of ) 748 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 308.305 96.071 Tm
+(XTestPRESS) show
+/Times-Roman 10 F
+1 0 0 -1 359.415 96.071 Tm
+[(, ) 748 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 363.667 96.071 Tm
+(XTestRELEASE) show
+/Times-Roman 10 F
+1 0 0 -1 427.557 96.071 Tm
+[(, ) 748 (or ) 748 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 441.891 96.071 Tm
+(XTest-) show
+1 0 0 -1 136 108.071 Tm
+(STROKE) show
+/Times-Roman 10 F
+1 0 0 -1 172.67 108.071 Tm
+(\).) show
+1 0 0 -1 48 129.318 Tm
+[(The ) -270 ] TJ
+/Courier 10 F
+1 0 0 -1 66.32 129.318 Tm
+(XTestPressButton) show
+/Times-Roman 10 F
+1 0 0 -1 162.32 129.318 Tm
+[( ) -270 (function ) -270 (creates ) -270 (input ) -270 (actions ) -270 (to ) -270 (be ) -270 (sent ) -270 (to ) -270 (the ) -270 (the ) -270 (server. ) -270 (The ) -270 (input ) -270 (actions)] TJ
+1 0 0 -1 48 141.318 Tm
+[(will ) -1227 (be ) -1227 (accumulated ) -1227 (in ) -1227 (a ) -1227 (request ) -1227 (defined ) -1227 (by ) -1227 (this ) -1227 (extension ) -1227 (until ) -1227 (the ) -1227 (request ) -1227 (is ) -1227 
+(full ) -1227 (or ) -1227 (the ) -1227 (XTestFlush)] TJ
+1 0 0 -1 48 153.318 Tm
+[(function ) -267 (is ) -267 (called. ) -267 (They ) -267 (will ) -267 (then ) -267 (be ) -267 (sent ) -267 (to ) -267 (the ) -267 (server. ) -267 (When ) -267 (the ) -267 (input ) -267 (actions ) -267 
+(are ) -267 (sent ) -267 (to ) -267 (the ) -267 (server, ) -267 (the)] TJ
+1 0 0 -1 48 165.318 Tm
+(input actions will cause the server to think that the specified button was moved as specified.) show
+1 0 0 -1 48 186.565 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 186.565 Tm
+(XTestPressButton) show
+/Times-Roman 10 F
+1 0 0 -1 162.05 186.565 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 211.801 Tm
+(XTestPressKey) show
+/Courier 10 F
+1 0 0 -1 48 234.369 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 234.369 Tm
+(XTestPressKey) show
+/Courier 10 F
+1 0 0 -1 150 234.369 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 156 234.369 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 204 234.369 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 216 234.369 Tm
+(device_id) show
+/Courier 10 F
+1 0 0 -1 270 234.369 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 282 234.369 Tm
+(delay) show
+/Courier 10 F
+1 0 0 -1 312 234.369 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 324 234.369 Tm
+(keycode) show
+/Courier 10 F
+1 0 0 -1 366 234.369 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 378 234.369 Tm
+(key_action) show
+/Courier 10 F
+1 0 0 -1 438 234.369 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 255.586 Tm
+(display) show
+1 0 0 -1 118 255.586 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 276.833 Tm
+(device_id) show
+1 0 0 -1 118 276.833 Tm
+[(Specifies ) 332 (which ) 332 (keyboard ) 332 (device ) 332 (was ) 332 (supposed ) 332 (to ) 332 (have ) 332 (caused ) 332 (the ) 332 (input ) 332 (action. ) 332 (This ) 332 (is ) 332 (a)] TJ
+1 0 0 -1 118 288.833 Tm
+[(provision ) -198 (for ) -198 (future ) -198 (support ) -198 (of ) -198 (multiple ) -198 (\(distinguishable\) ) -198 (keyboard ) -198 (devices, ) -198 (and ) -198 (should)] TJ
+1 0 0 -1 118 300.833 Tm
+(always be set to 0 for now.) show
+1 0 0 -1 48 322.08 Tm
+(delay) show
+1 0 0 -1 118 322.08 Tm
+(Specifies the time \(in milliseconds\) to wait before the input action.) show
+1 0 0 -1 48 343.327 Tm
+(keycode) show
+1 0 0 -1 118 343.327 Tm
+(Specifies which keycode is being acted upon.) show
+1 0 0 -1 48 364.574 Tm
+(key_action) show
+1 0 0 -1 118 364.574 Tm
+[(Specifies ) -888 (the ) -888 (action ) -888 (to ) -888 (be ) -888 (performed ) -888 (\(one ) -888 (of ) -888 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 303.395 364.574 Tm
+(XTestPRESS) show
+/Times-Roman 10 F
+1 0 0 -1 354.505 364.574 Tm
+[(, ) -888 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 360.393 364.574 Tm
+(XTestRELEASE) show
+/Times-Roman 10 F
+1 0 0 -1 424.283 364.574 Tm
+[(, ) -888 (or ) -888 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 441.889 364.574 Tm
+(XTest-) show
+1 0 0 -1 118 376.574 Tm
+(STROKE) show
+/Times-Roman 10 F
+1 0 0 -1 154.67 376.574 Tm
+(\).) show
+1 0 0 -1 48 397.821 Tm
+[(The ) -249 ] TJ
+/Courier 10 F
+1 0 0 -1 66.299 397.821 Tm
+(XTestPressKey) show
+/Times-Roman 10 F
+1 0 0 -1 144.299 397.821 Tm
+[( ) -249 (function ) -249 (creates ) -249 (input ) -249 (actions ) -249 (to ) -249 (be ) -249 (sent ) -249 (to ) -249 (the ) -249 (the ) -249 (server. ) -249 (The ) -249 (input ) -249 (actions ) -249 (will)] TJ
+1 0 0 -1 48 409.821 Tm
+[(be ) 337 (accumulated ) 337 (in ) 337 (a ) 337 (request ) 337 (defined ) 337 (by ) 337 (this ) 337 (extension ) 337 (until ) 337 (the ) 337 (request ) 337 (is ) 337 (full ) 337 (or ) 337 (the ) 337 
+(XTestFlush ) 337 (function ) 337 (is)] TJ
+1 0 0 -1 48 421.821 Tm
+[(called. ) 177 (They ) 177 (will ) 177 (then ) 177 (be ) 177 (sent ) 177 (to ) 177 (the ) 177 (server. ) 177 (When ) 177 (the ) 177 (input ) 177 (actions ) 177 (are ) 177 (sent ) 177 (to ) 177 (the ) 177 
+(server, ) 177 (the ) 177 (input ) 177 (actions)] TJ
+1 0 0 -1 48 433.821 Tm
+(will cause the server to think that the specified key on the keyboard was moved as specified.) show
+1 0 0 -1 48 455.068 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 455.068 Tm
+(XTestPressKey) show
+/Times-Roman 10 F
+1 0 0 -1 144.05 455.068 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 480.304 Tm
+(XTestFlush) show
+/Courier 10 F
+1 0 0 -1 48 502.872 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 502.872 Tm
+(XTestFlush) show
+/Courier 10 F
+1 0 0 -1 132 502.872 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 138 502.872 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 186 502.872 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 524.089 Tm
+(display) show
+1 0 0 -1 100 524.089 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 545.336 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 545.336 Tm
+(XTestFlush) show
+/Times-Roman 10 F
+1 0 0 -1 126.05 545.336 Tm
+( will send any remaining input actions to the server.) show
+1 0 0 -1 48 566.583 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 566.583 Tm
+(XTestFlush) show
+/Times-Roman 10 F
+1 0 0 -1 126.05 566.583 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+/Helvetica-Bold 17.28 F
+1 0 0 -1 0 594.283 Tm
+(Low Level Functions) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 621.802 Tm
+(XTestGetInput) show
+/Courier 10 F
+1 0 0 -1 48 644.37 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 644.37 Tm
+(XTestGetInput) show
+/Courier 10 F
+1 0 0 -1 150 644.37 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 156 644.37 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 204 644.37 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 216 644.37 Tm
+(action_handling) show
+/Courier 10 F
+1 0 0 -1 306 644.37 Tm
+(\);) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Helvetica-Bold
+%%+ font Times-Italic
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 6 6
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(6) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 48 8.33 Tm
+(display) show
+1 0 0 -1 148 8.33 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 30.83 Tm
+(action_handling) show
+1 0 0 -1 148 30.83 Tm
+[(Specifies ) -2502 (to ) -2502 (the ) -2502 (server ) -2502 (what ) -2502 (to ) -2502 (do ) -2502 (with ) -2502 (the ) -2502 (user ) -2502 (input ) -2502 (actions. ) -2502 (\(one ) -2502 (of ) -2502 (0,)] TJ
+/Times-Italic 10 F
+1 0 0 -1 148 42.83 Tm
+(XTestPACKED_MOTION) show
+/Times-Roman 10 F
+1 0 0 -1 253 42.83 Tm
+[( ) -890 (or ) -890 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 268.11 42.83 Tm
+(XTestPACKED_ACTIONS) show
+/Times-Roman 10 F
+1 0 0 -1 375.34 42.83 Tm
+[(; ) -890 (optionally ) -890 ('or'ed ) -890 (with)] TJ
+/Times-Italic 10 F
+1 0 0 -1 148 54.83 Tm
+(XTestEXCLUSIVE) show
+/Times-Roman 10 F
+1 0 0 -1 223 54.83 Tm
+(\).) show
+1 0 0 -1 48 77.33 Tm
+[(The ) -25 ] TJ
+/Courier 10 F
+1 0 0 -1 66.075 77.33 Tm
+(XTestGetInput) show
+/Times-Roman 10 F
+1 0 0 -1 144.075 77.33 Tm
+[( ) -25 (function ) -25 (tells ) -25 (the ) -25 (server ) -25 (to ) -25 (begin ) -25 (putting ) -25 (information ) -25 (about ) -25 (user ) -25 (input ) -25 (actions ) -25 (in-)] TJ
+1 0 0 -1 48 89.33 Tm
+[(to ) -489 (events ) -489 (to ) -489 (be ) -489 (sent ) -489 (to ) -489 (the ) -489 (client ) -489 (that ) -489 (called ) -489 (this ) -489 (function. ) -489 (These ) -489 (events ) -489 (can ) -489 
+(be ) -489 (read ) -489 (via ) -489 (the ) -489 (Xlib ) -489 ] TJ
+/Courier 10 F
+1 0 0 -1 438 89.33 Tm
+(XNex-) show
+1 0 0 -1 48 101.33 Tm
+(tEvent) show
+/Times-Roman 10 F
+1 0 0 -1 84 101.33 Tm
+(fR function.) show
+1 0 0 -1 48 123.83 Tm
+[(The ) -132 (server ) -132 (assigns ) -132 (an ) -132 (event ) -132 (type ) -132 (of ) -132 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 191.948 123.83 Tm
+(XTestInputActionType) show
+/Times-Roman 10 F
+1 0 0 -1 281.388 123.83 Tm
+[( ) -132 (to ) -132 (these ) -132 (events ) -132 (to ) -132 (distinguish ) -132 (them ) -132 (from ) -132 (other)] TJ
+1 0 0 -1 48 135.83 Tm
+[(events. ) 289 (Since ) 289 (the ) 289 (actual ) 289 (value ) 289 (of ) 289 (the ) 289 (event ) 289 (type ) 289 (may ) 289 (vary ) 289 (depending ) 289 (on ) 289 (how ) 289 (many ) 289 (extensions ) 289 
+(are ) 289 (included)] TJ
+1 0 0 -1 48 147.83 Tm
+[(with ) -520 (an ) -520 (X11 ) -520 (implementation, ) -520 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 169.802 147.83 Tm
+(XTestInputActionType) show
+/Times-Roman 10 F
+1 0 0 -1 259.242 147.83 Tm
+[( ) -520 (is ) -520 (a ) -520 (variable ) -520 (that ) -520 (will ) -520 (be ) -520 (contained ) -520 (in ) -520 (the ) -520 (Xlib ) -520 (part)] TJ
+1 0 0 -1 48 159.83 Tm
+(of this extension. It may be referenced as follows:) show
+1 0 0 -1 48 182.33 Tm
+(extern int XTestInputActionType;) show
+1 0 0 -1 48 204.83 Tm
+(\225) show
+1 0 0 -1 58 204.83 Tm
+[(An ) -525 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 73.245 204.83 Tm
+(action_handling) show
+/Times-Roman 10 F
+1 0 0 -1 138.805 204.83 Tm
+[( ) -525 (value ) -525 (of ) -525 (0 ) -525 (causes ) -525 (the ) -525 (server ) -525 (to ) -525 (send ) -525 (one ) -525 (user ) -525 (input ) -525 (action ) -525 (in ) -525 (each ) -525 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 410.23 204.83 Tm
+(XTestInputAc-) show
+1 0 0 -1 58 216.83 Tm
+(tionType) show
+/Times-Roman 10 F
+1 0 0 -1 93 216.83 Tm
+( event. This can sometimes cause performance problems.) show
+1 0 0 -1 48 239.33 Tm
+(\225) show
+1 0 0 -1 58 239.33 Tm
+[(An ) -409 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 73.129 239.33 Tm
+(action_handling) show
+/Times-Roman 10 F
+1 0 0 -1 138.689 239.33 Tm
+[( ) -409 (value ) -409 (of ) -409 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 177.406 239.33 Tm
+(XTestPACKED_ACTIONS) show
+/Times-Roman 10 F
+1 0 0 -1 284.636 239.33 Tm
+[( ) -409 (causes ) -409 (the ) -409 (server ) -409 (to ) -409 (pack ) -409 (as ) -409 (many ) -409 (user ) -409 (input)] TJ
+1 0 0 -1 58 251.33 Tm
+[(actions ) 589 (as ) 589 (possible ) 589 (into ) 589 (a ) 589 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 156.994 251.33 Tm
+(XTestInputActionType) show
+/Times-Roman 10 F
+1 0 0 -1 246.434 251.33 Tm
+[( ) 589 (event. ) 589 (This ) 589 (is ) 589 (needed ) 589 (if ) 589 (user ) 589 (input ) 589 (actions ) 589 (are ) 589 (happening)] TJ
+1 0 0 -1 58 263.33 Tm
+(rapidly \(such as when the user moves the pointer\) to keep performance at a reasonable level.) show
+1 0 0 -1 48 285.83 Tm
+(\225) show
+1 0 0 -1 58 285.83 Tm
+[(An ) 616 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 72.104 285.83 Tm
+(action_handling) show
+/Times-Roman 10 F
+1 0 0 -1 137.664 285.83 Tm
+[( ) 616 (value ) 616 (of ) 616 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 173.306 285.83 Tm
+(XTestPACKED_MOTION) show
+/Times-Roman 10 F
+1 0 0 -1 278.306 285.83 Tm
+[( ) 616 (causes ) 616 (the ) 616 (server ) 616 (to ) 616 (pack ) 616 (only ) 616 (user ) 616 (input ) 616 (actions)] TJ
+1 0 0 -1 58 297.83 Tm
+[(associated ) -644 (with ) -644 (moving ) -644 (the ) -644 (pointer. ) -644 (This ) -644 (allows ) -644 (the ) -644 (client ) -644 (to ) -644 (receive ) -644 (button ) -644 (and ) -644 (key ) -644 
+(motions ) -644 (as ) -644 (they)] TJ
+1 0 0 -1 58 309.83 Tm
+(happen without waiting for the event to fill up, while still keeping performance at a reasonable level.) show
+1 0 0 -1 48 332.33 Tm
+(\225) show
+1 0 0 -1 58 332.33 Tm
+[(An ) 55 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 72.665 332.33 Tm
+(action_handling) show
+/Times-Roman 10 F
+1 0 0 -1 138.225 332.33 Tm
+[( ) 55 (value ) 55 (with ) 55 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 184.998 332.33 Tm
+(XTestEXCLUSIVE) show
+/Times-Roman 10 F
+1 0 0 -1 259.998 332.33 Tm
+[( ) 55 ('or'ed ) 55 (in ) 55 (causes ) 55 (the ) 55 (server ) 55 (to ) 55 (send ) 55 (user ) 55 (input ) 55 (actions)] TJ
+1 0 0 -1 58 344.33 Tm
+(only to the client. The effect on the server is as if the user had performed no input actions.) show
+1 0 0 -1 48 366.83 Tm
+(\225) show
+1 0 0 -1 58 366.83 Tm
+[(An ) 552 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 72.168 366.83 Tm
+(action_handling) show
+/Times-Roman 10 F
+1 0 0 -1 137.728 366.83 Tm
+[( ) 552 (value ) 552 (without ) 552 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 195.792 366.83 Tm
+(XTestEXCLUSIVE) show
+/Times-Roman 10 F
+1 0 0 -1 270.792 366.83 Tm
+[( ) 552 (causes ) 552 (the ) 552 (server ) 552 (to ) 552 (copy ) 552 (user ) 552 (input ) 552 (actions, ) 552 (send-)] TJ
+1 0 0 -1 58 378.83 Tm
+[(ing ) -851 (one ) -851 (copy ) -851 (to ) -851 (the ) -851 (client, ) -851 (and ) -851 (handling ) -851 (the ) -851 (other ) -851 (copy ) -851 (normally ) -851 (\(as ) -851 (it ) -851 (would ) -851 
+(if ) -851 (this ) -851 (extension ) -851 (were)] TJ
+1 0 0 -1 58 390.83 Tm
+(not installed\).) show
+1 0 0 -1 48 413.33 Tm
+(There are four types of input actions that are passed from the server to the client. They are:) show
+1 0 0 -1 48 435.83 Tm
+(key/button~state~change) show
+1 0 0 -1 196 435.83 Tm
+[(This ) -493 (type ) -493 (of ) -493 (input ) -493 (action ) -493 (contains ) -493 (the ) -493 (keycode ) -493 (of ) -493 (the ) -493 (key ) -493 (or ) -493 (button)] TJ
+1 0 0 -1 196 447.83 Tm
+[(that ) -71 (changed ) -71 (state; ) -71 (whether ) -71 (the ) -71 (key ) -71 (or ) -71 (button ) -71 (is ) -71 (up ) -71 (or ) -71 (down, ) -71 (and ) -71 (the)] TJ
+1 0 0 -1 196 459.83 Tm
+(time delay between this input action and the previous input action.) show
+1 0 0 -1 48 482.33 Tm
+(pointer~motions) show
+1 0 0 -1 196 482.33 Tm
+[(This ) -701 (type ) -701 (of ) -701 (input ) -701 (action ) -701 (contains ) -701 (information ) -701 (about ) -701 (the ) -701 (motion ) -701 (of)] TJ
+1 0 0 -1 196 494.33 Tm
+[(the ) -193 (pointer ) -193 (when ) -193 (the ) -193 (pointer ) -193 (has ) -193 (only ) -193 (moved ) -193 (a ) -193 (short ) -193 (distance. ) -193 (If ) -193 (the)] TJ
+1 0 0 -1 196 506.33 Tm
+[(pointer ) -486 (has ) -486 (moved ) -486 (a ) -486 (long ) -486 (distance, ) -486 (the ) -486 (pointer ) -486 (jump ) -486 (input ) -486 (action ) -486 (is)] TJ
+1 0 0 -1 196 518.33 Tm
+(used.) show
+1 0 0 -1 48 540.83 Tm
+(pointer~jumps) show
+1 0 0 -1 196 540.83 Tm
+[(This ) -701 (type ) -701 (of ) -701 (input ) -701 (action ) -701 (contains ) -701 (information ) -701 (about ) -701 (the ) -701 (motion ) -701 (of)] TJ
+1 0 0 -1 196 552.83 Tm
+(the pointer when the pointer has moved a long distance.) show
+1 0 0 -1 48 575.33 Tm
+(delays) show
+1 0 0 -1 196 575.33 Tm
+[(This ) 756 (type ) 756 (of ) 756 (input ) 756 (action ) 756 (is ) 756 (used ) 756 (when ) 756 (the ) 756 (delay ) 756 (between ) 756 (input ) 756 (actions)] TJ
+1 0 0 -1 196 587.33 Tm
+(is too large to be held in the other input actions.) show
+1 0 0 -1 48 609.83 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 609.83 Tm
+(XTestGetInput) show
+/Times-Roman 10 F
+1 0 0 -1 144.05 609.83 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+1 0 0 -1 48 632.33 Tm
+[(An ) -874 (error ) -874 (code ) -874 (of ) -874 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 120.357 632.33 Tm
+(BadAccess) show
+/Times-Roman 10 F
+1 0 0 -1 163.677 632.33 Tm
+[( ) -874 (means ) -874 (that ) -874 (another ) -874 (client ) -874 (has ) -874 (already ) -874 (requested ) -874 (that ) -874 (user ) -874 (input ) -874 (actions ) -874 (be)] TJ
+1 0 0 -1 48 644.33 Tm
+(sent to it.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Courier
+%%+ font Times-Italic
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 7 7
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(7) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 12.319 Tm
+(XTestStopInput) show
+/Courier 10 F
+1 0 0 -1 48 35.312 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 35.312 Tm
+(XTestStopInput) show
+/Courier 10 F
+1 0 0 -1 156 35.312 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 162 35.312 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 210 35.312 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 56.954 Tm
+(display) show
+1 0 0 -1 100 56.954 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 78.626 Tm
+[(The ) 324 ] TJ
+/Courier 10 F
+1 0 0 -1 65.726 78.626 Tm
+(XTestStopInput) show
+/Times-Roman 10 F
+1 0 0 -1 149.726 78.626 Tm
+[( ) 324 (function ) 324 (tells ) 324 (the ) 324 (server ) 324 (to ) 324 (stop ) 324 (putting ) 324 (information ) 324 (about ) 324 (user ) 324 (input ) 324 (actions ) 324 (into)] TJ
+1 0 0 -1 48 90.626 Tm
+[(events. ) -357 (The ) -357 (server ) -357 (will ) -357 (process ) -357 (user ) -357 (input ) -357 (actions ) -357 (normally ) -357 (\(as ) -357 (it ) -357 (would ) -357 (if ) -357 (this ) -357 
+(extension ) -357 (were ) -357 (not ) -357 (in ) -357 (the)] TJ
+1 0 0 -1 48 102.626 Tm
+(server\).) show
+1 0 0 -1 48 124.298 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 124.298 Tm
+(XTestStopInput) show
+/Times-Roman 10 F
+1 0 0 -1 150.05 124.298 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+1 0 0 -1 48 145.97 Tm
+[(An ) 608 (error ) 608 (code ) 608 (of ) 608 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 114.425 145.97 Tm
+(BadAccess) show
+/Times-Roman 10 F
+1 0 0 -1 157.745 145.97 Tm
+[( ) 608 (means ) 608 (that ) 608 (a ) 608 (request ) 608 (was ) 608 (made ) 608 (to ) 608 (stop ) 608 (input ) 608 (when ) 608 (input ) 608 (has ) 608 (never ) 608 (been ) 608 (started.)] TJ
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 171.631 Tm
+(XTestFakeInput) show
+/Courier 10 F
+1 0 0 -1 48 194.624 Tm
+[(int ) -10000 ] TJ
+/Courier-Bold 10 F
+1 0 0 -1 82 194.624 Tm
+(XTestFakeInput) show
+/Courier 10 F
+1 0 0 -1 166 194.624 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 172 194.624 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 220 194.624 Tm
+[(, ) -10000 ] TJ
+/Courier-Oblique 10 F
+1 0 0 -1 242 194.624 Tm
+(*action_list_addr) show
+/Courier 10 F
+1 0 0 -1 344 194.624 Tm
+[(, ) -10000 ] TJ
+/Courier-Oblique 10 F
+1 0 0 -1 366 194.624 Tm
+(action_list_size) show
+/Courier 10 F
+1 0 0 -1 462 194.624 Tm
+(,) show
+/Courier-Oblique 10 F
+1 0 0 -1 48 206.624 Tm
+(ack_flag) show
+/Courier 10 F
+1 0 0 -1 96 206.624 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 228.266 Tm
+(display) show
+1 0 0 -1 154 228.266 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 249.938 Tm
+(action_list_addr) show
+1 0 0 -1 154 249.938 Tm
+(Specifies the address of an list of input actions to be sent to the server.) show
+1 0 0 -1 48 271.61 Tm
+(action_list_size) show
+1 0 0 -1 154 271.61 Tm
+[(Specifies ) 111 (the ) 111 (size ) 111 (\(in ) 111 (bytes\) ) 111 (of ) 111 (the ) 111 (list ) 111 (of ) 111 (input ) 111 (actions. ) 111 (It ) 111 (may ) 111 (be ) 111 (no ) 111 (larger ) 111 (than)] TJ
+/Times-Italic 10 F
+1 0 0 -1 154 283.61 Tm
+(XTestMAX_ACTION_LIST_SIZE) show
+/Times-Roman 10 F
+1 0 0 -1 287.34 283.61 Tm
+( bytes.) show
+1 0 0 -1 48 305.282 Tm
+(ack_flag) show
+1 0 0 -1 154 305.282 Tm
+[(Specifies ) -2884 (whether ) -2884 (the ) -2884 (server ) -2884 (needs ) -2884 (to ) -2884 (send ) -2884 (an ) -2884 (event ) -2884 (to ) -2884 (indicate ) -2884 (that ) -2884 (its)] TJ
+1 0 0 -1 154 317.282 Tm
+[(input ) -2168 (action ) -2168 (buffer ) -2168 (is ) -2168 (empty ) -2168 (\(one ) -2168 (of ) -2168 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 313.881 317.282 Tm
+(XTestFAKE_ACK_NOT_NEEDED) show
+/Times-Roman 10 F
+1 0 0 -1 455.001 317.282 Tm
+[( ) -2168 (or)] TJ
+/Times-Italic 10 F
+1 0 0 -1 154 329.282 Tm
+(XTestFAKE_ACK_REQUEST) show
+/Times-Roman 10 F
+1 0 0 -1 274.56 329.282 Tm
+(\).) show
+1 0 0 -1 48 350.954 Tm
+[(The ) 429 ] TJ
+/Courier 10 F
+1 0 0 -1 65.621 350.954 Tm
+(XTestFakeInput) show
+/Times-Roman 10 F
+1 0 0 -1 149.621 350.954 Tm
+[( ) 429 (function ) 429 (tells ) 429 (the ) 429 (server ) 429 (to ) 429 (take ) 429 (the ) 429 (specified ) 429 (user ) 429 (input ) 429 (actions ) 429 (and ) 429 (process ) 429 (them)] TJ
+1 0 0 -1 48 362.954 Tm
+(as if the user had physically performed them.) show
+1 0 0 -1 48 384.626 Tm
+[(The ) 113 (server ) 113 (can ) 113 (only ) 113 (accept ) 113 (a ) 113 (limited ) 113 (number ) 113 (of ) 113 (input ) 113 (actions ) 113 (at ) 113 (one ) 113 (time. ) 113 (This ) 113 (limit ) 113 
+(can ) 113 (be ) 113 (determined ) 113 (by)] TJ
+1 0 0 -1 48 396.626 Tm
+(the ) show
+/Courier 10 F
+1 0 0 -1 62.72 396.626 Tm
+(XTestQueryInputSize) show
+/Times-Roman 10 F
+1 0 0 -1 176.72 396.626 Tm
+( function in this extension.) show
+1 0 0 -1 48 418.298 Tm
+[(The ) -509 (client ) -509 (should ) -509 (set ) -509 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 135.589 418.298 Tm
+(ack_flag) show
+/Times-Roman 10 F
+1 0 0 -1 170.029 418.298 Tm
+[( ) -509 (to ) -509 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 183.828 418.298 Tm
+(XTestFAKE_ACK_NOT_NEEDED) show
+/Times-Roman 10 F
+1 0 0 -1 324.948 418.298 Tm
+[( ) -509 (on ) -509 (calls ) -509 (to ) -509 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 373.097 418.298 Tm
+(XTestFakeInput) show
+/Times-Roman 10 F
+1 0 0 -1 436.977 418.298 Tm
+[( ) -509 (that ) -509 (do)] TJ
+1 0 0 -1 48 430.298 Tm
+(not reach this limit.) show
+1 0 0 -1 48 451.97 Tm
+[(The ) 317 (client ) 317 (should ) 317 (set ) 317 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 132.28 451.97 Tm
+(ack_flag) show
+/Times-Roman 10 F
+1 0 0 -1 166.72 451.97 Tm
+[( ) 317 (to ) 317 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 178.865 451.97 Tm
+(XTestFAKE_ACK_REQUEST) show
+/Times-Roman 10 F
+1 0 0 -1 299.425 451.97 Tm
+[( ) 317 (on ) 317 (the ) 317 (call ) 317 (to ) 317 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 354.777 451.97 Tm
+(XTestFakeInput) show
+/Times-Roman 10 F
+1 0 0 -1 418.657 451.97 Tm
+[( ) 317 (that ) 317 (reaches)] TJ
+1 0 0 -1 48 463.97 Tm
+(this limit.) show
+1 0 0 -1 48 485.642 Tm
+[(When ) -494 (the ) -494 (server ) -494 (sees ) -494 (an ) -494 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 149.603 485.642 Tm
+(ack_flag) show
+/Times-Roman 10 F
+1 0 0 -1 184.043 485.642 Tm
+[( ) -494 (value ) -494 (of ) -494 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 223.016 485.642 Tm
+(XTestFAKE_ACK_REQUEST) show
+/Times-Roman 10 F
+1 0 0 -1 343.576 485.642 Tm
+[( ) -494 (it ) -494 (finishes ) -494 (processing ) -494 (its ) -494 (input)] TJ
+1 0 0 -1 48 497.642 Tm
+[(action ) -456 (buffer, ) -456 (then ) -456 (sends ) -456 (an ) -456 (event ) -456 (with ) -456 (type ) -456 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 228.56 497.642 Tm
+(XTestFakeAckType) show
+/Times-Roman 10 F
+1 0 0 -1 305.76 497.642 Tm
+[( ) -456 (to ) -456 (the ) -456 (client. ) -456 (When ) -456 (the ) -456 (client ) -456 (reads ) -456 (this)] TJ
+1 0 0 -1 48 509.642 Tm
+(event, it knows that it is safe to resume sending input actions to the server.) show
+1 0 0 -1 48 531.314 Tm
+[(Since ) 366 (the ) 366 (actual ) 366 (value ) 366 (of ) 366 (the ) 366 (event ) 366 (type ) 366 (may ) 366 (vary ) 366 (depending ) 366 (on ) 366 (how ) 366 (many ) 366 (extensions ) 366 (are ) 366 
+(included ) 366 (with ) 366 (an)] TJ
+1 0 0 -1 48 543.314 Tm
+[(X11 ) -132 (implementation, ) -132 ] TJ
+/Times-Italic 10 F
+1 0 0 -1 135.765 543.314 Tm
+(XTestFakeAckType) show
+/Times-Roman 10 F
+1 0 0 -1 212.965 543.314 Tm
+[( ) -132 (is ) -132 (a ) -132 (variable ) -132 (that ) -132 (is ) -132 (contained ) -132 (in ) -132 (the ) -132 (Xlib ) -132 (part ) -132 (of ) -132 (this ) -132 (extension.)] TJ
+1 0 0 -1 48 555.314 Tm
+(It may be referenced as follows:) show
+1 0 0 -1 48 576.986 Tm
+(extern int XTestFakeAckType;) show
+1 0 0 -1 48 598.658 Tm
+(There are four types of input actions that are passed from the client to the server. They are:) show
+1 0 0 -1 48 620.33 Tm
+(key/button~state~change) show
+1 0 0 -1 196 620.33 Tm
+[(This ) -493 (type ) -493 (of ) -493 (input ) -493 (action ) -493 (contains ) -493 (the ) -493 (keycode ) -493 (of ) -493 (the ) -493 (key ) -493 (or ) -493 (button)] TJ
+1 0 0 -1 196 632.33 Tm
+[(that ) 271 (is ) 271 (to ) 271 (change ) 271 (state; ) 271 (whether ) 271 (the ) 271 (key ) 271 (or ) 271 (button ) 271 (is ) 271 (to ) 271 (be ) 271 (up ) 271 (or ) 271 (down,)] TJ
+1 0 0 -1 196 644.33 Tm
+(and the time to delay before changing the state of the key or button.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Helvetica-Bold
+%%+ font Times-Italic
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Page: 8 8
+%%PageBoundingBox: 0 0 612 792
+%%PageHiResBoundingBox: 0 0 612 792
+%%PageResources: (atend)
+%FOPSimplePageMaster: body-odd
+%%BeginPageSetup
+%FOPBeginSetPageDevice
+<<
+/PageSize [612 792]
+/ImagingBBox null
+>> setpagedevice
+%FOPEndSetPageDevice
+[1 0 0 -1 0 792] CT
+%%EndPageSetup
+GS
+[1 0 0 1 72 36] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+[1 0 0 1 156 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 25.225 8.33 Tm
+(X11 INPUT SYNTHESIS) show
+1 0 0 -1 23.14 20.33 Tm
+(EXTENSION PROPOSAL) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 0] CT
+GS
+156 24.25 M
+156 24.5 lineto
+0 24.5 lineto
+0 24.25 lineto
+0 24 lineto
+156 24 lineto
+cp
+clip newpath
+0.5 LW
+0 24.25 M 156 24.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[0 -1 1 0 72 727.2] CT
+GR
+GS
+[0 -1 1 0 540 727.2] CT
+GR
+GS
+[1 0 0 1 72 727.2] CT
+GS
+[1 0 0 1 0 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GS
+[1 0 0 1 156 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 75.5 10.83 Tm
+(8) show
+ET
+GR
+GR
+GS
+[1 0 0 1 312 14.3] CT
+GS
+0 0.25 M
+0 0 lineto
+156 0 lineto
+156 0.25 lineto
+156 0.5 lineto
+0 0.5 lineto
+cp
+clip newpath
+0.5 LW
+0 0.25 M 156 0.25 lineto stroke newpath
+GR
+GR
+GR
+GS
+[1 0 0 1 72 72] CT
+GS
+BT
+/Times-Roman 10 F
+1 0 0 -1 48 8.33 Tm
+(pointer~motions) show
+1 0 0 -1 196 8.33 Tm
+[(This ) -701 (type ) -701 (of ) -701 (input ) -701 (action ) -701 (contains ) -701 (information ) -701 (about ) -701 (the ) -701 (motion ) -701 (of)] TJ
+1 0 0 -1 196 20.33 Tm
+[(the ) 56 (pointer ) 56 (when ) 56 (the ) 56 (pointer ) 56 (is ) 56 (to ) 56 (be ) 56 (moved ) 56 (a ) 56 (short ) 56 (distance, ) 56 (and ) 56 (the)] TJ
+1 0 0 -1 196 32.33 Tm
+[(time ) 399 (to ) 399 (delay ) 399 (before ) 399 (moving ) 399 (the ) 399 (pointer. ) 399 (If ) 399 (the ) 399 (pointer ) 399 (is ) 399 (to ) 399 (be ) 399 (moved)] TJ
+1 0 0 -1 196 44.33 Tm
+(a long distance, the pointer jump input action must be used.) show
+1 0 0 -1 48 66.33 Tm
+(pointer~jumps) show
+1 0 0 -1 196 66.33 Tm
+[(This ) -701 (type ) -701 (of ) -701 (input ) -701 (action ) -701 (contains ) -701 (information ) -701 (about ) -701 (the ) -701 (motion ) -701 (of)] TJ
+1 0 0 -1 196 78.33 Tm
+[(the ) -113 (pointer ) -113 (when ) -113 (the ) -113 (pointer ) -113 (is ) -113 (to ) -113 (be ) -113 (moved ) -113 (a ) -113 (long ) -113 (distance, ) -113 (and ) -113 (the)] TJ
+1 0 0 -1 196 90.33 Tm
+(time to delay before moving the pointer.) show
+1 0 0 -1 48 112.33 Tm
+(delays) show
+1 0 0 -1 196 112.33 Tm
+[(This ) 756 (type ) 756 (of ) 756 (input ) 756 (action ) 756 (is ) 756 (used ) 756 (when ) 756 (the ) 756 (delay ) 756 (between ) 756 (input ) 756 (actions)] TJ
+1 0 0 -1 196 124.33 Tm
+(is too large to be held in the other input actions.) show
+1 0 0 -1 48 146.33 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 146.33 Tm
+(XTestFakeInput) show
+/Times-Roman 10 F
+1 0 0 -1 150.05 146.33 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+1 0 0 -1 48 168.33 Tm
+[(An ) 712 (error ) 712 (code ) 712 (of ) 712 (\\fIBadAccess\\fR ) 712 (means ) 712 (that ) 712 (another ) 712 (client ) 712 (has ) 712 (already ) 712 (sent ) 712 (user ) 712 (input ) 712 (actions ) 712 
+(to ) 712 (the ) 712 (server,)] TJ
+1 0 0 -1 48 180.33 Tm
+(and the server has not finished processing the user input actions.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 206.319 Tm
+(XTestQueryInputSize) show
+/Courier 10 F
+1 0 0 -1 48 229.64 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 229.64 Tm
+(XTestQueryInputSize) show
+/Courier 10 F
+1 0 0 -1 186 229.64 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 192 229.64 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 240 229.64 Tm
+(, ) show
+/Courier-Oblique 10 F
+1 0 0 -1 252 229.64 Tm
+(size_return) show
+/Courier 10 F
+1 0 0 -1 318 229.64 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 251.61 Tm
+(display) show
+1 0 0 -1 124 251.61 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 273.61 Tm
+(size_return) show
+1 0 0 -1 124 273.61 Tm
+(Returns the number of input actions that the server's input action buffer can hold.) show
+1 0 0 -1 48 295.61 Tm
+[(The ) 22 ] TJ
+/Courier 10 F
+1 0 0 -1 66.028 295.61 Tm
+(XTestQueryInputSize) show
+/Times-Roman 10 F
+1 0 0 -1 180.028 295.61 Tm
+[( ) 22 (function ) 22 (asks ) 22 (the ) 22 (server ) 22 (to ) 22 (return ) 22 (the ) 22 (number ) 22 (of ) 22 (input ) 22 (actions ) 22 (that ) 22 (it ) 22 (can)] TJ
+1 0 0 -1 48 307.61 Tm
+(hold in its input action buffer in the unsigned long pointed to by \\fIsize_return\\fR.) show
+1 0 0 -1 48 329.61 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 329.61 Tm
+(XTestQueryInputSize) show
+/Times-Roman 10 F
+1 0 0 -1 180.05 329.61 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+/Helvetica-Bold 14.4 F
+1 0 0 -1 0 355.599 Tm
+(XTestReset) show
+/Courier 10 F
+1 0 0 -1 48 378.92 Tm
+(int ) show
+/Courier-Bold 10 F
+1 0 0 -1 72 378.92 Tm
+(XTestReset) show
+/Courier 10 F
+1 0 0 -1 132 378.92 Tm
+(\() show
+/Courier-Oblique 10 F
+1 0 0 -1 138 378.92 Tm
+(*display) show
+/Courier 10 F
+1 0 0 -1 186 378.92 Tm
+(\);) show
+/Times-Roman 10 F
+1 0 0 -1 48 400.89 Tm
+(display) show
+1 0 0 -1 100 400.89 Tm
+(Specifies the connection to the X server.) show
+1 0 0 -1 48 422.89 Tm
+[(The ) -869 ] TJ
+/Courier 10 F
+1 0 0 -1 66.919 422.89 Tm
+(XTestReset) show
+/Times-Roman 10 F
+1 0 0 -1 126.919 422.89 Tm
+[( ) -870 (function ) -870 (tells ) -870 (the ) -870 (server ) -870 (to ) -870 (set ) -870 (everything ) -870 (having ) -870 (to ) -870 (do ) -870 (with ) -870 (this ) -870 (extension ) -870 (back ) -870 (to)] TJ
+1 0 0 -1 48 434.89 Tm
+[(its ) -793 (initial ) -793 (state. ) -793 (After ) -793 (this ) -793 (call ) -793 (the ) -793 (server ) -793 (will ) -793 (act ) -793 (as ) -793 (if ) -793 (this ) -793 (extension ) -793 (were ) -793 
+(not ) -793 (installed ) -793 (until ) -793 (one ) -793 (of ) -793 (the)] TJ
+1 0 0 -1 48 446.89 Tm
+[(extension ) -496 (functions ) -496 (is ) -496 (called ) -496 (by ) -496 (a ) -496 (client. ) -496 (This ) -496 (function ) -496 (is ) -496 (not ) -496 (normally ) -496 (needed, ) -496 (but ) -496 
+(is ) -496 (included ) -496 (in ) -496 (case ) -496 (a)] TJ
+1 0 0 -1 48 458.89 Tm
+(client wishes to clean up the server state, such as after a serious error.) show
+1 0 0 -1 48 480.89 Tm
+(The ) show
+/Courier 10 F
+1 0 0 -1 66.05 480.89 Tm
+(XTestReset) show
+/Times-Roman 10 F
+1 0 0 -1 126.05 480.89 Tm
+( function will return -1 if there is an error, and 0 otherwise.) show
+ET
+GR
+GR
+showpage
+%%PageTrailer
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Helvetica-Bold
+%%+ font Times-Roman
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%Trailer
+%%Pages: 8
+%%BoundingBox: 0 0 612 792
+%%HiResBoundingBox: 0 0 612 792
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Times-Italic
+%%+ font Times-Roman
+%%DocumentSuppliedResources: encoding WinAnsiEncoding
+%%+ procset (Apache FOP Std ProcSet) 1.0 0
+%%+ procset (Apache XML Graphics EPS ProcSet) 1.0 0
+%%+ procset (Apache XML Graphics Std ProcSet) 1.1 0
+%%EOF

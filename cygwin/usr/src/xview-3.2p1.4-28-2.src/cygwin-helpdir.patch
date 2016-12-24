@@ -1,0 +1,27 @@
+--- origsrc/xview-3.2p1.4/config/XView.tmpl	2013-02-23 18:01:14.968750000 +0000
++++ src/xview-3.2p1.4/config/XView.tmpl	2013-02-23 18:02:17.718750000 +0000
+@@ -77,8 +77,7 @@ XCOMM # rules to those supplied with X V
+  *	Where to install the help files for spot help.
+  */
+ #ifndef XVHelpDest
+-/*#define XVHelpDest $(LIBRARY_DEST)/help*/
+-#define XVHelpDest $(XVDESTDIR)/share/openwin/help
++#define XVHelpDest $(LIBRARY_DEST)/help
+ #endif
+ /*
+  *	Where to install the extra support files.
+--- origsrc/xview-3.2p1.4/lib/libxview/help/help_file.c	2013-02-23 18:01:15.265625000 +0000
++++ src/xview-3.2p1.4/lib/libxview/help/help_file.c	2013-02-23 18:03:13.859375000 +0000
+@@ -21,12 +21,8 @@ static char     sccsid[] = "@(#)help_fil
+ #if !defined(__linux__) && !defined(__CYGWIN__)
+ #define DEFAULT_HELP_DIRECTORY "/usr/lib/help"
+ #else
+-#if 1 /* FHS compliance, but search the old directories, too - mbuck@debian.org */
+-#define DEFAULT_HELP_DIRECTORY "/usr/share/openwin/help:/usr/X11R6/lib/help"
+-#else
+ #define DEFAULT_HELP_DIRECTORY "/usr/openwin/lib/help"
+ #endif
+-#endif
+ #define MAX_MORE_HELP_CMD 128
+ 
+ Xv_private char *xv_strtok();

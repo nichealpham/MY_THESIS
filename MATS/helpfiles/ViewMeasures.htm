@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>View Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">View 
+      Measures</font></span><p>
+      <img border="0" src="Viewmeasures.JPG" width="390" height="646"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">At this stage it is 
+		assumed that some measures have been computed on some time series. 
+		Different operations can be used to visualize the computed measures on 
+		the different time series, as shown below. </span>
+		<p><span lang="en-us">For any of the visualization operations the user 
+		is presented with the list of the time series names for which the 
+		measures are computed on and the list of measure names, where each 
+		measure name codes the measure name (first 10 characters) and its 
+		specified set of parameters (one parameter value for each name). A 
+		subset of time series names or measure names can be selected from the 
+		respective lists with standard use of the mouse: a click on a name and 
+		Shift^click on a another name further down in the list selects all names 
+		between the former and the latter; a click on a name and subsequent 
+		Ctrl^clicks on other names select these names including the first name; 
+		Ctrl^a selects the whole list. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Table of Measures</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">A table of selected 
+		measures and time series can be shown in a separate data window and can 
+		be further saved in a file. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Free Plot</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Measures and time 
+		series can be selected to be shown in a so-called free plot of measures 
+		vs time series, provided that at least two time series are selected. 
+		This operation is useful to visualize the dependence of any measure on 
+		selected time series, as well as the difference of this dependence 
+		across different time series. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Plot of measure vs segment</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to plot a selection of measures computed on segments of time 
+		series, i.e. time series with names containing indices after the character 'S'. 
+		Then in one figure the graphs of the selected measures vs segment index 
+		are superimposed. Such a figure allows to track changes in the evolution 
+		of measure(s) along the recording epoch split in the time resolution of 
+		the duration of each segment. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Plot of measure vs resampled time series</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to plot a selection of measures computed on resampled time 
+		series of a time series, i.e. time series with names containing indices after the 
+		string code of the specified resampling type. Then in one figure the 
+		graphs of the selected measures vs resampled time series index are 
+		superimposed, 
+		with the zero index assigning the original time series. Such a figure 
+		visualizes the result of the resampling test for each time series, 
+		comparing the measure(s) value for the original time series at index 0 
+		to the other values of the resampled time series at the other indices.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Plot of measure vs parameter</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to plot a measure as a function of a varying parameter (at 
+		least two values of the specified parameter should exist) for selected 
+		time series. Then in one figure the 
+		graphs of the selected measure for the selected time series vs the 
+		measure specific parameter are superimposed. This is the classical 
+		visualization for the dependence of a measure on its parameter, allowing 
+		for superimposing for different time series. This operation can be 
+		applied only to measures bearing at least one varying parameters. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Plot of measure vs 2 parameters</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to plot a measure as a function of two varying parameters (at 
+		least two values of the each specified parameter should exist) for one 
+		selected time series. Then the surface of the selected measure and time 
+		series vs the two measure specific parameters is displayed in a three 
+		dimensional (3D) plot. This 3D plot visualizes the dependence of the 
+		measure on its two parameters, so it can be applied only to measures 
+		bearing at least two varying parameters. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Plot of measure1 vs measure2</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to make a scatter plot of two measures for en ensemble of 
+		selected time series. Then in a 2D plot the scatter of points, one for 
+		each time series, for the pair of the two selected measures will be 
+		shown. This visualization is particular useful to identify graphically 
+		cluster of time series with respect to the two selected measures.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>3D scatter plot of measures</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This operation can be 
+		selected to make a scatter plot of three measures for en ensemble of 
+		selected time series. Then in a 3D plot the scatter of points, one for 
+		each time series, for the triple of the three selected measures will be 
+		shown. This visualization is particular useful to identify graphically 
+		cluster of time series with respect to the three selected measures.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Exit</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		all figures generated by any of the above operations will be deleted, 
+		the window will be gone.</span><font size="2"> </font></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

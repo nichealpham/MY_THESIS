@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Standardize Time Series</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">Transform 
+      Time Series</font></span><p>
+      <img border="0" src="Transformtimeseries.jpg" width="535" height="530"></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">Multiple time series 
+		can be selected and each selected time series is standardized or 
+		transformed.</span><p><span lang="en-us">For standardization the user 
+		can use any 
+		of the following four standardization types:</span></p>
+		<p>
+		<span lang="en-us">1. Gaussian: The rank ordering function from the sample 
+		marginal distribution to marginal Gaussian distribution is applied.<br>
+		2.
+		Uniform: The rank ordering function from the sample marginal 
+		distribution to uniform Gaussian distribution is applied.<br>
+		3.
+		Linear [0,1]: The samples of the time series are linearly transformed so 
+		that the minimum is transformed to 0 and the maximum to 1.<br>
+		4.
+		Normalized (or z-score): The samples of the time series are transformed 
+		linearly so that they have mean zero and standard deviation 1.&nbsp;
+		</span>
+		<p>
+		<span lang="en-us">For transformation, there are four types: <br>
+		1. Box Cox: For the Box Cox transform, a parameter lambda (or a range of parameters to 
+		produce equivalently many transformed time series) determines the 
+		strength of the power Box-Cox transform that aims at normalizing the 
+		histogram of the time series. For lambda=0 the transform reduces to the 
+		natural logarithm. <br>
+		2.
+		Differencing: The transform of first differences (<i>y</i>(<i>i</i>)=<i>x</i>(<i>i</i>)-<i>x</i>(<i>i</i>-1)) 
+		is supposed to remove slow trends from the time series. This transform 
+		can be further extended to differences of a higher order <i>t</i>, that 
+		is at a given lag <i>t,</i> <i>y</i>(<i>i</i>)=<i>x</i>(<i>i</i>)-<i>x</i>(<i>i</i>-<i>t</i>).&nbsp; 
+		The order (lag) <i>t</i> (or an array of orders) can be given as input parameter.<br>
+		3.
+		Log-difference: In financial applications, the analysis is on the time 
+		series of returns rather than the financial indices. The returns are 
+		defined as the first differences of the logarithms of the index values, 
+		and this transform is implemented here.<br>
+		4.
+		Detrend: For this transform first a polynomial of a given degree is 
+		fitted to the time series and then subtracted from the time series.&nbsp; </span>
+		<p>
+		<span lang="en-us">The first of the four transforms attempts to make the 
+		magnitudes of the time series Gaussian while the other three transforms 
+		aim to reduce non-stationarity of the time series. First differences or 
+		logarithm of first differences, as well as polynomial detrending, aims 
+		at removing the slow drifts in the time series. Lag differences may be 
+		used to reduce the effect of periodicity if the selected lag matches the 
+		period of the cycle in the data. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Select one or more time series ...</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Multiple time series 
+		names can be selected from this list. This can be done by standard use 
+		of the mouse: a click on the first name and Shift^click on the last name 
+		selects all names between the first and the last name; a click on the 
+		first name and subsequent Ctrl^clicks on other names select these names 
+		including the first name; Ctrl^a selects the whole list.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Standardization types</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Any of the four 
+		standardization types, or even all standardization types (along with 
+		selected transformation types) can be 
+		selected. The standardization types are briefly explained below.</span><p>
+		<span lang="en-us"><b>Gaussian </b>: A rank ordering function from the 
+		sample marginal distribution to marginal Gaussian distribution is 
+		applied. Let <i>x</i>(<i>i</i>), <i>i</i> = 1,...,<i>N</i>, the selected 
+		time series. The position plotting transform estimates the marginal 
+		cumulative density function (cdf) as <i>F</i>(<i>x</i>(<i>i</i>)) = ((<i>i</i>)-0.326)/(<i>N</i>+0.348), 
+		where (<i>i</i>) is the order of <i>x</i>(<i>i</i>) in the <i>N</i> 
+		sample of the time series. Then the Gaussian standardization transform 
+		reads&nbsp; <i>y</i>(<i>i</i>) = </span><i>Φ</i><sup>-1</sup>(<span lang="en-us"><i>F</i>(<i>x</i>(<i>i</i>)), 
+		where </span><i>Φ</i><sup>-1</sup><span lang="en-us"> is the inverse 
+		marginal Gaussian cdf. </span></p>
+		<p><span lang="en-us"><b>Uniform </b>: A rank ordering function from the 
+		sample marginal distribution to marginal Uniform distribution is 
+		applied. Let <i>x</i>(<i>i</i>), <i>i</i> = 1,...,<i>N</i>, the selected 
+		time series. The position plotting transform estimates the marginal 
+		cumulative density function (cdf) as <i>F</i>(<i>x</i>(<i>i</i>)) = ((<i>i</i>)-0.326)/(<i>N</i>+0.348), 
+		where (<i>i</i>) is the order of <i>x</i>(<i>i</i>) in the <i>N</i> 
+		sample of the time series. Then the Unifrom standardization transform 
+		reads&nbsp; <i>y</i>(<i>i</i>) = <i>F</i>(<i>x</i>(<i>i</i>). </span>
+		</p>
+		<p><span lang="en-us"><b>Linear [0,1] </b>: The samples of the time 
+		series are linearly transformed so that the minimum is transformed to 0 
+		and the maximum to 1. Let <i>x</i><sub>min</sub><i> </i>and<i> x</i><sub>max</sub> 
+		the minimum and maximum of the time series <i>x</i>(<i>i</i>), <i>i</i> 
+		= 1,...,<i>N</i>. Then the Linear standardization transform reads&nbsp;
+		<i>y</i>(<i>i</i>) = (<i>x</i>(<i>i</i>) - <i>x</i><sub>min</sub>) / (<i>x</i><sub>max</sub>
+		<i>- x</i><sub>min</sub>).</span></p>
+		<p><span lang="en-us"><b>Normalized </b>(or z-score) : The samples of 
+		the time series are transformed linearly so that they have mean zero and 
+		standard deviation 1.&nbsp; Let<i> m </i>and<i> </i>SD the mean and 
+		standard deviation of the samples of the time series <i>x</i>(<i>i</i>),
+		<i>i</i> = 1,...,<i>N</i>. Then the Normalized standardization transform 
+		reads&nbsp; <i>y</i>(<i>i</i>) = (<i>x</i>(<i>i</i>) - <i>m</i>) / SD.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Transformation types</b></font></span></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Any of the four 
+		transformation types, or even all transformation types (along with 
+		selected standardization types) can be 
+		selected. The transformation types are briefly explained below.</span><p>
+		<span lang="en-us"><b>Log-difference</b>: This transform takes the first 
+		differences of the natural logarithms of the time series. If the time series contains negative value(s) then the 
+		logarithm transform is applied as <i>y</i>(<i>i</i>)=log(<i>x</i>(<i>i</i>)-xmin+1), 
+		for each value <i>x</i>(<i>i</i>) of a given time series, where xmin 
+		is the minimum value of the time series. Then the transform reads <i>y</i>(<i>i</i>)-<i>y</i>(<i>i</i>-1). </span></p>
+		<p><span lang="en-us"><b>Box Cox </b>: This is the Box Cox power 
+		transform and requires a parameter lambda. The transform is (x(i)^lambda-1)/lambda 
+		if lambda is not zero, and log(x(i)-xmin+1) if lambda is zero, where 
+		xmin is the minimum value of the time series. For the lambda parameter 
+		the user can give multiple values (according to the standard matlab 
+		format for forming arrays) and then the time series is transformed with 
+		the Box Cox formula for each lambda value.</span></p>
+		<p><span lang="en-us"><b>Differencing </b>: The transform of  
+		differencing for a given order (lag) <i>t</i> is defined as <i>x</i>(<i>i</i>)-<i>x</i>(<i>i</i>-<i>t</i>) 
+		(for t=1 this is the common first difference). For the order parameter the 
+		user can give multiple values (according to the standard matlab format 
+		for forming arrays) and then equally many differenced time series are obtained for each 
+		order.</span></p>
+		<p><span lang="en-us"><b>Detrend </b>: This is the detrending of the 
+		time series with a polynomial. First a polynomial of a given degree is 
+		fitted to the time series and then the fitted values are subtracted from 
+		the corresponding values of the time series. For the polynomial degree 
+		parameter the user can give multiple values (according to the standard 
+		matlab format for forming arrays) and then equally many detrended time 
+		series are obtained for each polynomial degree.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">OK</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this 
+		button, the standardizations of the selected time series starts and when it is 
+		completed the window is closed. </span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">
+		Cancel</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The window is closed 
+		without segmenting any time series.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">This page is displayed.</span></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

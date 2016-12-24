@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-xar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XAR archive</comment>
+  <acronym>XAR</acronym>
+  <expanded-acronym>eXtensible ARchive</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+  <glob pattern="*.xar"/>
+  <glob pattern="*.pkg"/>
+</mime-type>

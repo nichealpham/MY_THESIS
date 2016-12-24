@@ -1,0 +1,32 @@
+Author: Alan BRASLAU <alan.braslau@cea.fr>
+Debian-Bug: #617236, #635154
+Description: Fix setting of the DISPLAY variable in case the original value
+  of that variable did not contain a screen number.
+Approved: Ralf Treinen <reinen@debian.org>
+
+Index: xview-3.2p1.4/clients/olwm/environ.c
+===================================================================
+--- xview-3.2p1.4.orig/clients/olwm/environ.c	2011-07-24 15:48:06.000000000 +0200
++++ xview-3.2p1.4/clients/olwm/environ.c	2011-07-24 15:48:47.000000000 +0200
+@@ -131,7 +131,7 @@
+ 		len = colon - display;
+ 	}
+ 
+-	(void)sprintf(value,"%.*s.%d",len,display,screen);
++	(void)sprintf(value,"%*s.%d",len,display,screen);
+ 
+ 	putEnv(env,"DISPLAY",value);
+ }
+Index: xview-3.2p1.4/clients/olvwm-4.1/environ.c
+===================================================================
+--- xview-3.2p1.4.orig/clients/olvwm-4.1/environ.c	2011-07-24 15:50:06.000000000 +0200
++++ xview-3.2p1.4/clients/olvwm-4.1/environ.c	2011-07-24 15:50:58.000000000 +0200
+@@ -130,7 +130,7 @@
+ 		len = colon - display;
+ 	}
+ 
+-	(void)sprintf(value,"%.*s.%d",len,display,screen);
++	(void)sprintf(value,"%*s.%d",len,display,screen);
+ 
+ 	putEnv(env,"DISPLAY",value);
+ }

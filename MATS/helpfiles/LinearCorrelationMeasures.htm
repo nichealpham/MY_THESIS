@@ -1,0 +1,440 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Linear and Monotonic Correlation Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="925" height="2525">
+    <tr>
+      <td align="center" colspan="2" height="636" width="919"><span lang="en-us"><font size="5">
+      Linear and Monotonic Correlation Measures</font></span><p>
+      <img border="0" src="LinearCorrelationMeasures.jpg" width="413" height="627"></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="1" width="919"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">The standard measure of 
+		linear correlation in a time series is the autocorrelation given as a 
+		function of the delay parameter. The autocorrelation for each delay <i>t</i> is 
+		actually the Pearson correlation coefficient for the variable pair 
+		(<i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>)). In this sense, the autocorrelation at each delay 
+		<i>t</i> can be 
+		estimated by other estimates of the pair-wise correlation and here the 
+		Kendall and Spearman correlation coefficients are also implemented 
+		giving the Kendall and Spearman autocorrelation, respectively. Note that the autocorrelation (Pearson, Kendall, 
+		Spearman) at different delays are considered as different measures, so that for a range of delay values the 
+		same number of measures are generated. We consider in this group also 
+		the partial autocorrelation that measures the correlation of the 
+		variable pair (<i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>)) 
+		accounting for the intermediate variables <i>x</i>(<i>i+1</i>),...,<i>x</i>(<i>i+t-1</i>) 
+		(partial autocorrelation is the same as Pearson autocorrelation for <i>t</i>=1).</span><p><span lang="en-us">In 
+		addition to the autocorrelation functions, the cumulative autocorrelations 
+		(Pearson, Kendall, Spearman) are implemented as new measures that sums up 
+		the autocorrelation magnitudes for the delays up to a given delay. </span></p>
+		<p><span lang="en-us">There are two special values of the 
+		autocorrelation function and the respective delays are used in time series analysis: the decorrelation time, 
+		i.e. the delay for which the autocorrelation falls for the first time to 
+		the level 1/e, and the delay of zero autocorrelation, for which the 
+		autocorrelation crosses zero for the first time. These specific delays 
+		are computed for all three types of autocorrelation. </span>
+		<p><span lang="en-us">The definition of the Pearson, Kendall and 
+		Spearman correlation coefficients can be found in any standard textbook 
+		of statistics. The Pearson autocorrelation is a basic tool of linear 
+		analysis of time series and statistical description for this 
+		(estimation, inference) can be found in any standard book on time 
+		series analysis, e.g. see </span>
+		<p><span lang="en-us">Box, G.E.P., Jenkins, G.M., and Reinsel, G.C. 
+		(1994), <i>Time Series Analysis: Forecasting and Control</i>, 
+		Prentice-Hall, Third Edition, New Jersey. </span>
+		<p><span lang="en-us">The partial autocorrelation for each lag <i>t</i> 
+		is the last coefficient of the autoregressive (AR) model of order <i>t</i> 
+		and we implement the AR fitting to derive the partial autocorrelation 
+		measure for different given lags. The reader may refer to the same book 
+		for further details.</span><p><span lang="en-us">The implementation of Kendall 
+		and Spearman correlation coefficient on the estimation of the 
+		autocorrelation is not standard but may be useful in some cases, as when 
+		the marginal distribution of a time series deviates substantially from 
+		Gaussian. Note that the Kendall and Spearman autocorrelation&nbsp; 
+		estimate correlations in the ranks of the samples in the time series 
+		and therefore cannot be considered as linear measures. We call them <i>
+		monotonic measures</i>, since their values do not change under monotonic 
+		transforms of the time series.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">Pearson 
+      Autocorrelation (PearsAutoc)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="90" align="justify"></td>
+      <td width="849" height="90" align="justify"><span lang="en-us">Pearson 
+		Autocorrelation is the 
+		standard autocorrelation for the given range of delays. The 
+		following parameter can be specified:</span><p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10. </span></p>
+		<p><span lang="en-us">In addition the Cumulative Pearson Autocorrelation 
+		is computed for the same range of delays. Also, if the autocorrelation 
+		for delays up to the maximum given delay crosses the 1/e or zero level 
+		the delay of decorrelation or zero-autocorrelation, respectively, is 
+		assigned a value. The cumulative Pearson autocorrelation and the delay 
+		of decorrelation and zero autocorrelation can then be simply assigned to 
+		the respective measures if these are selected with the same set of 
+		delay values.</span></p>
+		<p><span lang="en-us">Note that when the delay parameter is changed, the 
+		change is passed to the same parameter in the measures of Cumulative 
+		Pearson Autocorrelation, Pearson Decorrelation Time and Zero Pearson 
+		Autocorrelation Time. </span>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for delay (t) '1:5 10 20', then Pearson Autocorrelation is computed 
+		for these delays and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">PearsAutoct1<br>
+		PearsAutoct2<br>
+		PearsAutoct3<br>
+		PearsAutoct4<br>
+		PearsAutoct5<br>
+		PearsAutoct10<br>
+		PearsAutoct20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="32" width="919" align="justify">
+  &nbsp;<p><b><span lang="en-us"><font size="4">Cumulative Pearson Autocorrelation (PearsCAuto)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="49" align="justify"></td>
+      <td width="849" height="49" align="justify"><span lang="en-us">Cumulative 
+		Pearson Autocorrelation is the 
+		cumulative function of the Pearson autocorrelation for the given range of delays. The 
+		delay parameter is determined as for the Pearson autocorrelation. </span>The
+		<span lang="en-us">C</span>umulative&nbsp;Pearson <span lang="en-us">A</span>utocorrelation
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the absolute 
+      values of the Pearson&nbsp;autocorrelation up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for delay (t) '10 20', then Cumulative Pearson Autocorrelation 
+		is computed for these delays and in the measure list the following 
+		measure names will appear</span><p><span lang="en-us">PearsCAutot10<br>
+		PearsCAutoct20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="30" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Pearson 
+      Decorrelation Time (PearsDecoT)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The Pearson 
+		Decorrelation Time is the delay for which the Pearson autocorrelation 
+		falls to the level 1/e. So, if the autocorrelation, computed for delays up to the 
+		maximum of the given delays (if more than one delay value is given), 
+		crosses 1/e for a delay <i>t<sub>e</sub></i>, then the Pearson Decorrelation Time is 
+		assigned <i>t<sub>e</sub></i> otherwise it has a NaN value (NaN=not a number).</span><p>
+		<span lang="en-us"><i>Example</i>: If the user selects this measure by 
+		activating the check box in the beginning of the measure line and sets 
+		for delay (t) '10 20', then Pearson Decorrelation Time is computed and 
+		in the measure list the following measure name will appear (for the 
+		maximum <i>t</i>=20)</span><p><span lang="en-us">PearsDecoTt20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="31" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Zero Pearson 
+      Autocorrelation Time (PearsZeroT)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The Zero 
+		Pearson Autocorrelation Time is the delay for which the Pearson 
+		autocorrelation falls to the zero level. So, if the autocorrelation, 
+		computed for 
+		delays up to the maximum of the given delays (if more than one delay 
+		value is given), crosses zero for a delay <i>t<sub>0</sub></i>, then the Zero Pearson 
+		Autocorrelation Time is assigned to <i>t<sub>0</sub></i> otherwise it has a NaN value (NaN=not 
+		a number).</span><p><span lang="en-us"><i>Example</i>: If the user 
+		selects this measure by activating the check box in the beginning of the 
+		measure line and sets for delay (t) '10 20', then Zero Pearson 
+		Autocorrelation Time is computed and in the measure list the following 
+		measure name will appear (for the maximum <i>t</i>=20)</span><p>
+		<span lang="en-us">PearsZeroTt20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">
+		Kendall 
+      Autocorrelation (KendaAutoc)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="90" align="justify"></td>
+      <td width="849" height="90" align="justify"><span lang="en-us">Kendall 
+		Autocorrelation is the estimate of autocorrelation for the given range of delays 
+		making use of the Kendall correlation coefficient. For each delay <i>t</i>, the 
+		Kendall Autocorrelation is actually the Kendall (or so-called tau) correlation 
+		coefficient for the variable pair (<i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>)). The 
+		following parameter can be specified:</span><p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10. </span></p>
+		<p><span lang="en-us">In addition, the Cumulative Kendall Autocorrelation 
+		is computed for the same range of delays. Also, if the Kendall autocorrelation 
+		for delays up to the maximum given delay crosses the 1/e or zero level 
+		the delay of Kendall decorrelation or zero Kendall autocorrelation, respectively, is 
+		assigned a value. The cumulative Kendall autocorrelation and the delay 
+		of Kendall decorrelation and zero Kendall autocorrelation can then be simply assigned to 
+		the respective measures, if these are selected with the same set of 
+		delay values.</span></p>
+		<p><span lang="en-us">Note that when the delay parameter is changed, the 
+		change is passed to the same parameter in the measures of Cumulative 
+		Kendall Autocorrelation, Kendall Decorrelation Time and Zero Kendall 
+		Autocorrelation Time. </span>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for delay (t) '1:5 10 20', then Kendall Autocorrelation is computed 
+		for these delays and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">KendaAutoct1<br>
+		KendaAutoct2<br>
+		KendaAutoct3<br>
+		KendaAutoct4<br>
+		KendaAutoct5<br>
+		KendaAutoct10<br>
+		KendaAutoct20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="32" width="919" align="justify">
+  &nbsp;<p><b><span lang="en-us"><font size="4">Cumulative Kendall Autocorrelation (KendaCAuto)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="49" align="justify"></td>
+      <td width="849" height="49" align="justify"><span lang="en-us">Cumulative 
+		Kendall Autocorrelation is the 
+		cumulative function of the Kendall autocorrelation for the given range of delays. The 
+		delay parameter is determined as for the Kendall autocorrelation. </span>The
+		<span lang="en-us">C</span>umulative&nbsp;Kendall <span lang="en-us">A</span>utocorrelation
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the absolute 
+      values of the Kendall&nbsp;autocorrelation up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for delay (t) '10 20', then Cumulative Kendall Autocorrelation 
+		is computed for these delays and in the measure list the following 
+		measure names will appear</span><p><span lang="en-us">KendaCAutot10<br>
+		KendaCAutoct20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="30" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">
+		Kendall 
+      Decorrelation Time (KendaDecoT)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The Kendall 
+		Decorrelation Time is the delay for which the Kendall autocorrelation 
+		falls to the level 1/e. So, if the autocorrelation, computed for delays up to the 
+		maximum of the given delays (if more than one delay value is given), 
+		crosses 1/e for a delay <i>t<sub>e</sub></i>, then the Kendall Decorrelation Time is 
+		assigned <i>t<sub>e</sub></i> otherwise it has a NaN value (NaN = not a number).</span><p>
+		<span lang="en-us"><i>Example</i>: If the user selects this measure by 
+		activating the check box in the beginning of the measure line and sets 
+		for delay (t) '10 20', then Kendall Decorrelation Time is computed and 
+		in the measure list the following measure name will appear (for the 
+		maximum <i>t</i>=20)</span><p><span lang="en-us">KendaDecoTt20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="31" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Zero 
+		Kendall 
+      Autocorrelation Time (KendaZeroT)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The Zero 
+		Kendall Autocorrelation Time is the delay for which the Kendall 
+		autocorrelation falls to the zero level. So, if the autocorrelation, 
+		computed for 
+		delays up to the maximum of the given delays (if more than one delay 
+		value is given), crosses zero for a delay <i>t<sub>0</sub></i>, then the Zero Kendall 
+		Autocorrelation Time is assigned to <i>t<sub>0</sub></i> otherwise it has a NaN value (NaN 
+		= not 
+		a number).</span><p><span lang="en-us"><i>Example</i>: If the user 
+		selects this measure by activating the check box in the beginning of the 
+		measure line and sets for delay (t) '10 20', then Zero Kendall 
+		Autocorrelation Time is computed and in the measure list the following 
+		measure name will appear (for the maximum <i>t</i>=20)</span><p>
+		<span lang="en-us">KendaZeroTt20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p>
+		<span lang="en-us"><font size="4"><b>Spearman</b></font></span><b><span lang="en-us"><font size="4">
+		Autocorrelation (SpearAutoc)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="90" align="justify"></td>
+      <td width="849" height="90" align="justify"><span lang="en-us">Spearman 
+		Autocorrelation is the estimate of autocorrelation for the given range of delays 
+		making use of the Spearman correlation coefficient. For each delay <i>t</i>, 
+		the Spearman Autocorrelation is actually the Spearman 
+		correlation coefficient for the variable pair (<i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>)). The 
+		following parameter can be specified:</span><p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10. </span></p>
+		<p><span lang="en-us">In addition the Cumulative Spearman Autocorrelation 
+		is computed for the same range of delays. Also, if the Spearman autocorrelation, 
+		computed 
+		for delays up to the maximum given delay, crosses the 1/e or zero level 
+		the delay of Spearman decorrelation or zero Spearman autocorrelation, respectively, is 
+		assigned a value. The cumulative Spearman autocorrelation and the delay 
+		of Spearman decorrelation and zero Spearman autocorrelation can then be simply assigned to 
+		the respective measures, if these are selected with the same set of 
+		delay values.</span></p>
+		<p><span lang="en-us">Note that when the delay parameter is changed, the 
+		change is passed to the same parameter in the measures of Cumulative 
+		Spearman Autocorrelation, Spearman Decorrelation Time and Zero Spearman 
+		Autocorrelation Time.</span><p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for delay (t) '1:5 10 20', then Spearman Autocorrelation is computed 
+		for these delays and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">SpearAutoct1<br>
+		SpearAutoct2<br>
+		SpearAutoct3<br>
+		SpearAutoct4<br>
+		SpearAutoct5<br>
+		SpearAutoct10<br>
+		SpearAutoct20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="32" width="919" align="justify">
+  &nbsp;<p><b><span lang="en-us"><font size="4">Cumulative Spearman Autocorrelation (SpearCAuto)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="49" align="justify"></td>
+      <td width="849" height="49" align="justify"><span lang="en-us">Cumulative 
+		Spearman Autocorrelation is the 
+		cumulative function of the Spearman autocorrelation for the given range of delays. The 
+		delay parameter is determined as for the Spearman autocorrelation.
+		</span>The <span lang="en-us">C</span>umulative&nbsp;Spearman
+		<span lang="en-us">A</span>utocorrelation
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the absolute 
+      values of the Spearman&nbsp;autocorrelation up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for delay (t) '10 20', then Cumulative Spearman Autocorrelation 
+		is computed for these delays and in the measure list the following 
+		measure names will appear</span><p><span lang="en-us">SpearCAutot10<br>
+		SpearCAutoct20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="30" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">
+		Spearman 
+      Decorrelation Time (SpearDecoT)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The 
+		Spearman 
+		Decorrelation Time is the delay for which the Spearman autocorrelation 
+		falls to the level 1/e. So, if the autocorrelation, computed for delays up to the 
+		maximum of the given delays (if more than one delay value is given), 
+		crosses 1/e for a delay <i>t<sub>e</sub></i>, then the Spearman Decorrelation Time is 
+		assigned <i>t<sub>e</sub></i> otherwise it has a NaN value (NaN = not a number).</span><p>
+		<span lang="en-us"><i>Example</i>: If the user selects this measure by 
+		activating the check box in the beginning of the measure line and sets 
+		for delay (t) '10 20', then Spearman Decorrelation Time is computed and 
+		in the measure list the following measure name will appear (for the 
+		maximum <i>t</i>=20)</span><p><span lang="en-us">SpearDecoTt20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="31" width="919" align="justify">&nbsp;<p><b>
+		<span lang="en-us"><font size="4">Zero 
+		Spearman 
+      Autocorrelation Time (SpearZeroT)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="69" align="justify"></td>
+      <td width="849" height="69" align="justify"><span lang="en-us">The Zero 
+		Spearman Autocorrelation Time is the delay for which the Spearman 
+		autocorrelation falls to the zero level. So, if the autocorrelation, 
+		computed for 
+		delays up to the maximum of the given delays (if more than one delay 
+		value is given), crosses zero for a delay <i>t<sub>0</sub></i>, then the Zero Spearman 
+		Autocorrelation Time is assigned to <i>t<sub>0</sub></i> otherwise it has a NaN value (NaN 
+		= not 
+		a number).</span><p><span lang="en-us"><i>Example</i>: If the user 
+		selects this measure by activating the check box in the beginning of the 
+		measure line and sets for delay (t) '10 20', then Zero Spearman 
+		Autocorrelation Time is computed and in the measure list the following 
+		measure name will appear (for the maximum <i>t</i>=20)</span><p>
+		<span lang="en-us">SpearZeroTt20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" width="919" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">Partial 
+      Autocorrelation (PartialAut)</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="66" height="90" align="justify"></td>
+      <td width="849" height="90" align="justify"><span lang="en-us">Partial 
+		Autocorrelation for a lag <i>t</i> is the correlation of the variable 
+		pair (<i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>)) accounting for 
+		the intermediate variables <i>x</i>(<i>i+1</i>),...,<i>x</i>(<i>i+t-1</i>). 
+		Here it can be computed for the given range of delays. The 
+		following parameter can be specified:</span><p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10. </span></p>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for delay (t) '1:5 10 20', then Partial Autocorrelation is computed 
+		for these delays and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">PartialAutt1<br>
+		PartialAutt2<br>
+		PartialAutt3<br>
+		PartialAutt4<br>
+		PartialAutt5<br>
+		PartialAutt10<br>
+		PartialAutt20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>OK</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Linear and Monotonic Correlation Measures&quot; will disappear and the user 
+		will be moved to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be stored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be ignored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    		</tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>

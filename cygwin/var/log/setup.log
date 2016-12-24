@@ -1,0 +1,300 @@
+2016/10/25 19:01:05 Starting cygwin install, version 2.876
+2016/10/25 19:01:05 User has backup/restore rights
+2016/10/25 19:01:05 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2016/10/25 19:01:05 Current Directory: C:\Users\Pe Tho\Downloads
+2016/10/25 19:01:05 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2016/10/25 19:01:10 source: network install
+2016/10/25 19:01:24 root: D:\thesis\cygwin system
+2016/10/25 19:01:25 Selected local directory: C:\Users\Pe Tho\Downloads
+2016/10/25 19:01:26 net: Direct
+2016/10/25 19:01:34 site: ftp://ftp.gtlib.gatech.edu/pub/cygwin/
+2016/10/25 19:01:43 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2016/10/25 19:01:43 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2016/10/25 19:03:21 Adding required dependency bzip2: Selecting version 1.0.6-2 for installation.
+2016/10/25 19:03:21 Adding required dependency ca-certificates: Selecting version 2.10-1 for installation.
+2016/10/25 19:03:21 Adding required dependency desktop-file-utils: Selecting version 0.23-1 for installation.
+2016/10/25 19:03:21 Adding required dependency font-bh-dpi75: Selecting version 7.5-3 for installation.
+2016/10/25 19:03:21 Adding required dependency font-bh-lucidatypewriter-dpi75: Selecting version 7.5-3 for installation.
+2016/10/25 19:03:21 Adding required dependency font-sun-misc: Selecting version 7.5-3 for installation.
+2016/10/25 19:03:21 Adding required dependency gamin: Selecting version 0.1.10-15 for installation.
+2016/10/25 19:03:21 Adding required dependency groff: Selecting version 1.22.3-1 for installation.
+2016/10/25 19:03:21 Adding required dependency gsettings-desktop-schemas: Selecting version 3.18.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency kbproto: Selecting version 1.0.7-1 for installation.
+2016/10/25 19:03:21 Adding required dependency less: Selecting version 481-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libargp: Selecting version 20110921-3 for installation.
+2016/10/25 19:03:21 Adding required dependency libattr1: Selecting version 2.4.46-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libblkid1: Selecting version 2.25.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libbz2_1: Selecting version 1.0.6-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libcom_err2: Selecting version 1.42.12-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libfam0: Selecting version 0.1.10-15 for installation.
+2016/10/25 19:03:21 Adding required dependency libffi6: Selecting version 3.2.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libgcc1: Selecting version 5.4.0-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libgdbm4: Selecting version 1.12-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libglib2.0_0: Selecting version 2.46.2-4 for installation.
+2016/10/25 19:03:21 Adding required dependency libgmp10: Selecting version 6.1.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libgssapi_krb5_2: Selecting version 1.14.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libiconv: Selecting version 1.14-3 for installation.
+2016/10/25 19:03:21 Adding required dependency libiconv2: Selecting version 1.14-3 for installation.
+2016/10/25 19:03:21 Adding required dependency libintl8: Selecting version 0.19.8.1-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libk5crypto3: Selecting version 1.14.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libkrb5support0: Selecting version 1.14.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libkrb5_3: Selecting version 1.14.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency liblzma5: Selecting version 5.2.2-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libmpfr4: Selecting version 3.1.5-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libncursesw10: Selecting version 6.0-8.20160917 for installation.
+2016/10/25 19:03:21 Adding required dependency libp11-kit0: Selecting version 0.22.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libpcre1: Selecting version 8.39-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libpipeline1: Selecting version 1.4.0-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libpopt-common: Selecting version 1.16-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libpopt0: Selecting version 1.16-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libsmartcols1: Selecting version 2.25.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libssp0: Selecting version 5.4.0-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libstdc++6: Selecting version 5.4.0-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libtasn1_6: Selecting version 4.9-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libtirpc-common: Selecting version 0.3.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libtirpc-devel: Selecting version 0.3.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libtirpc1: Selecting version 0.3.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libuuid1: Selecting version 2.25.2-2 for installation.
+2016/10/25 19:03:21 Adding required dependency libX11-devel: Selecting version 1.6.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libX11_6: Selecting version 1.6.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libXau-devel: Selecting version 1.0.8-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libXau6: Selecting version 1.0.8-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libxcb-devel: Selecting version 1.12-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libxcb1: Selecting version 1.12-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libXdmcp-devel: Selecting version 1.1.2-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libXdmcp6: Selecting version 1.1.2-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libXext6: Selecting version 1.3.3-1 for installation.
+2016/10/25 19:03:21 Adding required dependency libxml2: Selecting version 2.9.4-1 for installation.
+2016/10/25 19:03:21 Adding required dependency p11-kit: Selecting version 0.22.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency p11-kit-trust: Selecting version 0.22.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency pkg-config: Selecting version 0.29.1-1 for installation.
+2016/10/25 19:03:21 Adding required dependency shared-mime-info: Selecting version 1.6-3 for installation.
+2016/10/25 19:03:21 Adding required dependency xorg-x11-fonts-dpi75: Selecting version 7.5-3 for installation.
+2016/10/25 19:03:21 Adding required dependency xorg-x11-fonts-misc: Selecting version 7.5-3 for installation.
+2016/10/25 19:03:21 Adding required dependency xproto: Selecting version 7.0.31-1 for installation.
+2016/10/25 19:03:21 Adding required dependency xz: Selecting version 5.2.2-1 for installation.
+2016/10/25 19:03:21 Adding required dependency zlib0: Selecting version 1.2.8-3 for installation.
+2016/10/25 19:03:22 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001004-1.tar.xz
+2016/10/25 19:03:24 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2016/10/25 19:03:26 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-1.tar.xz
+2016/10/25 19:03:27 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/base-files/base-files-4.2-4.tar.xz
+2016/10/25 19:03:33 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bash/bash-4.3.46-7.tar.xz
+2016/10/25 19:03:36 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2016/10/25 19:03:39 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2.10-1.tar.xz
+2016/10/25 19:03:46 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/coreutils/coreutils-8.25-3.tar.xz
+2016/10/25 19:03:48 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/cygutils/cygutils-1.4.15-2.tar.xz
+2016/10/25 19:03:53 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/cygwin/cygwin-2.6.0-1.tar.xz
+2016/10/25 19:03:55 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/dash/dash-0.5.8-3.tar.xz
+2016/10/25 19:03:57 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/desktop-file-utils/desktop-file-utils-0.23-1.tar.xz
+2016/10/25 19:03:58 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/editrights/editrights-1.03-1.tar.xz
+2016/10/25 19:04:01 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/file/file-5.25-1.tar.xz
+2016/10/25 19:04:04 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/findutils/findutils-4.6.0-1.tar.xz
+2016/10/25 19:04:05 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/font-bh-dpi75/font-bh-dpi75-7.5-3.tar.xz
+2016/10/25 19:04:06 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/font-bh-lucidatypewriter-dpi75/font-bh-lucidatypewriter-dpi75-7.5-3.tar.xz
+2016/10/25 19:04:08 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/font-sun-misc/font-sun-misc-7.5-3.tar.xz
+2016/10/25 19:04:10 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gamin/gamin-0.1.10-15.tar.xz
+2016/10/25 19:04:13 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gawk/gawk-4.1.4-1.tar.xz
+2016/10/25 19:04:15 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/getent/getent-2.18.90-4.tar.xz
+2016/10/25 19:04:17 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/grep/grep-2.25-1.tar.xz
+2016/10/25 19:04:23 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/groff/groff-1.22.3-1.tar.xz
+2016/10/25 19:04:26 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/gsettings-desktop-schemas/gsettings-desktop-schemas-3.18.1-1.tar.xz
+2016/10/25 19:04:28 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gzip/gzip-1.8-1.tar.xz
+2016/10/25 19:04:29 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/hostname/hostname-3.13-1.tar.bz2
+2016/10/25 19:04:32 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/texinfo/info/info-6.1-2.tar.xz
+2016/10/25 19:04:33 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ipc-utils/ipc-utils-1.0-1.tar.bz2
+2016/10/25 19:04:35 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/kbproto/kbproto-1.0.7-1.tar.xz
+2016/10/25 19:04:37 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/less/less-481-1.tar.xz
+2016/10/25 19:04:39 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libX11/libX11-devel/libX11-devel-1.6.4-1.tar.xz
+2016/10/25 19:04:43 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libX11/libX11_6/libX11_6-1.6.4-1.tar.xz
+2016/10/25 19:04:44 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXau/libXau-devel/libXau-devel-1.0.8-1.tar.bz2
+2016/10/25 19:04:46 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXau/libXau6/libXau6-1.0.8-1.tar.bz2
+2016/10/25 19:04:47 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXdmcp/libXdmcp-devel/libXdmcp-devel-1.1.2-1.tar.xz
+2016/10/25 19:04:49 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXdmcp/libXdmcp6/libXdmcp6-1.1.2-1.tar.xz
+2016/10/25 19:04:52 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXext/libXext6/libXext6-1.3.3-1.tar.xz
+2016/10/25 19:04:53 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libargp/libargp-20110921-3.tar.xz
+2016/10/25 19:04:55 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/attr/libattr1/libattr1-2.4.46-1.tar.bz2
+2016/10/25 19:04:56 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libblkid1/libblkid1-2.25.2-2.tar.xz
+2016/10/25 19:04:58 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bzip2/libbz2_1/libbz2_1-1.0.6-2.tar.bz2
+2016/10/25 19:04:59 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/e2fsprogs/libcom_err2/libcom_err2-1.42.12-2.tar.xz
+2016/10/25 19:05:01 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gamin/libfam0/libfam0-0.1.10-15.tar.xz
+2016/10/25 19:05:02 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libffi/libffi6/libffi6-3.2.1-1.tar.xz
+2016/10/25 19:05:04 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libgcc1/libgcc1-5.4.0-1.tar.xz
+2016/10/25 19:05:06 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gdbm/libgdbm4/libgdbm4-1.12-1.tar.xz
+2016/10/25 19:05:15 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/glib2.0/libglib2.0_0/libglib2.0_0-2.46.2-4.tar.xz
+2016/10/25 19:05:18 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gmp/libgmp10/libgmp10-6.1.1-1.tar.xz
+2016/10/25 19:05:20 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libgssapi_krb5_2/libgssapi_krb5_2-1.14.4-1.tar.xz
+2016/10/25 19:05:22 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libiconv/libiconv-1.14-3.tar.xz
+2016/10/25 19:05:26 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libiconv/libiconv2/libiconv2-1.14-3.tar.xz
+2016/10/25 19:05:27 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gettext/libintl8/libintl8-0.19.8.1-2.tar.xz
+2016/10/25 19:05:29 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libk5crypto3/libk5crypto3-1.14.4-1.tar.xz
+2016/10/25 19:05:31 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libkrb5_3/libkrb5_3-1.14.4-1.tar.xz
+2016/10/25 19:05:33 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libkrb5support0/libkrb5support0-1.14.4-1.tar.xz
+2016/10/25 19:05:34 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xz/liblzma5/liblzma5-5.2.2-1.tar.xz
+2016/10/25 19:05:37 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/mpfr/libmpfr4/libmpfr4-3.1.5-1.tar.xz
+2016/10/25 19:05:39 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/libncursesw10/libncursesw10-6.0-8.20160917.tar.xz
+2016/10/25 19:05:45 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/openssl/libopenssl100/libopenssl100-1.0.2j-1.tar.xz
+2016/10/25 19:05:48 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/libp11-kit0/libp11-kit0-0.22.1-1.tar.xz
+2016/10/25 19:05:51 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/pcre/libpcre1/libpcre1-8.39-1.tar.xz
+2016/10/25 19:05:52 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libpipeline/libpipeline1/libpipeline1-1.4.0-1.tar.xz
+2016/10/25 19:05:54 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/popt/libpopt-common/libpopt-common-1.16-2.tar.xz
+2016/10/25 19:05:55 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/popt/libpopt0/libpopt0-1.16-2.tar.xz
+2016/10/25 19:05:58 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/readline/libreadline7/libreadline7-6.3.8-1.tar.xz
+2016/10/25 19:06:00 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libsmartcols1/libsmartcols1-2.25.2-2.tar.xz
+2016/10/25 19:06:01 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libssp0/libssp0-5.4.0-1.tar.xz
+2016/10/25 19:06:08 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libstdc++6/libstdc++6-5.4.0-1.tar.xz
+2016/10/25 19:06:09 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtasn1/libtasn1_6/libtasn1_6-4.9-1.tar.xz
+2016/10/25 19:06:11 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc-common/libtirpc-common-0.3.2-2.tar.xz
+2016/10/25 19:06:13 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc-devel/libtirpc-devel-0.3.2-2.tar.xz
+2016/10/25 19:06:16 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc1/libtirpc1-0.3.2-2.tar.xz
+2016/10/25 19:06:19 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libuuid1/libuuid1-2.25.2-2.tar.xz
+2016/10/25 19:06:21 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxcb/libxcb-devel/libxcb-devel-1.12-1.tar.xz
+2016/10/25 19:06:25 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxcb/libxcb1/libxcb1-1.12-1.tar.xz
+2016/10/25 19:06:35 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxml2/libxml2-2.9.4-1.tar.xz
+2016/10/25 19:06:37 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/login/login-1.11-1.tar.xz
+2016/10/25 19:06:45 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/man-db/man-db-2.7.5-2.tar.xz
+2016/10/25 19:06:48 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/mintty/mintty-2.6.2-0.tar.xz
+2016/10/25 19:06:52 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/ncurses-6.0-8.20160917.tar.xz
+2016/10/25 19:06:59 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/openssl/openssl-1.0.2j-1.tar.xz
+2016/10/25 19:07:01 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/p11-kit-0.22.1-1.tar.xz
+2016/10/25 19:07:03 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/p11-kit-trust/p11-kit-trust-0.22.1-1.tar.xz
+2016/10/25 19:07:06 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/pkg-config/pkg-config-0.29.1-1.tar.xz
+2016/10/25 19:07:10 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/rebase/rebase-4.4.2-1.tar.xz
+2016/10/25 19:07:12 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/run/run-1.3.4-2.tar.xz
+2016/10/25 19:07:16 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/sed/sed-4.2.2-3.tar.bz2
+2016/10/25 19:07:21 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/shared-mime-info/shared-mime-info-1.6-3.tar.xz
+2016/10/25 19:07:27 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/tar/tar-1.28-1.tar.xz
+2016/10/25 19:07:29 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/terminfo/terminfo-6.0-8.20160917.tar.xz
+2016/10/25 19:07:32 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/tzdata/tzdata-2016h-1.tar.xz
+2016/10/25 19:07:37 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/util-linux-2.25.2-2.tar.xz
+2016/10/25 19:07:40 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/vim/vim-minimal/vim-minimal-7.4.2367-1.tar.xz
+2016/10/25 19:07:42 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/which/which-2.20-2.tar.bz2
+2016/10/25 19:08:20 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/xorg-x11-fonts-dpi75/xorg-x11-fonts-dpi75-7.5-3.tar.xz
+2016/10/25 19:08:41 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/xorg-x11-fonts-misc/xorg-x11-fonts-misc-7.5-3.tar.xz
+2016/10/25 19:08:44 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xproto/xproto-7.0.31-1.tar.xz
+2016/10/25 19:08:48 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-1.tar.bz2
+2016/10/25 19:08:55 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-1-src.tar.bz2
+2016/10/25 19:08:57 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-devel/xview-devel-3.2p1.4-28-2.tar.xz
+2016/10/25 19:09:09 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-2-src.tar.xz
+2016/10/25 19:09:12 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xz/xz-5.2.2-1.tar.xz
+2016/10/25 19:09:14 Downloaded C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/zlib/zlib0/zlib0-1.2.8-3.tar.xz
+2016/10/25 19:09:19 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001004-1.tar.xz
+2016/10/25 19:09:19 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2016/10/25 19:09:20 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-1.tar.xz
+2016/10/25 19:09:20 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/base-files/base-files-4.2-4.tar.xz
+2016/10/25 19:09:20 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bash/bash-4.3.46-7.tar.xz
+2016/10/25 19:09:22 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bzip2/bzip2-1.0.6-2.tar.bz2
+2016/10/25 19:09:22 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2.10-1.tar.xz
+2016/10/25 19:09:23 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/coreutils/coreutils-8.25-3.tar.xz
+2016/10/25 19:09:28 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/cygutils/cygutils-1.4.15-2.tar.xz
+2016/10/25 19:09:28 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/cygwin/cygwin-2.6.0-1.tar.xz
+2016/10/25 19:09:29 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/dash/dash-0.5.8-3.tar.xz
+2016/10/25 19:09:30 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/desktop-file-utils/desktop-file-utils-0.23-1.tar.xz
+2016/10/25 19:09:30 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/editrights/editrights-1.03-1.tar.xz
+2016/10/25 19:09:30 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/file/file-5.25-1.tar.xz
+2016/10/25 19:09:30 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/findutils/findutils-4.6.0-1.tar.xz
+2016/10/25 19:09:31 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gamin/gamin-0.1.10-15.tar.xz
+2016/10/25 19:09:31 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gawk/gawk-4.1.4-1.tar.xz
+2016/10/25 19:09:32 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/getent/getent-2.18.90-4.tar.xz
+2016/10/25 19:09:32 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/grep/grep-2.25-1.tar.xz
+2016/10/25 19:09:33 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/groff/groff-1.22.3-1.tar.xz
+2016/10/25 19:09:42 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/gsettings-desktop-schemas/gsettings-desktop-schemas-3.18.1-1.tar.xz
+2016/10/25 19:09:43 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gzip/gzip-1.8-1.tar.xz
+2016/10/25 19:09:44 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/hostname/hostname-3.13-1.tar.bz2
+2016/10/25 19:09:44 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/texinfo/info/info-6.1-2.tar.xz
+2016/10/25 19:09:44 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ipc-utils/ipc-utils-1.0-1.tar.bz2
+2016/10/25 19:09:44 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/kbproto/kbproto-1.0.7-1.tar.xz
+2016/10/25 19:09:45 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/less/less-481-1.tar.xz
+2016/10/25 19:09:45 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libX11/libX11-devel/libX11-devel-1.6.4-1.tar.xz
+2016/10/25 19:09:45 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libX11/libX11_6/libX11_6-1.6.4-1.tar.xz
+2016/10/25 19:09:47 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXau/libXau-devel/libXau-devel-1.0.8-1.tar.bz2
+2016/10/25 19:09:47 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXau/libXau6/libXau6-1.0.8-1.tar.bz2
+2016/10/25 19:09:47 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXdmcp/libXdmcp-devel/libXdmcp-devel-1.1.2-1.tar.xz
+2016/10/25 19:09:47 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXdmcp/libXdmcp6/libXdmcp6-1.1.2-1.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libXext/libXext6/libXext6-1.3.3-1.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libargp/libargp-20110921-3.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/attr/libattr1/libattr1-2.4.46-1.tar.bz2
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libblkid1/libblkid1-2.25.2-2.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/bzip2/libbz2_1/libbz2_1-1.0.6-2.tar.bz2
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/e2fsprogs/libcom_err2/libcom_err2-1.42.12-2.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gamin/libfam0/libfam0-0.1.10-15.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libffi/libffi6/libffi6-3.2.1-1.tar.xz
+2016/10/25 19:09:48 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libgcc1/libgcc1-5.4.0-1.tar.xz
+2016/10/25 19:09:49 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gdbm/libgdbm4/libgdbm4-1.12-1.tar.xz
+2016/10/25 19:09:49 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/glib2.0/libglib2.0_0/libglib2.0_0-2.46.2-4.tar.xz
+2016/10/25 19:09:51 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gmp/libgmp10/libgmp10-6.1.1-1.tar.xz
+2016/10/25 19:09:51 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libgssapi_krb5_2/libgssapi_krb5_2-1.14.4-1.tar.xz
+2016/10/25 19:09:51 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libiconv/libiconv-1.14-3.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libiconv/libiconv2/libiconv2-1.14-3.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gettext/libintl8/libintl8-0.19.8.1-2.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libk5crypto3/libk5crypto3-1.14.4-1.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libkrb5_3/libkrb5_3-1.14.4-1.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/krb5/libkrb5support0/libkrb5support0-1.14.4-1.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xz/liblzma5/liblzma5-5.2.2-1.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/mpfr/libmpfr4/libmpfr4-3.1.5-1.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/libncursesw10/libncursesw10-6.0-8.20160917.tar.xz
+2016/10/25 19:09:52 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/openssl/libopenssl100/libopenssl100-1.0.2j-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/libp11-kit0/libp11-kit0-0.22.1-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/pcre/libpcre1/libpcre1-8.39-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libpipeline/libpipeline1/libpipeline1-1.4.0-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/popt/libpopt-common/libpopt-common-1.16-2.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/popt/libpopt0/libpopt0-1.16-2.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/readline/libreadline7/libreadline7-6.3.8-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libsmartcols1/libsmartcols1-2.25.2-2.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libssp0/libssp0-5.4.0-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/gcc/libstdc++6/libstdc++6-5.4.0-1.tar.xz
+2016/10/25 19:09:53 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtasn1/libtasn1_6/libtasn1_6-4.9-1.tar.xz
+2016/10/25 19:09:54 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc-common/libtirpc-common-0.3.2-2.tar.xz
+2016/10/25 19:09:54 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc-devel/libtirpc-devel-0.3.2-2.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libtirpc/libtirpc1/libtirpc1-0.3.2-2.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/libuuid1/libuuid1-2.25.2-2.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxcb/libxcb-devel/libxcb-devel-1.12-1.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxcb/libxcb1/libxcb1-1.12-1.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/libxml2/libxml2-2.9.4-1.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/login/login-1.11-1.tar.xz
+2016/10/25 19:09:55 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/man-db/man-db-2.7.5-2.tar.xz
+2016/10/25 19:09:57 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/mintty/mintty-2.6.2-0.tar.xz
+2016/10/25 19:09:58 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/ncurses-6.0-8.20160917.tar.xz
+2016/10/25 19:09:58 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/openssl/openssl-1.0.2j-1.tar.xz
+2016/10/25 19:09:59 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/p11-kit-0.22.1-1.tar.xz
+2016/10/25 19:09:59 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/p11-kit/p11-kit-trust/p11-kit-trust-0.22.1-1.tar.xz
+2016/10/25 19:09:59 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/pkg-config/pkg-config-0.29.1-1.tar.xz
+2016/10/25 19:09:59 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/rebase/rebase-4.4.2-1.tar.xz
+2016/10/25 19:09:59 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/run/run-1.3.4-2.tar.xz
+2016/10/25 19:10:00 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/sed/sed-4.2.2-3.tar.bz2
+2016/10/25 19:10:00 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/shared-mime-info/shared-mime-info-1.6-3.tar.xz
+2016/10/25 19:10:01 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/tar/tar-1.28-1.tar.xz
+2016/10/25 19:10:02 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/ncurses/terminfo/terminfo-6.0-8.20160917.tar.xz
+2016/10/25 19:10:03 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/tzdata/tzdata-2016h-1.tar.xz
+2016/10/25 19:10:13 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/util-linux/util-linux-2.25.2-2.tar.xz
+2016/10/25 19:10:15 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/vim/vim-minimal/vim-minimal-7.4.2367-1.tar.xz
+2016/10/25 19:10:15 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/which/which-2.20-2.tar.bz2
+2016/10/25 19:10:15 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/xorg-x11-fonts-dpi75/xorg-x11-fonts-dpi75-7.5-3.tar.xz
+2016/10/25 19:10:35 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xorg-x11-fonts/xorg-x11-fonts-misc/xorg-x11-fonts-misc-7.5-3.tar.xz
+2016/10/25 19:10:40 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/noarch/release/xproto/xproto-7.0.31-1.tar.xz
+2016/10/25 19:10:40 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-1.tar.bz2
+2016/10/25 19:10:43 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-devel/xview-devel-3.2p1.4-28-2.tar.xz
+2016/10/25 19:10:45 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xz/xz-5.2.2-1.tar.xz
+2016/10/25 19:10:45 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/zlib/zlib0/zlib0-1.2.8-3.tar.xz
+2016/10/25 19:10:46 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-1-src.tar.bz2
+2016/10/25 19:10:46 Extracting from file://C:\Users\Pe Tho\Downloads/ftp%3a%2f%2fftp.gtlib.gatech.edu%2fpub%2fcygwin%2f/x86/release/xview/xview-3.2p1.4-28-2-src.tar.xz
+2016/10/25 19:10:46 Changing gid back to original
+2016/10/25 19:10:46 running: D:\thesis\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2016/10/25 19:10:59 running: D:\thesis\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2016/10/25 19:11:01 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/000-cygwin-post-install.sh"
+2016/10/25 19:11:01 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/coreutils.sh"
+2016/10/25 19:11:01 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/bash.sh"
+2016/10/25 19:11:01 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-mketc.sh"
+2016/10/25 19:11:02 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-profile.sh"
+2016/10/25 19:11:04 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/libxml2.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/gsettings-desktop-schemas.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/libtirpc.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/man-db.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2016/10/25 19:11:06 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2016/10/25 19:11:07 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2016/10/25 19:11:07 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2016/10/25 19:11:07 running: D:\thesis\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2016/10/25 19:11:18 Changing gid to Administrators
+2016/10/25 19:21:29 note: Installation Complete
+2016/10/25 19:21:29 Ending cygwin install

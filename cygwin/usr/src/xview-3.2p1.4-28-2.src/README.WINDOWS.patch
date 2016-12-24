@@ -1,0 +1,69 @@
+--- origsrc/xview-3.2p1.4/README.WINDOWS	2013-02-23 18:06:07.843750000 +0000
++++ src/xview-3.2p1.4/README.WINDOWS	2013-02-23 18:24:07.468750000 +0000
+@@ -4,7 +4,7 @@ file: README.WINDOWS		G. Moody (george@m
+ Building, installing, and using XView under MS-Windows
+ 
+ 1. Install the Cygwin development environment (freely available from
+-   http://cygwin.com/), inlcuding the gcc, make, sunrpc, and xorg-x11-devel
++   http://cygwin.com/), inlcuding the gcc, make, sunrpc, and libX11-devel
+    packages.  This step is not optional -- XView cannot be built
+    or used under MS-Windows without Cygwin.  Specifically, mingw gcc and
+    other C compilers that do not use the Cygwin library will not work, because
+@@ -43,26 +43,21 @@ Building, installing, and using XView un
+ 
+ 6. Before attempting to run any XView application, start the X server if it
+    is not running already.  One way to do this is via
+-	/usr/X11R6/bin/startxwin.bat
++	/usr/bin/startxwin
+    The version of this script that comes with Cygwin's xorg package runs the
+    X server with backing store disabled, which causes XView applications to
+-   open with blank (solid white) windows. To avoid this problem, open
+-   startxwin.bat in any text editor (Windows Notepad will work), and find the
+-   line that reads
+-	run XWin -multiwindow -clipboard -silent-dup-error
+-   Add the option "+bs" to the end of this line, so that it reads
+-	run XWin -multiwindow -clipboard -silent-dup-error +bs
+-   If you have a two-button mouse, you will be able to simulate a middle
+-   button click by "chording" (clicking both buttons at approximately the same
+-   time) by using this form of the XWin command instead:
+-        run XWin -multiwindow -clipboard -silent-dup-error +bs -emulate3buttons
+-   Save startwin.bat.  If you make a desktop shortcut to this file, you can
+-   click on it to launch the X server and an xterm window.
+-
+-   Note that this command will fail under recent versions of Windows if
+-   another user previously ran the X server and left its log file in /tmp.
+-   To fix this, delete the old log file before starting the X server:
+-	rm -f /tmp/XWin.log
++   open with blank (solid white) windows.
++
++   To avoid this problem, start the X server with the option "+bs" added via
++	/usr/bin/startxwin -- +bs
++
++  If you have a two-button mouse, you will be able to simulate a middle button
++  click by "chording" (clicking both buttons at approximately the same time)
++  by adding "--emulate3buttons"
++	/usr/bin/startxwin -- +bs -emulate3buttons
++
++   If you make a desktop shortcut to run this command, you can click on it to
++   launch the X server and an xterm window.
+ 
+ 7. Start any X applications using the appropriate commands in the xterm
+    window, or (if you have set DISPLAY as shown above) in the Cygwin terminal
+@@ -79,7 +74,7 @@ number of optional packages can be insta
+ everything necessary to compile and use XView, notably:
+     - gcc (the GNU compiler collection)
+     - make
+-    - a high-quality X11R6 server, libraries, and clients
++    - a high-quality X11 server, libraries, and clients
+     - sunrpc (interprocess communications used by XView)
+    
+ 1. Click on "Install Cygwin now" at http://cygwin.com/ to download
+@@ -94,7 +89,7 @@ everything necessary to compile and use
+    the list of optional packages, selecting the packages to be installed
+    by clicking on the indicators in the "New" column until a package
+    version number appears. Be sure to select the gcc, make, sunrpc, and
+-   xorg-x11-devel packages (the additional packages needed to satisfy the
++   libX11-devel packages (the additional packages needed to satisfy the
+    dependencies of these packages will be installed automatically).
+ 
+    Select any other desired Cygwin packages, then click "Next" to

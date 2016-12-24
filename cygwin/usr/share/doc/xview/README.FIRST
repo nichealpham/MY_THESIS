@@ -1,0 +1,43 @@
+file: README.FIRST	G. Moody	31 January 2005
+			Last revised:	  8 April 2005
+
+This directory contains sources for the XView and olgx libraries, an X Window
+System graphical user interface toolkit that implements the OPEN LOOK GUI
+specification.  Sources for several standard XView applications are also
+included here.  The most recent version of this package is always available
+from PhysioNet's XView repository at
+	http://physionet.org/physiotools/xview/ 
+The PhysioNet XView repository also provides precompiled XView binaries for
+GNU/Linux, Mac OS X, and MS-Windows, and pointers to XView packages for other
+platforms.
+
+An outstanding resource for information about XView is a set of three books
+available freely from O'Reilly's Open Books Project:
+	http://www.oreilly.com/openbook/openlook/
+
+This directory contains sources for the XView toolkit, version 3.2p1.4-19c,
+based on the Debian GNU/Linux XView version 3.2p1.4-19, with additional patches
+that allow it to be compiled and used successfully with:
+
+  * modern GNU/Linux distributions that lack support for (deprecated) BSD ptys,
+    but that do have UNIX98 (SYSV) pty support (see README.LINUX)
+
+  * MS-Windows, when compiled using Cygwin gcc, and while running the
+    Cygwin/x.org X server (see README.WINDOWS)
+
+This version should also work on any of the previously supported platforms; the
+modifications with respect to the Debian 3.2p1.4-19 version are minimal.  See
+the other README files in this directory for information about building and
+installing XView on various platforms; if your platform is not among these, try
+following the build instructions for GNU/Linux.
+
+This version was prepared by Isaac Henry (ihenry@physionet.org) and George
+Moody (george@mit.edu).  It is based on Martin Buck's Debian version, which is
+based on Oleg Kibirev's release for Linux/ELF, which is based on earlier work
+for Linux/COFF by Kenneth Osterberg, Wolfram Gloger, E. Zimmermann, Rainer
+Wiesner, Sven Rudolph, Sebastiano Suraci, and Martin Buck, with additional
+contributions from Frodo Looijaard and Roman Hodek; this in turn was based on
+Joern Lubkoll's xview-3.2p1 for X11R6 on SunOS, which was based on Sun's XView
+3.2 release of 1/7/92 for X11R5 on SunOS.  See the directory named "old" for
+the history of this software; the contents of that directory were formerly
+here, but have been moved aside to reduce confusion about the build process.

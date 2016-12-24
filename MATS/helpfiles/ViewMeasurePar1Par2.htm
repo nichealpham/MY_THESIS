@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Plot of measure vs 2 parameters</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><font size="5"><span lang="en-us">Plot of 
+		measure vs </span></font><span lang="en-us"><font size="5">2 parameters</font></span><p>
+      <img border="0" src="view3dparametertimeseries.jpg" width="556" height="697"></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">This operation plots in 
+		a figure a measure as a function of two varying parameters (at least two 
+		values of the each specified parameter should exist) for one selected 
+		time series. Then the surface of the selected measure and time series vs 
+		the two measure specific parameters is displayed in a three dimensional 
+		(3D) plot. This 3D plot visualizes the dependence of the measure on its 
+		two parameters, so it can be applied only to measures bearing at least 
+		two varying parameters. </span>
+		<p><span lang="en-us">A single time series can be selected from the time 
+		series list having the title <b>Select one time series</b>. </span></p>
+		<p><span lang="en-us">Before selecting from the measure list the two 
+		parameters must be chosen from the <b>First Parameter to select</b> and
+		<b>Second Parameter to select </b>among the listed parameters (<i>t</i>,<i> 
+		m</i>,<i> h, f, k, q, b, s, r, a, w</i>, see &quot;Measure Parameter Name 
+		Notation&quot; in the main menu). Upon the selection of the two parameters, 
+		the list of measure names is restricted to the measure names that 
+		include both parameters (measures that are dependent on the two 
+		specified parameters). If for example, the &quot;delay (t)&quot; is selected as 
+		first parameter and the &quot;embedding dimension&quot; as the second parameter, 
+		the label on the top of the measure list reads <b>Select measures of 
+		parameter type &quot;delay (t)&quot; and &quot;embedding dimension (m)&quot;</b>,<b> </b>and 
+		the list contains all measure names that contain these two parameters 
+		(the measure names contain the character 't' followed by a number and 
+		the character 'm' followed by a number). If no such a measure name 
+		exists, the list is empty and this operation cannot run for this 
+		parameter.</span></p>
+		<p><span lang="en-us">A subset of measure names can be selected from the 
+		list with standard use of the mouse: a click on a name and Shift^click 
+		on a another name further down in the list selects all names between the 
+		former and the latter; a click on a name and subsequent Ctrl^clicks on 
+		other names select these names including the first name; Ctrl^a selects 
+		the whole list. </span></p>
+		<p><span lang="en-us"><i>Tips</i>: For the selection of a subset of 
+		measure names from the list, click on the measure of this subset 
+		appearing first in the list and then Shift^click at the last measure in 
+		the list. In this way, all measures from the first selected to the last 
+		measure in the list will be marked and from those only the ones that 
+		have the same measure name as the first and differ only to the value of 
+		the two specified parameters will be processed.&nbsp;&nbsp; </span></td>
+    </tr>
+	<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>First 
+		Parameter to select</b></font></span></td>
+    	</tr>
+		<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">The user can choose one of the 
+		following parameters (for details see &quot;Measure Parameter Name Notation&quot; 
+		in the main menu) </span>
+		<p><span lang="en-us">delay (t)<br>
+		embedding dimension (m)<br>
+		prediction time (h)<br>
+		fraction for test set (f)<br>
+		number of neighbors (k)<br>
+		truncation parameter (q)<br>
+		number of bins (b)<br>
+		upper/low scaling ratio (s)<br>
+		radius (r)<br>
+		file order (a)<br>
+		offset for window length (w)</span></p>
+		<p><span lang="en-us">If there are measures in the list of measure names 
+		that are defined in terms of the selected parameter, they are displayed 
+		in the list of measures.</span></td>
+    	</tr>
+		<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>Second 
+		Parameter to select</b></font></span></td>
+    		</tr>
+			<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">The user can choose one of the 
+		following parameters (for details see &quot;Measure Parameter Name Notation&quot; 
+		in the main menu) </span>
+		<p><span lang="en-us">delay (t)<br>
+		embedding dimension (m)<br>
+		prediction time (h)<br>
+		fraction for test set (f)<br>
+		number of neighbors (k)<br>
+		truncation parameter (q)<br>
+		number of bins (b)<br>
+		upper/low scaling ratio (s)<br>
+		radius (r)<br>
+		file order (a)<br>
+		offset for window length (w)</span></p>
+		<p><span lang="en-us">The selected parameter should not be the same as 
+		the one selected in <b>First Parameter to Select</b>. If there are 
+		measures in the list of measure names that are defined in terms of the 
+		two selected parameters, they are displayed in the list of measures.</span></td>
+    		</tr>
+			<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>View selected plot</b></font></span></td>
+    		</tr>
+			<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Provided that there are 
+		measures in the list that differ in at least two values at each of the 
+		two parameters, i.e. at least four measure names for all combinations of 
+		the two values for the two parameters, by pressing this button a 
+		separate figure window will be displayed (as the one shown below). The 
+		plot is the surface of the measure vs the two parameters for the 
+		selected time series. The time series name is displayed in the title, 
+		the measure name (deleting the string regarding the two parameters) is 
+		displayed at the label of the z-axis, and the two parameter names are 
+		displayed at&nbsp; the label of the x-axis and y-axis.</span><p>
+      <img border="0" src="plot3dparametertimeseries.jpg" width="576" height="509"></td>
+    		</tr>
+			<tr>
+      <td colspan="2">&nbsp;<p><b><span lang="en-us"><font size="4">Running Messages</font></span></b></td>
+    			</tr>
+				<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">A text box displaying messages for the 
+		running operations.</span></td>
+    			</tr>
+				<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Exit</font></span></b></td>
+    			</tr>
+				<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Plot of measure vs 2 parameters&quot; will disappear and the 
+		user will be moved to the &quot;View Measures&quot; window. Note that any created 
+		figures will remain until the user exits from the &quot;View Measures&quot; 
+		window. </span><font size="2">&nbsp;</font></td>
+    			</tr>
+				<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    			</tr>
+				<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    			</tr>
+    </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

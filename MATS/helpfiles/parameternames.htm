@@ -1,0 +1,231 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Load Time Series</title>
+</head>
+
+<body style="text-align: center">
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center"><b><span lang="en-us"><font size="5">Measure Parameter 
+      Name Notation</font></span></b><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><span lang="en-us"><font size="4">A large number of different measures 
+		with varying parameters can be generated. To keep track of the measure 
+		names unique notation is used for the measure parameters. The full name 
+		of each measure is comprised by a 10 character string coding the name 
+		of the measure, followed by the measure-specific parameter declaration 
+		(one value for each parameter). </font></span>
+		</p>
+		<p align="justify"><span lang="en-us"><font size="4">Each parameter is identified by a 
+		character, as shown in the first column in the table below. </font></span>
+		</p>
+		<p align="justify"><span lang="en-us"><font size="4">The parameters may bear only a single value or a range of values given 
+		in standard matlab syntax, e.g. 1:10 or [1 5:10 20] (see second column 
+		in the table). </font></span></p>
+		<p align="justify"><span lang="en-us"><font size="4">The parameters may be constrained to specific ranges, as 
+		given in the third column of the table.&nbsp; </font></span></p>
+		<p align="justify">&nbsp;</p>
+		</td>
+    </tr>
+    </table>
+  <table border="0" width="80%" id="table2">
+    <tr>
+      <td align="center">
+
+<table border="1" width="87%" id="table3">
+	<tr>
+		<td colspan="5" align="center"><b><span lang="en-us">Parameter Notation</span></b></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><i><span lang="en-us">Character</span></i></td>
+		<td width="8%" align="center"><i><span lang="en-us">Multiple values</span></i></td>
+		<td width="11%" align="center"><i><span lang="en-us">Range</span></i></td>
+		<td width="7%" align="center"><i><span lang="en-us">Default</span></i></td>
+		<td width="61%">
+		<p align="center"><i><span lang="en-us">&nbsp;Description&nbsp;</span></i></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">a</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">moving average filter 
+		order, when smoothing the time series for the detection of turning 
+		points</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">b</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">0</span></td>
+		<td width="61%" align="left"><span lang="en-us">number of bins when 
+		partitioning the time series range, if b=0 then it is determined by the 
+		criterion b=sqrt(n)</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">c</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">[0, 1]</span></td>
+		<td width="7%" align="center"><span lang="en-us">0.5</span></td>
+		<td width="61%" align="left"><span lang="en-us">correlation sum, for 
+		finding the radius given the correlation sum.</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">e</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">integer 
+		<font face="Times New Roman">&#8805; </font>2</span></td>
+		<td width="7%" align="center"><span lang="en-us">10</span></td>
+		<td width="61%" align="left"><span lang="en-us">escape factor, for 
+		assessing the false nearest neighbors</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">f</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">[0.1, 0.9]</span></td>
+		<td width="7%" align="center"><span lang="en-us">0.5</span></td>
+		<td width="61%" align="left"><span lang="en-us">fraction for the test 
+		set, e.g. f=0.3 indicates that the test set is 0.3 times the time series 
+		length </span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">g</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">integer 
+		<font face="Times New Roman">&#8805; </font>0</span></td>
+		<td width="7%" align="center"><span lang="en-us">0</span></td>
+		<td width="61%" align="left"><span lang="en-us">Theiler's window, to 
+		exclude temporally correlated points from the set of neighboring points</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">h</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">lead time for fitting 
+		and prediction </span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">k</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">number of nearest 
+		neighbors</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">l</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">[0, 0.5]</span></td>
+		<td width="7%" align="center"><span lang="en-us">multiple cases</span></td>
+		<td width="61%" align="left"><span lang="en-us">lower band frequency, 
+		for the computation of energy in frequency bands (assuming that the 
+		sampling frequency is one)</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">m</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">embedding dimension or 
+		AR model order</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">o</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers<font face="Times New Roman"> 
+		&#8805; </font>10</span></td>
+		<td width="7%" align="center"><span lang="en-us">100</span></td>
+		<td width="61%" align="left">number of radii<span lang="en-us"> for the 
+		computation of the correlation sum in the correlation dimension 
+		estimation</span>, <span lang="en-us">low </span>resolution<span lang="en-us"> 
+		(small 'o' facilitates the computation at the cost of accuracy)</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><span lang="en-us"><b>p</b></span></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">order of the moving 
+		average part in ARMA</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">q</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">integer 
+		<font face="Times New Roman">&#8805; </font>0</span></td>
+		<td width="7%" align="center"><span lang="en-us">0</span></td>
+		<td width="61%" align="left"><span lang="en-us">truncation parameters, 
+		q=0 for local average map, q&lt;m for PCR solution of the local linear 
+		model parameters, q=m for standard OLS solution of the local linear 
+		model parameters</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">r</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">[0, 1]</span></td>
+		<td width="7%" align="center"><span lang="en-us">0.1</span></td>
+		<td width="61%" align="left"><span lang="en-us">radius for the 
+		computation of the correlation sum (the time series is standardized in 
+		[0,1]).</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">s</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">4</span></td>
+		<td width="61%" align="left">upper/lower ratio of scaling window<span lang="en-us">, 
+		i.e. s=r2/r1, where r2-r1 is the length of the scaling window </span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">t</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">delay</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">u</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">no</span></td>
+		<td width="11%" align="center"><span lang="en-us">[0, 0.5]</span></td>
+		<td width="7%" align="center"><span lang="en-us">multiple cases</span></td>
+		<td width="61%" align="left"><span lang="en-us">upper band frequency, 
+		for the computation of energy in frequency bands (assuming that the 
+		sampling frequency is one). Note that it should hold u&gt;l.</span></td>
+	</tr>
+	<tr>
+		<td width="9%" align="center"><b><span lang="en-us">w</span></b></td>
+		<td width="8%" align="center"><span lang="en-us">yes</span></td>
+		<td width="11%" align="center"><span lang="en-us">integers &gt;0</span></td>
+		<td width="7%" align="center"><span lang="en-us">1</span></td>
+		<td width="61%" align="left"><span lang="en-us">offset for the local 
+		window, the local window has length 2*w+1 and it is used for the 
+		detection of turning points</span></td>
+	</tr>
+	</table>
+		<p>
+      &nbsp;</td>
+    </tr>
+    </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

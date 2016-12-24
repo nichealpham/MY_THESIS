@@ -1,0 +1,183 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Select and Run Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">Select 
+		and 
+      Run Measures</font></span><p>
+      <img border="0" src="SelectMeasures.jpg" width="530" height="537"></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">This is the top window 
+		for measure selection and run. Starting from here the user can enter the 
+		different measure groups, select the measures and determine the measure 
+		specific parameters. When the selection is completed the user can press 
+		the &quot;Run&quot; button to start executing the selected measures <i>on all the time 
+		series in the current time series list</i>. Any subset 
+		of the listed measures in the different groups (or even all the measures) 
+		can be selected but the user should be aware of the computational cost for each measure, 
+		taking also into account the number and length of the time series in the 
+		current time series list.</span><p><span lang="en-us">Note that when a 
+		measure function is selected (by activating the check-box in the beginning of 
+		each measure line), the output for this selection may be a number of 
+		measures, one for each combination of parameter values (if parameters are to be 
+		specified). These are listed as distinct measures in the measure list 
+		and they are identified by the label of the selected measure function (this is 
+		the 10 character string in 
+		parenthesis after the descriptive name of each measure) and characters 
+		followed by numbers for each specified parameter (for the list of 
+		parameter notations, press the &quot;Measure and parameter 
+		name notation&quot; button in the main menu).</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">Linear Measures</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The group of linear 
+		measures includes measures based on the linear correlation 
+		(autocorrelation), frequency (power spectrum) and linear models (only 
+		autoregressive models are included so far). To select measures in the 
+		specific groups press the associated button. Note that the Correlation 
+		group includes measures of linear and monotonic autocorrelation, i.e. in 
+		addition to measures based on the Pearson autocorrelation function 
+		measures based on the Kendall and Spearman autocorrelation function are 
+		included as well.&nbsp;&nbsp; </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">
+  &nbsp;<p><b><span lang="en-us"><font size="4">Nonlinear Measures</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The group of nonlinear 
+		measures includes measures based on the nonlinear correlation (mutual 
+		information), dimension and complexity (embedding dimension, correlation 
+		dimension, entropy) and nonlinear models (local average and local linear 
+		models). To select measures in the specific groups press the associated 
+		button.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Other Measures</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The group of &quot;other&quot; 
+		measures includes simple measures of descriptive statistics (marginal 
+		moments) together with the Hjorth parameters and measures of long range correlation (DFA and Hurst 
+		exponent), as well as simple descriptive statistics of 
+		oscillation features extracted from the time series. To select measures 
+		in the specific groups press the associated button.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><font size="4">Load Measure Parameters</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This option can be used 
+		in case the user wants to use a pre-specified set of selected measures 
+		and parameter values stored in a file with a special format. The file 
+		should have been created from this program (using the &quot;Save Measure Parameters&quot; 
+		option, see below). This facility can be helpful if the user wants to 
+		execute the same set of measures and parameters on different instances, 
+		or different set of time series.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><font size="4">Save Measure Parameters</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This option allows the 
+		user to save the selected set of measures and parameters in a file of 
+		specific format. The user may load this file (&quot;Load Measure Parameters&quot; 
+		option, see above) if he/she wants to execute the same set of measures 
+		and parameters at a later stage (e.g. on a different set of time 
+		series).</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><font size="4">
+		<span lang="en-us">Reset Default </span>Parameters</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This option allows the 
+		user to restore the default parameters for all measures.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Run</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This button should be 
+		pressed when the user has selected all the measures (and parameters) and 
+		the measures will be 
+		executed on&nbsp;all the time series in the current time series list. 
+		Note that for each use of the Run button the measure list is cleared in 
+		order to be filled with the measure values from the new execution. 
+		Information about the progress of the batch execution of the selected 
+		measures is given in the &quot;Running messages&quot; text box. Note that the 
+		execution can be slow for some computationally involved measures, such 
+		as the correlation dimension estimation and the iterative local linear 
+		fit.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Running messages</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Here the progress in the 
+		batch execution of the measures on the time series in the current time 
+		series list is displayed. For each measure, the measure name appears 
+		in a new line followed with 1 (for the first time series being 
+		executed), and dots and number (1+multiple of 20) that indicate the number of the time 
+		series being processed. For example, a snapshot for the execution of 
+		the &quot;False Nearest Neighbors&quot; measure (for a set of parameter values) 
+		processing 
+		the 24th time series in the current time series list would look like the 
+		following:
+		</span>
+		<p><span lang="en-us">False Nearest Neighbors : 
+		1...................21...</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the main menu.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    		</tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

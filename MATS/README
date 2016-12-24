@@ -1,0 +1,46 @@
+The Measures of Analysis of Time Series (MATS) toolkit is a matlab-based product that aims at facilitating the computation of a large number of measures of scalar time series analysis on a number of time series. The strength of the MATS toolkit is the simultaneous operation on both multiple time series and multiple measures, allowing a range of measure specific parameters to be set as well. 
+
+To install MATS:
+1. Unzip the zipped file MATS.zip and it will create a directory MATS containing all the files you need. 
+2. Open matlab and move to the directory MATS (alternatively add this directory to the matlab path, e.g. using the command addpath).
+3. Type MATS on the matlab command line and then enter.
+
+The GUI main window of MATS will appear and you can proceed by loading time series files first. For any operation at any GUI window you can use the 'Help' button to get explanation and guidance information. The help text appears in html and opens on your selected browser.
+   
+In the MATS directory there are two EEG data files in ascii format (epilepticEEG.dat and normal.dat).
+
+The MATS toolkit should run on any matlab version 6.0 or newer and for some operations you will need the Signal Processing and Statistics matlab toolboxes. 
+
+MATS runs as is with matlab version 7.1 or later. For those who have an older matlab version, they should first run the function "changeallfig" giving as imput variable the full path of the MATS directory. This function updates all files of .fig type in order to be run by older matlab versions. 
+
+Any commments, especially on bugs, are welcome. For any problem, you may send e-mail to dkugiu@gen.auth.gr.
+
+Dimitris Kugiumtzis and Alkis Tsimpiris
+
+========================================================================
+Copyright (C) 2010 by Dimitris Kugiumtzis and Alkiviadis Tsimpiris 
+                       <dkugiu@gen.auth.gr>
+========================================================================
+Version: 1.0
+
+LICENSE:
+     This program is free software; you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation; either version 3 of the License, or
+     any later version.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program. If not, see http://www.gnu.org/licenses/>.
+
+=========================================================================
+ Reference : D. Kugiumtzis and A. Tsimpiris, "Measures of Analysis of Time Series (MATS): 
+             A Matlab  Toolkit for Computation of Multiple Measures on Time Series Data Bases",
+             Journal of Statistical Software, in press, 2010
+
+ Link      : http://eeganalysis.web.auth.gr/
+========================================================================= 

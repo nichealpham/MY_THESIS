@@ -1,0 +1,22 @@
+--- origsrc/xview-3.2p1.4/lib/libxview/base/base.h	2015-10-02 18:09:22.736363700 +0100
++++ src/xview-3.2p1.4/lib/libxview/base/base.h	2015-10-02 18:10:44.082926300 +0100
+@@ -67,7 +67,7 @@
+ #elif defined(__CYGWIN__)
+ #define XV_OS_SVR4
+ #undef XV_USE_TTCOMPAT
+-#undef SYSV_UCONTEXT 
++#define SYSV_UCONTEXT 
+ #define XV_USE_XVFCNTL
+ #endif
+  
+--- origsrc/xview-3.2p1.4/lib/libxview/notify/ndet_loop.c	2015-10-02 18:09:22.807730500 +0100
++++ src/xview-3.2p1.4/lib/libxview/notify/ndet_loop.c	2015-10-02 18:10:00.865999300 +0100
+@@ -1052,7 +1052,7 @@ notify_get_signal_code()
+     return (ndet_signal_code);
+ }
+ 
+-#if !defined(SVR4) && !defined(__linux__)
++#if !defined(SVR4) && !defined(__linux__) && !defined(__CYGWIN__)
+ extern struct sigcontext *
+ #else /* SVR4 */
+ extern ucontext_t *

@@ -1,0 +1,17 @@
+function changeallfig(dirtxt)
+% It calls the function 'replacefcnhandles2.m' on each file of extension
+% .fig in the given directory 'dirtxt'. The function 'replacefcnhandles2.m'
+% updates the GUI in order to be run by older matlab versions.
+% For exdirtxt = 'c:\MyFiles\matlab\MATS\';
+suffixtxt = '.fig';
+
+eval(['cd ',dirtxt])
+AllS = ls;
+n = size(AllS,1);
+for i=1:n
+    if findstr(AllS(i,:),suffixtxt)>0
+        % fprintf('%d %s \n',i,AllS(i,:));
+        replacefcnhandles2(AllS(i,:));
+    end
+end
+

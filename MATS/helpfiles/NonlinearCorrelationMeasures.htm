@@ -1,0 +1,428 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>NonLinear Correlation Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%" height="2141">
+    <tr>
+      <td align="center" colspan="2" height="382"><font size="5">
+      Non<span lang="en-us">Linear Correlation Measures</span></font><p>
+      <img border="0" src="nonlinearcorrelation.jpg" width="618" height="457"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" height="1"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">Basically two measures 
+		of nonlinear correlation are included, the bicorrelation and the mutual 
+		information. The <i>bicorrelation</i>, or three-point autocorrelation, 
+		or higher order correlation, is the joint moment of three variables 
+		formed from the time series and two delays <i>t</i> and <i>s</i>. A simplified 
+		scenario for the delays is implemented, <i>s </i>= 2<i>t</i>, so the bicorrelation is E[<i>x</i>(<i>i</i>),
+		<i>x</i>(<i>i</i>+<i>t</i>), <i>x</i>(<i>i</i>+2<i>t</i>)], 
+		where the mean value is estimated by the sample average. In 
+		this way, the bicorrelation is a function of a single delay <i>t</i>. The <i>mutual 
+		information</i> is defined for two variables <i>X</i> and <i>Y</i> as the amount of 
+		information that is known for the one variable when the other is given, 
+		and it is computed from the joint and single entropies of <i>X</i> and 
+		<i>Y</i>. For 
+		time series, <i>X </i>= <i>x</i>(<i>i</i>) and&nbsp; Y = <i>x</i>(<i>i</i>+<i>t</i>) for a delay 
+		<i>t</i>, so that the mutual 
+		information is a function of the delay <i>t</i> that measures the linear and 
+		nonlinear autocorrelation. There are a number of estimators of mutual 
+		information based on histograms, kernels, nearest neighbors and splines. 
+		Here, the histogram-based estimator is implemented using either 
+		equidistant or equiprobable binning. Note that 
+		the nonlinear correlation (bicorrelation, 
+		equisitant and equiprobable mutual information) at each delay <i>t</i> 
+		is a different measure, so that for a range of delay values the 
+		same number of measures are generated.</span><p><span lang="en-us">In 
+		addition to the nonlinear correlation measures of bicorrelation, 
+		equisitant and equiprobable mutual information, the cumulative nonlinear 
+		correlation measures are implemented as new measures that sum up 
+		the magnitude of the nonlinear correlation over the delays up to a given delay.</span></p>
+		<p><span lang="en-us">The first minimum of the mutual information function 
+		is of special interest and the respective delay can be used either as a 
+		discriminating measure or as the optimal delay for state space 
+		reconstruction in time series analysis. This specific delay is computed for 
+		both the equidistant and the equiprobable estimate of mutual 
+		information.</span><p><span lang="en-us">The bicorrelation is not a 
+		widely discussed measure, but the cumulative bicorrelation has been used 
+		as a statistic for the test of linearity (or non-linearity as it is best 
+		known in the dynamical systems approach of time series analysis), the 
+		so-called Hinnich test, see </span>
+		<p><span lang="en-us">Hinich M.J. (1996), Testing for 
+		Dependence in the Input to a Linear Time Series Model, <i>Journal of 
+		Nonparametric Statistics</i>, Vol 6, pp 205-221. </span>
+		<p><span lang="en-us">The bicorrelation, under the name three point 
+		autocorrelation, has 
+		been used as a simple nonlinear measure in the surrogate data test for 
+		nonlinearity, see </span>
+		<p><span lang="en-us">Schreiber T. and Schmitz A. (1997), Discrimination 
+		Power of Measures for Nonlinearity in a Time Series, <i>Physical Review 
+		E</i>, Vol 55, No 5, pp 5443-5447.</span><p><span lang="en-us">Kugiumtzis, D. (2001), On the 
+		Reliability of the Surrogate Data Test for Nonlinearity in the Analysis 
+		of Noisy Time Series, <i>International Journal of Bifurcation and Chaos</i>, 
+		Vol 11, No 7, pp 1881-1896. </span>
+		<p><span lang="en-us">The mutual information has gained much 
+		attention in time series analysis, and a number of papers have been 
+		written proposing or comparing different estimates. The first paper on 
+		mutual information estimation in time series is </span>
+		<p><span lang="en-us">Fraser A.M. and Swinney H. (1986), Independent Coordinates for 
+		Strange Attractors from Mutual Information, <i>Physical Review A</i>, 
+		Vol 33, pp 1134-1140. </span>
+		<p><span lang="en-us">There are advantages and disadvantages of all 
+		estimates, and we implemented here the histogram-based estimates of 
+		equidistant and equiprobable binning because there are the most standard 
+		and widely used in the literature. For a discussion on the different 
+		estimates of mutual information on time series from nonlinear dynamical 
+		systems see </span>
+		<p><span lang="en-us">Papana A. and Kugiumtzis D. (2008), Evaluation of Mutual 
+		Information Estimators on Nonlinear Dynamic Systems, <i>Complex 
+		Phenomena in Nonlinear Systems</i>, submitted.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="39" align="justify">
+  &nbsp;<p><b><font size="4">Bicorrelation (Bicorrelat)</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="120" align="justify"></td>
+      <td width="60%" height="120" align="justify"><span lang="en-us">
+		Bicorrelation is the extension of the standard Pearson autocorrelation 
+		to three variables <i>x</i>(<i>i</i>), <i>x</i>(<i>i</i>+<i>t</i>), and 
+		<i>x</i>(<i>i</i>+2<i>t</i>), and it is computed for the given range of 
+		the delay <i>t</i>. The 
+		following parameter can be specified:</span><p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10. </span></p>
+		<p><span lang="en-us">In addition, the Cumulative Bicorrelation 
+		is computed for the same range of delays. The cumulative bicorrelation can then be simply assigned to 
+		the respective measure, if it is selected with the same set of 
+		delay values.</span></p>
+		<p><span lang="en-us">Note that when the delay parameter is changed, the 
+		change is passed to the same parameter in the measure of Cumulative 
+		Bicorrelation. </span>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for delay (t) '1:5 10 20', then Bicorrelation is computed 
+		for these delays and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">Bicorrelat1<br>
+		Bicorrelat2<br>
+		Bicorrelat3<br>
+		Bicorrelat4<br>
+		Bicorrelat5<br>
+		Bicorrelat10<br>
+		Bicorrelat20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Cumulative Bicorrelation (Bicorrela)</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="120" align="justify"></td>
+      <td width="60%" height="120" align="justify"><span lang="en-us">Cumulative 
+		Bicorrelation is the 
+		cumulative function of the bicorrelation for the given range of delays. The 
+		delay parameter is determined as for the Bicorrelation. </span>The
+		<span lang="en-us">C</span>umulative&nbsp;Bicorrel<span lang="en-us">a</span>tion
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the absolute 
+      values of the Bicorrelation up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for delay (t) '10 20', then Cumulative Bicorrelation 
+		is computed for these delays and in the measure list the following 
+		measure names will appear</span><p><span lang="en-us">PearsCAutot10<br>
+		PearsCAutoct20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Mutual Information, equidistant 
+      bins (MutInfEqDi)</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="75" align="justify"></td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">Mutual 
+		Information, equidistant bins, is the estimate of the mutual information 
+		based on histograms of equidistant bins. The estimate is computed for the given range of 
+		the delay <i>t</i>. The 
+		following parameter can be specified:</span><p><span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values. </span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10.</span></p>
+		<p><span lang="en-us">In addition, the cumulative mutual information and 
+		the delay of the first minimum of mutual information (both for 
+		equidistant bins) are computed for the same range of delays or/and 
+		number of bins. These two 
+		other measures can then be assigned to 
+		the respective measures, if these are selected with the same set of 
+		parameters (<i>b</i> and <i>t</i>).</span></p>
+		<p><span lang="en-us">Note that when the either <i>b</i> or <i>t</i> 
+		parameter is changed, the 
+		change is passed to the same parameter in the measures of Cumulative 
+		Mutual Information and the delay of the First Minimum of Mutual 
+		Information (both for equidistant bins). </span>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for number of bins (b) '0 5' and for delay (t) '1:5:20', then Mutual Information is computed 
+		for the combinations of the 2 values of <i>b</i> and the 4 values of <i>
+		t</i> and in the measure list the following measure names 
+		will appear (for b=0 the number of bins depends on the length of each 
+		time series in the current time series list)</span><p><span lang="en-us">MutInfEqDib0t1<br>
+		MutInfEqDib0t6<br>
+		MutInfEqDib0t11<br>
+		MutInfEqDib0t16<br>
+		MutInfEqDib5t1<br>
+		MutInfEqDib5t6<br>
+		MutInfEqDib5t11<br>
+		MutInfEqDib5t16</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Cumulative Mutual Information, 
+      equidistant bins (MutInCEqDi)</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="75" align="justify"></td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">Cumulative 
+		Mutual Information is the 
+		cumulative function of the mutual information using equidistant bins for the given range of delays. The 
+		number of bins <i>b</i> and the delay <i>t</i> are determined as for the Mutual Information, equidistant 
+		bins. </span>The
+		<span lang="en-us">C</span>umulative&nbsp;<span lang="en-us">Mutual 
+		Information</span>
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the 
+      values of the <span lang="en-us">Mutual Information</span> up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<span lang="en-us"> The following parameter can be 
+		specified:</span><p><span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values. </span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10.</span></p><p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for number of bins (b) '0' and for delay (t) '10 20', then Cumulative Mutual Information is 
+		computed for the 2 delays using a number of bins that depends on the 
+		length of each time series in the current time series list, and in the measure list the following measure 
+		names will appear</span><p><span lang="en-us">MutInCEqDib0t10<br>
+		MutInCEqDib0t20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">First Minimum of Mutual 
+      Information, equidistant bins (MutMinEqDi)</font></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="99" align="justify"></td>
+      <td width="60%" height="99" align="justify"><span lang="en-us">The First 
+		Minimum of Mutual Information, equidistant bins, is the delay for which the 
+		Mutual Information (computed using equidistant bins) falls to its first 
+		minimum. So, if the mutual information for 
+		delays up to the maximum of the given delays (if more than one delay 
+		value is given) reaches its minimum for the first time for a delay <i>t</i>, then the 
+		First Minimum of Mutual Information, equidistant bins, is assigned to <i>t</i> otherwise it has a NaN value (NaN 
+		= not 
+		a number). The following parameter can be specified:</span><p>
+		<span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values. </span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10, but only one measure will be given to the output, 
+		for delay 10, the maximum of the given delays.</span></p>
+		<p><span lang="en-us"><i>Example</i>: If the user 
+		selects this measure by activating the check box in the beginning of the 
+		measure line and sets for number of bins (b) '0 5' and for delay (t) '10 20', then First Minimum of 
+		Mutual Information, equidistant bins, is computed and in the measure list the following 
+		measure names will appear (for the maximum <i>t</i> value), the first 
+		using a number of bins that depends on the length of each time series in 
+		the current time series list and the second using <i>b</i>=5,</span></p><p>
+		<span lang="en-us">MutMinEqDib0t20<br>
+		MutMinEqDib5t20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Mutual Information, 
+		equiprobable 
+      bins (MutInfEqPr)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="75" align="justify"></td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">Mutual 
+		Information, equiprobable bins, is the estimate of the mutual information 
+		based on histograms of equiprobable bins, i.e. of bins containing all 
+		the same proportion of data points. The estimate is computed for the given range of 
+		the delay <i>t</i>. The 
+		following parameter can be specified:</span><p><span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values. </span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10.</span></p>
+		<p><span lang="en-us">In addition the cumulative mutual information and 
+		the delay of the first minimum of mutual information (both for 
+		equiprobable bins) are computed for the same range of delays or/and 
+		number of bins. These two 
+		other measures can then be assigned to 
+		the respective measures, if these are selected with the same set of 
+		parameters (<i>b</i> and <i>t</i>).</span></p>
+		<p><span lang="en-us">Note that when the either <i>b</i> or <i>t</i> 
+		parameter is changed, the 
+		change is passed to the same parameter in the measures of Cumulative 
+		Mutual Information and the delay of the First Minimum of Mutual 
+		Information (both for equiprobable bins). </span>
+		<p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for number of bins (b) '0 5' and for delay (t) '1:5:20', then Mutual Information is computed 
+		for the combinations of the 2 values of <i>b</i> and the 4 values of <i>
+		t</i> and in the measure list the following measure names 
+		will appear (for b=0 the number of bins depends on the length of each 
+		time series in the current time series list)</span><p><span lang="en-us">MutInfEqDib0t1<br>
+		MutInfEqDib0t6<br>
+		MutInfEqDib0t11<br>
+		MutInfEqDib0t16<br>
+		MutInfEqDib5t1<br>
+		MutInfEqDib5t6<br>
+		MutInfEqDib5t11<br>
+		MutInfEqDib5t16</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Cumulative Mutual Information, 
+      equiprobable bins (MutInCEqPr)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="75" align="justify"></td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">Cumulative 
+		Mutual Information is the 
+		cumulative function of the mutual information using equiprobable bins for the given range of delays. The 
+		number of bins <i>b</i> and the delay <i>t</i> are determined as for the Mutual Information, 
+		equiprobable 
+		bins. </span>The
+		<span lang="en-us">C</span>umulative&nbsp;<span lang="en-us">Mutual 
+		Information</span>
+		<span lang="en-us">for each delay <i>t</i> </span>is the sum of the 
+      values of the <span lang="en-us">Mutual Information</span> up to the delay<span lang="en-us"> 
+		<i>t</i></span>.<span lang="en-us"> The following parameter can be 
+		specified:</span><p><span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values.</span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10.</span></p><p><span lang="en-us"><i>Example</i>: If the user selects this 
+		measure by activating the check box in the beginning of the measure line 
+		and sets for number of bins (b) '0' and for delay (t) '10 20', then Cumulative Mutual Information is 
+		computed for the 2 delays and in the measure list the following measure 
+		names will appear</span><p><span lang="en-us">MutInCEqDib0t10<br>
+		MutInCEqDib0t20</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">First Minimum of Mutual 
+      Information, equiprobable bins (MutMinEqPr)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="99" align="justify"></td>
+      <td width="60%" height="99" align="justify"><span lang="en-us">The First 
+		Minimum of Mutual Information, equiprobable bins, is the delay for which the 
+		Mutual Information (computed using equiprobable bins) falls to its first 
+		minimum. So, if the mutual information for 
+		delays up to the maximum of the given delays (if more than one delay 
+		value is given) reaches its minimum for the first time for a delay <i>t</i>, then the 
+		First Minimum of Mutual Information, equiprobable bins, is assigned to
+		<i>t</i> otherwise it has a NaN value (not 
+		a number). The following parameter can be specified:</span><p>
+		<span lang="en-us">
+		- <b>
+		number of bins (b)</b>: any valid matlab format denoting an array of 
+		positive integers or a single positive integer. The default is '0' and 
+		it is used to denote the number of bins set to the rounded integer of sqrt(<i>N</i>/5), where 
+		<i>N</i> is the length of 
+		the time series. Note that <i>b </i>= 1 is meaningless as at least two 
+		bins should be given to split the range of values.</span></p>
+		<p><span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1:10' meaning 
+		delays from 1 to 10, but only one measure will be given to the output, 
+		for delay 10, the maximum of the given delays.</span></p>
+		<p><span lang="en-us"><i>Example</i>: If the user 
+		selects this measure by activating the check box in the beginning of the 
+		measure line and sets for number of bins (b) '0 5' and for delay (t) '10 20', then First Minimum of 
+		Mutual Information, equiprobable bins, is computed and in the measure list the following 
+		measure names will appear (for the maximum <i>t</i> value, for b=0 the 
+		number of bins depends on the length of each time series in the current 
+		time series list)</span></p><p>
+		<span lang="en-us">MutMinEqDib0t20<br>
+		MutMinEqDib5t20</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>OK</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;NonLinear Correlation Measures&quot; will disappear and the user 
+		will be moved to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be stored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be ignored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown<font size="2">.</font></span></td>
+    		</tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>

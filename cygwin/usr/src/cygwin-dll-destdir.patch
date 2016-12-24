@@ -1,0 +1,15 @@
+--- origsrc/xview-3.2p1.4/config/XView.rules	2013-02-23 15:05:58.843750000 +0000
++++ src/xview-3.2p1.4/config/XView.rules	2013-02-23 15:09:27.390625000 +0000
+@@ -549,9 +549,9 @@ install::  								@@\
+ 	$(RM) $(DESTDIR)dest/lib/**/libname-rev.dll.a				@@\
+ 	$(INSTALL) $(INSTSHAREDLIBFLAGS) lib/**/libname-rev.dll.a $(DESTDIR)dest @@\
+ 	(cd $(DESTDIR)dest && $(LN) -f lib/**/libname-rev.dll.a lib/**/libname.a) @@\
+-	mkdir -p $(BINDIR) @@\
+-	$(RM) $(BINDIR)/cyg/**/libname-rev.dll				@@\
+-	$(INSTALL) cyg/**/libname-rev.dll $(BINDIR) @@\
++	mkdir -p $(DESTDIR)$(BINDIR) @@\
++	$(RM) $(DESDIR)$(BINDIR)/cyg/**/libname-rev.dll				@@\
++	$(INSTALL) cyg/**/libname-rev.dll $(DESTDIR)$(BINDIR) @@\
+ 
+ 
+ #else /* __linux__ */

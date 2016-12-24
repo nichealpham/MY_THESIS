@@ -1,0 +1,51 @@
+file: README.LINUX		G. Moody (george@mit.edu)	1 February 2005
+					Last revised:		 8 April 2005
+
+Building, installing, and using XView under GNU/Linux
+
+XView packages for GNU/Linux are available from several sources, notably from
+Debian (on which this are based).  At this time, however, the XView packages
+available from Debian and other sources require support for BSD ptys, which is
+no longer standard in distributions based on the 2.6 kernel.  This version of
+XView is compatible with the newer UNIX98 (SYSV) ptys supported in 2.6-based
+distributions such as Fedora Core 2 and later;  it will also work with older
+2.x-based kernels that typically include support for both BSD and UNIX98 ptys.
+
+1. If you have not already done so, download and unpack the tarball of
+   XView sources:
+	tar xfvz xview-3.2p1.4-19c.tar.gz
+
+2. Compile and install the XView libraries and clients:
+	cd xview-3.2p1.4-18c
+	bash Build-XView.bash libs instlibs clients instclients
+   
+   This procedure will take a long time and will generate thousands of lines
+   of progress and warning messages.  When it is complete, the libraries,
+   *.h files, and xview clients will all have been installed in subdirectories
+   of /usr/openwin.  If you wish to copy the binaries to another system, it is
+   sufficient to copy the contents of /usr/openwin.
+
+3. Add /usr/openwin/lib to /etc/ld.so.conf and run /sbin/ldconfig (requires
+   root permissions) before attempting to compile or run any other XView
+   applications.  To simplify running the standard XView clients, it may be
+   helpful to add /usr/openwin/bin to your PATH.
+
+4. Run this command:
+	xdpyinfo | grep backing
+
+   If the output is similar to:
+	  options:    backing-store NO, save-unders NO
+   then you will need to enable backing store by inserting the line
+	  Option      "backingstore"
+   in the Device section of your X server configuration file (normally one of
+   /etc/X11/xorg.conf, /etc/X11/XF86Config, or /etc/X11/XF86Config-4).
+   (Alternatively, you can run your X server with the option +bs to obtain the
+   same result without editing your configuration file.)  Restart your X
+   server, then run the xdpyinfo command again to verify that backing store is
+   now enabled.
+
+   Recent Linux distributions are configured so that the X server runs with
+   backing store disabled, which causes XView applications to open with blank
+   (solid white) windows.  Usually resizing or refreshing such windows causes
+   their contents to appear, but enabling backing store avoids this problem
+   entirely.

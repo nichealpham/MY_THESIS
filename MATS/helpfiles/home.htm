@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MATS home page</title>
+<base target="_self">
+</head>
+
+<body>
+
+<table border="1" width="85%" id="table1" style="border-width: 0px">
+	<tr>
+		<td style="border-style: none; border-width: medium">
+		<p align="center"><b><font size="6">Measures of Analysis of Time Series tool</font></b><font size="6"><b>kit 
+(MATS)</b></font></p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" bordercolor="#111111" width="100%" id="table2">
+  <tr>
+    <td width="100%" style="border-style: none; border-width: medium">
+    <p align="center">
+    <img border="0" src="guimenu.jpg" width="828" height="465"></td>
+  </tr>
+</table>
+		<p>&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium"><font size="4"><u>
+		MATS copyright and citation</u><br>
+		MATS is licensed under the terms of the GPL. You may use and refer to 
+		the programs as you do with any scientific publication. The correct 
+		reference will be<br>
+		D. Kugiumtzis and A. Tsimpiris, Measures of Analysis of Time Series 
+		(MATS): A Matlab Toolkit for Computation of Multiple Measures on Time 
+		Series Data Bases, Journal of Statistical Software, in press (2010)</font><p>
+		<font size="4">The <i>
+		Measures of Analysis of Time Series</i> (MATS) toolkit is a matlab-based product 
+that aims at facilitating the computation of a large number of measures of scalar 
+time series analysis on a number of time series. The strength of the MATS toolkit is the 
+simultaneous operation on both multiple time series and multiple 
+measures, allowing a range of measure specific parameters to be set as well.
+</font> 
+		</p>
+<p><font size="4">A main feature of MATS is that it keeps track of two lists: 
+the <i>time series 
+list</i> containing the set of scalar time series to be analyzed, and the <i>measure 
+list</i> containing the values of the selected measures computed on the time series 
+in the current time series list. The time series list is dynamic so that time 
+series can be deleted from the list and new time series can be added to the list 
+by selecting specific data-related operations, i.e. loading time series 
+files, standardizing or segmenting time series from the list, or generating resampled (surrogate) time series 
+(left part of the main menu window). 
+A number of various measures of different types (linear, nonlinear, others) can 
+be selected. The selected measures are then computed on all the time series in 
+the current time series list and the measure values are stored in the current measure list, 
+where for 
+each measure and for each combination of its parameter values a unique name is 
+assigned (right part of the main menu window). The computed 
+measures can be viewed in different ways by selecting measure names from the 
+measure list and time series names from the time series list associated to the 
+computed measures, 
+e.g. plots of measures versus segment or surrogate time series index, or 
+measures versus one or two varying parameters (2D and 3D plot). </font> </p>
+<p><font size="4">The user can select many different measures, as well 
+as measure specific parameters, compute them on different time series, and view 
+the results on the different measures and time series. It should be noted that 
+the computation for each selected measure can be slow when a large number of time series 
+are selected or the length of the time series is large (or both). Also, some measures, such as the 
+measure of the local linear model and the measure of the correlation dimension, 
+require long computation time.</font></p>
+<p><b><font size="5">Data-related operations</font></b></p>
+<p><b><font size="4">Load time series </font></b><font size="4">Different data formats can be read. So far, 
+the formats implemented are for plain text (ascii), excel (xls), matlab data 
+files (mat) and the edf format used specifically for EEG records. All loaded 
+data are organized in vector form with unique names (one name for each scalar 
+time series). For example, if a data matrix of three columns is read from a file, 
+the user can select to store in the current time series list any of the three 
+time series with a name starting with the file name, followed by the character 
+'C' (for column) and the index of the corresponding column in the data matrix.</font></p>
+<p><font size="4"><b>Segment</b></font><b><font size="4"> time series </font>
+</b><font size="4">In some applications, a long time series record is available 
+and the analysis is done on consecutive or overlapping segments from this 
+record. This may be the case if the interest is to detect changes in the 
+underlying system of the observed data record. Thus one or more measures are 
+estimated on the segments and the change can be possibly be observed in the 
+derived series of measures. The user can generate consecutive or overlapping 
+segments of a number of selected time series. The segmented time series get a 
+coded name with a running index and are stored in the current time series list.</font></p>
+<p><font size="4"><b>Transform</b></font><b><font size="4"> time series </font></b>
+<font size="4">
+Before applying tools of analysis on time series, often the time series are 
+first transformed or/and standardized in order to fulfill certain conditions for 
+the analysis (stationarity, normality) or to bring time series at different 
+range at the same standardized range. For transformation, there are four types: 
+the Box Cox power transform attempts to make the magnitudes of the time series 
+Gaussian, while the other three transforms (lag-difference, log-difference and 
+detrend) aim to reduce non-stationarity of the time series. For standardization 
+four different schemes are 
+implemented (Gaussian, uniform, linear and normalized). The selected transformed 
+or standardized time series get a coded name and are 
+stored in the current time series list.</font></p>
+<p><font size="4"><b>Surrogate time series </b>When analyzing time series, it is 
+often of interest to test an hypothesis on the underlying to the time series 
+system. Here we focus on the hypothesis of independent time series, of Gaussian 
+linear process and of linear stochastic process. Many of the offered measures 
+can be used as test statistics for these tests and the resampling approach can 
+be used to carry out the test by generating randomized or bootstrap time series. 
+The resampled time series get a coded name with a running index and are stored 
+in the current time series list.</font></p>
+<p><font size="4"><b>Save time series </b>The user can save any of the time 
+series in the current time series list generated by the abovementioned 
+operations. The saving formats implemented are for plain text (ascii), excel (xls) 
+and matlab data files (mat).</font></p>
+<p><font size="4"><b>View time series </b>There three options that are displayed 
+in this popup menu. The first is denoted as '1D' and choosing this time history plots (1D plot) can be 
+generated for a number of selected time series. This can be particularly useful 
+to see all segments of a time series together or surrogate time series along the 
+original time series. The second choice is denoted as '2D/3D' for the generation 
+of scatter plots in two and three dimensions (2D / 3D 
+plots) for one time series at a time. This is useful when 
+underlying deterministic dynamics are investigated and the user want to get a 
+projected view of the hypothesized underlying attractor. The third choice is 
+denoted as 'histogram' for the generation of histogram plots (as bars or lines) 
+for selected time series. </font> </p>
+<p><font size="4"><b>Sort by size</b> and <b>Sort by name</b> allow to sort the 
+time series in the current time series list by size and name, respectively. <b>
+Delete </b>allows to delete time series from the current time series list.</font></p>
+		<p><font size="4"><b>Table of selected time series</b> This selection opens a 
+		sheet having three columns and rows as many as the selected time series. 
+		For each row, the cell in the first column contains the time series 
+		name, the cell in the second column contains the data values of the time 
+		series that can be seen by clicking on it, and the cell in the third 
+		column displays the length of the time series. This option allows the 
+		user to copy and paste the time series content to another file or sheet 
+		like excel.&nbsp;
+</font> </p>
+<p><font size="4"><b>Time series name notation</b> This selection opens a window 
+showing a list of the special characters used in the names of the time series.&nbsp;
+</font> </p>
+<p><font size="4">Messages regarding the selected operations may be given to the 
+text box titled <i>Running messages</i>.</font></p>
+<p><font size="5"><b>Measure</b></font><b><font size="5">-related operations</font></b></p>
+<p><font size="4"><b>Select / Run measures</b> A large number of measures from 
+simple to sophisticated can be selected that are organized in groups. The main 
+groups are linear measures, nonlinear measures and &quot;other&quot; measures, and each 
+contains other groups, e.g. the group of linear measures contains correlation, 
+frequency-based and model-based measures. Many of the measures require one or 
+more parameters being specified. The default values are mostly chosen under the 
+criterion of simplicity and there are often not the most appropriate. After 
+navigation in the different measure groups and upon selection of the measures 
+the hard and most important task of computation execution starts. Note that each 
+selected measure is computed possibly for a given range of values for one or 
+more parameters and for the whole set of time series in the current time series 
+list, so execution time can vary according to the number and length of the 
+selected time series as well as the selected measures and parameters. Some 
+nonlinear measures, such as the correlation dimension and the local linear fit 
+and prediction, are computationally rather involved and may require long time. 
+When execution is finished the name of measure and parameters are listed in the 
+measure list. Each name regards an array of values of length equal to the number 
+of time series in the time series list at the moment of execution of the measure 
+computations. </font></p>
+<p><font size="4"><b>Save measures</b> The table of the computed measure values 
+(rows) for the selected time series (columns) can be saved in a file. The file 
+can be plain ascii, excel (.xls) and matlab data file (.mat).</font></p>
+<p><font size="4"><b>View measures</b> This option allows the user to view any 
+parts of the table of the computed measure values (rows) for the selected time 
+series (columns). Selected parts can be shown in a separate table or in a &quot;free 
+plot&quot;. When measures are computed on segmented or surrogate time series, 
+selected measures (as well as selected parameter values for the same measure) 
+can be drawn against the segment or surrogate indices (for the latter the 
+measure values for the original are displayed as well). This allows to detect 
+differences across segments (i.e. in time evolution) or between original and 
+surrogate time series. For measures computed for a range of one or more 
+parameters, the measures on selected time series can be plotted against one 
+parameter (2D plot) or a measure on one selected time series can be plotted 
+against two parameters (3D plot). This type of plots can show the dependence of 
+the measure on one or two parameters for the selected time series. Further, two 
+or three selected measures (including specific parameter values) can be used as 
+coordinates fro a 2D and 3D plot, respectively, where the drawn points regard 
+the different time series. This type of plots allows to identify cluster of time 
+series with respect to estimated measures. </font></p>
+<p><font size="4">Each measure is given a label and the specific choice of a 
+parameter is coded by a character followed by the value (multiplied by 100 if 
+its range is positive and smaller than one). The concatenation of these strings 
+constitutes the name of the specific measure. Thus it is quite hard to identify 
+the measure from such string names. It is helpful to check the <b>Measure 
+parameter name notation</b> that shows a list of the parameters and their label.</font></p>
+<p><b><font size="5">Possible uses of the MATS toolkit</font></b></p>
+<p><font size="4">Here follows some possible uses of the MATS toolkit that are 
+supported with special visualization options.</font></p>
+<p><font size="4">- <i>Detection of regime change in long data records</i>: 
+allowing for computing a measure on consecutive segments of a long data record 
+and detecting on the series of measure values abrupt or smooth changes as well 
+as trends. </font></p>
+<p><font size="4">- <i>Surrogate data test for nonlinearity</i>: allowing the 
+selection of different surrogate data generating algorithms and many different 
+test statistics.</font></p>
+<p><font size="4">- <i>Discrimination ability of different measures</i>: 
+comparing different measures with respect to their power in discriminating 
+different types of time series.</font></p>
+<p><font size="4">- <i>Assessing the dependence of a measure on measure specific 
+parameters</i>: visualizing the measure as a function of its parameters and 
+comparing the dependence of the measure on its parameters for different types of 
+time series. </font></p>
+<p><font size="4">- <i>Feature-based clustering of time series data base</i>, 
+computing a set of measures (features) on a set of time series (for two or three 
+features the clusters can be seen in a 2D or 3D plot). For quantitative results, 
+the array of measure data has to be fed in a feature-based clustering algorithm 
+(we currently work on developing such a tool and link it to MATS).</font></p>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

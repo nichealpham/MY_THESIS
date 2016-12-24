@@ -1,0 +1,255 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Plot of measures vs resampled time series indices</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">Plot of 
+		measures vs resampled time series indices</font></span><p>
+      <img border="0" src="Viewresampledtimeseries.jpg" width="549" height="579"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">A selection of measures computed on 
+		resampled time series of a specific type, i.e. time series with names 
+		containing indices after the string code of the specified resampling 
+		type, can be plotted against the resampling indices in a figure window. 
+		This type of figure visualizes the result of the resampling test for a 
+		time series, comparing the measure(s) value for the original time series 
+		at index 0 to the other values of the resampled time series at the other 
+		indices. Further, the user is opted to select to get a graph of ordered 
+		values and test results (p-values of a parametric test and nonparametric 
+		test).</span><p><span lang="en-us">First, the <b>Resampling type</b> 
+		must be chosen among the listed resampling types (RP, FT, AAFT, IAAFT, 
+		STAP, AMRB, see &quot;Resampled Time Series&quot; operation). Upon the selection 
+		of the resampling type the list of resampled time series is restricted 
+		to include only resampled time series of the specified type. If for 
+		example, the STAP resampling type is specified, the label on the top of 
+		the list reads <b>Select STAP resampled time series </b>and the list 
+		contains all the STAP surrogate time series for which measures have been 
+		computed in the last run of measures. </span></p>
+		<p><span lang="en-us">The resampled time series in the list are 
+		identified for the specified resampling type by the time series name and 
+		the indices after the string code of the specified resampling type (if 
+		there is a string after the index this should be the same in the names 
+		of the segments). If no such resampled time series names exist the list 
+		of resampled time series is empty and this operation cannot run for this 
+		resampling type. Further, one or more measures can be selected from the 
+		measure list having the title <b>Select one or more measures</b>. For 
+		measures defined in terms of one or more measure specific parameters, 
+		the measure name regards a specified set of parameters (one parameter 
+		value for each name). A subset of resampled time series and measure 
+		names can be selected from the respective lists with standard use of the 
+		mouse: a click on a name and Shift^click on a another name further down 
+		in the list selects all names between the former and the latter; a click 
+		on a name and subsequent Ctrl^clicks on other names select these names 
+		including the first name; Ctrl^a selects the whole list. 
+		</span></p>
+		<p><span lang="en-us"><i>Tips</i>: For the selection of a subset of resampled time series names from the list, 
+		click on the resampled time series of this subset appearing first in the 
+		list and then Shift^click at the last resampled time series in the list. In this way, all time series from the 
+		first selected to the last time series in the list will be marked and 
+		from those only the ones that have the same resampled time series name 
+		as the first one and differ only to the resampling index will be 
+		processed.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>Resampling 
+		type</b></font></span></td>
+    	</tr>
+		<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">The user can choose one of the 
+		following resampling types (for details of the resampling types see the 
+		&quot;Resampled Time Series&quot; operation) </span>
+		<p><span lang="en-us">RP: Random Permutation, <br>
+		FT: Fourier Transform, <br>
+		AAFT: Amplitude Adjusted Fourier Transform,<br>
+		IAAFT: Iterated Amplitude Adjusted Fourier Transform, <br>
+		STAP: Statically Transformed Autoregressive Process,<br>
+		AMRB: Autoregressive Model Residual Bootstrap.</span></p>
+		<p><span lang="en-us">If there are time series of the selected 
+		resampling type in the list of time series names, they are displayed in 
+		the list of resampled time series.</span></td>
+    	</tr>
+		<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>Draw lines / 
+		points</b></font></span></td>
+    	</tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">The user can choose one of the 
+		following: Lines, Points, Both. This is the drawing type for the measure 
+		vs resampling index plot and a different drawing type is used for each 
+		measure, as explained in the legend or to &quot;Running messages&quot; text box 
+		(if more than 5 lines are displayed in one graph).</span></td>
+    	</tr>
+	<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>Normalize</b></font></span></td>
+    	</tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">If this checkbox is activated, the 
+		measures are first normalized to have mean zero and standard deviation 
+		one (z-score). In this way, the user can have all selected measures at 
+		the same range, and can assess visualize whether the measure value (test 
+		statistic) for the original time series is out of the limits of null 
+		distribution.</span></td>
+    	</tr>
+	<tr>
+      <td colspan="2">&nbsp;<p><span lang="en-us"><font size="4"><b>Display test</b></font></span></td>
+    	</tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">If this checkbox is activated, then one 
+		graph for each of the selected measures will be generated (after the 
+		user pushes the View selected plot button), and the test results will be 
+		given in the form of p-values, provided that the original time series 
+		name is in the list of the time series names. Each graph contains the 
+		following:</span><p><span lang="en-us">- At index value 0 the measure 
+		value for the original time series is displayed by an open circle. For 
+		index values 1 to M (the number of resampled time series), the measure 
+		values for the resampled time series are displayed (according to the 
+		Draw lines / points selection) in ascending or descending order 
+		(depending whether the measure value for the original time series is 
+		towards the left or right part of the distribution of the &quot;resampled&quot; 
+		values).</span></p>
+		<p><span lang="en-us">- Two red broken horizontal lines display the 
+		critical values for the significant level </span>α=0.05
+		<span lang="en-us">and </span>α=0.01<span lang="en-us"> for a parametric 
+		(normal) test. Basically these two values define the tails (left or 
+		right depending on the original value) of the null distribution of the 
+		test statistic. So, the user can have a graphical representation of the 
+		test judging from the position of the original value (open circle at 
+		time index 0) with respect to these two horizontal lines.</span></p>
+		<p><span lang="en-us">- Quantitative test results are given in the title 
+		of the graph in the form of two p-values, one for the parametric 
+		(normal) test and the other for the nonparametric test (based on rank 
+		ordering of the M+1 values, the original and the M resampled ones). 
+		Further the validity of the parametric test is examined with the 
+		Kolmogorov-Smirnov test for normality and the notification &quot;normality 
+		accepted&quot; is displayed along with the parametric p-value if the null 
+		hypothesis of the Kolmogorov-Smirnov test is not rejected, otherwise the 
+		notification is changed to &quot;normality rejected&quot;. In this way, the user 
+		has evidence to whether rely or not on the parametric test result.</span></td>
+    	</tr>
+		<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>View selected plot</b></font></span></td>
+    	</tr>
+		<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Pressing this button 
+		will generate one or more figures in separate window(s), provided that a list of 
+		at least two resampled time series names of the specified resampling 
+		type and one or more measure names are selected. The generation of one 
+		or possible more figures depends on the selection of the &quot;Display test&quot; 
+		option as follows.</span><p><span lang="en-us">If the &quot;Display test&quot; 
+		option is not selected, a single figure as the one shown below will be 
+		displayed containing lines or points (or both) of distinct type for each selected measure vs the resampling indices. When up to 5 measure names are 
+		selected, they are listed in a legend together with their corresponding 
+		drawing type, otherwise they are listed in the &quot;Running messages&quot; text 
+		box.</span></p>
+		<p align="center">
+      <img border="0" src="plotresampledtimeseries1.JPG" width="482" height="452"><p>
+      <span lang="en-us">The resampling test here is for the null hypothesis of 
+		linear stochastic process using surrogate data generated by the STAP 
+		algorithm on a time series of EEG from an epileptic seizure (exhibiting 
+		rhythmic oscillations and thus expected nonlinear dynamics to be present 
+		and the null hypothesis to be rejected). We note that for two of the 
+		four measures displayed in the figure above, the cumulative 
+		bicorrelation for maximum lag 10 (blue line) and the cumulative mutual 
+		information using equiprobable binning of automatically selected number 
+		of bins and maximum lag 10 (red line), it is obvious that the original 
+		values for both measures are well above the respective values of the 
+		resampled data. The distinction is less clear for the measure of the fit 
+		with a local zero order model of 10 neighbors, lag one, embedding 
+		dimension 10 and predicting 5 time steps ahead using the direct 
+		prediction scheme (black dashed line). However, this does not mean that 
+		the rejection of the null hypothesis is less confident by this nonlinear 
+		measure. It is just that the range for this measure is much smaller, as 
+		is for the forth measure of the linear autoregressive (AR) fit for the 
+		same prediction and using AR order 10. </span>
+		<p>
+      <span lang="en-us">To visualize better the graphs for the two last 
+		measures (the nonlinear and linear fit measures) we should use the 
+		option &quot;Normalize&quot;. Moreover, to obtain quantitative results as well&nbsp; 
+		for these two measures, we select only these two, and activate the 
+		checkboxes&nbsp; &quot;Normalize&quot; and &quot;Display test&quot;. By then pressing the 
+		button &quot;View selected plot&quot; two figures are generated in separate 
+		windows as shown below (for the test statistic of the linear fit on the 
+		first figure and the test statistic of the nonlinear fit on the second 
+		figure).</span><p>
+      <img border="0" src="plotresampledtimeseries2.JPG" width="407" height="380"><p>
+      <img border="0" src="plotresampledtimeseries3.JPG" width="408" height="381"><p>
+      <span lang="en-us">It is obvious that for the linear fit the value for the 
+		original EEG data is well within the distribution of the values from the 
+		STAP surrogate time series (the open circle is above both the two red 
+		horizontal lines and towards zero). Accordingly, the p-values of both 
+		the parametric and the nonparametric test are large (displayed at the 
+		title of the figure). We note that the set of measure values for the 
+		resampled data form a distribution that is accepted to be normal as 
+		given by the Kolmogorov-Smirnov test, and this result is displayed in 
+		the title as &quot;normality accepted&quot;. So, we can trust the result of the 
+		parametric test. The test results for the nonlinear fit test statistic 
+		given in the second figure above, suggest that the null hypothesis for 
+		linear stochastic process should be rejected at very low significance 
+		level when using the parametric approach and at the smallest significant 
+		level of </span><font face="Times New Roman">&#8776;0.02<span lang="en-us">5 
+		when using the nonparametric approach. The Kolmogorov-Smirnov test 
+		suggests here that the test statistic values on the resampled data do 
+		not follow normal distribution (stated as &quot;normality rejected&quot; in the 
+		title), so we cannot trust the parametric 
+		result.</span></font></td>
+    	</tr>
+		<tr>
+      <td colspan="2"><p>&nbsp;<p><b><span lang="en-us"><font size="4">Running Messages</font></span></b></td>
+    		</tr>
+			<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">A text box displaying messages for the 
+		running operations.</span></td>
+    		</tr>
+			<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Exit</font></span></b></td>
+    		</tr>
+			<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Plot of Measures vs Resampled Time Series Indices&quot; will 
+		disappear and the user will be moved to the &quot;View Measures&quot; window. Note 
+		that any created figures will remain until the user exits from the &quot;View 
+		Measures&quot; window. </span><font size="2">&nbsp;</font></td>
+    		</tr>
+			<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+			<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown</span><font size="2"> </font></td>
+    		</tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,636 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+
+<title>Nonlinear Model Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="925" height="1155">
+    <tr>
+      <td align="center" colspan="2" height="1" width="919"><font size="5">
+      Non<span lang="en-us">linear  </span>Model<span lang="en-us"> Measures</span></font><p>
+      <img border="0" src="nonlinearmodeling.jpg" width="826" height="499"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" height="1" width="919"></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20" align="justify"><span lang="en-us">Among 
+		different classes of nonlinear models, the <i>local state space models</i> 
+		are implemented here. This class is popular in nonlinear analysis of 
+		time series because it is effective for fitting and prediction tasks and 
+		it is intuitively simple. Different variations of the local model are 
+		implemented, and different statistical measures of fitting and 
+		prediction can be derived for a number of varying model specific 
+		parameters. These are the <i>delay </i>(<i>t</i>),
+		<i>embedding dimension</i> (<i>m</i>), <i>number of neighbors</i> (<i>k</i>) 
+		and <i>prediction times</i> (<i>h</i>). </span>
+		<p><span lang="en-us">T</span>he local region <span lang="en-us">
+		supporting the model </span>f<span lang="en-us">or fitting or prediction
+		</span>is determined <span lang="en-us">here </span>by the number of 
+		neighbours
+		<span lang="en-us">to the target point </span>formed from the
+		<span lang="en-us">available</span> set<span lang="en-us"> of 
+		reconstructed points</span>. The k-d-tree data&nbsp;structure is utilized to 
+		speed up computation time in the search of&nbsp;neighboring points<span lang="en-us">, 
+		as implemented by Guy Shechter. The routines are written in C and they 
+		are converted to matlab functions. They should run in Windows and Linux 
+		operational systems without any problems.
+		</span>The <span lang="en-us">point </span>distance<span lang="en-us">s</span>
+		<span lang="en-us">are</span> computed using the Euclidean (L2) norm.</p>
+		<p><span lang="en-us">The difference between the fitting and prediction 
+		measures is in the set of samples that are used to compute the 
+		statistical measure: all the samples are used for fitting and the 
+		samples in the so-called test set are used for prediction. Here, the 
+		test set is the last part of the time series given by the parameter of <i>
+		fraction for test set</i> (<i>f</i>). For multi-step fit or prediction, 
+		both the direct and iterative schemes are implemented. For the direct 
+		fit or prediction at a lead time
+		<i>h</i>, the <i>h</i>-step ahead mappings are used to form the estimate 
+		of the target points at a lead time <i>h</i>, whereas for the iterative 
+		fit or prediction, the one step predictions from previous steps are used 
+		to make predictions for the current step until the <i>h</i>-step is 
+		reached. </span></p>
+		<p><span lang="en-us">The local models implemented here are listed 
+		below, where the task is to predict <i>h</i>-step ahead from a current 
+		state <i><b>x</b><sub>i</sub></i>, where all states (points) are 
+		reconstructed with a delay <i>t</i> 
+		and an embedding dimension <i>m, </i>and the local model is estimated on 
+		the basis of the <i>k</i> nearest neighbors of <i><b>x</b><sub>i</sub></i>, 
+		denoted as <i><b>x</b><sub>i</sub></i><sub>(<i>j</i>)</sub>, for <i>j</i>=1,...,<i>k</i>. 
+		The selection of the specific model is determined by the value of the 
+		so-called <i>truncation parameter</i> (<i>q</i>).&nbsp; </span></p>
+		<p><span lang="en-us">- The <i>local average model</i> (LAM), called 
+		also model of zero order, predicts <i>x</i><sub><i>i</i>+<i>h</i></sub>&nbsp; 
+		from the average of the mappings of the neighbors at lead time <i>h</i>, 
+		i.e. <i>x<sub>i</sub></i><sub>(<i>j</i>)+<i>h</i></sub>, for <i>j</i>=1,...,<i>k</i>. 
+		This model is selected by <i>q </i>= 0.</span></p>
+		<p><span lang="en-us">- The <i>local linear model</i> (LLM) is the 
+		linear autoregressive model <i>x</i><sub><i>i</i>+<i>h</i></sub> = a<sub>0</sub> 
+		+ <b>a</b><sup>T</sup> <i><b>x</b><sub>i</sub></i>,&nbsp; based only on 
+		the neighboring points <i><b>x</b><sub>i</sub></i><sub>(<i>j</i>)</sub>, 
+		for <i>j</i>=1,...,<i>k</i>. The parameters a<sub>0</sub> and <b>a </b>
+		are estimated by ordinary least squares (OLS) and this requires that <i>
+		k </i>&gt; <i>m</i>+1. The prediction <i>x</i><sub><i>i</i>+<i>h</i></sub> 
+		is computed from the equation above for the target point <i><b>x</b><sub>i</sub></i>. 
+		Note that the solution for the model parameters may be numerically 
+		unstable if <i>k</i> is close to <i>m</i>. This model is selected by 
+		using any <i>q </i><font face="Times New Roman">&#8805; </font><i>m</i>.</span></p>
+		<p><span lang="en-us">- The <i>local linear model</i> as above but&nbsp; 
+		regularizing the OLS solution for the model parameters with principal 
+		component regression (PCR). PCR rotates the parameter space to match the 
+		basis formed by the principal components (found by Singular Value 
+		Decomposition (SVD) of the matrix formed by the neighboring points). 
+		Then the space is projected to the subspace formed by the <i>q</i> 
+		first principal axes, the solution for the parameters is found in this 
+		subspace and it is transformed back to the original state space to yield 
+		the PCR regularized solution for the parameters. In this way, the 
+		estimated parameters have smaller variance (they are more stable) at the 
+		cost of an introduced bias. Another advantage is that PCR may at cases 
+		reduce the effect of noise. The condition for the PCR solution is that <i>
+		k </i>
+		&gt; <i>q</i>+1, so that stable solutions can be reached even when <i>m </i>
+		&gt;<i> k</i> 
+		provided that the truncation parameter is sufficiently small. This 
+		solution is selected by using 0 &lt; <i>q</i> &lt; <i>m</i>.</span></p>
+		<p><span lang="en-us">Four standard statistical measures are 
+		encountered, the mean square error (MSE), the normalized mean square 
+		error (NMSE), the normalized root mean square error (NMSE) and the 
+		correlation coefficient (CC). The three last measures account for the 
+		variance of the time series and this allows comparison of the measure 
+		across different time series.&nbsp;&nbsp;&nbsp; </span></p>
+		<p><span lang="en-us">The local state space models are commonly used 
+		under the hypothesis of an underlying deterministic system to the time 
+		series, e.g. see</span><p>Abarbanel H.D.I.<span lang="en-us"> (1996)</span>,
+		<i>Analysis of Observed Chaotic Data</i>, Springer, New York<span lang="en-us">.</span><p>
+		Kantz H. and Schreiber T.<span lang="en-us"> (1997)</span>, <i>Nonlinear 
+		Time Series Analysis</i>, Cambridge University Press<span lang="en-us">,
+		</span>Cambridge<span lang="en-us">.</span><p><span lang="en-us">The 
+		local linear model was first introduced in </span>
+		<p><span lang="en-us">Farmer J.D. and Sidorowich J.J. (1987), Predicting 
+		Chaotic Time Series, <i>Physical Review Letters</i>, Vol 59, pp 845-848. </span>
+		<p><span lang="en-us">The PCR regularization of the OLS solution for the 
+		local linear model and the difference in direct and iterative prediction 
+		are presented in </span>
+		<p><span lang="en-us">Kugiumtzis D., Lingj<font face="Arial" size="2">&aelig;</font>rde 
+		O.C. and Christophersen N. (1998), Regularized Local Linear Prediction 
+		of Chaotic Time Series, <i>Physica D</i>, Vol 112, pp 344-360.</span><p>
+		<span lang="en-us">Kugiumtzis D. (2002), State Space Local Linear 
+		Prediction, in <i>Modelling and Forecasting Financial Data, Techniques 
+		of Nonlinear Dynamics</i>, eds Soofi A. and Cao L., Kluwer Academic 
+		Publishers, Chp 4, pp 95-113.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="39" align="justify">
+  &nbsp;<p><b><font size="4">Local Average or Linear Direct Fit (Loc_DirFit)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="709" align="justify">&nbsp;</td>
+      <td width="60%" height="709" align="justify"><span lang="en-us">
+		Local Average or Linear Direct Fit gives four statistical measures of 
+		goodness of fit with a local model of order zero (the local average 
+		model, LAM) or one (the local linear model, LLM). A number of different 
+		delays, embedding dimensions and number of neighbors for the local model 
+		can be given and the fit can be computed for a number of lead times 
+		using the direct prediction scheme. The following parameters can be 
+		specified:</span><p>
+		<span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1'. </span></p>
+		<p>
+		<span lang="en-us">- <b>embedding dimension (m)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that no state space reconstruction 
+		will be done and the points are simply the samples of the time series.</span></p>
+		<p>
+		<span lang="en-us">- <b>number of neighbors (k)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that the computations of the 
+		goodness of fit measures will be done for the simplest local model where 
+		the prediction is based on the mapping of the nearest neighbor of the 
+		target point. This prediction is called also for nearest neighbor 
+		prediction.&nbsp; </span></p>
+		<p><span lang="en-us">- <b>prediction time (h)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that the computations of the 
+		goodness of fit measures will be done only for one-step ahead.</span></p>
+		<p><span lang="en-us">- <b>truncation parameter (q)</b> : any positive 
+		integer. This parameter actually determines the type of local model to 
+		be used. The default is '0' meaning that the local average model will be 
+		used. If <i>q</i><font face="Times New Roman"> 
+		&#8805; <i>m</i></font> the standard local linear model with OLS solution for 
+		the model parameters will be used. So, if the user wants to run this 
+		model for a number of different embedding dimensions, just use <i>q</i> 
+		larger than the maximum of the selected embedding dimensions. If 0 &lt; <i>
+		q</i>&nbsp; &lt; <i>m </i>&nbsp;the local linear model with the PCR regularized 
+		solution for the model parameters will be used. Care should be taken 
+		that the condition <i>q</i> &lt; <i>k</i> (or <i>m</i> &lt; <i>k</i> if <i>q
+		</i>&gt;<i> m</i>) always holds, otherwise the equation system is 
+		under-determined and there is no unique solution for the model 
+		parameters leading to unstable parameter estimates. The solution for the 
+		model parameters can be unstable (in the sense that the variance of the 
+		estimates is very large) also when <i>q</i> (or <i>m</i> if <i>q</i> &gt;
+		<i>m</i>) is at the level of <i>k</i>.&nbsp; </span></p>
+		<p><span lang="en-us">The user can activate (check) any of the four 
+		statistical measures to save results for. If none is checked then 
+		results for all four measures will be saved and the measures will be 
+		included in the measure list. The statistical measures are the 
+		following:</span></p>
+		<p><span lang="en-us">- <b>MSE</b> : if checked the mean square error (MSE) 
+		measure of goodness of fit for the specified parameters will be included 
+		in the list of measures. MSE is the sum of squares of prediction errors 
+		defined as </span></p>
+		<p align="center">
+		<img border="0" src="image002.gif" width="268" height="45"></p>
+		<p>where <i>x<sub>i+h</sub></i> 
+		is the actual sample and <i>x<sub>i</sub></i>(<i>h</i>) 
+		is the <i>h</i>-step ahead prediction at current time <i>i</i>, for <i>i</i>=<i>m</i>,...,<i>N-h</i>, 
+		and <i>N</i> is the length of the time series.<span lang="en-us">&nbsp;&nbsp;
+		</span></p>
+		<p><span lang="en-us">- <b>NMSE</b> : if checked the normalized mean 
+		square error (MSE) measure of goodness of fit for the specified 
+		parameters will be included in the list of measures. NMSE is the MSE 
+		divided by the variance of the samples included in the sum of MSE, 
+		defined as</span></p>
+		<p align="center">
+		<img border="0" src="image004.gif" width="197" height="88"></span></span></span></p>
+		<p>
+		<span style="font-family: Times New Roman" lang="en-us">
+		where <img border="0" src="xbar.JPG" width="18" height="20">is the mean of the samples in the sum. 
+		</span></p>
+		<p><span lang="en-us">- <b>NRMSE</b> : if checked the normalized root 
+		mean square error (MSE) measure of goodness of fit for the specified 
+		parameters will be included in the list of measures. NRMSE is the square 
+		root of NMSE.</span></p>
+		<p><span lang="en-us">- <b>CC</b> : if checked the correlation 
+		coefficient (CC) measure of goodness of fit for the specified parameters 
+		will be included in the list of measures. CC is the standard Pearson 
+		correlation coefficient between the actual samples and the respective 
+		predictions, i.e. </span> <i>x<sub>i+h</sub></i> 
+		and <i>x<sub>i</sub></i>(<i>h</i>) 
+		<span lang="en-us">for</span> <i>h</i>-step ahead prediction at current time <i>i</i><span lang="en-us">.</span><p><span lang="en-us"><i>
+		Example</i>: If the user selects this measure by activating the check 
+		box in the beginning of the measure line and sets for the delay (t) '1', 
+		for embedding dimension (m) '5 10', for the number of nearest neighbors 
+		(k) '10 20', for prediction time (h) '1:3' and for truncation parameter 
+		(q) '20' (no truncation with PCR since <i>q
+		</i><font face="Times New Roman">&#8805; </font><i>m</i>), and checks only 
+		NRMSE then the NRMSE measure of Local Average or Linear Direct Fit is 
+		computed for the combinations of the 2 values of <i>m</i>, 2 values of <i>
+		k </i>
+		and the 3 values of <i>h</i> and in the measure list the following 
+		measure names will appear</span><p><span lang="en-us">
+		Loc_DirFitNRMSEt1m5k10q20h1<br>
+		Loc_DirFitNRMSEt1m5k10q20h2<br>
+		Loc_DirFitNRMSEt1m5k10q20h3<br>
+		Loc_DirFitNRMSEt1m5k20q20h1<br>
+		Loc_DirFitNRMSEt1m5k20q20h2<br>
+		Loc_DirFitNRMSEt1m5k20q20h3<br>
+		Loc_DirFitNRMSEt1m10k10q20h1&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirFitNRMSEt1m10k10q20h2&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirFitNRMSEt1m10k10q20h3&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirFitNRMSEt1m10k20q20h1<br>
+		Loc_DirFitNRMSEt1m10k20q20h2<br>
+		Loc_DirFitNRMSEt1m10k20q20h3</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Local Average or Linear 
+      Iterative Fit (Loc_IteFit)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="120" align="justify">&nbsp;</td>
+      <td width="60%" height="120" align="justify"><span lang="en-us">
+		Local Average or Linear Iterative Fit gives four statistical measures of goodness of fit 
+		with a local model of order zero (the local average model, LAM) or one 
+		(the local linear model, LLM). A number of different delays, embedding 
+		dimensions and number of neighbors for the 
+		local model can be given and the fit can be computed for a number of lead 
+		times using the Iterative prediction scheme. The following parameters can be specified:</span><p>
+		<span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1'. </span></p>
+		<p>
+		<span lang="en-us">- <b>embedding dimension (m)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that no state space reconstruction 
+		will be done and the points are simply the samples of the time series.</span></p>
+		<p>
+		<span lang="en-us">- <b>number of neighbors (k)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that the computations of the 
+		goodness of fit measures will be done for the simplest local model where 
+		the prediction is based on the mapping of the nearest neighbor of the 
+		target point. This prediction is called also for nearest neighbor 
+		prediction.&nbsp; </span></p>
+		<p><span lang="en-us">- <b>prediction time (h)</b> : any valid 
+		matlab format denoting an array of positive integers or a single 
+		positive integer. The default is '1' meaning that the computations of 
+		the goodness of fit measures will be done only for one-step ahead.</span></p>
+		<p><span lang="en-us">- <b>truncation parameter (q)</b> : any positive integer. 
+		This parameter actually determines the type of local model to be used. The default is '0' meaning that the 
+		local average model will be used. If <i>q</i><font face="Times New Roman"> 
+		&#8805; <i>m</i></font> the standard local linear model with OLS solution for 
+		the model parameters will be used. So, if the user wants to run this 
+		model for a number of embedding dimensions, just use <i>q</i> larger 
+		than the maximum of the selected embedding dimensions. If 0 &lt; <i>q</i>&nbsp; 
+		&lt; <i>m </i>&nbsp;the local linear model with the PCR regularized 
+		solution for the model parameters will be used. Care should be taken 
+		that the condition <i>q</i> &lt; <i>k</i> (or <i>m</i> &lt; <i>k</i> if <i>q
+		</i>&gt;<i> m</i>) always holds, otherwise the equation system is 
+		under-determined and there is no unique solution for the model 
+		parameters leading to unstable parameter estimates. The solution for the 
+		model parameters can be unstable (in the sense that the variance of the 
+		estimates is very large) also when <i>q</i> (or <i>m</i> if <i>q</i> &gt;
+		<i>m</i>) is at the level of <i>k</i>.&nbsp; </span></p>
+		<p><span lang="en-us">The user can activate (check) any of the four 
+		statistical measures to save results for. If none is checked then 
+		results for all four measures will be saved and the measures will be 
+		included in the measure list. The statistical measures are the 
+		following:</span></p>
+		<p><span lang="en-us">- <b>MSE</b> : if checked the mean square error (MSE) 
+		measure of goodness of fit for the specified parameters will be included 
+		in the list of measures. MSE is the sum of squares of prediction errors 
+		defined as </span></p>
+		<p align="center">
+		<img border="0" src="image002.gif" width="268" height="45"></p>
+		<p>where <i>x<sub>i+h</sub></i> 
+		is the actual sample and <i>x<sub>i</sub></i>(<i>h</i>) 
+		is the <i>h</i>-step ahead prediction at current time <i>i</i>, for <i>i</i>=<i>m</i>,...,<i>N-h</i>, 
+		and <i>N</i> is the length of the time series.<span lang="en-us">&nbsp;&nbsp;
+		</span></p>
+		<p><span lang="en-us">- <b>NMSE</b> : if checked the normalized mean 
+		square error (MSE) measure of goodness of fit for the specified 
+		parameters will be included in the list of measures. NMSE is the MSE 
+		divided by the variance of the samples included in the sum of MSE, 
+		defined as</span></p>
+		<p align="center">
+		<img border="0" src="image004.gif" width="197" height="88"></span></span></span></p>
+		<p>
+		<span style="font-family: Times New Roman" lang="en-us">
+		where <img border="0" src="xbar.JPG" width="18" height="20">is the mean of the samples in the sum. 
+		</span></p>
+		<p><span lang="en-us">- <b>NRMSE</b> : if checked the normalized root 
+		mean square error (MSE) measure of goodness of fit for the specified 
+		parameters will be included in the list of measures. NRMSE is the square 
+		root of NMSE.</span></p>
+		<p><span lang="en-us">- <b>CC</b> : if checked the correlation 
+		coefficient (CC) measure of goodness of fit for the specified parameters 
+		will be included in the list of measures. CC is the standard Pearson 
+		correlation coefficient between the actual samples and the respective 
+		predictions, i.e. </span> <i>x<sub>i+h</sub></i> 
+		and <i>x<sub>i</sub></i>(<i>h</i>) 
+		<span lang="en-us">for</span> <i>h</i>-step ahead prediction at current time <i>i</i><span lang="en-us">.</span><p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for the delay (t) '1', for embedding dimension (m) '5 10', for the 
+		number of nearest neighbors (k) '10 20', for prediction time (h) '1:3' 
+		and for truncation parameter (q) '20' (no truncation with PCR since <i>q
+		</i><font face="Times New Roman">&#8805; </font><i>m</i>), and checks only 
+		NRMSE then the NRMSE measure of Local Average or Linear Iterative Fit is computed 
+		for the combinations of the 2 values of <i>m</i>, 2 values of <i>k </i>
+		and the 3 values of <i>h</i> and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">Loc_IteFitNRMSEt1m5k10q20h1<br>
+		Loc_IteFitNRMSEt1m5k10q20h2<br>
+		Loc_IteFitNRMSEt1m5k10q20h3<br>
+		Loc_IteFitNRMSEt1m5k20q20h1<br>
+		Loc_IteFitNRMSEt1m5k20q20h2<br>
+		Loc_IteFitNRMSEt1m5k20q20h3<br>
+		Loc_IteFitNRMSEt1m10k10q20h1&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_IteFitNRMSEt1m10k10q20h2&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_IteFitNRMSEt1m10k10q20h3&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_IteFitNRMSEt1m10k20q20h1<br>
+		Loc_IteFitNRMSEt1m10k20q20h2<br>
+		Loc_IteFitNRMSEt1m10k20q20h3</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" align="justify"><b><font size="4">Local Average or Linear 
+      Direct Prediction (Loc_DirPre)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="75" align="justify">&nbsp;</td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">
+		Local Average or Linear Direct Prediction gives four statistical measures of goodness of 
+		prediction 
+		with a local model of order zero (the local average model, LAM) or one 
+		(the local linear model, LLM). The local average or linear model is 
+		estimated in the first part of the time series, the so-called training 
+		set, and the predictions are made in the second part of the time series, 
+		the so-called test set. A number of different delays, embedding 
+		dimensions and number of neighbors for the 
+		local model can be given and the prediction can be computed for a number of lead 
+		times using the direct prediction scheme. The following parameters can be specified:</span><p>
+		<span lang="en-us">&nbsp;-
+		<b>fraction for test set (f)</b> : any number between 0.1 and 0.9. The 
+		default is '0.5' meaning that the test set is the second half of the 
+		time series. Typically <i>f</i> should be smaller or equal to 0.5, so that the 
+		test set does not exceed in size the training set.&nbsp; </span></p>
+		<p>
+		<span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1'. </span></p>
+		<p>
+		<span lang="en-us">- <b>embedding dimension (m)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that no state space reconstruction 
+		will be done and the points are simply the samples of the time series.</span></p>
+		<p>
+		<span lang="en-us">- <b>number of neighbors (k)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that the computations of the 
+		goodness of prediction measures will be done for the simplest local model 
+		where the prediction is based on the mapping of the nearest neighbor of 
+		the target point in the training set. This prediction is called also for 
+		nearest neighbor prediction.&nbsp; </span></p>
+		<p><span lang="en-us">- <b>prediction time (h)</b> : any valid 
+		matlab format denoting an array of positive integers or a single 
+		positive integer. The default is '1' meaning that the computations of 
+		the goodness of prediction measures will be done only for one-step ahead.</span></p>
+		<p><span lang="en-us">- <b>truncation parameter (q)</b> : any positive integer. 
+		This parameter actually determines the type of local model to be used. The default is '0' meaning that the 
+		local average model will be used. If <i>q</i><font face="Times New Roman"> 
+		&#8805; <i>m</i></font> the standard local linear model with OLS solution for 
+		the model parameters will be used. So, if the user wants to run this 
+		model for a number of embedding dimensions, just use <i>q</i> larger 
+		than the maximum of the selected embedding dimensions. If 0 &lt; <i>q</i>&nbsp; 
+		&lt; <i>m </i>&nbsp;the local linear model with the PCR regularized 
+		solution for the model parameters will be used. Care should be taken 
+		that the condition <i>q</i> &lt; <i>k</i> (or <i>m</i> &lt; <i>k</i> if <i>q
+		</i>&gt;<i> m</i>) always holds, otherwise the equation system is 
+		under-determined and there is no unique solution for the model 
+		parameters leading to unstable parameter estimates. The solution for the 
+		model parameters can be unstable (in the sense that the variance of the 
+		estimates is very large) also when <i>q</i> (or <i>m</i> if <i>q</i> &gt;
+		<i>m</i>) is at the level of <i>k</i>.&nbsp; </span></p>
+		<p><span lang="en-us">The user can activate (check) any of the four 
+		statistical measures to save results for. If none is checked then 
+		results for all four measures will be saved and the measures will be 
+		included in the measure list. The statistical measures are the 
+		following:</span></p>
+		<p><span lang="en-us">- <b>MSE</b> : if checked the mean square error (MSE) 
+		measure of prediction in the test set for the specified parameters will be included in the list of measures. MSE is the 
+		sum of squares of prediction errors defined as</span></p>
+		<p align="center">
+		<img border="0" src="image006.gif" width="273" height="48"></p>
+		<p>where <i>x<sub>i+h</sub></i> 
+		is the actual sample and <i>x<sub>i</sub></i>(<i>h</i>) 
+		is the <i>h</i>-step ahead prediction at current time <i>i</i>, for <i>i</i>=<span lang="en-us"><i>N<sub>1</sub></i></span>,...,<i>N-h</i>, 
+		<i>N</i> is the length of the time series<span lang="en-us"> and <i>N<sub>1</sub></i> 
+		is the length of the training set ( <i>N<sub>1</sub></i> = (1-<i>f</i>)<i>N
+		</i>)</span>.<span lang="en-us">&nbsp;
+		</span></p>
+		<p><span lang="en-us">- <b>NMSE</b> : if checked the normalized mean 
+		square error (MSE) measure of prediction in the test set for the 
+		specified parameters will be included in the list 
+		of measures. NMSE is the MSE divided by the variance of the samples 
+		included in the sum of MSE, defined as</span></p>
+		<p align="center">
+		<img border="0" src="image008.gif" width="197" height="93"></p>
+		<p><span style="font-family: Times New Roman" lang="en-us">where 
+		<img border="0" src="xbar.JPG" width="18" height="20">is the mean of the 
+		samples in the sum</span><!--[if gte mso 9]>.<![endif]--></p>
+		<p><span lang="en-us">- <b>NRMSE</b> : if checked the normalized root 
+		mean square error (MSE) measure of prediction in the test set for the 
+		specified parameters will be included in the list 
+		of measures. NRMSE is the square root of NMSE.</span></p>
+		<p><span lang="en-us">- <b>CC</b> : if checked the correlation 
+		coefficient (CC) 
+		measure of prediction in the test set for the specified parameters will be included in the list of measures. CC is the 
+		standard Pearson correlation coefficient between the actual samples and 
+		the respective predictions.</span><p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for fraction for test set (f) '0.25', for the delay (t) '1', for 
+		embedding dimension (m) '5 10', for the number of nearest neighbors (k) 
+		'10 20', for prediction time (h) '1:3' and for truncation parameter (q) 
+		'20' (no truncation with PCR since <i>q </i>
+		<font face="Times New Roman">&#8805; </font><i>m</i>), and checks only NRMSE then 
+		the NRMSE measure of Local Average or Linear Direct Prediction is computed 
+		on a test set of length one forth of time series length for the 
+		combinations of the 2 values of <i>m</i>, 2 values of <i>k </i>and the 3 
+		values of <i>h</i> and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">Loc_DirPreNRMSEt1m5k10q20h1<br>
+		Loc_DirPreNRMSEt1m5k10q20h2<br>
+		Loc_DirPreNRMSEt1m5k10q20h3<br>
+		Loc_DirPreNRMSEt1m5k20q20h1<br>
+		Loc_DirPreNRMSEt1m5k20q20h2<br>
+		Loc_DirPreNRMSEt1m5k20q20h3<br>
+		Loc_DirPreNRMSEt1m10k10q20h1&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirPreNRMSEt1m10k10q20h2&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirPreNRMSEt1m10k10q20h3&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_DirPreNRMSEt1m10k20q20h1<br>
+		Loc_DirPreNRMSEt1m10k20q20h2<br>
+		Loc_DirPreNRMSEt1m10k20q20h3</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" height="20" align="justify">&nbsp;<p><b><font size="4">Local Average or Linear 
+      Iterative Prediction (Loc_ItePre)</font></b></td>
+    </tr>
+	<tr>
+      <td width="5%" height="75" align="justify">&nbsp;</td>
+      <td width="60%" height="75" align="justify"><span lang="en-us">
+		Local Average or Linear Iterative Prediction gives four statistical measures of goodness of 
+		prediction 
+		with a local model of order zero (the local average model, LAM) or one 
+		(the local linear model, LLM). The local average or linear model is 
+		estimated in the first part of the time series, the so-called training 
+		set, and the predictions are made in the second part of the time series, 
+		the so-called test set. A number of different delays, embedding 
+		dimensions and number of neighbors for the 
+		local model can be given and the prediction can be computed for a number of lead 
+		times using the iterative prediction scheme. The following parameters can be specified:</span><p>
+		<span lang="en-us">&nbsp;-
+		<b>fraction for test set (f)</b> : any number between 0.1 and 0.9. The 
+		default is '0.5' meaning that the test set is the second half of the 
+		time series. Typically <i>f</i> should be smaller or equal to 0.5, so that the 
+		test set does not exceed in size the training set.&nbsp; </span></p>
+		<p>
+		<span lang="en-us">- <b>
+		delay (t)</b>: any valid matlab format denoting an array of positive 
+		integers or a single positive integer. The default is '1'. </span></p>
+		<p>
+		<span lang="en-us">- <b>embedding dimension (m)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that no state space reconstruction 
+		will be done and the points are simply the samples of the time series.</span></p>
+		<p>
+		<span lang="en-us">- <b>number of neighbors (k)</b> : any valid matlab 
+		format denoting an array of positive integers or a single positive 
+		integer. The default is '1' meaning that the computations of the 
+		goodness of prediction measures will be done for the simplest local model 
+		where the prediction is based on the mapping of the nearest neighbor of 
+		the target point in the training set. This prediction is called also for 
+		nearest neighbor prediction.&nbsp; </span></p>
+		<p><span lang="en-us">- <b>prediction time (h)</b> : any valid 
+		matlab format denoting an array of positive integers or a single 
+		positive integer. The default is '1' meaning that the computations of 
+		the goodness of prediction measures will be done only for one-step ahead.</span></p>
+		<p><span lang="en-us">- <b>truncation parameter (q)</b> : any positive integer. 
+		This parameter actually determines the type of local model to be used. The default is '0' meaning that the 
+		local average model will be used. If <i>q</i><font face="Times New Roman"> 
+		&#8805; <i>m</i></font> the standard local linear model with OLS solution for 
+		the model parameters will be used. So, if the user wants to run this 
+		model for a number of embedding dimensions, just use <i>q</i> larger 
+		than the maximum of the selected embedding dimensions. If 0 &lt; <i>q</i>&nbsp; 
+		&lt; <i>m </i>&nbsp;the local linear model with the PCR regularized 
+		solution for the model parameters will be used. Care should be taken 
+		that the condition <i>q</i> &lt; <i>k</i> (or <i>m</i> &lt; <i>k</i> if <i>q
+		</i>&gt;<i> m</i>) always holds, otherwise the equation system is 
+		under-determined and there is no unique solution for the model 
+		parameters leading to unstable parameter estimates. The solution for the 
+		model parameters can be unstable (in the sense that the variance of the 
+		estimates is very large) also when <i>q</i> (or <i>m</i> if <i>q</i> &gt;
+		<i>m</i>) is at the level of <i>k</i>.&nbsp; </span></p>
+		<p><span lang="en-us">The user can activate (check) any of the four 
+		statistical measures to save results for. If none is checked then 
+		results for all four measures will be saved and the measures will be 
+		included in the measure list. The statistical measures are the 
+		following:</span></p>
+		<p><span lang="en-us">- <b>MSE</b> : if checked the mean square error (MSE) 
+		measure of prediction in the test set for the specified parameters will be included in the list of measures. MSE is the 
+		sum of squares of prediction errors defined as</span></p>
+		<p align="center">
+		<img border="0" src="image006.gif" width="273" height="48"></p>
+		<p>where <i>x<sub>i+h</sub></i> 
+		is the actual sample and <i>x<sub>i</sub></i>(<i>h</i>) 
+		is the <i>h</i>-step ahead prediction at current time <i>i</i>, for <i>i</i>=<span lang="en-us"><i>N<sub>1</sub></i></span>,...,<i>N-h</i>, 
+		<i>N</i> is the length of the time series<span lang="en-us"> and <i>N<sub>1</sub></i> 
+		is the length of the training set ( <i>N<sub>1</sub></i> = (1-<i>f</i>)<i>N
+		</i>)</span>.<span lang="en-us">&nbsp;
+		</span></p>
+		<p><span lang="en-us">- <b>NMSE</b> : if checked the normalized mean 
+		square error (MSE) measure of prediction in the test set for the 
+		specified parameters will be included in the list 
+		of measures. NMSE is the MSE divided by the variance of the samples 
+		included in the sum of MSE, defined as</span></p>
+		<p align="center">
+		<img border="0" src="image008.gif" width="197" height="93"></p>
+		<p><span style="font-family: Times New Roman" lang="en-us">where 
+		<img border="0" src="xbar.JPG" width="18" height="20">is the mean of the 
+		samples in the sum</span><!--[if gte mso 9]>.<![endif]--></p>
+		<p><span lang="en-us">- <b>NRMSE</b> : if checked the normalized root 
+		mean square error (MSE) measure of prediction in the test set for the 
+		specified parameters will be included in the list 
+		of measures. NRMSE is the square root of NMSE.</span></p>
+		<p><span lang="en-us">- <b>CC</b> : if checked the correlation 
+		coefficient (CC) 
+		measure of prediction in the test set for the specified parameters will be included in the list of measures. CC is the 
+		standard Pearson correlation coefficient between the actual samples and 
+		the respective predictions.</span><p><span lang="en-us"><i>Example</i>: If the user selects this measure 
+		by activating the check box in the beginning of the measure line and 
+		sets for fraction for test set (f) '0.25', for the delay (t) '1', for 
+		embedding dimension (m) '5 10', for the number of nearest neighbors (k) 
+		'10 20', for prediction time (h) '1:3' and for truncation parameter (q) 
+		'20' (no truncation with PCR since <i>q </i>
+		<font face="Times New Roman">&#8805; </font><i>m</i>), and checks only NRMSE then 
+		the NRMSE measure of Local Average or Linear Iterative Prediction is computed 
+		on a test set of length one forth of time series length for the 
+		combinations of the 2 values of <i>m</i>, 2 values of <i>k </i>and the 3 
+		values of <i>h</i> and in the measure list the following measure names 
+		will appear</span><p><span lang="en-us">Loc_ItePreNRMSEt1m5k10q20h1<br>
+		Loc_ItePreNRMSEt1m5k10q20h2<br>
+		Loc_ItePreNRMSEt1m5k10q20h3<br>
+		Loc_ItePreNRMSEt1m5k20q20h1<br>
+		Loc_ItePreNRMSEt1m5k20q20h2<br>
+		Loc_ItePreNRMSEt1m5k20q20h3<br>
+		Loc_ItePreNRMSEt1m10k10q20h1&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_ItePreNRMSEt1m10k10q20h2&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_ItePreNRMSEt1m10k10q20h3&nbsp;&nbsp;&nbsp; (these measure values 
+		should not be trusted as <i>m </i>= <i>k</i>)<br>
+		Loc_ItePreNRMSEt1m10k20q20h1<br>
+		Loc_ItePreNRMSEt1m10k20q20h2<br>
+		Loc_ItePreNRMSEt1m10k20q20h3</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>OK</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Nonlinear Model Measures&quot; will disappear and the user 
+		will be moved to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be stored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be ignored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown<font size="2">.</font></span></td>
+    		</tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>

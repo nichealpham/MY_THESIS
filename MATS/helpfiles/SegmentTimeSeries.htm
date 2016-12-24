@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Segment Time Series</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td align="center" colspan="2"><span lang="en-us"><font size="5">Segment 
+      Time Series</font></span><p>
+      <img border="0" src="Segmenttimeseries.jpg" width="550" height="454"></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify"><span lang="en-us">Multiple time series 
+		can be selected and each selected time series is split to segments of 
+		equal length, allowing the specification of the sliding step.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us"><font size="4">
+		Current List of Time Series</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Multiple time series 
+		names can be selected from this list. This can be done by standard use 
+		of the mouse: a click on the first name and Shift^click on the last name 
+		selects all names between the first and the last name; a click on the 
+		first name and subsequent Ctrl^clicks on other names select these names 
+		including the first name; Ctrl^a selects the whole list.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Length of segment (n)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The length of each 
+		segment the time series is split to. If this is larger than the time 
+		series length no operation will be done on this time series.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">
+		Sliding step (s)</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The step of the sliding 
+		window. Default is the value of the length of segment (n), which means 
+		that the segments are consecutive. A values s&lt;n indicates overlapping 
+		whereas s&gt;n leaves gaps of data not included in the segments. </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Ignore 
+		remaining data</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Two modes can be 
+		selected: Beginning (B) or End (E). This option is in action when the 
+		splitting of the time series with sliding windows leaves an unused data 
+		window. Then this window of unused data is from the beginning or end of the time 
+		series according to the chosen mode.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">OK</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this 
+		button, the segmenting of the selected time series starts and when it is 
+		completed the window is closed. </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">
+		Cancel</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">The window is closed 
+		without segmenting any time series.</span></td>
+    </tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    </tr>
+	<tr>
+      <td width="5%"></td>
+      <td width="60%"><span lang="en-us">This page is displayed.</span></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
+<meta http-equiv="Content-Language" content="el">
+<title>Moments / Long Range Correlation Measures</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="80%" height="1077">
+    <tr>
+      <td align="center" colspan="2" height="1"><font size="5">
+      Moment<span lang="en-us">s</span><span lang="en-us"> / Long Range Correlation Measures</span></font><p>
+      <img border="0" src="momentslongragecorrelation.jpg" width="301" height="637"><p>
+      &nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" height="1"></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20"><span lang="en-us">This group of measures does 
+		not represent a distinct class but it is rather a summary of descriptive 
+		statistics (simple moment measures of the time series), measures of 
+		moments of the first and second differences of the time series (the Hjorth parameters) 
+		and measures of long range correlation (Hurst exponent and Detrended 
+		Fluctuation analysis). </span>
+		<p><span lang="en-us">The Hjorth parameters of mobility and complexity 
+		are simple measures of signal complexity based on the second moment of 
+		the signal and its first and second difference. These measures have been 
+		used in the analysis EEG and they are ‘... clinically useful tools for 
+		the quantitative description of an EEG’ as quoted from the original 
+		paper in </span></p>
+		<p><span lang="en-us">Hjorth B (1970), EEG Analysis Based on Time Domain Properties, <i>
+		Electroencephalography and Clinical Neurophysiology</i>, Vol 29, 
+		306-310.</span></p>
+		<p><span lang="en-us">On the other hand, the Hurst exponent and 
+		Detrended Fluctuation Analysis (DFA) have been used as measures of long 
+		range correlation in the analysis of non-stationary time series, mostly 
+		in economics and geophysics. For the Hurst exponent, see the books
+		</span>
+		<p>Mandelbrot<span lang="en-us"> B. (1997),</span> <i>Fractals and 
+		Scaling in Finance</i>, Springer Verlag<span lang="en-us">.</span><p>
+		<span lang="en-us">Edgar E.P. (1996), <i>Chaos and Order in the Capital Markets: A New View of 
+		Cycles, Prices, and Market Volatility</i>, Second Edition, John Wiley 
+		and Sons, Inc. </span>
+		<p><span lang="en-us">DFA has been popular in many applications since it was 
+		first introduced in </span>
+		<p>Peng C<span lang="en-us">.</span>-K<span lang="en-us">.</span>, 
+		Buldyrev S<span lang="en-us">.</span>V<span lang="en-us">.</span>, 
+		Havlin S<span lang="en-us">.</span>, Simons M<span lang="en-us">.</span>, 
+		Stanley H<span lang="en-us">.</span>E<span lang="en-us">.</span>, 
+		Goldberger A<span lang="en-us">.</span>L<span lang="en-us">. (1994),</span> 
+		Mosaic <span lang="en-us">O</span>rganization of DNA <span lang="en-us">
+		N</span>ucleotides. <i>Phys<span lang="en-us">ical</span> Rev<span lang="en-us">iew</span> 
+		E<span lang="en-us">,</span></i><span lang="en-us"> Vol </span>49<span lang="en-us">, 
+		pp </span>1685<span lang="en-us">-</span>1689<span lang="en-us">. </span>
+		<p><span lang="en-us">Both 
+		Hurst exponent and DFA estimate the scaling of the energy of the time 
+		series (either in terms of variance or power spectrum) at different time 
+		scales.</span></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20">&nbsp;<p><span lang="en-us"><font size="4"><b>
+		Descriptive Statistics</b></font></span></td>
+    </tr>
+    <tr>
+      <td width="5%" height="71"></td>
+      <td width="60%" height="71"><p style="margin-top: 0; margin-bottom: 0">
+		<span lang="en-us">The following self-explained simple measures of the 
+		time series are included in this group.</span></p>
+		<p style="margin-top: 0; margin-bottom: 0"><b>Time Series mean (MeanTimSer)</b></p>
+      <p style="margin-top: 0; margin-bottom: 0"><b>Time Series median (MedianTimS)<br>
+      Time Series variance (VarianceTS)<br>
+      Time Series Standard Deviation (StdDeviaTS)<br>
+      Time Series intequartile range (IntQuarRangTS)<br>
+      Time Series skewness (SkewnessTS)<br>
+      Time Series kurtosis (KurtosisTS)</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20">&nbsp;<p><b><span lang="en-us"><font size="4">
+		Hjorth parameters</font></span></b></td>
+    </tr>
+    <tr>
+      <td width="5%" height="71"></td>
+      <td width="60%" height="71"><p style="margin-top: 0; margin-bottom: 0">
+		<span lang="en-us">The following two Hjorth parameters are implemented:</span></p>
+		<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		<p style="margin-top: 0; margin-bottom: 0"><b><span lang="en-us">Hjorth 
+		mobility (HjorthMobi)</span></b></p>
+		<p style="margin-top: 0; margin-bottom: 0"><span lang="en-us">It is the 
+		square root of the ratio of the second moment of the first difference of 
+		the time series to the second moment of the time series.</span></p>
+		<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		<p style="margin-top: 0; margin-bottom: 0"><b><span lang="en-us">Hjorth 
+		Complexity (HjorthComp)</span></b></p>
+		<p style="margin-top: 0; margin-bottom: 0"><span lang="en-us">It is the 
+		square root of the difference of two ratios: a) the second moment of the 
+		second difference of the time series to the second moment of the first 
+		difference of the time series and b) the second moment of the first 
+		difference of the time series to the second moment of the time series.</span></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20">&nbsp;<p><span lang="en-us"><font size="4"><b>
+		Long Range Correlation</b></font></span></td>
+    </tr>
+    <tr>
+      <td width="5%" height="75"></td>
+      <td width="60%" height="75"><p style="margin-top: 0; margin-bottom: 0">
+		<span lang="en-us">The following two measures of long range correlation 
+		are implemented:</span></p>
+		<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		<p style="margin-top: 0; margin-bottom: 0"><b><span lang="en-us">Hurst 
+		exponent (HurstExpon)</span></b></p>
+		<p style="margin-top: 0; margin-bottom: 0"><span lang="en-us">The Hurst 
+		exponent is calculated </span>using the rescaled range (R<span lang="en-us">/</span>S) 
+		technique<span lang="en-us">.</span></p>
+		<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		<p style="margin-top: 0; margin-bottom: 0"><b>Detrended Fluctuation Analysis 
+      (DetFluctAna)</b></p>
+		<p style="margin-top: 0; margin-bottom: 0"><span lang="en-us">The simple 
+		form of linear DFA is used where first degree polynomials are fitted to 
+		the time series segments to derive the residuals.</span></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>OK</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">By pressing this button 
+		the window of &quot;Moments / Long Range Correlation Measures&quot; will disappear and the user 
+		will be moved to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be stored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><span lang="en-us">
+		<font size="4"><b>Cancel</b></font></span></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">Quit without doing 
+		anything and return to the &quot;Select / run measures&quot; window. Any changes 
+		in the measures and parameter values will be ignored.</span></td>
+    		</tr>
+	<tr>
+      <td colspan="2" align="justify">&nbsp;<p><b><span lang="en-us">
+		<font size="4">Help</font></span></b></td>
+    		</tr>
+	<tr>
+      <td width="5%" align="justify"></td>
+      <td width="60%" align="justify"><span lang="en-us">This file will be shown<font size="2">.</font></span></td>
+    		</tr>
+    </table>
+  </center>
+</div>
+
+</body>
+
+</html>
