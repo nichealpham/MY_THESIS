@@ -80,18 +80,7 @@ for soloop = 1:10
             T_locs(end + 1) = ind;
         end;
     end;
-    figure4 = figure;
-    set(figure4,'name',filename,'numbertitle','off');
-    subplot(4,1,1);plot(seg);title('sig');
-    hold on;plot(QRS_locs,QRS_amps,'o');
-    hold on;plot(T_locs,T_amps,'^');
-    subplot(4,1,2);plot(seg2);title('QRS peaks');
-    hold on;plot(thres_mean);
-    subplot(4,1,3);plot(sig);title('T peaks');
-    hold on;plot(thres_T);
-    subplot(4,1,4);plot(baseline);title('Baseline wander');
-    maxfig(figure4,1);
-    % REJECTION CRITERIA---------------------------------------------------
+    %-REJECTION CRITERIA---------------------------------------------------
     if length(QRS_locs) ~= length(T_locs)
         continue;
     end;
@@ -113,5 +102,17 @@ for soloop = 1:10
             continue;
         end;
     end;
+    %-PLOTTING SECTION-----------------------------------------------------
+    figure4 = figure;
+    set(figure4,'name',filename,'numbertitle','off');
+    subplot(4,1,1);plot(seg);title('sig');
+    hold on;plot(QRS_locs,QRS_amps,'o');
+    hold on;plot(T_locs,T_amps,'^');
+    subplot(4,1,2);plot(seg2);title('QRS peaks');
+    hold on;plot(thres_mean);
+    subplot(4,1,3);plot(sig);title('T peaks');
+    hold on;plot(thres_T);
+    subplot(4,1,4);plot(baseline);title('Baseline wander');
+    maxfig(figure4,1);
 end;
 

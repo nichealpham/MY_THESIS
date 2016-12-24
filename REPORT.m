@@ -1,6 +1,6 @@
 T_std_thres = 1;
-span = 15;
-for soloop = 1:10
+span = 10;
+for soloop = 1:20
     inputloop = soloop;
     %-DELINEATION----------------------------------------------------------
         % FIRST NORMALIZE SIGNAL FROM 0 TO 1
@@ -142,8 +142,8 @@ for soloop = 1:10
             pheight = (seg(QRS_locs(km) + floor(2.6 * leng)) - seg(QRS_locs(km) + floor(1.6 * leng))) / seg(QRS_locs(km)) * 100;
             width = floor(2.6 * leng) - floor(1.6 * leng);
             STslope(end + 1) = pheight / width * 10;
-            Tinv(end + 1) = (seg(T_locs(km)) - seg(T_locs(km) - floor(0.5 * leng))) * 10;
-            ToR(end + 1) = seg(T_locs(km)) / seg(QRS_locs(km)) * 100;
+            Tinv(end + 1) = seg(T_locs(km));
+            ToR(end + 1) = abs(seg(T_locs(km))) / abs(seg(QRS_locs(km))) * 100;
             ST_on_locs(end + 1) = QRS_locs(km) + floor(1.6 * leng);
             ST_on_amps(end + 1) = seg(QRS_locs(km) + floor(1.6 * leng));
             ST_off_locs(end + 1) = QRS_locs(km) + floor(2.6 * leng);
@@ -194,7 +194,7 @@ for soloop = 1:10
     %-PLOTTING SECTION-----------------------------------------------------
     figure2 = figure;
     set(figure2,'name',filename,'numbertitle','off');
-    subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv))]);
+    subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);
     yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
     subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm']);
@@ -258,7 +258,7 @@ for soloop = 1:10
     %subplot(3,4,[7,8]);plot(LFHF);title(['LFHF / DFA']);hold on;
     %subplot(3,4,[11,12]);yyaxis left;plot(FBAND);title(['FBAND / ENTROPY']);
     %yyaxis right;plot(ENTROPY);
-    subplot(3,4,[11,12]);yyaxis left;plot(ENERGY_RATIO);title(['ENERY RATIO: ' num2str(mean(ENERGY_RATIO)) ' - ENTROPY: ' num2str(mean(ENTROPY_CUTOFF(~isinf(ENTROPY_CUTOFF))))]);
+    subplot(3,4,[11,12]);yyaxis left;plot(ENERGY_RATIO);title(['ENERY: ' num2str(mean(ENERGY_RATIO)) ' - ENTROPY: ' num2str(mean(ENTROPY_CUTOFF(~isinf(ENTROPY_CUTOFF))))]);
     axis([0 inf 0.02 0.12]);
     yyaxis right;plot(ENTROPY_CUTOFF);
     axis([0 inf 0.3 2.6]);
