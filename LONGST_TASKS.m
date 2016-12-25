@@ -74,7 +74,7 @@ for record = 1:length(recordings)
     hea = ECGw.ECG_header;
     sig = ECGw.read_signal(1,hea.nsamp);
     sig1_raw = sig(:,leads(record));
-    sig1_raw = sig1_raw(1:250000);
+    sig1_raw = sig1_raw(1:end);
     % NORMALIZATION CODES--------------------------------
     sig1_raw = sig1_raw - mean(sig1_raw);
     L = length(sig1_raw);
@@ -134,13 +134,13 @@ for record = 1:length(recordings)
     %     Ttipo: [111614x1 double]
     %BEAT_TO_BEAT;
     %SLIDING_WINDOW;
-    WAVELET;
-    %REPORT;
+    %WAVELET;
+    REPORT;
 end;
 %FINAL_PLOT;
 %WINDOW_FINAL_PLOT;
-%aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
-%        RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
-%        RP_Tinv_bin RP_ToR_bin];
+aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
+        RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
+        RP_Tinv_bin RP_ToR_bin];
 
 
