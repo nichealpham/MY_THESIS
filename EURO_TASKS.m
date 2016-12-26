@@ -24,11 +24,13 @@ analysis = [];
 %recordings = [302 306 312];
 %leads = [1 1 1 1 1];
 %-EUROPE-------------------------------------------------------------------
-recordings = [103 112 118 121 119 129 139 133 162 161 154];
+%recordings = [103 104 105 106 112 118 121 129 139 133 162 161 154 613 612 704 801 808];
+%leads = [1 2 1 2 2 1 1 2 2 2 2 2 2 1 2 2 2 2];
 %recordings = [103 118 111];
 %leads = [1 1 1];
 %recordings = [103 112 118 111];
-leads = [1 2 1 1 2 2 2 2 2 2 2];
+recordings = [103 106 113 121 136 163 170 105 108 112 115 123 129 133 147 154 104 107 112 118 122 801 154 161];
+leads = [1 2 2 1 2 2 1 1 1 2 2 2 2 2 2 2 1 1 2 2 2 2 1 2];
 % ANN, 92%, 5 features
 % k-NN, 96,8%, 2 cai HR, FBAND, ENERGY_RATIO, 50-50
 %-PARAMETERS-------------------------------
@@ -67,7 +69,7 @@ for record = 1:length(recordings)
     disp(filename);
     full_path = [data_path filename '.hea'];
     ECGw = ECGwrapper( 'recording_name', full_path);
-    load([data_path filename '_ECG_delineation.mat']);
+    %load([data_path filename '_ECG_delineation.mat']);
     % READ SIGANL AND ANNOTATION-------------------------
     ann = ECGw.ECG_annotations;
     hea = ECGw.ECG_header;
@@ -101,14 +103,14 @@ for record = 1:length(recordings)
     %elseif exist('wqrs_MV1','var')
     %    QRS = wqrs_MV1.time;
     %end;
-    QRS = wavedet;
-    fields = fieldnames(QRS);
-    fieldname = getfield(QRS,fields{leads(record)});
+    %QRS = wavedet;
+    %fields = fieldnames(QRS);
+    %fieldname = getfield(QRS,fields{leads(record)});
     % GENERAL PARAMETERS---------------------------------
     fs = hea.freq;
     ts = 1/fs;
-    beatNum = length(QRS);
-    annNum = length(ann.anntyp);
+    %beatNum = length(QRS);
+    %annNum = length(ann.anntyp);
     % FFT PARAMETERS-------------------------------------
     FFT_beat_step = 30;
     FFT_part_of_total_data_used = 10;
@@ -141,5 +143,26 @@ end;
 aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
         RP_Tinv_bin RP_ToR_bin];
-
-
+STATUS = [];
+for i = 1:length(aaaa)
+    if aaaa(i,4) > 1
+        STATUS(end + 1) = 1;
+    else
+        STATUS(end + 1) = 0;
+    end;
+end;
+STATUS = STATUS';
+aaaa = [aaaa STATUS];
+%-SCATTER PLOT-------------------------------------------------------------
+spss = [aaaa(:,2) aaaa(:,1) aaaa(:,7) aaaa(:,9)];
+STD1 = RP_STdev_bin(STATUS > 0);
+STD2 = RP_STdev_bin(STATUS == 0);
+STslope1 = RP_STslope_bin(STATUS > 0);
+STslope2 = RP_STslope_bin(STATUS == 0);
+Tinv1 = RP_Tinv_bin(STATUS > 0);
+Tinv2 = RP_Tinv_bin(STATUS == 0);
+figure(1000);
+scatter3(STD1,STslope1,Tinv1);hold on;scatter3(STD2,STslope2,Tinv2);
+xlabel('STDev');
+ylabel('STslope');
+zlabel('Tinv');

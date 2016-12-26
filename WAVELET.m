@@ -1,6 +1,6 @@
 T_std_thres = 1;
 span = 15;
-for soloop = 1:10
+for soloop = 1:3
     inputloop = soloop;
     % FIRST NORMALIZE SIGNAL FROM 0 TO 1
     % This step is done in the TASKS_HANDLE, muc dich de quare tin hieu
@@ -104,7 +104,7 @@ for soloop = 1:10
     end;
     %-PLOTTING SECTION-----------------------------------------------------
     figure4 = figure;
-    set(figure4,'name',filename,'numbertitle','off');
+    set(figure4,'name',[filename ' - ' num2str(soloop)],'numbertitle','off');
     subplot(4,1,1);plot(seg);title('sig');
     hold on;plot(QRS_locs,QRS_amps,'o');
     hold on;plot(T_locs,T_amps,'^');

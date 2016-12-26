@@ -1,6 +1,6 @@
 T_std_thres = 1;
 span = 10;
-fraction = 1/5;
+fraction = 1/2;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
