@@ -6,6 +6,7 @@ total_length = length(sig1);
 window_length = fs * span;
 number_of_loop = floor(total_length * fraction / window_length);
 for soloop = 1:number_of_loop
+%for soloop = 1:5
     %-DISPLAY SOME TEXT ON THE SCREEN------------------------------------------
     clc;
     percent = soloop / number_of_loop;
@@ -92,23 +93,27 @@ for soloop = 1:number_of_loop
         end;
         % REJECTION CRITERIA-----------------------------------------------
         if length(QRS_locs) ~= length(T_locs)
+            rejected = rejected + 1;
             continue;
         end;
         for rjloop = 2:length(QRS_locs)
             condition = QRS_locs(rjloop) - QRS_locs(rjloop - 1);
             if condition > 450
+                rejected = rejected + 1;
                 continue;
             end;
         end;
         for rjloop = 2:length(T_locs)
             condition = T_locs(rjloop) - T_locs(rjloop - 1);
             if condition > 450
+                rejected = rejected + 1;
                 continue;
             end;
         end;
         for rjloop = 1:length(T_locs)
             condition = T_locs(rjloop) - QRS_locs(rjloop);
             if condition > 250 || condition < 25
+                rejected = rejected + 1;
                 continue;
             end;
         end;
@@ -184,6 +189,29 @@ for soloop = 1:number_of_loop
        dfa = DetrendedFluctuation(data);
        DFA(end + 1) = dfa;
     end;
+    %-CALCULATING THE SCORE------------------------------------------------
+    score = 0;
+    mean_STD = mean(STDeviation);
+    mean_STS = mean(STslope);
+    mean_HR = mean(HR);
+    mean_ToR = mean(ToR);
+    mean_Tinv = mean(Tinv);
+    mean_DFA = mean(DFA);
+    if mean_STD > 60 || mean_STD < -40
+        score = score + 1;
+    end;
+    if abs(mean_STS) > 6
+        score = score + 1;
+    end;
+    if mean_Tinv < 0.01
+        score = score + 1;
+    end;
+    %if mean_HR > 100 || mean_HR < 50
+    %    score = score + 1;
+    %end;
+    if mean_DFA > 1
+        score = score + 2;
+    end;
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end
        data = seg(QRS_locs(i):QRS_locs(i+1));
@@ -205,7 +233,7 @@ for soloop = 1:number_of_loop
     %set(figure2,'name',filename,'numbertitle','off');
     %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
-    %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm']);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
+    %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
     %subplot(3,4,[3,4]);yyaxis left;plot(HR);title(['HR: ' num2str(mean(HR)) ' - DFA: ' num2str(mean(DFA))]);yyaxis right;plot(DFA);
     %-CALCULATE FFT--------------------------------------------------------
     %-beat-to-beat FFT------------------------
@@ -284,5 +312,12 @@ for soloop = 1:number_of_loop
 
     ToR = ToR';
     RP_ToR_bin = [RP_ToR_bin; mean(ToR)];
+    
+        
+    score_bin = [score_bin; score];
+    
+    accepted = accepted + 1;
+    
+    
 end;
 

@@ -1,6 +1,6 @@
 T_std_thres = 1;
 span = 15;
-for soloop = 1:3
+for soloop = 1:5
     inputloop = soloop;
     % FIRST NORMALIZE SIGNAL FROM 0 TO 1
     % This step is done in the TASKS_HANDLE, muc dich de quare tin hieu

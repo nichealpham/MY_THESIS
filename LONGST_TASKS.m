@@ -58,6 +58,10 @@ RP_ENERGY_RATIO_bin = [];
 RP_ENTROPY_CUTOFF_bin = [];
 RP_Tinv_bin = [];
 RP_ToR_bin = [];
+score_bin = [];
+% QUALIFYING DETECTION CODDE-----------------------------------------------
+accepted = 0;
+rejected = 0;
 %------------------------------------------
 for record = 1:length(recordings)
 %for record = 1:20
@@ -68,7 +72,7 @@ for record = 1:length(recordings)
     disp(filename);
     full_path = [data_path filename '.hea'];
     ECGw = ECGwrapper( 'recording_name', full_path);
-    load([data_path filename '_ECG_delineation.mat']);
+    %load([data_path filename '_ECG_delineation.mat']);
     % READ SIGANL AND ANNOTATION-------------------------
     ann = ECGw.ECG_annotations;
     hea = ECGw.ECG_header;
@@ -102,14 +106,14 @@ for record = 1:length(recordings)
     %elseif exist('wqrs_MV1','var')
     %    QRS = wqrs_MV1.time;
     %end;
-    QRS = wavedet;
-    fields = fieldnames(QRS);
-    fieldname = getfield(QRS,fields{leads(record)});
+    %QRS = wavedet;
+    %fields = fieldnames(QRS);
+    %fieldname = getfield(QRS,fields{leads(record)});
     % GENERAL PARAMETERS---------------------------------
     fs = hea.freq;
     ts = 1/fs;
-    beatNum = length(QRS);
-    annNum = length(ann.anntyp);
+    %beatNum = length(QRS);
+    %annNum = length(ann.anntyp);
     % FFT PARAMETERS-------------------------------------
     FFT_beat_step = 30;
     FFT_part_of_total_data_used = 10;
@@ -141,6 +145,27 @@ end;
 %WINDOW_FINAL_PLOT;
 aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
-        RP_Tinv_bin RP_ToR_bin];
-
-
+        RP_Tinv_bin RP_ToR_bin score_bin];
+STATUS = [];
+for i = 1:length(aaaa)
+    if aaaa(i,9) >= 3
+        STATUS(end + 1) = 1;
+    else
+        STATUS(end + 1) = 0;
+    end;
+end;
+STATUS = STATUS';
+aaaa = [aaaa STATUS];
+%-SCATTER PLOT-------------------------------------------------------------
+spss = [aaaa(:,4) aaaa(:,1) aaaa(:,7) aaaa(:,10)];
+DFA1 = RP_DFA_bin(STATUS > 0);
+DFA2 = RP_DFA_bin(STATUS == 0);
+STslope1 = RP_STslope_bin(STATUS > 0);
+STslope2 = RP_STslope_bin(STATUS == 0);
+Tinv1 = RP_Tinv_bin(STATUS > 0);
+Tinv2 = RP_Tinv_bin(STATUS == 0);
+figure(1000);
+scatter3(DFA1,STslope1,Tinv1);hold on;scatter3(DFA2,STslope2,Tinv2);
+xlabel('DFA');
+ylabel('STslope');
+zlabel('Tinv');
