@@ -5,9 +5,11 @@ data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 % ECGID--------------------------------------------------------------------
 %leads = ones(1,20) * 2;
 % CAD----------------------------------------------------------------------
-recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
+%recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
 %recordings = [20274 20461];
-leads = [2 1 2 2 2 1 1 2];
+%leads = [2 1 2 2 2 1 1 2];
+recordings = [20011 20021 20031 20041 20051 20061 20071 20081 20091 20101 20111 20121 20131 20141 20151 20161 20171 20181 20191 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20161 20361];
+leads = ones(1,length(recordings));
 %recordings = [20011];
 %leads = [2];
 % recordings = [20011 20431 20221 20271 20272 20273 20274 20451 20461 20151 20161];
@@ -148,7 +150,7 @@ aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_Tinv_bin RP_ToR_bin score_bin];
 STATUS = [];
 for i = 1:length(aaaa)
-    if aaaa(i,9) >= 3
+    if aaaa(i,9) >= 2
         STATUS(end + 1) = 1;
     else
         STATUS(end + 1) = 0;
@@ -157,15 +159,45 @@ end;
 STATUS = STATUS';
 aaaa = [aaaa STATUS];
 %-SCATTER PLOT-------------------------------------------------------------
-spss = [aaaa(:,4) aaaa(:,1) aaaa(:,7) aaaa(:,10)];
-DFA1 = RP_DFA_bin(STATUS > 0);
-DFA2 = RP_DFA_bin(STATUS == 0);
+STdev1 = RP_STdev_bin(STATUS > 0);
+STdev2 = RP_STdev_bin(STATUS == 0);
 STslope1 = RP_STslope_bin(STATUS > 0);
 STslope2 = RP_STslope_bin(STATUS == 0);
 Tinv1 = RP_Tinv_bin(STATUS > 0);
 Tinv2 = RP_Tinv_bin(STATUS == 0);
 figure(1000);
-scatter3(DFA1,STslope1,Tinv1);hold on;scatter3(DFA2,STslope2,Tinv2);
-xlabel('DFA');
+subplot(1,2,1);scatter3(STdev1,STslope1,Tinv1);hold on;scatter3(STdev2,STslope2,Tinv2);
+STdev1 = RP_STdev_bin(RP_DFA_bin > 1);
+STdev2 = RP_STdev_bin(RP_DFA_bin < 1);
+STslope1 = RP_STslope_bin(RP_DFA_bin > 1);
+STslope2 = RP_STslope_bin(RP_DFA_bin < 1);
+Tinv1 = RP_Tinv_bin(RP_DFA_bin > 1);
+Tinv2 = RP_Tinv_bin(RP_DFA_bin < 1);
+subplot(1,2,2);scatter3(STdev1,STslope1,Tinv1);hold on;scatter3(STdev2,STslope2,Tinv2);
+xlabel('STdev');
+ylabel('STslope');
+zlabel('Tinv');
+%-SCATTER PLOT-------------------------------------------------------------
+STdev0 = RP_STdev_bin(score_bin == 0);
+STdev1 = RP_STdev_bin(score_bin == 1);
+STdev2 = RP_STdev_bin(score_bin == 2);
+STdev3 = RP_STdev_bin(score_bin == 3);
+STdev4 = RP_STdev_bin(score_bin == 4);
+STdev5 = RP_STdev_bin(score_bin == 5);
+STslope0 = RP_STslope_bin(score_bin == 0);
+STslope1 = RP_STslope_bin(score_bin == 1);
+STslope2 = RP_STslope_bin(score_bin == 2);
+STslope3 = RP_STslope_bin(score_bin == 3);
+STslope4 = RP_STslope_bin(score_bin == 4);
+STslope5 = RP_STslope_bin(score_bin == 5);
+Tinv0 = RP_Tinv_bin(score_bin == 0);
+Tinv1 = RP_Tinv_bin(score_bin == 1);
+Tinv2 = RP_Tinv_bin(score_bin == 2);
+Tinv3 = RP_Tinv_bin(score_bin == 3);
+Tinv4 = RP_Tinv_bin(score_bin == 4);
+Tinv5 = RP_Tinv_bin(score_bin == 5);
+figure(1001);
+scatter3(STdev0,STslope0,Tinv0);hold on;scatter3(STdev1,STslope1,Tinv1);hold on;scatter3(STdev2,STslope2,Tinv2);hold on;scatter3(STdev3,STslope3,Tinv3);hold on;scatter3(STdev4,STslope4,Tinv4);hold on;scatter3(STdev5,STslope5,Tinv5);
+xlabel('STdev');
 ylabel('STslope');
 zlabel('Tinv');

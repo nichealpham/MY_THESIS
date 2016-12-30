@@ -1,13 +1,13 @@
 T_std_thres = 1;
 span = 10;
-fraction = 1/2;
+fraction = 1/200;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
 number_of_loop = floor(total_length * fraction / window_length);
 for soloop = 1:number_of_loop
 %for soloop = 1:5
-    %-DISPLAY SOME TEXT ON THE SCREEN------------------------------------------
+    %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
     clc;
     percent = soloop / number_of_loop;
     disp([num2str(record) '/' num2str(length(recordings)) '. ' filename ': ' num2str(floor(percent * 100)) '%']);

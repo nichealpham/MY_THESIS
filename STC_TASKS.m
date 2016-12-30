@@ -20,9 +20,11 @@ data_path = 'C:\Nguyen Pham\MY THESIS\database\stchange\';
 % R2 = 84.5%, 10s, 1/10 partition, trapz only -> Calculate STD
 analysis = [];
 %-ST CHANGES---------------------------------------------------------------
-recordings = [300 302 303 306 317];
+%recordings = [300 302 303 306 317];
 %recordings = [302 306 312];
-leads = [1 1 1 1 1];
+%leads = [1 1 1 1 1];
+recordings = 300:327;
+leads = ones(1,28);
 %-EUROPE-------------------------------------------------------------------
 %recordings = [103 112 118 111 121 119 129 139 133 162 161 154];
 %recordings = [103 118 111];
@@ -57,6 +59,10 @@ RP_ENERGY_RATIO_bin = [];
 RP_ENTROPY_CUTOFF_bin = [];
 RP_Tinv_bin = [];
 RP_ToR_bin = [];
+score_bin = [];
+% QUALIFYING DETECTION CODDE-----------------------------------------------
+accepted = 0;
+rejected = 0;
 %------------------------------------------
 for record = 1:length(recordings)
 %for record = 1:20
@@ -101,13 +107,9 @@ for record = 1:length(recordings)
     %elseif exist('wqrs_MV1','var')
     %    QRS = wqrs_MV1.time;
     %end;
-    QRS = wavedet;
-    fields = fieldnames(QRS);
-    fieldname = getfield(QRS,fields{leads(record)});
     % GENERAL PARAMETERS---------------------------------
     fs = hea.freq;
     ts = 1/fs;
-    beatNum = length(QRS);
     annNum = length(ann.anntyp);
     % FFT PARAMETERS-------------------------------------
     FFT_beat_step = 30;
