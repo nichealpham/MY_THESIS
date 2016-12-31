@@ -45,9 +45,9 @@ for soloop = 1:3
     end;
     sig = seg;
     % FILTER WITH LOWPASS
-    %filt = fir1(24, 40/(250/2),'low');
-    %sig = conv(filt,sig);
-    %sig = sig(12:end,1);
+    filt = fir1(24, 40/(250/2),'low');
+    sig = conv(filt,sig);
+    sig = sig(12:end,1);
     % FILTER WITH WAVELET
     %sig = sig - detail(:,9) - detail(:,8);
     for i = 2:length(QRS_locs)

@@ -139,8 +139,8 @@ for record = 1:length(recordings)
     %     Ttipo: [111614x1 double]
     %BEAT_TO_BEAT;
     %SLIDING_WINDOW;
-    %WAVELET;
-    REPORT;
+    WAVELET;
+    %REPORT;
 end;
 %FINAL_PLOT;
 %WINDOW_FINAL_PLOT;
