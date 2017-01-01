@@ -1,6 +1,6 @@
 QRS_std_thres = 1;
 span = 10;
-fraction = 1/2;
+fraction = 1/20;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
@@ -179,10 +179,10 @@ for soloop = 1:number_of_loop
     mean_ToR = mean(ToR);
     mean_Tinv = mean(Tinv);
     mean_DFA = mean(DFA);
-    if mean_STD > 60 || mean_STD < -40
+    if mean_STD > 100 || mean_STD < -80
         score = score + 1;
     end;
-    if abs(mean_STS) > 6
+    if mean_STS > 10 || mean_STS < -8
         score = score + 1;
     end;
     if mean_Tinv < 0.01
@@ -211,8 +211,8 @@ for soloop = 1:number_of_loop
        ENTROPY_CUTOFF(end + 1) = temp2;
     end;
     %-PLOTTING SECTION-----------------------------------------------------
-    %figure2 = figure;
-    %set(figure2,'name',filename,'numbertitle','off');
+%     figure2 = figure;
+%     set(figure2,'name',filename,'numbertitle','off');
     %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
     %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
