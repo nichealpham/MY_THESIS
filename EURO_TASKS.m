@@ -24,13 +24,13 @@ analysis = [];
 %recordings = [302 306 312];
 %leads = [1 1 1 1 1];
 %-EUROPE-------------------------------------------------------------------
-%recordings = [103 104 105 106 112 118 121 129 139 133 162 161 154 613 612 704 801 808];
-%leads = [1 2 1 2 2 1 1 2 2 2 2 2 2 1 2 2 2 2];
+recordings = [103 104 105 106 112 118 121 129 139 133 162 161 154 613 612 704 801 808];
+leads = [1 2 1 2 2 1 1 2 2 2 2 2 2 1 2 2 2 2];
 %recordings = [103 118 111];
 %leads = [1 1 1];
 %recordings = [103 112 118 111];
-recordings = [103 106 113 121 136 163 170 105 108 112 115 123 129 133 147 154 104 107 112 118 122 801 154 161];
-leads = [1 2 2 1 2 2 1 1 1 2 2 2 2 2 2 2 1 1 2 2 2 2 1 2];
+% recordings = [103 106 113 121 136 163 170 105 108 112 115 123 129 133 147 154 104 107 112 118 122 801 154 161];
+% leads = [1 2 2 1 2 2 1 1 1 2 2 2 2 2 2 2 1 1 2 2 2 2 1 2];
 % ANN, 92%, 5 features
 % k-NN, 96,8%, 2 cai HR, FBAND, ENERGY_RATIO, 50-50
 %-PARAMETERS-------------------------------
@@ -139,11 +139,9 @@ for record = 1:length(recordings)
     %     Ttipo: [111614x1 double]
     %BEAT_TO_BEAT;
     %SLIDING_WINDOW;
-    WAVELET;
-    %REPORT;
+    %WAVELET;
+    REPORT;
 end;
-%FINAL_PLOT;
-%WINDOW_FINAL_PLOT;
 aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
         RP_Tinv_bin RP_ToR_bin score_bin];
