@@ -1,6 +1,6 @@
 QRS_std_thres = 1;
 span = 10;
-fraction = 1/20;
+fraction = 1/10;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
@@ -191,9 +191,9 @@ for soloop = 1:number_of_loop
     %if mean_HR > 100 || mean_HR < 50
     %    score = score + 1;
     %end;
-    if mean_DFA > 1
-        score = score + 1;
-    end;
+%     if mean_DFA > 1
+%         score = score + 1;
+%     end;
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end
        data = seg(QRS_locs(i):QRS_locs(i+1));

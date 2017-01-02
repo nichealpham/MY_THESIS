@@ -68,6 +68,9 @@ for record = 1:length(recordings)
 %for record = 1:20
     %filename = ['s' num2str(recordings(record))];
     filename = num2str(recordings(record));
+    if filename == '302'
+        continue;
+    end;
     %filename = ['e0' num2str(recordings(record))];
     %filename = ['rec_' num2str(record)];
     disp(filename);
@@ -135,8 +138,8 @@ for record = 1:length(recordings)
     %     Ttipo: [111614x1 double]
     %BEAT_TO_BEAT;
     %SLIDING_WINDOW;
-    WAVELET;
-    %REPORT;
+    %WAVELET;
+    REPORT;
 end;
 SCATTER_PLOT;
 
