@@ -1,6 +1,6 @@
 QRS_std_thres = 1;
 span = 10;
-fraction = 1/10;
+fraction = 1/5;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
@@ -191,9 +191,32 @@ for soloop = 1:number_of_loop
     %if mean_HR > 100 || mean_HR < 50
     %    score = score + 1;
     %end;
-%     if mean_DFA > 1
-%         score = score + 1;
-%     end;
+    if mean_DFA > 1
+        score = score + 1;
+    end;
+    %-MAKING THE DIAGNOSIS-------------------------------------------------
+    if mean_STD > 100 || mean_STS > 11
+        diagnosis = 'Transient ST Elevate';
+    elseif mean_STD < -40 && mean_STS < -4
+        diagnosis = 'Transient ST Depress';
+    elseif mean_Tinv < -0
+        diagnosis = 'T wave inverted';
+    elseif mean_Tinv < 0.02
+        diagnosis = 'T wave absence';
+    elseif mean_DFA > 1 && mean_STD > 20
+        diagnosis = 'Minor positive STD';
+    elseif mean_DFA > 1 && mean_STD < -10
+        diagnosis = 'Minor negative STD';
+    elseif mean_STD > 20
+        diagnosis = 'Minor positive STD without DFA';
+    elseif mean_STD < -10
+        diagnosis = 'Minor negative STD without DFA';
+    elseif mean_DFA > 1
+        diagnosis = 'STD spotted by DFA without MF';
+    else
+        diagnosis = 'Normal ECG';
+    end;
+    disp(diagnosis);
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end
        data = seg(QRS_locs(i):QRS_locs(i+1));
@@ -212,7 +235,7 @@ for soloop = 1:number_of_loop
     end;
     %-PLOTTING SECTION-----------------------------------------------------
     %figure2 = figure;
-    %set(figure2,'name',filename,'numbertitle','off');
+    %set(figure2,'name',[filename ': ' diagnosis],'numbertitle','off');
     %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
     %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
