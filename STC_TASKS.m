@@ -138,10 +138,6 @@ for record = 1:length(recordings)
     WAVELET;
     %REPORT;
 end;
-%FINAL_PLOT;
-%WINDOW_FINAL_PLOT;
-%aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
-%        RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
-%        RP_Tinv_bin RP_ToR_bin];
+SCATTER_PLOT;
 
 

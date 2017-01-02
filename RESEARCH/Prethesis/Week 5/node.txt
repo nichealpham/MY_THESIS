@@ -1,0 +1,67 @@
+non-ST myocardial infarction, silient ischemia: nhieu du lieu, can method
+- total: ... articles reviewed
+- 
+- 
+
+Details:
+
+1. Clinical
+- silent ischemia, known as silent MI, là
+	+ giai doan dau cua Myocardial Infarction
+	+ có the preceed thành STEMI, NSTEMI
+	+ mostly come with angina
+- 3 types:
+	+ type 1: most commonly with angina
+	+ type 2: also common, in patient with prior MI
+	+ type 3: least common, without angina
+
+- Diagnostics: cardiac enzymes, stress test cause ST-depress, ST + heart rate monitor using Holter monitor (2 leads, 24-48h)
+	       implantable devices, cardiac imaging
+
+- Procedure: with or without angina -> stress test -> ST Deviation
+	+ STD?  -> AECG on the lead that cause STD -> result
+	+ non STD? -> suspect? -> test khac: cardiac enzyme, CT ...
+
+- Limitation:
+	+ cardiac enzyme: blood test, only at hospital ...
+	+ stress test: STD not always show up
+	+ Holter suffer from false posity: ST can depress during daily activities, such as postures.
+					   there is differences, however, quite weak.
+	+ implantable devices: invasive
+
+
+2. Computational Algorithm: lastest revision is in 2013, detect abnormal ST-seg using moving window
+
+- morphological characteristics of ST deviation: >= 1.0 mm from baseline, happen in episodes, episode lasts for > 1 min
+- other variables: depth of depression, duration of the episode, area-under-the-curve of the ST-segment depression
+- clinical variables: Heart rate (80% of silent ischemia), RR-interval, VPB count, SVPB count 
+
+- Limatation:
+	+ lack of data: 48h monitor, cost 40MB per records -> in sufficient of database (long-term ST, European ST-T physionet)
+	+ reliance of detection algorithm
+	+ false posity due to: changes in postures... can also cause ST Deviation
+- Good knowledge: 
+	+ increase of heart rate, increase of blood pressure before STD is the current characteristics of silent ischemia
+	+ STD happen in episodes, episode > 30s each
+	+ STD during Holter is better than STD in stress test for detection
+
+=> ECG provesto be unsufficient, sensitivity 64%
+=> Emerging technique: intra-cardiac temperature monitoring, Tissue O2 tension, CT, near Infrared spectroscopy
+ 
+
+AIMS:
+
+ichemia
+
+arrhythmia
+
+pericarditis adicury
+
+Statistics method
+
+Stochastic
+
+
+DETECTION of Myocardial Infarction on Mobile platform
+- prethesis: develop code and qualify the accuracy using Matlab
+- thesis: implement the code into web-based and mobile platform

@@ -1,0 +1,69 @@
+The sXYYYZ.tsr.zip files, where X is the number of ECG leads,
+YYY is the patient number, and Z is the record number of this
+patient, contain following files:
+
+sXYYYZ_fin.dmy - Fine diagnostic and morphology time series
+sXYYYZ_raw.dmy - Raw diagnostic and morphology time series
+sXYYYZ_1.sta   - ST segment markers according to annotation
+                 protocol A
+
+These three files are needed internally by SEMIA viewing tool.
+
+To unzip each sXYYYZ.tsr.zip file type:
+
+unzip sXYYYZ.tsr.zip
+---
+
+The sXYYYZ.stf files, where X is the number of ECG leads,
+YYY is the patient number, and Z is the record number of this
+patient, are ASCII files and contain:
+ - Raw ST level function
+ - Raw inearly approximated baseline ST level function
+   (raw ST reference function)
+ - Raw ST deviation function
+for each ECG lead. These files are intended to users.
+
+Columns in the sXYYYZ.stf file represent:
+
+Column  1:  Sample index
+Column  2:  ST level     (lead 0) (20 units = 100 uV)
+Column  3:  ST reference (lead 0) (20 units = 100 uV)
+Column  4:  ST deviation (lead 0) (20 units = 100 uV)
+Column  5:  ST level     (lead 1) (20 units = 100 uV)
+Column  6:  ST reference (lead 1) (20 units = 100 uV)
+Column  7:  ST deviation (lead 1) (20 units = 100 uV)
+[ Column  8:  ST level     (lead 2) (20 units = 100 uV) ]
+[ Column  9:  ST reference (lead 2) (20 units = 100 uV) ]
+[ Column 10:  ST deviation (lead 2) (20 units = 100 uV) ]
+---
+
+The sXYYYZ.klt.zip files, where X is the number of ECG leads,
+YYY is the patient number, and Z is the record number of this
+patient, are compressed ASCII files and contain:
+ - Time series of ST segment Karhunen-Loeve transform
+   coefficients (ST segment principal components)
+ - Time series of QRS complex Karhunen-Loeve transform
+   coefficients (QRS complex principal components)
+These files are intended to users.
+
+To unzip each sXYYYZ.klt.zip file type:
+
+unzip sXYYYZ.klt.zip
+
+Columns in the sXYYYZ.klt file represent:
+
+Column  1:  Sample index
+Column  2:  ST segment  KL coefficient 1 (100 units = 1 st.d.)
+Column  3:  ST segment  KL coefficient 2 (100 units = 1 st.d.)
+Column  4:  ST segment  KL coefficient 3 (100 units = 1 st.d.)
+Column  5:  ST segment  KL coefficient 4 (100 units = 1 st.d.)
+Column  6:  ST segment  KL coefficient 5 (100 units = 1 st.d.)
+Column  7:  ST segment  KL Mahalanobis distance using the
+            first 5 KL coefficients      (100 units = 1 st.d.)
+Column  8:  QRS complex KL coefficient 1 (100 units = 1 st.d.)
+Column  9:  QRS complex KL coefficient 2 (100 units = 1 st.d.)
+Column 10:  QRS complex KL coefficient 3 (100 units = 1 st.d.)
+Column 11:  QRS complex KL coefficient 4 (100 units = 1 st.d.)
+Column 12:  QRS complex KL coefficient 5 (100 units = 1 st.d.)
+Column 13:  QRS complex KL Mahalanobis distance using the
+            first 5 KL coefficients      (100 units = 1 st.d.)

@@ -179,20 +179,20 @@ for soloop = 1:number_of_loop
     mean_ToR = mean(ToR);
     mean_Tinv = mean(Tinv);
     mean_DFA = mean(DFA);
-    if mean_STD > 100 || mean_STD < -80
+    if mean_STD > 20 || mean_STD < -20
         score = score + 1;
     end;
-    if mean_STS > 10 || mean_STS < -8
+    if mean_STS > 8 || mean_STS < 0
         score = score + 1;
     end;
-    if mean_Tinv < 0.01
+    if mean_Tinv < 0.02
         score = score + 1;
     end;
     %if mean_HR > 100 || mean_HR < 50
     %    score = score + 1;
     %end;
     if mean_DFA > 1
-        score = score + 2;
+        score = score + 1;
     end;
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end
@@ -211,8 +211,8 @@ for soloop = 1:number_of_loop
        ENTROPY_CUTOFF(end + 1) = temp2;
     end;
     %-PLOTTING SECTION-----------------------------------------------------
-%     figure2 = figure;
-%     set(figure2,'name',filename,'numbertitle','off');
+    %figure2 = figure;
+    %set(figure2,'name',filename,'numbertitle','off');
     %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
     %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
