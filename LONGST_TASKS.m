@@ -8,7 +8,8 @@ data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 %recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
 %recordings = [20274 20461];
 %leads = [2 1 2 2 2 1 1 2];
-recordings = [20011 20021 20031 20041 20051 20061 20071 20081 20091 20101 20111 20121 20131 20141 20151 20161 20171 20181 20191 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20161 20361];
+recordings = [20171 20181 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20361];
+%recordings = [20011 20021 20031 20041 20051 20061 20071 20081 20091 20101 20111 20121 20131 20141 20151 20171 20181 20191 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20161 20361];
 leads = ones(1,length(recordings));
 %recordings = [20011];
 %leads = [2];
@@ -78,7 +79,7 @@ for record = 1:length(recordings)
     % READ SIGANL AND ANNOTATION-------------------------
     ann = ECGw.ECG_annotations;
     hea = ECGw.ECG_header;
-    sig = ECGw.read_signal(1,floor(hea.nsamp/20));
+    sig = ECGw.read_signal(1,floor(hea.nsamp/10));
     sig1_raw = sig(:,leads(record));
     sig1_raw = sig1_raw(1:end);
     % NORMALIZATION CODES--------------------------------

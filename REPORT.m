@@ -1,6 +1,6 @@
 QRS_std_thres = 1;
 span = 10;
-fraction = 1/5;
+fraction = 1/2;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
@@ -216,7 +216,7 @@ for soloop = 1:number_of_loop
     else
         diagnosis = 'Normal ECG';
     end;
-    disp(diagnosis);
+    %disp(diagnosis);
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end
        data = seg(QRS_locs(i):QRS_locs(i+1));
