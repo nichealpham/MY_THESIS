@@ -1,0 +1,4 @@
+%-Calculate DFA sensitivity------------------------------------------------
+for i = 1:length(aaaa)
+    if aaaa(i, 4) > 1 && 
+end;

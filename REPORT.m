@@ -1,12 +1,12 @@
 QRS_std_thres = 1;
 span = 10;
-fraction = 1/2;
+fraction = 1/1;
 % CALCULATE SOLOOP---------------------------------------------------------
 total_length = length(sig1);
 window_length = fs * span;
 number_of_loop = floor(total_length * fraction / window_length);
-for soloop = 1:number_of_loop
-%for soloop = 1:1
+%for soloop = 1:number_of_loop
+for soloop = 1:1
     %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
     clc;
     percent = soloop / number_of_loop;
@@ -269,8 +269,9 @@ for soloop = 1:number_of_loop
     P2 = abs(Y/L);
     P1 = P2(1:floor(L/2)+1);
     P1(2:end-1) = 2*P1(2:end-1);
-    P1_smooth = smooth(P1,20/L,'rloess');
-    P1_smooth = resample(P1_smooth,length(P1_smooth),length(f));
+    P1_smooth = P1;
+    %P1_smooth = smooth(P1,20/L,'rloess');
+    %P1_smooth = resample(P1_smooth,length(P1_smooth),length(f));
     aloha = SampEn(2, 0.15*std(P1_smooth), P1_smooth, 1);
     aloho = DetrendedFluctuation(P1_smooth);
     %subplot(3,4,6);plot(P1(find(f >= 60)));title(['SE = ' num2str(aloha) ', DFA = ' num2str(aloho)]);
@@ -317,9 +318,22 @@ for soloop = 1:number_of_loop
 
     ToR = ToR';
     RP_ToR_bin = [RP_ToR_bin; mean(ToR)];
-    
-        
+           
     score_bin = [score_bin; score];
+    
+    %-HRV PARAMETERES CALCULATION AND SAVING-------------------------------
+    
+    HRV_std_bin = [HRV_std_bin; std(HR)];
+    
+    HRV_min_bin = [HRV_min_bin; min(HR)];
+    
+    HRV_max_bin = [HRV_max_bin; max(HR)];
+    
+    HRV_minmax_bin = [HRV_minmax_bin; max(HR) - min(HR)];
+    
+    HRV_DFA_bin = [HRV_DFA_bin; DetrendedFluctuation(HR)];
+    
+    %-update criteria------------------------------------------------------
     
     accepted = accepted + 1;
     

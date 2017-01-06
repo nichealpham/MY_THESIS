@@ -1,6 +1,17 @@
+% RP_STslope_bin = STslope;
+% RP_STdev_bin = STdev;
+% RP_HR_bin = HR;
+% RP_DFA_bin = DFA;
+% RP_ENERGY_RATIO_bin = ENERGY;
+% RP_ENTROPY_CUTOFF_bin = SAMEN;
+% RP_Tinv_bin = Tinv;
+% RP_ToR_bin = ToR;
+% score_bin = SCORE;
+
 aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
         RP_Tinv_bin RP_ToR_bin score_bin];
+
 STATUS = [];
 for i = 1:length(aaaa)
     if aaaa(i,9) >= 2
@@ -11,6 +22,9 @@ for i = 1:length(aaaa)
 end;
 STATUS = STATUS';
 aaaa = [aaaa STATUS];
+%-INSERT HRV PARAMETERS----------------------------------------------------
+aaaa = [aaaa HRV_std_bin HRV_max_bin HRV_min_bin ...
+        HRV_minmax_bin HRV_DFA_bin];
 %-SCATTER PLOT-------------------------------------------------------------
 STdev1 = RP_STdev_bin(STATUS == 0);
 STdev2 = RP_STdev_bin(STATUS > 0);

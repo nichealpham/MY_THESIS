@@ -1,3 +1,4 @@
+warning('off','all');
 data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\stchange\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\euro\';
@@ -8,8 +9,9 @@ data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 %recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
 %recordings = [20274 20461];
 %leads = [2 1 2 2 2 1 1 2];
-recordings = [20171 20181 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20361];
+%recordings = [20171 20181 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20361];
 %recordings = [20011 20021 20031 20041 20051 20061 20071 20081 20091 20101 20111 20121 20131 20141 20151 20171 20181 20191 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20161 20361];
+recordings = 20011:20361;
 leads = ones(1,length(recordings));
 %recordings = [20011];
 %leads = [2];
@@ -62,86 +64,103 @@ RP_ENTROPY_CUTOFF_bin = [];
 RP_Tinv_bin = [];
 RP_ToR_bin = [];
 score_bin = [];
+failed_records = {};
+%-HRV PARAMETERS-----------------------------------------------------------
+HRV_std_bin = [];
+HRV_minmax_bin = [];
+HRV_min_bin = [];
+HRV_max_bin = [];
+HRV_DFA_bin = [];
 % QUALIFYING DETECTION CODDE-----------------------------------------------
 accepted = 0;
 rejected = 0;
 %------------------------------------------
 for record = 1:length(recordings)
 %for record = 1:20
-    filename = ['s' num2str(recordings(record))];
-    %filename = num2str(recordings(record));
-    %filename = ['e0' num2str(recordings(record))];
-    %filename = ['rec_' num2str(record)];
-    disp(filename);
-    full_path = [data_path filename '.hea'];
-    ECGw = ECGwrapper( 'recording_name', full_path);
-    %load([data_path filename '_ECG_delineation.mat']);
-    % READ SIGANL AND ANNOTATION-------------------------
-    ann = ECGw.ECG_annotations;
-    hea = ECGw.ECG_header;
-    sig = ECGw.read_signal(1,floor(hea.nsamp/10));
-    sig1_raw = sig(:,leads(record));
-    sig1_raw = sig1_raw(1:end);
-    % NORMALIZATION CODES--------------------------------
-    sig1_raw = sig1_raw - mean(sig1_raw);
-    L = length(sig1_raw);
-    Ex = 1/L * sum(abs(sig1_raw).^2);
-    sig1_raw = sig1_raw / Ex;
-    % BASELINE REMOVE USING Wavelet_decompose------------
-    [approx, detail] = wavelet_decompose(sig1_raw, 8, 'db4');
-    sig1 = sig1_raw - approx(:,8);
-    %sig1 = sig1_raw;
-    sig_backup = sig1;
-    % NORMALIZA THE SIGNAL FROM 0 TO 1
-    sig1 = sig1 + abs(min(sig1));
-    sig1 = sig1 / max(sig1);
-    % QRS DETECTION--------------------------------------
-    %if exist('wqrs_ECGv1','var')
-    %    QRS = wqrs_ECGv1.time;
-    %elseif exist('wqrs_V4','var')
-    %    QRS = wqrs_V4.time;
-    %elseif exist('wqrs_V1','var')
-    %    QRS = wqrs_V1.time;
-    %elseif exist('wqrs_MLII','var')
-    %    QRS = wqrs_MLII.time;
-    %elseif exist('wqrs_MV2','var')
-    %    QRS = wqrs_MV2.time;
-    %elseif exist('wqrs_MV1','var')
-    %    QRS = wqrs_MV1.time;
-    %end;
-    %QRS = wavedet;
-    %fields = fieldnames(QRS);
-    %fieldname = getfield(QRS,fields{leads(record)});
-    % GENERAL PARAMETERS---------------------------------
-    fs = hea.freq;
-    ts = 1/fs;
-    %beatNum = length(QRS);
-    %annNum = length(ann.anntyp);
-    % FFT PARAMETERS-------------------------------------
-    FFT_beat_step = 30;
-    FFT_part_of_total_data_used = 10;
-    envelope_size = 26;
-    smooth_type = 'loess';
-    smooth_span = .01;
-    % ---------------
-    %       Pon: [111614x1 double]
-    %         P: [111614x1 double]
-    %      Poff: [111614x1 double]
-    %     Ptipo: [111614x1 double]
-    %     QRSon: [111614x1 double]
-    %       qrs: [111614x1 double]
-    %         Q: [111614x1 double]
-    %         R: [111614x1 double]
-    %         S: [111614x1 double]
-    %    QRSoff: [111614x1 double]
-    %       Ton: [111614x1 double]
-    %         T: [111614x1 double]
-    %    Tprima: [111614x1 double]
-    %      Toff: [111614x1 double]
-    %     Ttipo: [111614x1 double]
-    %BEAT_TO_BEAT;
-    %SLIDING_WINDOW;
-    %WAVELET;
-    REPORT;
+    try
+        filename = ['s' num2str(recordings(record))];
+        %filename = num2str(recordings(record));
+        %filename = ['e0' num2str(recordings(record))];
+        %filename = ['rec_' num2str(record)];
+        disp(filename);
+        full_path = [data_path filename '.hea'];
+        ECGw = ECGwrapper( 'recording_name', full_path);
+        %load([data_path filename '_ECG_delineation.mat']);
+        % READ SIGANL AND ANNOTATION-------------------------
+        ann = ECGw.ECG_annotations;
+        hea = ECGw.ECG_header;
+        sig = ECGw.read_signal(1,floor(hea.nsamp/10));
+        sig1_raw = sig(:,leads(record));
+        sig1_raw = sig1_raw(1:end);
+        % NORMALIZATION CODES--------------------------------
+        sig1_raw = sig1_raw - mean(sig1_raw);
+        L = length(sig1_raw);
+        Ex = 1/L * sum(abs(sig1_raw).^2);
+        sig1_raw = sig1_raw / Ex;
+        % BASELINE REMOVE USING Wavelet_decompose------------
+        [approx, detail] = wavelet_decompose(sig1_raw, 8, 'db4');
+        sig1 = sig1_raw - approx(:,8);
+        %sig1 = sig1_raw;
+        sig_backup = sig1;
+        % NORMALIZA THE SIGNAL FROM 0 TO 1
+        sig1 = sig1 + abs(min(sig1));
+        sig1 = sig1 / max(sig1);
+        % QRS DETECTION--------------------------------------
+        %if exist('wqrs_ECGv1','var')
+        %    QRS = wqrs_ECGv1.time;
+        %elseif exist('wqrs_V4','var')
+        %    QRS = wqrs_V4.time;
+        %elseif exist('wqrs_V1','var')
+        %    QRS = wqrs_V1.time;
+        %elseif exist('wqrs_MLII','var')
+        %    QRS = wqrs_MLII.time;
+        %elseif exist('wqrs_MV2','var')
+        %    QRS = wqrs_MV2.time;
+        %elseif exist('wqrs_MV1','var')
+        %    QRS = wqrs_MV1.time;
+        %end;
+        %QRS = wavedet;
+        %fields = fieldnames(QRS);
+        %fieldname = getfield(QRS,fields{leads(record)});
+        % GENERAL PARAMETERS---------------------------------
+        fs = hea.freq;
+        ts = 1/fs;
+        %beatNum = length(QRS);
+        %annNum = length(ann.anntyp);
+        % FFT PARAMETERS-------------------------------------
+        FFT_beat_step = 30;
+        FFT_part_of_total_data_used = 10;
+        envelope_size = 26;
+        smooth_type = 'loess';
+        smooth_span = .01;
+        % ---------------
+        %       Pon: [111614x1 double]
+        %         P: [111614x1 double]
+        %      Poff: [111614x1 double]
+        %     Ptipo: [111614x1 double]
+        %     QRSon: [111614x1 double]
+        %       qrs: [111614x1 double]
+        %         Q: [111614x1 double]
+        %         R: [111614x1 double]
+        %         S: [111614x1 double]
+        %    QRSoff: [111614x1 double]
+        %       Ton: [111614x1 double]
+        %         T: [111614x1 double]
+        %    Tprima: [111614x1 double]
+        %      Toff: [111614x1 double]
+        %     Ttipo: [111614x1 double]
+        %BEAT_TO_BEAT;
+        %SLIDING_WINDOW;
+        %WAVELET;
+        try
+            REPORT;
+        catch
+            disp('An error occured while calibrating this record');
+            failed_records{end + 1} = filename;
+        end;
+    catch
+        disp(['record ' filename ' not found. Proceed to next one']);
+    end;
 end;
 SCATTER_PLOT;
+STATS;
