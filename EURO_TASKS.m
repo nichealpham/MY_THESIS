@@ -1,7 +1,7 @@
 warning('off','all');
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\stchange\';
-data_path = 'C:\Nguyen Pham\MY THESIS\database\euro\';
+data_path = 'E:\ME_THESIS_GIT\database\euro\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\ecgid\pt1\';
 % ECGID--------------------------------------------------------------------
 %leads = ones(1,20) * 2;
@@ -31,10 +31,10 @@ analysis = [];
 % leads = [2 1 2];
 % recordings = [103 106 113 121 136 163 170 105 108 112 115 123 129 133 147 154 104 112 118 122 154 161];
 % leads = [1 2 2 1 2 2 1 1 1 2 2 2 2 2 2 2 1 2 2 2 1 2];
-recordings =    [103 104 105 106 112 113 118 121 129 133 136 139 154 161 162 163 170 105 108 112 115 123 129 133 147 154 104 112 118 122 154 161 612 801 808];
-leads =         [001 002 001 002 002 002 001 001 002 002 002 002 002 002 002 002 001 001 001 002 002 002 002 002 002 002 001 002 002 002 001 002 002 002 002];
-% recordings = 100:900;
-% leads = ones(1,length(recordings));
+% recordings =    [103 104 105 106 112 113 118 121 129 133 136 139 154 161 162 163 170 105 108 112 115 123 129 133 147 154 104 112 118 122 154 161 612 801 808];
+% leads =         [001 002 001 002 002 002 001 001 002 002 002 002 002 002 002 002 001 001 001 002 002 002 002 002 002 002 001 002 002 002 001 002 002 002 002];
+recordings = 100:900;
+leads = ones(1,length(recordings)) * 2;
 %-PARAMETERS-------------------------------
 HR_bin = [];
 meanHR_bin = []; % <----- For sliding window only

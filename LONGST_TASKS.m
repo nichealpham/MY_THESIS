@@ -1,5 +1,5 @@
 warning('off','all');
-data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
+data_path = 'E:\DATABASE\database\longst\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\stchange\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\euro\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\ecgid\pt1\';
