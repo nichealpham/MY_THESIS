@@ -157,4 +157,3 @@ for record = 1:length(recordings)
 end;
 SCATTER_PLOT;
 STATS;
-

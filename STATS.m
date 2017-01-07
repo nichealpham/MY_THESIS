@@ -28,7 +28,6 @@ for i = 1:length(aaaa)
     end;
 end;
 sensitivity_DFA = accurate_DFA_1 / total_DFA_1;
-disp(['DFA sensitivity: ' num2str(sensitivity_DFA)]);
 %-CALCULATE DFA SPECIFICITY------------------------------------------------
 for i = 1:length(aaaa)
     if aaaa(i, 4) < 1                           % DFA < 1
@@ -39,4 +38,14 @@ for i = 1:length(aaaa)
     end;
 end;
 specificity_DFA = accurate_DFA_0 / total_DFA_0;
+%-CASE SUMMARY-------------------------------------------------------------
+disp('-CASE SUMMARY------------------------------------------------------');
+failed_records_string = 'Recordings failed: ';
+for k = 1:length(failed_records)
+    failed_records_string = [failed_records_string failed_records{k} ', '];
+end;
+disp(failed_records_string);
+disp(['Accepted: ' num2str(accepted)]);
+disp(['Rejected: ' num2str(rejected)]);
+disp(['DFA sensitivity: ' num2str(sensitivity_DFA)]);
 disp(['DFA specificity: ' num2str(specificity_DFA)]);

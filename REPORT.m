@@ -5,8 +5,8 @@ fraction = 1/1;
 total_length = length(sig1);
 window_length = fs * span;
 number_of_loop = floor(total_length * fraction / window_length);
-%for soloop = 1:number_of_loop
-for soloop = 1:1
+for soloop = 1:number_of_loop
+%for soloop = 1:1
     %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
     clc;
     percent = soloop / number_of_loop;
