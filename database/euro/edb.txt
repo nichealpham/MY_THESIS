@@ -1,0 +1,175 @@
+File: edb.txt
+
+European ST-T Database
+Copyright (C) European Society of Cardiology 1991.  All rights reserved.
+
+Overview
+========
+
+The European ST-T Database CD-ROM contains nearly three hundred hours' worth of
+ambulatory ECG recordings, annotated beat-by-beat (nearly one and one-quarter
+million annotations in all).  The CD-ROM contains four directories:
+    edb		European ST-T Database
+    valedb	VALE Database
+    lib		DB library for use with Microsoft C (small memory model)
+    bin		MS-DOS executable programs for viewing annotated waveforms, and
+		 for extracting data in text format
+The files on the European ST-T Database CD-ROM are in the same format as those
+on the MIT-BIH Arrhythmia and Polysomnographic Database CD-ROMs and the MGH/MF
+Waveform Database CD-ROMs.
+
+The European ST-T Database
+--------------------------
+
+The European ST-T Database is intended to be used for evaluation of algorithms
+for analysis of ST and T-wave changes.  This database consists of 90 annotated
+excerpts of ambulatory ECG recordings from 79 subjects (70 men aged 30 to 84,
+and 8 women aged 55 to 71; information is missing for one subject). Myocardial
+ischemia was diagnosed or suspected for each subject (see reference 1);
+additional selection criteria were established in order to obtain a
+representative selection of ECG abnormalities in the database.  The database
+includes 367 episodes of ST segment change, and 401 episodes of T-wave change,
+with durations ranging from 30 seconds to several minutes, and peak
+displacements ranging from 100 microvolts to more than one millivolt.
+
+Each record is two hours in duration and contains two signals, each sampled at
+250 samples per second with 12-bit resolution over a nominal 20 millivolt input
+range.  The sample values were rescaled after digitization with reference to
+calibration signals in the original analog recordings, in order to obtain a
+uniform scale of 200 ADC units per millivolt for all signals.  (The calibration
+signals are not included in the signal files.)  The header files include
+information about the leads used, the patient's age, sex, and medications, the
+clinical findings, and the recording equipment.
+
+Two cardiologists worked independently to annotate each record beat-by-beat and
+for changes in ST segment and T-wave morphology, rhythm, and signal quality.
+ST segment and T-wave changes were identified in both leads (using predefined
+criteria which were applied uniformily in all cases), and their onsets,
+extrema, and ends were annotated.  Annotations made by the two cardiologists
+were compared, disagreements were resolved by the coordinating group in Pisa
+(see reference 3), and the reference annotation files were prepared;
+altogether, these files contain 802,866 annotations.
+
+The VALE Database
+-----------------
+
+The VALE (VALidation-Ecg) Database is intended to be used for evaluation of
+algorithms for arrhythmia detection as well as ST-T analysis.  This database
+consists of 35 annotated records, selected from ambulatory ECG recordings of 35
+subjects.  The database includes 101 episodes of ST segment change, 178
+episodes of T-wave change, as well as a variety of ventricular and
+supraventricular arrhythmias (see references 4 and 5).
+
+Each record is three hours in duration (except for vale09, which is two hours
+and 48 minutes in duration) and contains one signal, sampled at 200 samples per
+second with 12-bit resolution over a 25-40 millivolt input range.  The sample
+values were rescaled after digitization, as for the European ST-T Database.
+The records were annotated using a procedure similar to that used for the
+European ST-T Database, although the criteria for identifying ST-T changes
+differed.  In all, the reference annotation files for the VALE Database contain
+438,642 annotations.
+
+References
+----------
+
+1. Taddei, A., Benassi, A., Biagini, A., Bongiorni, M.G., Contini, C.,
+   Distante, G., Landucci, L., Mazzei, M.G., Pisani, P., Roggero, N.,
+   Varanini, M., Marchesi, C.
+   ST-T change analysis in ECG ambulatory monitoring: a European
+   standard for performance evaluation.
+   Computers in Cardiology 14:63-68 (1987).
+2. Marchesi, C.
+   The European Community concerted action on Ambulatory Monitoring.
+   Journal of Med. Eng. and Techn. 10:131-134 (1986).
+3. Taddei, A., Biagini, A., Distante, G., Marchesi, C., Mazzei, M.G.,
+   Pisani, P., Roggero, N., Zeelenberg, C.
+   An annotated database aimed at performance evaluation of algorithms
+   for ST-T change analysis.
+   Computers in Cardiology 16:117-120 (1989).
+4. Taddei, A., Varanini, M., Macerata, A., Marchesi, C., Contini, C., Biagini,
+   A., Bongiorni, M.G., Mazzei, M.G., Mazzocca, G.F., and Baratto, M.
+   An annotated database for the evaluation of algorithms for the analysis of
+   arrhythmias and ischemic events.
+   Computers in Cardiology 10:191-194 (1983).
+5. Taddei, A., Varanini, M., Macerata, A., Baratto, M., Biagini, A., Bongiorni,
+   M.G., Contini, C., Mazzei, M.G., Mazzocca, G.F., and Marchesi, C.
+   Performance evaluation of algorithms for the QRS morphology classification
+   and for the detection of the ST changes in ambulatory monitoring.
+   Computers in Cardiology 11:277-280 (1984).
+6. Taddei, A., Biagini, A., Distante, G., Emdin, M., Mazzei, M.G., Pisani, P.,
+   Roggero, N., Varanini, M., Mark, R.G., Moody, G.B., Braaksma, L.,
+   Zeelenberg, C., Marchesi, C.
+   The European ST-T Database: development, distribution, and use.
+   Computers in Cardiology 17:177-180 (1990).
+7. Taddei, A., Distante, G., Emdin, M., Pisani, P., Moody, G.B., Zeelenberg, C.,
+   and Marchesi, C.
+   The European ST-T Database: standard for evaluating systems for the analysis
+   of ST-T changes in ambulatory electrocardiography.
+   European Heart Journal 13: 1164-1172 (1992).
+8. ANSI-AAMI EC38-1994. Ambulatory electrocardiographs.
+   Association for the Advancement of Medical Instrumentation, 3330 Washington
+   Boulevard, Suite 400, Arlington, VA 22201-4598, USA (1994).
+9. Jager F.
+   Guidelines for assessing performance of ST analysers.
+   Journal of Medical Engineering & Technology 22:25-30 (1998).
+
+The sample record
+=================
+
+This directory contains a twelve-minute excerpt (record x_edb), taken from
+the beginning of record e0105 of the European ST-T Database.  This excerpt shows
+a complete episode of transient ST change in both signals, accompanied by
+a T-wave morphology change in signal 0.  The annotation file, `x_edb.atr',
+contains beat, rhythm, and signal quality labels as in the MIT-BIH Arrhythmia
+Database, with additional annotations to document ST and T changes.  To print
+only the ST and T change annotations, use the command:
+    rdann -r x_edb -a atr -p s t
+The output appears as:
+    4:00.444    60111     s    0    0    0	(ST0+
+    4:29.268    67317     t    0    0    0	(T0+
+    4:55.892    73973     s    0    0    0	(ST1-
+    8:28.544   127136     t    0    0    0	AT0+250
+    8:30.928   127732     s    0    0    0	AST0+600
+    8:34.176   128544     s    0    0    0	AST1-150
+    9:41.336   145334     t    0    0    0	T0+)
+    9:58.580   149645     s    0    0    0	ST1-)
+   10:02.816   150704     s    0    0    0	ST0+)
+The last column shows the contents of the `aux' field of each of these
+annotations (see the ECG Database Programmer's Guide for general information
+about the `aux' field).  In this case, the first, fourth, and last of these
+annotations indicate the beginning (`(ST0+'), extremum (`AST0+600'), and
+end (`ST0+)') of an episode of ST elevation in signal 0.  The annotation for
+the extremum indicates that the maximum elevation was 600 microvolts (relative
+to the baseline for this subject represented by the first 30 seconds of the
+record).  Similarly, the `(T0+', `AT0+250', and `T0+)' indicate an episode
+during which the T-wave amplitude increased by 250 microvolts in signal 0,
+and the `(ST1-', `AST1-150', and `ST1-)' indicate an episode of ST depression
+in signal 1, with an extreme deviation of -150 microvolts from baseline.
+
+
+Additional information
+======================
+
+Additional information about this database is available from:
+
+    Alessandro Taddei         
+    National Research Council (CNR) Institute of Clinical Physiology
+    Biomedical Engineering and Medical Informatics
+    via Trieste,41
+    56126 PISA, Italy
+
+    Telephone: +(39) 050 502771 (501145)    Telefax: +(39) 050 503596
+    E-mail: taddei@ifc.pi.cnr.it
+    Web: http://www.ifc.pic.cnr.it
+
+or:
+
+    George B. Moody
+    Harvard-MIT Division of Health Sciences and Technology
+    MIT Room E25-505A
+    77 Massachusetts Avenue
+    Cambridge, MA 02139 USA
+
+    Telephone: +1(617) 253-7424   Telefax: +1(617) 258-7859
+    E-mail: george@mit.edu
+    Web: http://ecg.mit.edu/~george

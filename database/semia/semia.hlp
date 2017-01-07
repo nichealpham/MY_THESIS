@@ -1,0 +1,286 @@
+
+INSTRUCTIONS ON USING SEMIA, Version 3.0.1
+
+Semia, version 3.0.1, is a tool to view time series of diagnostic and morphology
+parameters of long-term ambulatory recordings, and ST segment annotations with
+their corresponding ECG waveforms of the Long-Term ST Database.
+
+To run Semia type following command:
+
+semia &
+
+To successfully run Semia following files are needed in the current working
+directory:
+
+ sXXXXX.hea     - Header file of the XXXXX record. This file also contains
+                  comments of human annotators, diagnostic data of the patient and
+                  technical data of the record.
+ sXXXXX.dat     - Signal file (ECG data) of the record
+ sXXXXX_fin.dmy - File with time series of "fine" diagnostic and morphology
+                  parameters obtained on average heart beats
+ sXXXXX_raw.dmy - File with time series of "raw" (resampled - 0.5 samples/sec -
+                  and smoothed time series) diagnostic and morphology parameters
+ sXXXXX_1.sta   - ST annotation markers according to annotation protocol A
+ sXXXXX.cnt     - File containing numbers of annotated ST events and their
+                  durations according to annotation protocols A, B, and C and
+                  numbers of normal and abnormal heart beats
+
+ semia.opt      - File containing Semia's options
+ semia.hlp      - File containing this text
+
+MAIN WINDOW:
+
+After running Semia, main window appears with following buttons:
+
+ <Open>     - Open record (dialog to open a record appears)
+ <Quit>     - Exit Semia (dialog to exit Semia)
+ <Lead0>    - Open "Lead0" window
+ <Lead1>    - Open "Lead1" window
+ <Lead2>    - Open "Lead2" window
+ <Data>     - Open "Data" window
+ <KLCoeff>  - Open "KL" window
+ <DiagData> - Open window with annotators' comments, diagnostic data of the
+              patient and technical data of the record
+ <N_Events> - Open window with numbers of annotated ST events and their durations
+              according to annotation protocol A, and with numbers of normal and
+              abnormal heart beats
+ <AplOp>    - Apply semia's options (reads the semia.opt file)
+ <Help>     - Open window with this text
+
+The "Lead" windows display ST annotations and time series of diagnostic parameters
+(raw and fine ST level functions, raw and fine ST slope functions, raw linearly
+interpolated ST reference function, raw ST deviation functions, raw and fine heart
+rate functions, and annotated ST episodes).
+
+The "Data" window displays ECG signals corresponding to time instance of active
+reference annotation (upper) and ECG signals corresponding to time instance of
+marker (lower).
+
+The "KL" window displays time series of ST segment and QRS complex Karhunen-Loeve
+Transform morphology coefficients.
+
+DIALOG TO OPEN A RECORD:
+
+When typing the record name in the dialog to open a record, end it with <CR>. It
+is necessary to end the record name with <CR>.
+
+OPTIONS:
+
+If modifying Semia's options, edit semia.opt file. Rows in the file have following
+meaning:
+          
+ LineWidth:1   Set the width of the functions
+ Color1:green  Color of global and local reference
+ Color2:blue   Color of active annotation
+ Color3:red    Color of marker and overlays within windows
+ Color4:red    Color of overlay from the lead 0
+ Color5:red    Color of overlay from the lead 1
+ Color6:red    Color of overlay from the lead 2
+               
+               Line width could be 1,2,3,4, while colors could
+               be colors "by name". No white spaces.
+
+"LEAD0", "LEAD1", AND "LEAD2" WINDOWS:
+
+What are fine and raw time series or functions? Fine functions are those obtained
+on average heart beats after noise detection during preprocessing phase. Raw
+functions are those after resampling and smoothing of fine functions. Sampling
+frequency is 0.5 samples/sec.
+
+Semia works in three different modes. You change modes using buttons "Subtr"
+("UnSubtr"), and "ConsLR" ("ConsGR"):
+
+ - Subtracted mode ("Subtr"), active reference is global reference ("ConsGR"):
+           Upper part of a "Lead" window displays ST deviation (subtracted ST
+           level) function
+ - Unsubtracted mode ("UnSubtr"), active reference is global reference ("ConsGR"):
+           Upper part of a "Lead" window displays ST level (unsubtracted ST
+           level) function
+ - Unsubtracted mode ("UnSubtr"), active reference is local reference ("ConsLR"):
+           Upper part of a "Lead" window displays ST level (unsubtracted ST
+           level) function
+
+In the bottom part of the "Lead" windows, raw and fine time indexes are indicated
+by short vertical lines (upper - raw indexes, lower - fine indexes).
+
+Description of buttons and menus in the "Lead" windows:
+
+ < <  >   - Move backward for one half of screen
+ < << >   - Move backward for one screen
+ < >  >   - Move forward for one half of screen
+ < >> >   - Move forward for one screen
+            Moves are made synchronous for all three (or two) leads
+ <Marker> - Set marker. After clicking "Mrk" button, click into "Lead" window.
+          Vertical marker appears in the "Lead" and "KL" windows.
+ <Subtr>/(<UnSubtr>) - Entering subtracted (or unsubtracted) mode. As a result,
+                       subtracted ST level function, i.e., ST deviation function
+                       (or unsubtracted ST level function, i.e., ST level
+                       function) is displayed in the upper part of "Lead" window.
+ <OvrApp>/(<UnOvAp>) - Overlay (unoverlay) linearly interpolated ST reference
+                       function onto ST level function in the upper part of "Lead"
+                       window
+ Menu <OvrLds> - Overlay ST level functions from other leads.
+                 Options:
+                 <Lead0> - Overlay ST level function from lead 0
+                 <Lead1> - Overlay ST level function from lead 1
+                 <Lead2> - Overlay ST level function from lead 2
+                 <UnOvrly> - Unoverlay overlaied functions
+ Menu <HRate>  - Displays raw and fine ST level functions, raw and fine ST slope
+                 functions, raw ST deviation functions, raw and fine heart rate
+                 functions, and annotated ST episodes.
+                 Options:
+                 <HRate>     - Raw ST level (deviation) function (above), fine
+                               heart rate (below)
+                 <HR Raw>    - Raw ST level (deviation) function (above), raw
+                               heart rate (below)
+                 <ST Fine>   - Raw ST level (deviation) function (above), fine ST
+                               level function (below)
+                 <STsl Fine> - Raw ST level (deviation) function (above), fine ST
+                               slope (below)
+                 <STsl Raw>  - Raw ST level (deviation) function (above), raw ST
+                               slope (below)
+                 <Episodes>  - Raw ST level (deviation) function (above),
+                               annotated ST episodes (below)
+                 <Hide HR>   - Raw ST level (deviation) function (above),
+                               none (below)
+ Menu <12 min> - Time scale (from 1 minute to 96 hours).
+                 Options:
+                 <1 min>,  <2 min>,  <3 min>, <6 min>, <9 min>, <12 min>,
+                 <24 min>, <30 min>, <1 h>,   <2 h>,   <4 h>,   <6 h>,
+                 <12 h>,   <24 h>,   <48 h>,  <96 h>. 
+                 Chosen scale corresponds to one screen.
+ Menu <100 uV> - Amplitude scale (from 20uV to 5 mV).
+                 Options:
+                 <20 uV>,  <25 uV>,  <50 uV>,  <75 uV>,  <100 uV>, <125 uV>,
+                 <150 uV>, <200 uV>, <250 uV>, <500 uV>, <750 uV>, <1 mV>,
+                 <2 mV>,   <5 mV>.
+                 Chosen scale corresponds to one unit (0 - 1).
+ <Exm> - Examine annotation. After clicking "Exm" button, click as close as
+         possible to an annotation to be examined. Examined annotation becomes
+         current active annotation.
+ <ConsLR>/(<ConsGR>) - Currently examined local reference becomes active reference
+                       (global reference becomes active reference). In the case
+                       that a local references is active, examining any other
+                       local reference makes this last local reference as active
+                       reference.
+
+Description of annotation markers:
+
+ M (Marker) - This is not an annotation
+ GR         - Global reference
+ LR         - Local reference
+ BI         - Beginning of ischemic ST episode
+ XI         - Extrema of ischemic ST episode
+ EI         - End of ischemic ST episode
+ BR         - Beginning of heart-rate related ST episode
+ XR         - Extrema of heart-rate related ST episode
+ ER         - End of heart-rate related ST episode
+ NO         - Noise
+ UB         - Beginning of unreadable interval
+ UE         - End of unreadable interval
+
+Description of the left side of the "Lead" window. From top to bottom:
+
+ [units][uV] R: - Description of units, record number and lead
+ Mode    - MANUAL MODE
+ Mode    - UNSUBTRACTED/SUBTRACTED
+ ACTIVE: - Active reference (global or local reference)
+ RAW:    - Raw time of marker [hh:mm:ss.tht]
+ HRate:  - Raw heart rate [bpm]
+ ST80:   - Value of raw ST level function [uV] at marker / value of raw ST level
+           function [uV] at current active annotation
+ STSb:   - Value of raw ST deviation function [uV] at marker / value of raw ST
+           deviation function [uV] at current active annotation
+ FINE:   - Fine time of marker [hh:mm:ss.ttt]
+ HRate:  - Fine heart rate [bpm]
+ ST80:   - Value of fine ST level function [uV] at marker / value of fine ST level
+           function [uV] at current active annotation
+ Description of the function shown in the lower part of the window
+ [time]
+
+There exists a "fast mode" for setting marker and examining annotations:
+
+ - Any click into the "Lead" window (upper two thirds) using left mouse button
+   inserts a marker. Vertical marker appears in the "Lead" and "KL" windows.
+ - Any click in the "Lead" window close to an annotation using middle mouse button
+   examines this annotation. Examined annotation becomes current active
+   annotation.
+
+Any click into lower third of the "Lead" window displays values of the functions
+at this time instance in the left side of the "Lead" window. Left column of this
+area displays the values of the functions at the position of the last click, while
+the right column in this area displays the differences of values of the functions
+for the last two clicks.
+
+"DATA" WINDOW:
+
+Lower edge of the "Data" window is resizable.
+
+ Menu <Lead 0> - Signals of lead to display at time instances of active reference
+                 and marker.
+                 Options:
+                 <Lead 0> - Display lead 0
+                 <Lead 1> - Display lead 1
+                 <Lead 2> - Display lead 2
+ Menu <OvrLds> - Signals of lead to overlay.
+                 Options:
+                 <Lead 0>  - Overlay lead 0
+                 <Lead 1>  - Overlay lead 1
+                 <Lead 2>  - Overlay lead 2
+                 <UnOvrly> - Unoverlay overlaied leads
+ Menu <16 sec> - Time interval surrounding raw index of active reference, or
+                 marker, from which individual heart beats are taken to compute
+                 average heart beat (from single to 5 min).
+                 Options:
+                 <Sngl>,  <2 s>,   <4 s>,   <6 s>,   <10 s>,  <16 s>,  <20 s>,
+                 <30 s>,  <1 min>, <2 min>, <3 min>, <4 min>, <5 min>.
+ Menu <520 ms> - Width of the average heart beat (from 200 ms to 1000 ms).
+ Menu <Ovrly>  - How overlays are plotted.
+                 Options:
+                 <Ovrly>   - If overlays are used in menu <OvrLds>, this option
+                             yields in overlays.
+                 <OvShift> - If overlays are used in menu <OvrLds>, this option
+                             yields in overlays with shifts.
+ Menu <6s>     - Time scale (from 1 sec to 60 sec).
+                 Options:
+                 <1 s>,  <2 s>,  <4 s>,  <5 s>,  <6 s>,  <8 s>,  <10 s>, <12 s>,
+                 <15 s>, <20 s>, <25 s>, <30 s>, <45 s>, <60 s>. 
+                 Chosen scale corresponds to one screen.
+ Menu <1 mV>   - Amplitude scale (from 50 uV to 5 mV).
+                 Options:
+                 <50 uV>,  <75 uV>,  <100 uV>, <125 uV>, <150 uV>, <200 uV>,
+                 <250 uV>, <500 uV>, <750 uV>, <1 mV>,   <2 mV>,   <5 mV>.
+                 Chosen scale corresponds to one unit (0 - 1).
+ <OvrRef>      - Overlay reference waveform over the marker's waveform
+
+Description of the left side of the "Data" window. From top to bottom:
+
+ [units][uV] R: - Description of units and record number
+ Mode       - FINE MODE
+ HRate:     - Fine heart rate [bpm]
+ Mean:      - Samples used to compute amplitudes in ECG signals [smp]
+ ABeat:     - Window to compute average beat [sec]
+ Refer.     - Time (fine) of the active reference
+ Marker     - Time (fine) of the marker
+ Time tick: [msec]
+
+"KL" WINDOW:
+
+ Menu <ST KL> - Display ST segment or QRS complex Karhunen-Loeve Transform
+                coefficients.
+                Options:
+                <ST KL>  - Display ST segment KLT coefficients
+                <QRS KL> - Display ST segment KLT coefficients
+ <DistF> (<UnDistF>) - Overlay ST segment or QRS complex distance function, i.e.,
+                Mahalanobis distance function, (unoverlay ST segment or QRS
+                distance function). The distance function is computed using the
+                first five ST segment or QRS complex KLT coefficients.
+ Menu <1 std> - Amplitude scale (from 0.1 std to 20 std).
+                Options:
+                <0.1 std>, <0.125 std>, <0.2 std>, <0.25 std>, <0.5 std>, <1 std>,
+                <2 std>,   <4 std>,     <5 std>,   <8 std>,    <10 std>, <20 std>.
+                Chosen scale corresponds to one unit (0 - 1).
+
+Any click into the "KL" window displays values of KL coefficients (and value of
+distance function, if option "Ovrly" is used).
+

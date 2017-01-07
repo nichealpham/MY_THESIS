@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Introduction to SEMIA, Version 3.0.1</title>
+</head>
+<body bgcolor="white">
+<IMG SRC="/physiobank-banner.png" WIDTH=600 HEIGHT=64 BORDER=0 USEMAP="#pbmap">
+
+<MAP NAME="pbmap">
+<!-- #$-:Image Map file created by GIMP Imagemap Plugin -->
+<!-- #$-:GIMP Imagemap Plugin by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:1.3 -->
+<!-- #$AUTHOR:George B. Moody -->
+<AREA SHAPE="RECT" COORDS="10,0,118,40" ALT="PhysioNet" HREF="/">
+<AREA SHAPE="RECT" COORDS="139,0,267,40" ALT="PhysioBank" HREF="/physiobank/">
+<AREA SHAPE="RECT" COORDS="286,0,426,40" ALT="PhysioToolkit" HREF="/physiotools/">
+<AREA SHAPE="RECT" COORDS="438,0,599,63" ALT="NIH National Center for Research Resources" TARGET="other" HREF="http://www.ncrr.nih.gov/">
+<AREA SHAPE="RECT" COORDS="0,40,144,64" ALT="An Introduction to the PhysioBank Archives" HREF="/physiobank/physiobank-intro.shtml">
+<AREA SHAPE="RECT" COORDS="144,40,268,64" ALT="PhysioBank Archive Index" HREF="/physiobank/database/">
+<AREA SHAPE="RECT" COORDS="269,40,436,64" ALT="About PhysioBank" HREF="/physiobank/about.shtml">
+</MAP>
+<table cellpadding=0 cellspacing=0>
+ <tr valign=top><td align=center>
+  <font size=-2 color=green><strong>
+  <form method="get" action="/cgi-bin/htsearch">
+  <input type=hidden name=method value=and>
+  <input type=hidden name=format value=builtin-long>
+  <input type=hidden name=sort value=score>
+  <input type=hidden name=config value=htdig>
+  <input type=hidden name=restrict value="">
+  <input type=hidden name=exclude value="">
+  <input type="text" size="10" name="words" value="">
+  <input type="submit" value="Search">
+  <a href="/search.shtml">Advanced Search</a>&nbsp;&nbsp;
+  <a href="/mirrors/">Mirrors</a>&nbsp;&nbsp;
+  <a href="/faq.shtml">FAQ</a>
+  </font></strong>
+ </form></td></tr>
+</table>
+<font size=-1><a href="http://www.physionet.org/cgi-bin/chart?database=ltstdb">Chart-O-Matic</a></font>
+
+<center><h1>Introduction to SEMIA, Version 3.0.1</h1></center>
+
+<p>
+SEMIA, version 3.0.1, is a tool for viewing time series of diagnostic and
+morphology parameters of long-term ambulatory recordings, and ST
+segment annotations with their corresponding ECG waveforms of the <a
+href="../">Long-Term ST Database</a> (LTST DB).  SEMIA was
+created during the development of the LTST DB, a project supported by
+Medtronic, Inc. (Minneapolis, MN, USA) and Zymed, Inc. (Camarillo, CA,
+USA).
+
+<h2>Compiling SEMIA</h2>
+
+<p>
+If you have not already installed the <a
+href="/physiotools/wfdb.shtml">WFDB software package</a> and the
+<a href="/physiotools/xview/">XView toolkit</a>, do so now.
+
+<p>
+If you are running under GNU/Linux, you may not need to compile SEMIA.
+Try running the precompiled version of SEMIA available <a
+href="semia">here</a>.  (You will still need to have installed WFDB
+and XView in order to do this successfully.)
+
+<p>
+If you need to compile SEMIA, make a directory for the SEMIA sources,
+then copy all files from this directory into it.
+
+<p>
+Enter your directory of SEMIA sources and type '<tt>make</tt>'.
+
+<p>
+You may encounter many warnings related to improperly formatted
+comments in XView #include files.  These warnings may be ignored.  If
+you wish to eliminate them, download and apply this <a
+href="/physiotools/wfdb/wave/xview-patches">patch</a> (read and follow
+the instructions at the beginning of the patch to see how to apply
+it).
+
+<p>
+When '<tt>make</tt>' finishes, copy <tt>semia</tt> into a directory in your
+<b>PATH</b>, and copy <tt>semia.opt</tt> and <tt>semia.hlp</tt> into
+the directory where you wish to use SEMIA.
+
+<h2>Using SEMIA</h2>
+
+<p>
+To run SEMIA successfully, the following files of the LTST DB are needed in the
+current working directory:
+
+<ul>
+<li> <tt>s<i>nnnnn</i>.hea</tt> (the header file for record s<i>nnnnn</i>).
+     This file also contains comments of human annotators, diagnostic data of
+     the patient, and technical data of the record.
+<li> <tt>s<i>nnnnn</i>.dat</tt> (digitized ECGs for the record)
+<li> <tt>s<i>nnnnn</i>.cnt</tt> (numbers of annotated ST events and their
+     durations according to annotation protocols A, B, and C, and numbers of
+     normal and abnormal heart beats)
+<li> <tt>s<i>nnnnn</i>_fin.dmy</tt> (time series of "fine" diagnostic
+     and morphology parameters obtained on average heart beats)
+<li> <tt>s<i>nnnnn</i>_raw.dmy</tt> (time series of "raw" (resampled - 0.5
+     samples/sec - and smoothed) diagnostic and morphology parameters)
+<li> <tt>s<i>nnnnn</i>_1.sta</tt> (ST annotation markers according to
+     annotation protocol A)
+</ul>
+
+<p>
+The last three of these files are contained within the <tt>.tsr.zip</tt>
+files in the LTST DB directory on PhysioNet (or on the "Subset" CD-ROM).
+Download the <tt>.tsr.zip</tt> file and unpack it using a command such as:
+
+<pre>
+     unzip s20011.tsr.zip
+</pre>
+
+<p>
+In addition, you will need copies of <tt>semia.opt</tt> (a text file containing
+SEMIA's options) and <tt>semia.hlp</tt> (a text file containing on-line help
+for SEMIA) in the current working directory, as noted above.
+
+<p>
+Run SEMIA by typing "<tt>semia</tt>".  Click on the "Help" button to view
+SEMIA's on-line manual.  To open a record, click on "Open", then enter the
+record name (<tt>s<i>nnnnn</i></tt> only;  do not include <tt>.hea</tt> or any
+other suffix in the record name).  Depending on the speed of your system, it
+may take up to a minute for SEMIA to load the data after you click "OK".
+
+<p>
+Once the data have been loaded, several buttons that were initially
+inactive become available for use.  Each of them ( "Lead0", "Lead1",
+"Lead2", "Data", and "KL") opens a window when clicked. ("Lead2" remains
+inactive unless you have opened a record with 3 ECG signals.)
+
+<ul>
+<li> The "Lead" windows display time series of diagnostic parameters
+   (raw and fine ST level functions, raw and fine ST slope functions,
+   raw linearly interpolated ST reference functions, raw ST deviation
+   functions, raw and fine heart rate functions, and annotated ST
+   episodes) and ST segment annotations according to annotation
+   protocol A of the LTST DB.
+
+   <p>
+   Fine time series or functions are those obtained on average heart
+   beats after noise detection during preprocessing phase. Raw time
+   series or functions are those after resampling and smoothing of
+   fine functions.
+
+   <p>
+   ST segment annotations are: global reference, local references
+   that define the ST reference function, ST segment annotations
+   indicating ischemic and heart-rate related ST episodes (beginnings,
+   extrema, ends), axis shift annotations, conduction change
+   annotations, noise annotations, and annotations indicating
+   unreadable intervals (beginnings, ends).
+
+   <p>
+   Three different display modes for "Lead" windows are possible:
+   <ul>
+   <li> Unsubtracted mode displaying ST level function (linearly interpolated
+       ST reference function is not subtracted from the ST level function).
+       In this mode, the active reference to compare ST segment waveforms is
+       the global reference annotation.
+
+   <li> Unsubtracted mode displaying ST level function (linearly interpolated
+       ST reference function is not subtracted from the ST level function).
+       In this mode, the active reference to compare ST segment waveforms is
+       a local reference annotation.
+
+   <li> Subtracted mode displaying ST deviation function (linearly interpolated
+       ST reference function is subtracted from the ST level function to form
+       the ST deviation function).  In this mode, the active reference to
+       compare ST segment waveforms is the global reference annotation
+   </ul>
+
+   <p>
+   The ECG signal corresponding to current active reference annotation
+   is displayed in the upper part of the "Data" window.
+
+   <p>
+   Time series displayed in the "Lead" windows can be examined by
+   pointing them using mouse cursor or setting the <b>Marker</b> at the
+   time instance of interest. The corresponding ECG signal is displayed in
+   the lower part of the "Data" window.
+
+   <p>
+   ST segment annotations can be examined using the <b>Exm</b> option. The
+   examined ST annotation becomes the currently active annotation, and
+   its corresponding ECG signal is displayed in the lower part of the
+   "Data" window as well.
+
+   <p>
+   The time scale may be adjusted to permit between 1 minute and 96 hours
+   of data to be seen at once. Time series from "other" ECG leads may be
+   overlaid in each "Lead" window.
+
+<li> The "Data" window displays the ECG signal corresponding to the time
+   of the active reference annotation in the upper portion of the window,
+   and that corresponding to the time of the current active annotation or
+   marker in the lower portion of the window.  These two ECG waveforms may be
+   overlaid.  A variety of scales may be selected for comparing ST segment
+   morphologies.  The time scale may be adjusted to permit between 1 and 60
+   seconds of data to be seen at once.
+
+   <p>
+   The center heart beat in each ECG trace is the beat average over the chosen
+   time window. ECG signals from "other" ECG leads may be overlaid.
+
+<li> The "KL" window displays time series of morphology (waveform shape)
+   parameters.  Two sets of parameters (for the ST segment and the QRS complex)
+   can be displayed;  the parameters are coefficients of a Karhunen-Lo&egrave;ve
+   transform (principal components).
+
+   <p>
+   The ST segment or QRS complex distance function (Mahalanobis distance
+   function) can be overlaid in the KL window.
+</ul>
+
+<hr>
+
+<h3>References:</h3>
+
+<ol>
+<li> Franc Jager, George B. Moody, Alessandro Taddei, Gorazd Antolic, Michele Emdin,
+    Ales Smrdel, Boris Glavic, Carlo Marchesi, and Roger G. Mark.
+    A Long-Term ST Database for Development and Evaluation of Ischemia Detectors.
+    <i>Computers in Cardiology 1998</i>, pp. 301-304, IEEE Press. ISSN 0276-6547.
+<li> Franc Jager, Alessandro Taddei, Michele Emdin, Gorazd Antolic, Roman Dorn,
+    George B. Moody, Boris Glavic, Ales Smrdel, M Varanini, Mitja Zabukovec,
+    Simone Bordigiago, Carlo Marchesi, and Roger G. Mark.
+    The Long-Term ST Database: A Research Resource for Algorithm Development and
+    Physiologic Studies of Transient Myocardial Ischemia.
+    <i>Computers in Cardiology 2000</i>, pp. 841-844. IEEE Press. ISSN 0276-6547.</ol>

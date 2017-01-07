@@ -1,0 +1,14 @@
+AddDescription "configuration file" .opt
+AddType text/plain .opt
+AddDescription "How to use SEMIA" .hlp
+AddType text/plain .hlp
+AddDescription "C++ source file" .cc
+AddType text/plain .cc
+AddDescription "C++ include file" .h
+AddType text/plain .h
+AddDescription "SEMIA, precompiled for x86/Linux" semia
+AddDescription "'make' description file" Makefile
+AddType text/plain Makefile
+AddIcon /icons/text.gif Makefile
+AddType application/octet-stream semia
+AddIcon /icons/binary.gif semia
