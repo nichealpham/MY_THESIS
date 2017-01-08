@@ -5,8 +5,8 @@ fraction = 1/2;
 total_length = length(sig1);
 window_length = fs * span;
 number_of_loop = floor(total_length * fraction / window_length);
-for soloop = 1:number_of_loop
-%for soloop = 1:1
+%for soloop = 1:number_of_loop
+for soloop = 1:1
     %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
     clc;
     percent = soloop / number_of_loop;
@@ -70,9 +70,6 @@ for soloop = 1:number_of_loop
             data = abs(data);
             data = data.^12;
             data = data(2 * leng:6 * leng);
-            %         [val, ind] = findpeaks(data);
-            %         max_peaks = max(val);
-            %         ind = ind(find(val == max_peaks));
             [val, ind] = max(data);
             T_locs(end + 1) = QRS_locs(hk) + 2 * leng + ind;
             T_amps(end + 1) = seg(QRS_locs(hk) + 2 * leng + ind);
@@ -234,12 +231,12 @@ for soloop = 1:number_of_loop
        ENTROPY_CUTOFF(end + 1) = temp2;
     end;
     %-PLOTTING SECTION-----------------------------------------------------
-    %figure2 = figure;
-    %set(figure2,'name',[filename ': ' diagnosis],'numbertitle','off');
-    %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
+    figure2 = figure;
+    set(figure2,'name',[filename ': ' diagnosis],'numbertitle','off');
+    subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
-    %subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
-    %subplot(3,4,[3,4]);yyaxis left;plot(HR);title(['HR: ' num2str(mean(HR)) ' - DFA: ' num2str(mean(DFA))]);yyaxis right;plot(DFA);
+    subplot(3,4,[1,2]);plot(seg);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
+    subplot(3,4,[3,4]);yyaxis left;plot(HR);title(['HR: ' num2str(mean(HR)) ' - DFA: ' num2str(mean(DFA))]);yyaxis right;plot(DFA);
     %-CALCULATE FFT--------------------------------------------------------
     %-beat-to-beat FFT------------------------
     data = seg(QRS_locs(beat_start):QRS_locs(beat_start + 1));
@@ -253,14 +250,14 @@ for soloop = 1:number_of_loop
     P40 = P1(sss);
     aloha = SampEn(2, 0.15*std(P40), P40, 1);
     aloho = DetrendedFluctuation(P40);
-    %subplot(3,4,5);plot(f,P1);title(['SE = ' num2str(aloha) ', DFA = ' num2str(aloho)]);axis([40 fs/2 0 max(P40)]);
+    subplot(3,4,5);plot(f,P1);title(['SE = ' num2str(aloha) ', DFA = ' num2str(aloho)]);axis([40 fs/2 0 max(P40)]);
     [app, det] = wavelet_decompose(P40, 3, 'db4');
     FFT_app = app(:,3);
     FFT_det = P40 - FFT_app;
     FFT_app_DFA = DetrendedFluctuation(FFT_app);
-    %subplot(3,4,7);plot(FFT_app);title(['DFA = ' num2str(FFT_app_DFA)]);axis([1 length(FFT_app) 0 max(FFT_app)]);
+    subplot(3,4,7);plot(FFT_app);title(['DFA = ' num2str(FFT_app_DFA)]);axis([1 length(FFT_app) 0 max(FFT_app)]);
     FFT_det_SA = SampEn(2, 0.15*std(FFT_det), FFT_det, 1);
-    %subplot(3,4,8);plot(FFT_det);title(['SE = ' num2str(FFT_det_SA)]);
+    subplot(3,4,8);plot(FFT_det);title(['SE = ' num2str(FFT_det_SA)]);
     %-series-FFT--------------------------------
     data = seg(QRS_locs(beat_start):QRS_locs(beat_end));
     L = length(data);
@@ -274,7 +271,7 @@ for soloop = 1:number_of_loop
     %P1_smooth = resample(P1_smooth,length(P1_smooth),length(f));
     aloha = SampEn(2, 0.15*std(P1_smooth), P1_smooth, 1);
     aloho = DetrendedFluctuation(P1_smooth);
-    %subplot(3,4,6);plot(P1(find(f >= 60)));title(['SE = ' num2str(aloha) ', DFA = ' num2str(aloho)]);
+    subplot(3,4,6);plot(P1(find(f >= 60)));title(['SE = ' num2str(aloha) ', DFA = ' num2str(aloho)]);
     %-CALCULATE LFHF-------------------------------------------------------
     %for i = beat_start:beat_end
     %   data = seg(QRS_locs(i-15):QRS_locs(i+15));
@@ -289,10 +286,10 @@ for soloop = 1:number_of_loop
     %end;
     %LFHF = LFHF';
     %LFHF_bin = [LFHF_bin; LFHF];
-    %%subplot(3,4,[7,8]);plot(LFHF);title(['LFHF / DFA']);hold on;
-    %%subplot(3,4,[11,12]);yyaxis left;plot(FBAND);title(['FBAND / ENTROPY']);
+    %subplot(3,4,[7,8]);plot(LFHF);title(['LFHF / DFA']);hold on;
+    %subplot(3,4,[11,12]);yyaxis left;plot(FBAND);title(['FBAND / ENTROPY']);
     %yyaxis right;plot(ENTROPY);
-    %subplot(3,4,[11,12]);yyaxis left;plot(ENERGY_RATIO);title(['ENERY: ' num2str(mean(ENERGY_RATIO)) ' - ENTROPY: ' num2str(mean(ENTROPY_CUTOFF(~isinf(ENTROPY_CUTOFF))))]);axis([0 inf 0.02 0.12]);yyaxis right;plot(ENTROPY_CUTOFF);axis([0 inf 0.3 2.6]);maxfig(figure2,1);
+    subplot(3,4,[11,12]);yyaxis left;plot(ENERGY_RATIO);title(['ENERY: ' num2str(mean(ENERGY_RATIO)) ' - ENTROPY: ' num2str(mean(ENTROPY_CUTOFF(~isinf(ENTROPY_CUTOFF))))]);axis([0 inf 0.02 0.12]);yyaxis right;plot(ENTROPY_CUTOFF);axis([0 inf 0.3 2.6]);maxfig(figure2,1);
     %-DATA SAVING SeCTION--------------------------------------------------
 
     STslope = STslope';

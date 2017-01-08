@@ -7,6 +7,11 @@
 % RP_Tinv_bin = Tinv;
 % RP_ToR_bin = ToR;
 % score_bin = SCORE;
+% HRV_std_bin = HRV_std;
+% HRV_max_bin = HRV_max;
+% HRV_min_bin = HRV_min;
+% HRV_minmax_bin = HRV_minmax;
+% HRV_DFA_bin = HRV_DFA;
 
 aaaa = [RP_STslope_bin RP_STdev_bin RP_HR_bin RP_DFA_bin ...
         RP_ENERGY_RATIO_bin RP_ENTROPY_CUTOFF_bin ...
