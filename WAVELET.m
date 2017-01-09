@@ -1,6 +1,6 @@
 QRS_std_thres = 1;
 span = 15;
-for soloop = 1:1
+for soloop = 1:4
     inputloop = soloop;
     %-READ SIGNAL----------------------------------------------------------
     data_length = span * fs;

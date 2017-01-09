@@ -152,6 +152,7 @@ for record = 1:length(recordings)
         %WAVELET;
         try
             REPORT;
+            %WAVELET;
         catch
             disp('An error occured while calibrating this record');
             failed_records{end + 1} = filename;
