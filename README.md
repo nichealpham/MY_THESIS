@@ -1,4 +1,4 @@
-<b>DEVELOPMENT OF AN ECG SCORING SYSTEM APPLIED FOR DETECTION AND QUANTIFICATION OF 
+<b>DEVELOPMENT OF AN EKG RISK SCORE SYSTEM APPLIED FOR DETECTION AND QUANTIFICATION OF 
 MYOCARDIAL DAMAGE USING MORPHOLOGICAL FEATURES AND DE-TRENDED FLUCTUATION ANALYSIS</b>
 
 <b>Contact Information</b><br/>
@@ -29,30 +29,31 @@ PRETHESIS REPORT.pdf, QUANTIFYING MYOCARDIAL DAMAGE USING ECG SIGNAL.pptx
 - code files: Matlab .m files
 
 <b/>Research methodologies:</b><br/>
-1. Signal preprocessing:
-- Baseline wander removal and noise estimation using Discrete Wavelet Decomposition
-2. EKG delineation:
+<b/>1. Signal preprocessing:</b><br/>
+- Baseline wander removal and noise estimation using Discrete Wavelet Decomposition<br/>
+<b/>EKG delineation:</b><br/>
 - Self constructed R peak and T peak detection: code can be found in REPORT.m, WAVELET.m or link here:<br/>
-- ST segment detection
-3. Features extraction:
-- Window length of 10 seconds
-- ST deviation and ST slope calibration for each beat, then calculate mean value for the 10 second span
-- Applied Detrended FLuctuation Analysis to the beat to beat segment, then calculate mean value for the 10 second span
-4. Thresholding:
-- ST segment elevation Myocardial Infarction: ST deviation > 40 and ST slope > 6, with or without DFA higher than 1
-- ST segment depression Myocardial Infarction: ST deviation < -20 and ST slope < -4, with or without DFA higher than 1
-- Myocardial Ischemia: T wave inversion, with or without ST deviation < -20
-- Normal subject: ST deviation < 40 and > -20, ST slope < 6 and > -4, DFA < 1
-5. Validation:
-- Thresholds obtained is compared and adjusted according to American Heart Association (AHA) guideline for myocardial infarction
-- Still underdevelopment and validation...
+https://www.mathworks.com/matlabcentral/fileexchange/61100-ekg-r-peak-and-t-peak-detection</br>
+- ST segment detection<br/>
+<b/>2. Features extraction:</b><br/>
+- Window length of 10 seconds<br/>
+- ST deviation and ST slope calibration for each beat, then calculate mean value for the 10 second span<br/>
+- Applied Detrended FLuctuation Analysis to the beat to beat segment, then calculate mean value for the 10 second span<br/>
+<b/>3. Thresholding:</b><br/>
+- ST segment elevation Myocardial Infarction: ST deviation > 40 and ST slope > 6, with or without DFA higher than 1<br/>
+- ST segment depression Myocardial Infarction: ST deviation < -20 and ST slope < -4, with or without DFA higher than 1<br/>
+- Myocardial Ischemia: T wave inversion, with or without ST deviation < -20<br/>
+- Normal subject: ST deviation < 40 and > -20, ST slope < 6 and > -4, DFA < 1<br/>
+<b/>4. Validation:</b><br/>
+- Thresholds obtained is compared and adjusted according to American Heart Association (AHA) guideline for myocardial infarction<br/>
+- Still underdevelopment and validation...<br/>
 
-<b/>Implementations:</b><br/>
+<b/>5. Implementation:</b><br/>
 - Real time application web service will locate at:<br/>
 http://www.cassandra.com.vn/
-- Cross platform application development: Android, iOS
-- Desktop application: Matlab runtime
+- Cross platform application development: Android, iOS<br/>
+- Desktop application: Matlab runtime<br/>
 
-For further information, please contact:
-Phạm Khôi Nguyên
+For further information, please contact:<br/>
+Phạm Khôi Nguyên<br/>
 phamkhoinguyen1995@gmail.com
