@@ -6,12 +6,12 @@ data_path = 'E:\DATABASE\database\longst\';
 % ECGID--------------------------------------------------------------------
 %leads = ones(1,20) * 2;
 % CAD----------------------------------------------------------------------
-%recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
+recordings = [20011 20221 20271 20272 20274 20461 20161 20361];
 %recordings = [20274 20461];
 %leads = [2 1 2 2 2 1 1 2];
 %recordings = [20171 20181 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20361];
 %recordings = [20011 20021 20031 20041 20051 20061 20071 20081 20091 20101 20111 20121 20131 20141 20151 20171 20181 20191 20201 20211 20221 20231 20241 20251 20261 20271 20272 20274 20461 20161 20361];
-recordings = 20011:20361;
+%recordings = 20011:20361;
 leads = ones(1,length(recordings));
 %recordings = [20011];
 %leads = [2];
@@ -153,7 +153,9 @@ for record = 1:length(recordings)
         %SLIDING_WINDOW;
         %WAVELET;
         try
-            REPORT;
+            %REPORT;
+            %WAVELET;
+            [Q_amps, Q_locs, T_amps, T_locs] = nguyenpham_QTdetection(sig1(1:2500),fs);
         catch
             disp('An error occured while calibrating this record');
             failed_records{end + 1} = filename;
