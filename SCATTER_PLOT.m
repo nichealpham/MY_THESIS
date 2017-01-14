@@ -83,3 +83,35 @@ hold on;scatter3(STdev5,STslope5,Tinv5);
 xlabel('STdev');
 ylabel('STslope');
 zlabel('Tinv');
+%-SCATTER PLOT-------------------------------------------------------------
+ST_dev0 = [];
+ST_slope0 = [];
+T_inv0 = [];
+ST_dev1 = [];
+ST_slope1 = [];
+T_inv1 = [];
+ST_dev2 = [];
+ST_slope2 = [];
+T_inv2 = [];
+for i = 1:length(score_bin)
+    if score_bin(i)  <= 1
+        ST_dev0(end + 1) = RP_STdev_bin(i);
+        ST_slope0(end + 1) = RP_STslope_bin(i);
+        T_inv0(end + 1) = RP_Tinv_bin(i);
+    elseif score_bin(i)  == 2
+        ST_dev1(end + 1) = RP_STdev_bin(i);
+        ST_slope1(end + 1) = RP_STslope_bin(i);
+        T_inv1(end + 1) = RP_Tinv_bin(i);
+    else
+        ST_dev2(end + 1) = RP_STdev_bin(i);
+        ST_slope2(end + 1) = RP_STslope_bin(i);
+        T_inv2(end + 1) = RP_Tinv_bin(i);
+    end;
+end;
+figure(1002);
+scatter3(ST_dev0,ST_slope0,T_inv0);
+hold on;scatter3(ST_dev1,ST_slope1,T_inv1,'g');
+hold on;scatter3(ST_dev2,ST_slope2,T_inv2,'r');
+xlabel('STdev');
+ylabel('STslope');
+zlabel('Tinv');
