@@ -37,7 +37,7 @@ PRETHESIS REPORT.pdf, QUANTIFYING MYOCARDIAL DAMAGE USING ECG SIGNAL.pptx<br/>
 <p>+ Baseline wander removal and noise estimation using Discrete Wavelet Decomposition</p>
 <b>2. EKG delineation:</b></p>
 <p>+ Self constructed R peak and T peak detection:</p>
-<p>+ https://www.mathworks.com/matlabcentral/fileexchange/submissions/61156-ecg-qrs-peak-and-t-peak-detection</p>
+<p>+ https://www.mathworks.com/matlabcentral/fileexchange/61156-ecg-qrs-peak-and-t-peak-detection</p>
 <p>+ ST segment detection</p>
 <b>3. Features extraction:</b><br/>
 <p>+ Window length of 10 seconds</p>
