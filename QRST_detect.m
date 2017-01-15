@@ -42,27 +42,39 @@ moving_average = ones(1,24)./24;
 sig = conv(sig, moving_average);
 sig = sig(12:end);
 %-ZEROLIZING EACH BEAT INTERVAL--------------------------------------------
+%-ZEROLIZING EACH BEAT INTERVAL--------------------------------------------
 for hk = 1:length(QRS_locs) - 1
-    data = sig(QRS_locs(hk):QRS_locs(hk + 1));
-    leng = floor((QRS_locs(hk + 1) - QRS_locs(hk)) / 20);
-    if leng == 0
-        leng = 1;
-    end;
-    isoelec = sig(QRS_locs(hk) + isothres * leng);
-    data = data - isoelec;
-    data = data.^sqrt_operation;
-    data = data(thres_start * leng:thres_stop * leng);
-    [pks, locs] = findpeaks(data);
-    T_threshold = mean(data) + 1 * std(data);
-    for tp = length(locs):-1:1
-        if pks(tp) > T_threshold
-            ind = locs(tp);
-            break;
+    try
+        data = sig(QRS_locs(hk):QRS_locs(hk + 1));
+        leng = floor((QRS_locs(hk + 1) - QRS_locs(hk)) / 20);
+        if leng == 0
+            leng = 1;
         end;
+        isoelec = sig(QRS_locs(hk) + isothres * leng);
+        data = data - isoelec;
+        data = data.^sqrt_operation;
+        data = data(thres_start * leng:thres_stop * leng);
+        [pks, locs] = findpeaks(data);
+        T_threshold = mean(data) + 1 * std(data);
+        if ~isempty(locs)
+            for tp = length(locs):-1:1
+                if pks(tp) > T_threshold
+                    ind = locs(tp);
+                    break;
+                end;
+            end;
+        else
+            ind = floor((thres_stop - thres_start) / 2 * leng);
+        end;
+        if isempty(ind)
+            ind = floor((thres_stop - thres_start) / 2 * leng);
+        end;
+        T_locs(end + 1) = QRS_locs(hk) + thres_start * leng + ind;
+        T_amps(end + 1) = signal_filtered(QRS_locs(hk) + thres_start * leng + ind);
+    catch
+       disp('An error occur during T peak detection.');
     end;
-    T_locs(end + 1) = QRS_locs(hk) + thres_start * leng + ind;
-    T_amps(end + 1) = signal_filtered(QRS_locs(hk) + thres_start * leng + ind);
 end;
 catch
-    disp('An error occured during this calibration');
+    disp('An error occured during this QRS calibration');
 end;

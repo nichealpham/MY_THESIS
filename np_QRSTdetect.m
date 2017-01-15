@@ -1,17 +1,15 @@
 function [QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs)
 %==========================================================================
 % IMPORTANT NOTES:
-% For improved accuracy, only use this function for limp leads
+% + For improved accuracy, use this function for limp leads
+% + This function is inspired by Pan Thompkin algorithm
+% + Discrete Wavelet Transformation is applied to filter the signal
 %==========================================================================
-% Prerequisite files:
-% This function is inspired from Pan Thompkin algorithm
-% and applied Discrete Wavelet Transformation to filter the signal
-% wavelet_decompose.m
+% Prerequisite files: wavelet_decompose.m
 %==========================================================================
-% EKG signal_filtered R peak and T peak detection
-% given time series 'signal_filtered'.
+% EKG signal R peak and T peak detection
 % INPUTS:
-% + signal    : The given scalar time series
+% + signal    : The given scalar time series ECG
 % + fs        : Sampling frequency
 % OUTPUTS
 % + QRS_amps        : Array of Q wave amplitudes
@@ -43,7 +41,6 @@ function [QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(s
 %==========================================================================
 % Methodologies:
 % Link: https://github.com/nguyenpham95/MY_THESIS
-% Find documentation at directory ~/research/prethesis/HK2/PRETHESIS REPORT.pdf
 %==========================================================================
 % For more references and information, please visit
 % Link: https://github.com/nguyenpham95/MY_THESIS
@@ -99,7 +96,7 @@ ecg_d = ecg_d/max(ecg_d);
 delay = delay + 6;               % delay of derivative filter 2 samples
 %% obtained the data for QRS detection
 segment = ecg_d(delay:end);
-%-BRING THE signal_filtered ABOVE 0---------------------------------
+%-BRING THE signal_filtered ABOVE 0----------------------------------------
 if min(segment) < 0
    segment = segment + abs(min(segment));
 end;
@@ -132,7 +129,7 @@ sig = signal_filtered;
 filt = fir1(24,5/(fs/2),'low');
 sig = conv(filt, sig);
 sig = sig(12:end);
-%-SMOOTH-----------------------------------------------------------
+%-SMOOTHING----------------------------------------------------------------
 moving_average = ones(1,24)./24;
 sig = conv(sig, moving_average);
 sig = sig(12:end);
@@ -150,16 +147,23 @@ for hk = 1:length(QRS_locs) - 1
         data = data(thres_start * leng:thres_stop * leng);
         [pks, locs] = findpeaks(data);
         T_threshold = mean(data) + 1 * std(data);
-        for tp = length(locs):-1:1
-            if pks(tp) > T_threshold
-                ind = locs(tp);
-                break;
+        if ~isempty(locs)
+            for tp = length(locs):-1:1
+                if pks(tp) > T_threshold
+                    ind = locs(tp);
+                    break;
+                end;
             end;
+        else
+            ind = floor((thres_stop - thres_start) / 2 * leng);
+        end;
+        if isempty(ind)
+            ind = floor((thres_stop - thres_start) / 2 * leng);
         end;
         T_locs(end + 1) = QRS_locs(hk) + thres_start * leng + ind;
         T_amps(end + 1) = signal_filtered(QRS_locs(hk) + thres_start * leng + ind);
     catch
-       disp('An error occur during this calibration');
+       disp('An error occur during T peak detection.');
     end;
 end;
 %-END OF T DETECTION-------------------------------------------------------

@@ -38,10 +38,10 @@ for record = 1:length(recordings)
         % GENERAL PARAMETERS-----------------------------------------------
         fs = hea.freq;
         ts = 1/fs;       
-        signal = sig1_raw(1:10000);
+        signal = sig1_raw(1:20000);
         [qrs_amp_raw,qrs_i_raw,delay,ecg_h]=pan_tompkin(signal,fs,0);
-        [QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,250);
-        %QRST_detect;
+        %[QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs);
+        QRST_detect;
         figure1 = figure;
         set(figure1,'name',filename,'numbertitle','off');
         subplot(3,1,1);plot(signal_filtered);title('Nguyen Pham QRS');
@@ -50,7 +50,7 @@ for record = 1:length(recordings)
         subplot(3,1,2);plot(signal_filtered);title('Nguyen Pham T');
         axis([0 length(signal_filtered) 0 1]);
         hold on;plot(T_locs,T_amps,'^');
-        subplot(3,1,3);plot(ecg_h);title('Pan Thompkin');
+        subplot(3,1,3);plot(ecg_h);title('Pan Thompkin QRS');
         hold on;plot(qrs_i_raw,qrs_amp_raw,'o');
     catch
         disp('error occured.');
