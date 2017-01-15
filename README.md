@@ -16,7 +16,7 @@ During the last decade we have witnessed the tremendous growth of Telecommunicat
 - Underdevelopment</br>
 
 <h3>Disclaimer:</h3>
-<p>- This project is part of my university research. Some of the algorithms developed in this respiratory will be published soon so you need to reference me or this respiratory if you find them usefull in your work.</p>
+- This project is part of my university research. Some of the algorithms developed in this respiratory will be published soon so you need to reference me or this respiratory if you find them usefull in your work.</br>
 <b>IMPORTANT:</b> I am not owning the code in the following directory<br/>
 1. lib: library codes from other sources that are applied in this research<br/>
 2. ecg-kit-0.1.6: this folder and algorithms within it belongs to Marianux. You can find out more about him at: http://marianux.github.io/ecg-kit/<br/>
