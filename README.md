@@ -6,16 +6,17 @@ Name:  Phạm Khôi Nguyên<br/>
 School:  International University – Vietnam National University (VNU)<br/>
 Department:  Biomedical Engineering<br/>
 Email: phamkhoinguyen1995@gmail.com<br/>
+Linkedin: https://vn.linkedin.com/in/pham-khoi-nguyen-43a505102<br/>
 
 <h3>Abstract:</h3>
 The algorithm proposed in this project strives to provide doctors with a remote diagnosis tool for Cardiovascular Diseases.<br/></br>
 During the last decade we have witnessed the tremendous growth of Telecommunication technologies, particularly the advancement in the field of semiconductors, wireless network and cloud infrastructure that could eventually bring forward the era of homecare. As a result, these innovations have made early diagnosis and prevention medicine for Cardiovascular Disease (CD) feasible. In Vietnam, there is a constant interest in the development of various types of real - time, wireless EKG (ECG) devices dedicated to people who are at high risk of CD, where many startups emerged to provide this type of innovative products to the community. As appealing as it may sound, however, these devices are currently lack of a decent diagnosing system. Therefore, this project aims to develop an algorithm capable of analyzing EKG input to provide automatic diagnosis of Cardiovascular Disease. In future work, the algorithm will be integrated into an online platform dedicated for real – time diagnosis of CD.
 
 <h3>Status:</h3>
-Underdevelopment
+- Underdevelopment</br>
 
 <h3>Disclaimer:</h3>
-<p>This project is part of my university research. Some of the algorithms developed in this respiratory will be published soon so you need to reference me or this respiratory if you find them usefull in your work.</p>
+<p>- This project is part of my university research. Some of the algorithms developed in this respiratory will be published soon so you need to reference me or this respiratory if you find them usefull in your work.</p>
 <b>IMPORTANT:</b> I am not owning the code in the following directory<br/>
 1. lib: library codes from other sources that are applied in this research<br/>
 2. ecg-kit-0.1.6: this folder and algorithms within it belongs to Marianux. You can find out more about him at: http://marianux.github.io/ecg-kit/<br/>
@@ -57,5 +58,8 @@ PRETHESIS REPORT.pdf, QUANTIFYING MYOCARDIAL DAMAGE USING ECG SIGNAL.pptx<br/>
 <p>+ Desktop application: Matlab runtime</p>
 
 <h3>Author:</h3>
-Phạm Khôi Nguyên<br/>
-phamkhoinguyen1995@gmail.com
+Name:  Phạm Khôi Nguyên<br/>
+School:  International University – Vietnam National University (VNU)<br/>
+Department:  Biomedical Engineering<br/>
+Email: phamkhoinguyen1995@gmail.com<br/>
+Linkedin: https://vn.linkedin.com/in/pham-khoi-nguyen-43a505102<br/>
