@@ -1,7 +1,7 @@
 warning('off','all');
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\stchange\';
-data_path = 'E:\ME_THESIS_GIT\database\euro\';
+data_path = 'database\euro\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\ecgid\pt1\';
 % ECGID--------------------------------------------------------------------
 %leads = ones(1,20) * 2;
