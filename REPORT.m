@@ -29,9 +29,9 @@ for soloop = 1:number_of_loop
         %-QRS DETECTION----------------------------------------------------
         signal = seg;
         %-USE ENHANCED PAN THOMPKIN----------------------------------------
-        %QRST_detect;
+        QRST_detect;
         %-USE MY OWN CODE--------------------------------------------------
-        [QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs);
+        %[QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs);
         %-CHANGING AMPLITUDE TO PLOT---------------------------------------
         for qrsloc = 1:length(QRS_locs)
             QRS_amps(qrsloc) = signal(QRS_locs(qrsloc));

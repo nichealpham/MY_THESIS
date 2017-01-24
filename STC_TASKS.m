@@ -1,6 +1,6 @@
 warning('off','all');
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\longst\';
-data_path = 'E:\ME_THESIS_GIT\database\stchange\';
+data_path = 'database\stchange\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\euro\';
 %data_path = 'C:\Nguyen Pham\MY THESIS\database\ecgid\pt1\';
 % ECGID--------------------------------------------------------------------
