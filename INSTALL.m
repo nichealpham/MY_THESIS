@@ -1,4 +1,11 @@
+host = pwd;
+cd ecg-kit-0.1.6;
+run InstallECGkit.m;
+cd(host);
 cd lib;
 addpath(pwd);savepath;
 cd mcode;
 addpath(pwd);savepath;
+cd(host);
+clear all;
+close all;
