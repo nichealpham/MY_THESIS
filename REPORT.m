@@ -5,7 +5,7 @@ fraction = 1/2;
 total_length = length(sig1);
 window_length = fs * span;
 %number_of_loop = floor(total_length * fraction / window_length);
-number_of_loop = 20;
+number_of_loop = 10;
 for soloop = 1:number_of_loop
     %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
     clc;
@@ -202,13 +202,13 @@ for soloop = 1:number_of_loop
        ENTROPY_CUTOFF(end + 1) = temp2;
     end;
     %-PLOTTING SECTION-----------------------------------------------------
-    %figure2 = figure;set(figure2,'name',[filename ': ' diagnosis],'numbertitle','off');
-    %subplot(2,1,1);plot(signal);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);hold on;plot(QRS_locs,QRS_amps,'o');
-    %subplot(2,1,2);plot(signal);hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
-    %subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
+    figure2 = figure;set(figure2,'name',[filename ': ' diagnosis],'numbertitle','off');
+    subplot(2,1,1);plot(signal);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);hold on;plot(QRS_locs,QRS_amps,'o');
+    subplot(2,1,2);plot(signal);hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
+%     subplot(3,4,[9,10]);yyaxis left;plot(STDeviation);title(['STD: ' num2str(mean(STDeviation)) ' - slope: ' num2str(mean(STslope)) ' - Tinv: ' num2str(mean(Tinv)) ' - ToR: ' num2str(mean(ToR))]);yyaxis right;plot(STslope);
     %-THEN PLOT THE SIGNAL---------------------
-    %subplot(3,4,[1,2]);plot(signal);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
-    %subplot(3,4,[3,4]);yyaxis left;plot(HR);title(['HR: ' num2str(mean(HR)) ' - DFA: ' num2str(mean(DFA))]);yyaxis right;plot(DFA);
+    subplot(3,4,[1,2]);plot(signal);title(['ECG' ' - ' num2str(mean_HR) ' bpm - score: ' num2str(score)]);axis([0 500 min(seg) max(seg)]);hold on;plot(QRS_locs,QRS_amps,'o');hold on;plot(T_locs,T_amps,'^');hold on;plot(ST_on_locs,ST_on_amps,'*');hold on;plot(ST_off_locs,ST_off_amps,'*');
+    subplot(3,4,[3,4]);yyaxis left;plot(HR);title(['HR: ' num2str(mean(HR)) ' - DFA: ' num2str(mean(DFA))]);yyaxis right;plot(DFA);
     %-CALCULATE FFT--------------------------------------------------------
     %-beat-to-beat FFT------------------------
     data = seg(QRS_locs(beat_start):QRS_locs(beat_start + 1));

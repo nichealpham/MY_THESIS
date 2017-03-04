@@ -1,0 +1,131 @@
+---
+title: "Arrhythmia"
+output: html_document
+---
+```{r}
+rm(list=ls())
+```
+This is an analysis on changes in P/R ratio and Heart rate variability (HRV) in response to arrhythmia and myocradial infarction dataset.
+
+## Loading libs and data
+We first load some necessary libs
+```{r}
+library(ggplot2)
+library(data.table)
+library(readxl)
+source('multiplot.R')
+```
+
+And then load arrhythmia
+```{r}
+dataset <- read_excel("Arrhythmia mi dataset.xlsx", 
+    col_types = c("text", "numeric", "numeric", 
+        "numeric", "numeric", "numeric"))
+dataset = as.data.table(dataset)
+
+print(dataset)
+```
+
+## Compare Min and Max between Arrhythmia and MI group
+We take the summary fo the dataset about the PR ratio min
+```{r}
+data_stats <- summarySE(dataset, measurevar = "PR_ratio_Min", groupvars = c("Record"))
+data_stats
+
+```
+
+Plot 95% confident interval
+```{r}
+ggplot(data_stats, aes(x = Record, y = PR_ratio_Min)) + 
+  geom_errorbar(aes(ymin=PR_ratio_Min-ci, ymax=PR_ratio_Min+ci), width=.1) + 
+  geom_point()
+```
+
+And summary of the dataset about the PR ratio max
+```{r}
+data_stats <- summarySE(dataset, measurevar = "PR_ratio_Max", groupvars = c("Record"))
+data_stats
+```
+
+Plot 95% confident interval
+```{r}
+ggplot(data_stats, aes(x = Record, y = PR_ratio_Max)) + 
+  geom_errorbar(aes(ymin=PR_ratio_Max-ci, ymax=PR_ratio_Max+ci), width=.1) + 
+  geom_point()
+```
+
+Boxplot
+```{r}
+compare_min = ggplot(dataset, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Min")
+compare_max = ggplot(dataset, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Max")
+
+multiplot(compare_min, compare_max, cols = 2)
+```
+
+### t-test:
+we test the PR ratio min of 2 group
+```{r}
+t.test(PR_ratio_Min ~ Record, dataset, alternative="less")
+```
+***Reslt: the minimum of arrhythmia group is less than mi group (p > 0.05)***
+
+test the PR ratio max of 2 group
+```{r}
+t.test(PR_ratio_Max ~ Record, dataset, alternative="less")
+```
+***Reslt: the maximum of arrhythmia group is less than mi group (p > 0.05)***
+
+### plot result
+```{r}
+# ====== PR ratio min ======
+dataset_stats <- summarySE(dataset, measurevar = "PR_ratio_Min", groupvars = c("Record"))
+
+p1 <- ggplot(dataset_stats, aes(x=Record, y=PR_ratio_Min)) + 
+  geom_bar(position=position_dodge(), stat="identity") +
+  geom_errorbar(aes(ymin=PR_ratio_Min-ci, ymax=PR_ratio_Min+ci), width=.1) + 
+  theme_bw() +
+  xlab("Record") + ylab("value")+ggtitle("PR ratio Min")
+
+# ====== PR ratio max ======
+dataset_stats <- summarySE(dataset, measurevar = "PR_ratio_Max", groupvars = c("Record"))
+
+p2 <- ggplot(dataset_stats, aes(x=Record, y=PR_ratio_Max)) + 
+  geom_bar(position=position_dodge(), stat="identity") +
+  geom_errorbar(aes(ymin=PR_ratio_Max-ci, ymax=PR_ratio_Max+ci), width=.1) + 
+  theme_bw() +
+  xlab("Record") + ylab("value")+ggtitle("PR ratio Max")
+
+# ====== multiplot ======
+multiplot(p1, p2, cols=2)
+```
+
+## Compare  the minimum and maximum within 2 group
+### Arrhythmia group
+First, we remove the MI group from the dataset
+```{r}
+arrhythmia_group = dataset[(dataset$Record=='arrhythmia'), ]
+print(arrhythmia_group)
+```
+
+Then,we look at the difference between minimum and maximum
+```{r}
+min_arr = ggplot(arrhythmia_group, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Min")
+max_arr = ggplot(arrhythmia_group, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Max")
+
+multiplot(min_arr, max_arr, cols = 2)
+```
+
+### MI group
+We remove the Arrhythmia group from the dataset
+```{r}
+mi_group = dataset[(dataset$Record=='mi'), ]
+print(mi_group)
+```
+
+Then,we look at the difference between minimum and maximum
+```{r}
+min_arr = ggplot(mi_group, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.25) + ggtitle("PR ratio Min")
+max_arr = ggplot(mi_group, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.25) + ggtitle("PR ratio Max")
+
+multiplot(min_arr, max_arr, cols = 2)
+```
