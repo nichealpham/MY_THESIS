@@ -18,114 +18,83 @@ source('multiplot.R')
 
 And then load arrhythmia
 ```{r}
-dataset <- read_excel("Arrhythmia mi dataset.xlsx", 
-    col_types = c("text", "numeric", "numeric", 
-        "numeric", "numeric", "numeric"))
+dataset <- read_excel("E:/MY_THESIS/data analysis/arrhythmia.xlsx")
 dataset = as.data.table(dataset)
 
 print(dataset)
 ```
 
-## Compare Min and Max between Arrhythmia and MI group
-We take the summary fo the dataset about the PR ratio min
+## Main analysis
+### Mean and std PR ratio analysis
+We take the summary fo the dataset about the mean of PR ratio
 ```{r}
-data_stats <- summarySE(dataset, measurevar = "PR_ratio_Min", groupvars = c("Record"))
+data_stats <- summarySE(dataset, measurevar = "MeanPR")
 data_stats
-
 ```
 
 Plot 95% confident interval
 ```{r}
-ggplot(data_stats, aes(x = Record, y = PR_ratio_Min)) + 
-  geom_errorbar(aes(ymin=PR_ratio_Min-ci, ymax=PR_ratio_Min+ci), width=.1) + 
+ggplot(data_stats, aes(x = 0, y = MeanPR)) + 
+  geom_errorbar(aes(ymin=MeanPR-ci, ymax=MeanPR+ci), width=.1) + 
   geom_point()
 ```
 
-And summary of the dataset about the PR ratio max
+And summary of the dataset about the std PR ratio 
 ```{r}
-data_stats <- summarySE(dataset, measurevar = "PR_ratio_Max", groupvars = c("Record"))
+data_stats <- summarySE(dataset, measurevar = "StdPR")
 data_stats
 ```
 
 Plot 95% confident interval
 ```{r}
-ggplot(data_stats, aes(x = Record, y = PR_ratio_Max)) + 
-  geom_errorbar(aes(ymin=PR_ratio_Max-ci, ymax=PR_ratio_Max+ci), width=.1) + 
+ggplot(data_stats, aes(x = 0, y = StdPR)) + 
+  geom_errorbar(aes(ymin=StdPR-ci, ymax=StdPR+ci), width=.1) + 
   geom_point()
 ```
 
 Boxplot
 ```{r}
-compare_min = ggplot(dataset, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Min")
-compare_max = ggplot(dataset, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Max")
+compare_min = ggplot(dataset, aes(x=0, y=MeanPR)) + geom_boxplot() + geom_point() + ylim(0, 0.75) + ggtitle("Mean PR ratio")
+compare_max = ggplot(dataset, aes(x=0, y=StdPR)) + geom_boxplot() + geom_point() + ylim(0, 0.25) + ggtitle("std PR ratio")
 
 multiplot(compare_min, compare_max, cols = 2)
 ```
 
-### t-test:
-we test the PR ratio min of 2 group
+***Conclusion: the threshold of PR ratio should be from 0.3 to 0.375 and the threshold of std of PR ratio is from 0.1 to 0.12***
+
+### Mean and std of HRV:
+We take the summary fo the dataset about the mean of PR ratio
 ```{r}
-t.test(PR_ratio_Min ~ Record, dataset, alternative="less")
-```
-***Reslt: the minimum of arrhythmia group is less than mi group (p > 0.05)***
-
-test the PR ratio max of 2 group
-```{r}
-t.test(PR_ratio_Max ~ Record, dataset, alternative="less")
-```
-***Reslt: the maximum of arrhythmia group is less than mi group (p > 0.05)***
-
-### plot result
-```{r}
-# ====== PR ratio min ======
-dataset_stats <- summarySE(dataset, measurevar = "PR_ratio_Min", groupvars = c("Record"))
-
-p1 <- ggplot(dataset_stats, aes(x=Record, y=PR_ratio_Min)) + 
-  geom_bar(position=position_dodge(), stat="identity") +
-  geom_errorbar(aes(ymin=PR_ratio_Min-ci, ymax=PR_ratio_Min+ci), width=.1) + 
-  theme_bw() +
-  xlab("Record") + ylab("value")+ggtitle("PR ratio Min")
-
-# ====== PR ratio max ======
-dataset_stats <- summarySE(dataset, measurevar = "PR_ratio_Max", groupvars = c("Record"))
-
-p2 <- ggplot(dataset_stats, aes(x=Record, y=PR_ratio_Max)) + 
-  geom_bar(position=position_dodge(), stat="identity") +
-  geom_errorbar(aes(ymin=PR_ratio_Max-ci, ymax=PR_ratio_Max+ci), width=.1) + 
-  theme_bw() +
-  xlab("Record") + ylab("value")+ggtitle("PR ratio Max")
-
-# ====== multiplot ======
-multiplot(p1, p2, cols=2)
+data_stats <- summarySE(dataset, measurevar = "MeanHRV")
+data_stats
 ```
 
-## Compare  the minimum and maximum within 2 group
-### Arrhythmia group
-First, we remove the MI group from the dataset
+Plot 95% confident interval
 ```{r}
-arrhythmia_group = dataset[(dataset$Record=='arrhythmia'), ]
-print(arrhythmia_group)
+ggplot(data_stats, aes(x = 0, y = MeanHRV)) + 
+  geom_errorbar(aes(ymin=MeanHRV-ci, ymax=MeanHRV+ci), width=.1) + 
+  geom_point()
 ```
 
-Then,we look at the difference between minimum and maximum
+And summary of the dataset about the std PR ratio 
 ```{r}
-min_arr = ggplot(arrhythmia_group, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Min")
-max_arr = ggplot(arrhythmia_group, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.75) + ggtitle("PR ratio Max")
-
-multiplot(min_arr, max_arr, cols = 2)
+data_stats <- summarySE(dataset, measurevar = "StdHRV")
+data_stats
 ```
 
-### MI group
-We remove the Arrhythmia group from the dataset
+Plot 95% confident interval
 ```{r}
-mi_group = dataset[(dataset$Record=='mi'), ]
-print(mi_group)
+ggplot(data_stats, aes(x = 0, y = StdHRV)) + 
+  geom_errorbar(aes(ymin=StdHRV-ci, ymax=StdHRV+ci), width=.1) + 
+  geom_point()
 ```
 
-Then,we look at the difference between minimum and maximum
+Boxplot
 ```{r}
-min_arr = ggplot(mi_group, aes(x=Record, y=PR_ratio_Min)) + geom_boxplot() + geom_point() + ylim(0, 2.25) + ggtitle("PR ratio Min")
-max_arr = ggplot(mi_group, aes(x=Record, y=PR_ratio_Max)) + geom_boxplot() + geom_point() + ylim(0, 2.25) + ggtitle("PR ratio Max")
+compare_min = ggplot(dataset, aes(x=0, y=MeanHRV)) + geom_boxplot() + geom_point() + ylim(0, 200) +ggtitle("Mean HRV")
+compare_max = ggplot(dataset, aes(x=0, y=StdHRV)) + geom_boxplot() + geom_point() + ylim(0, 200) +ggtitle("std PR HRV")
 
-multiplot(min_arr, max_arr, cols = 2)
+multiplot(compare_min, compare_max, cols = 2)
 ```
+
+***Conclusion: the threshold of HRV should be from 100 to 110, sine the std of HRV is so large, we ignore this figure***

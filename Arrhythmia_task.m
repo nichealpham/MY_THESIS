@@ -3,40 +3,34 @@ clear all; close all; clc
 %% ============================ Add path ==================================
 data_path = 'database\arrhythmia\';
 
-%% ========================= Calling arrhythmia records =========================
-recordings = [234];%   [100 101 103 106 109 112 113 115 116 118 119 121 122 123 124 200 201 202 203 205 207 208 209 210 212 213 214 215 217 219 220 221 222 223 228 230 232 233 234];
-leads =      [001];%   [001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001];
-%106
-%% ============================= PARAMETERS ===============================
-PR_abnormal = []; 
-PR_normal = [];
-min_HRV_abnormal = [];
-max_HRV_abnormal = [];
-std_HRV_abnormal = [];
-changed_HRV_abnormal = [];
-min_HRV_normal = [];
-max_HRV_normal = [];
-std_HRV_normal = [];
-changed_HRV_normal = [];
+%% ====================== Calling arrhythmia records ======================
+recordings = [103];% 101 103 106 109 112 113 115 116 118 119 121 122 123 124 200 201 202 203 205 207 208 209 210 212 213 214 215 217 219 220 221 222 223 228 230 232 233 234];
+leads =      [001];% 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001 001];
 
-R_value = []; R_loc = [];   % value and location of R peak
-Q_value = []; Q_loc = [];   % value and location of Q peak
-S_value = []; S_loc = [];   % value and location of S peak
-J_value = []; J_loc = [];   % value and location of J peak
-T_value = []; T_loc = [];   % value and location of T peak
-P_value = []; P_loc = [];   % value and location of P peak
-RR = [];                    % RR interval
-PR = [];                    % PR segment
-QT = [];                    % QT segment
-HRV = [];                   % beat per min
-tqrs = [];                  % duartion of QRS complex
-trr = [];                   % duration of RR segment
-tqr = [];                   % duration of QR segment
-tqt = [];                   % duration of QT segment
-PR_ratio = [];              % P/S ratio for checking arrhythmia
+%% =========================== New parameters =============================
+mean_PR_ratio = [];
+std_PR_ratio = [];
+
+mean_HRV_all = [];
+std_HRV_all = [];
 
 %% ============================= Processing ===============================
 for record = 1:length(recordings)
+    full_data = [];
+    R_value_all = []; R_loc_all = [];   % value and location of R peak
+    P_value_all = []; P_loc_all = [];   % value and location of P peak
+    HRV_all = [0];                   % beat per min
+    PR_ratio = []; 
+    PR_all = [0];
+    mean_PR = [];
+    std_HRV_all = [];
+    mean_HRV_all = [];
+    PR_ratio_all = [0];
+    diagnosis = [];
+    std_PR = [];
+    std_PR_all = [];
+    mean_PR_all = [];
+        
     filename = num2str(recordings(record));
 
     disp(filename);
@@ -113,54 +107,75 @@ for record = 1:length(recordings)
     ANNOT=round(ANNOT);
     ANNOTD= ANNOT(ind);
     
-    % ====== feature extraction ======
-    [R_value, R_loc, Q_value, Q_loc, S_value, S_loc, J_value, J_loc, T_value, T_loc, P_value, P_loc, RR, PR, QT, HRV, tqrs, trr, tpr, tqt] = ecg_extraction(sig1,fs);
-    HRV(find(HRV >= 200)) = [];
-%     figure
-%     plot(t(1:length(sig1)),sig1)
-%     hold on
-%     plot(t(P_loc), P_value, 'o',t(R_loc),R_value,'^r')
+    arrhythmia_peak = find((ANNOT ~= 1) & (ANNOT ~= 28) & (ANNOT ~= 14))';
    
-%     plot(BPM_need)
-    % ====== base on file annotation to collect the arrhythmia's peak ======
-    abnormal_sig = find((ANNOT ~= 1) & (ANNOT ~= 28) & (ANNOT ~= 14))';
-    normal_sig = find((ANNOT == 1) | (ANNOT == 28) | (ANNOT == 14))';
-    for i = 1:length(abnormal_sig)
-        HRV_abnormal =  HRV(abnormal_sig <= length(HRV));
-        HRV_normal =    HRV(normal_sig <= length(HRV));
+    windowl = 5*fs;
+    for i = 1:windowl:length(sig1)-windowl
+        data = sig1(i+1:i+windowl);
+        % ====== feature extraction ======
+        [c,R_value, R_loc, Q_value, Q_loc, S_value, S_loc, J_value, J_loc, T_value, T_loc, P_value, P_loc, RR, PR, QT, HRV, tqrs, trr, tpr, tqt] = ecg_extraction(data,fs);
 
-        P_abnormal_value = P_value(abnormal_sig <= length(P_value));
-        P_abnormal_loc = P_loc(abnormal_sig <= length(P_loc));
-        P_normal_value = P_value(normal_sig <= length(P_value));
-        P_normal_value = P_value(abnormal_sig <= length(P_value));
-
-        R_abnormal_value = R_value(abnormal_sig <= length(R_value));
-        R_abnormal_loc = R_loc(abnormal_sig <= length(R_value));
-        R_normal_value = R_value(normal_sig <= length(R_value));
-        R_normal_loc = R_loc(normal_sig <= length(R_value));
+            % ====== R peak ======
+            R_value_all = [R_value_all;R_value']; 
+            R_loc_all = [R_loc_all;(R_loc + i-1)'];
+            
+            % ====== P peak ======
+            P_value_all = [P_value_all;P_value']; 
+            P_loc_all = [P_loc_all;(P_loc + i-1)'];
+            
+            % ====== PR ratio ======  
+            std_PR = std(PR);
+            std_PR_all = [std_PR_all;std_PR];
+            mean_PR = mean(PR);
+            mean_PR_all = [mean_PR_all;mean_PR];
+            PR = [PR_all(end) PR];
+            PR_all = [PR_all;PR'];
+            
+            PR_ratio = mean(P_value)/mean(R_value);
+%             PR_ratio = [PR_ratio_all(end) PR_ratio];
+            PR_ratio_all = [PR_ratio_all;PR_ratio'];
+                     
+            % ====== HRV ======
+            std_HRV = std(HRV);
+            std_HRV_all = [std_HRV_all;std_HRV];
+            mean_HRV = mean(HRV);
+            mean_HRV_all = [mean_HRV_all;mean_HRV];
+            HRV = [HRV_all(end) HRV];
+            HRV_all = [HRV_all;HRV'];
+            
+            sign_window = zeros(1,length(HRV));
+            if std_HRV >= 5
+                for peak = 2:length(HRV)-1
+                    if HRV(peak) >= mean_HRV && HRV(peak+1) <= mean_HRV
+                        sign_window(peak+1) = 1;
+                    end
+                end
+            end
+            diagnosis = [diagnosis sign_window];
+           
+            % ====== full data ======
+            full_data = [full_data c];
     end
-
-    % ====== checking for arrhythmia =====
-        % P/R ratio
-    PR_abnormal = [PR_abnormal;mean(P_abnormal_value)/mean(R_abnormal_value)]; 
-    PR_normal = [PR_normal;mean(P_normal_value)/mean(R_normal_value)];
-
-    min_HRV_abnormal = [min_HRV_abnormal;min(HRV_abnormal)];
-    max_HRV_abnormal = [max_HRV_abnormal;max(HRV_abnormal)];
-    std_HRV_abnormal = [std_HRV_abnormal;std(HRV_abnormal)];
-    changed_HRV_abnormal = [changed_HRV_abnormal;mean(abs(diff(HRV_abnormal)))];
     
-    min_HRV_normal = [min_HRV_normal;min(HRV_normal)];
-    max_HRV_normal = [max_HRV_normal;max(HRV_normal)];
-    std_HRV_normal = [std_HRV_normal;std(HRV_normal)];
-    changed_HRV_normal = [changed_HRV_normal;mean(abs(diff(HRV_normal)))];
+    std_PR_ratio = [std_PR_ratio;std(PR_ratio)];
+    mean_PR_ratio = [mean_PR_ratio;mean(PR_ratio)];
     
-%     result = [PR_abnormal;PR_normal; min_HRV_abnormal;max_HRV_abnormal;std_HRV_abnormal;changed_HRV_abnormal;min_HRV_normal;max_HRV_normal;std_HRV_normal;changed_HRV_normal]
-
-%     % ====== FFT PARAMETERS ======
-%     FFT_beat_step = 30;
-%     FFT_part_of_total_data_used = 10;
-%     envelope_size = 26;
-%     smooth_type = 'loess';
-%     smooth_span = .01;
+    std_HRV_all = [std_HRV_all;std(std_HRV_all)];
+    mean_HRV_all = [mean_HRV_all;mean(mean_HRV_all)];
+        
+%     for i = 1 : length(diagnosis)
+%         if diagnosis(i) == 1
+%             if PR_ratio_all(i) <= 0.3
+%                 diagnosis(i) = 1;
+%             else
+%                 diagnosis(i) = 0;
+%             end
+%         end
+%     end 
+    a = find(diagnosis == 1);
 end;
+% t = [0:length(full_data)-1]/fs;
+% figure
+% plot(t,full_data)
+% hold on
+% plot(t(1:length(a)),a);

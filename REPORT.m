@@ -1,72 +1,81 @@
 QRS_std_thres = 1;
 span = 10;
 fraction = 1/2;
-% CALCULATE SOLOOP---------------------------------------------------------
+%% ======================== CALCULATE SOLOOP ==============================
 total_length = length(sig1);
 window_length = fs * span;
 %number_of_loop = floor(total_length * fraction / window_length);
 number_of_loop = 10;
+
 for soloop = 1:number_of_loop
-    %-DISPLAY SOME TEXT ON THE SCREEN--------------------------------------
+%% ================ DISPLAY SOME TEXT ON THE SCREEN =======================
     clc;
     percent = soloop / number_of_loop;
     disp([num2str(record) '/' num2str(length(recordings)) '. ' filename ': ' num2str(floor(percent * 100)) '%']);
     inputloop = soloop;
-    %-DELINEATION----------------------------------------------------------
-    %-READ SIGNAL----------------------------------------------------------
-        data_length = span * fs;
-        startpoint = (inputloop - 1) * data_length + 1;
-        endpoint = inputloop * data_length;
-        seg = sig1(startpoint:endpoint);
-        %-PREPROCESSING------------------------------------------------------------
-        %-BASELINE REMOVAL---------------------------------------------------------
-        [approx, detail] = wavelet_decompose(seg, 8, 'db4');
-        seg = seg - approx(:,8);
-        %-CLEAN SIGNAL WITH BANDPASS 0.5 - 40Hz filter-----------------------------
-        filt = fir1(24, [.5/(fs/2) 40/(fs/2)],'bandpass');
-        seg = conv(filt,seg);
-        seg = seg(12:end,1);
-        %-QRS DETECTION----------------------------------------------------
-        signal = seg;
-        %-USE ENHANCED PAN THOMPKIN----------------------------------------
-        QRST_detect;
-        %-USE MY OWN CODE--------------------------------------------------
-        %[QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs);
-        %-CHANGING AMPLITUDE TO PLOT---------------------------------------
-        for qrsloc = 1:length(QRS_locs)
-            QRS_amps(qrsloc) = signal(QRS_locs(qrsloc));
+%% ========================= DELINEATION ==================================
+    % ====== READ SIGNAL ======
+    data_length = span * fs;
+    startpoint = (inputloop - 1) * data_length + 1;
+    endpoint = inputloop * data_length;
+    seg = sig1(startpoint:endpoint);
+        
+%% ======================== PREPROCESSING =================================
+    % ====== BASELINE REMOVAL ======
+    [approx, detail] = wavelet_decompose(seg, 8, 'db4');
+    seg = seg - approx(:,8);
+    
+    % ====== CLEAN SIGNAL WITH BANDPASS 0.5 - 40Hz filter ======
+    filt = fir1(24, [.5/(fs/2) 40/(fs/2)],'bandpass');
+    seg = conv(filt,seg);
+    seg = seg(12:end,1);
+    
+    % ====== QRS DETECTION ======
+    signal = seg;
+    
+    % ======= USE ENHANCED PAN THOMPKIN ======
+    QRST_detect;
+
+    % ====== USE MY OWN CODE ======
+    %[QRS_amps, QRS_locs, T_amps, T_locs, signal_filtered] = np_QRSTdetect(signal,fs);
+
+    % ====== CHANGING AMPLITUDE TO PLOT ======
+    for qrsloc = 1:length(QRS_locs)
+        QRS_amps(qrsloc) = signal(QRS_locs(qrsloc));
+    end;
+    for tloc = 1:length(T_locs)
+        T_amps(tloc) = signal(T_locs(tloc));
+    end;
+    
+    % then 'signal_filtered' variable created but UNUSABLE!!!!!--------
+    % ====== REJECTION CRITERIA ======
+    for rjloop = 2:length(QRS_locs)
+        condition = QRS_locs(rjloop) - QRS_locs(rjloop - 1);
+        if condition > 450
+            rejected = rejected + 1;
+            continue;
         end;
-        for tloc = 1:length(T_locs)
-            T_amps(tloc) = signal(T_locs(tloc));
+    end;
+    for rjloop = 2:length(T_locs)
+        condition = T_locs(rjloop) - T_locs(rjloop - 1);
+        if condition > 450
+            rejected = rejected + 1;
+            continue;
         end;
-        % then 'signal_filtered' variable created but UNUSABLE!!!!!--------
-        % REJECTION CRITERIA-----------------------------------------------
-        for rjloop = 2:length(QRS_locs)
-            condition = QRS_locs(rjloop) - QRS_locs(rjloop - 1);
-            if condition > 450
-                rejected = rejected + 1;
-                continue;
-            end;
+    end;
+    for rjloop = 1:length(T_locs)
+        condition = T_locs(rjloop) - QRS_locs(rjloop);
+        if condition > 250 || condition < 25
+            rejected = rejected + 1;
+            continue;
         end;
-        for rjloop = 2:length(T_locs)
-            condition = T_locs(rjloop) - T_locs(rjloop - 1);
-            if condition > 450
-                rejected = rejected + 1;
-                continue;
-            end;
-        end;
-        for rjloop = 1:length(T_locs)
-            condition = T_locs(rjloop) - QRS_locs(rjloop);
-            if condition > 250 || condition < 25
-                rejected = rejected + 1;
-                continue;
-            end;
-        end;
-        %-END OF REJECTION CRITERIA----------------------------------------
-    % END OF DELENIATION---------------------------------------------------
+    end;
+    % ====== END OF REJECTION CRITERIA ======
+    % ====== END OF DELENIATION ======
     beat_start = 1;
     beat_end = length(QRS_locs);
-    %-PARAMETERS-----------------------------------------------------------
+    
+    % ====== PARAMETERS ======
     HR = [];
     FFT = [];
     LFHF = [];
@@ -89,11 +98,12 @@ for soloop = 1:number_of_loop
     number_of_samples = span * fs;
     index2start = (inputloop - 1) * number_of_samples + 1;
     index2end = inputloop * number_of_samples;
-    % CALCULATE NUMBER OF BEATS COVERED------------------------------------
+    % ====== CALCULATE NUMBER OF BEATS COVERED ======
     number_of_beat_covered = beat_end - beat_start;
     mean_HR = floor(number_of_beat_covered / (span / 60));
     beat_end = beat_start + number_of_beat_covered - 1;
-    %-CALDULATE STslope----------------------------------------------------
+    
+    %% ==================== CALDULATE STslope =============================
     STslope = [];
     for km = beat_start:beat_end
         if ~isnan(QRS_locs(km)) && ~isnan(T_locs(km))
@@ -109,7 +119,8 @@ for soloop = 1:number_of_loop
             ST_off_amps(end + 1) = seg(QRS_locs(km) + floor(2.6 * leng));
         end;
     end;
-    %-CALDULATE STDeviation------------------------------------------------
+    
+    % ====== CALDULATE STDeviation ======
     for km = beat_start:beat_end
         if ~isnan(QRS_locs(km)) && ~isnan(T_locs(km))
             leng = floor((T_locs(km) - QRS_locs(km))/4);
@@ -122,19 +133,22 @@ for soloop = 1:number_of_loop
             %STDeviation(end + 1) = (trapz(pdata));
         end;
     end;
-    %-CALCULATE HR---------------------------------------------------------
+    
+    % ====== CALCULATE HR ======
     for i = beat_start:beat_end
        step_size = QRS_locs(i+1) - QRS_locs(i);
        hr = 60 / (step_size / 250);
        HR(end + 1) = hr;
     end;
-    %-CALCULATE DFA--------------------------------------------------------
+    
+    % ====== CALCULATE DFA ======
     for i = beat_start:beat_end
        data = seg(QRS_locs(i):QRS_locs(i+1));
        dfa = DetrendedFluctuation(data);
        DFA(end + 1) = dfa;
     end;
-    %-CALCULATING THE SCORE------------------------------------------------
+    
+    % ====== CALCULATING THE SCORE ======
     score = 0;
     mean_STD = mean(STDeviation);
     mean_STS = mean(STslope);
@@ -142,6 +156,7 @@ for soloop = 1:number_of_loop
     mean_ToR = mean(ToR);
     mean_Tinv = mean(Tinv);
     mean_DFA = mean(DFA);
+    
     if mean_STD > 30 || mean_STD < -20
         score = score + 2;
     elseif mean_STD > 20 || mean_STD < -10
@@ -162,7 +177,8 @@ for soloop = 1:number_of_loop
     %if mean_DFA > 1
     %    score = score + 1;
     %end;
-    %-MAKING THE DIAGNOSIS-------------------------------------------------
+    
+    % ====== MAKING THE DIAGNOSIS ======
     if mean_STD > 100 || mean_STS > 11
         diagnosis = 'Transient ST Elevate';
     elseif mean_STD < -40 && mean_STS < -4
@@ -184,6 +200,7 @@ for soloop = 1:number_of_loop
     else
         diagnosis = 'Normal ECG';
     end;
+    
     %disp(diagnosis);
     %-CALCULATE ENERGY_RATIO-----------------------------------------------
     for i = beat_start:beat_end

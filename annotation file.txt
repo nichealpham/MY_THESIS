@@ -1,0 +1,42 @@
+#define	NOTQRS	0	/* not-QRS (not a getann/putann code) */
+#define NORMAL	1	/* normal beat */
+#define	LBBB	2	/* left bundle branch block beat */
+#define	RBBB	3	/* right bundle branch block beat */
+#define	ABERR	4	/* aberrated atrial premature beat */
+#define	PVC	5	/* premature ventricular contraction */
+#define	FUSION	6	/* fusion of ventricular and normal beat */
+#define	NPC	7	/* nodal (junctional) premature beat */
+#define	APC	8	/* atrial premature contraction */
+#define	SVPB	9	/* premature or ectopic supraventricular beat */
+#define	VESC	10	/* ventricular escape beat */
+#define	NESC	11	/* nodal (junctional) escape beat */
+#define	PACE	12	/* paced beat */
+#define	UNKNOWN	13	/* unclassifiable beat */
+#define	NOISE	14	/* signal quality change */
+#define ARFCT	16	/* isolated QRS-like artifact */
+#define STCH	18	/* ST change */
+#define TCH	19	/* T-wave change */
+#define SYSTOLE	20	/* systole */
+#define DIASTOLE 21	/* diastole */
+#define	NOTE	22	/* comment annotation */
+#define MEASURE 23	/* measurement annotation */
+#define PWAVE	24	/* P-wave peak */
+#define	BBB	25	/* left or right bundle branch block */
+#define	PACESP	26	/* non-conducted pacer spike */
+#define TWAVE	27	/* T-wave peak */
+#define RHYTHM	28	/* rhythm change */
+#define UWAVE	29	/* U-wave peak */
+#define	LEARN	30	/* learning */
+#define	FLWAV	31	/* ventricular flutter wave */
+#define	VFON	32	/* start of ventricular flutter/fibrillation */
+#define	VFOFF	33	/* end of ventricular flutter/fibrillation */
+#define	AESC	34	/* atrial escape beat */
+#define SVESC	35	/* supraventricular escape beat */
+#define LINK    36	/* link to external data (aux contains URL) */
+#define	NAPC	37	/* non-conducted P-wave (blocked APB) */
+#define	PFUS	38	/* fusion of paced and normal beat */
+#define WFON	39	/* waveform onset */
+#define PQ	WFON	/* PQ junction (beginning of QRS) */
+#define WFOFF	40	/* waveform end */
+#define	JPT	WFOFF	/* J point (end of QRS) */
+#define RONT	41	/* R-on-T premature ventricular contraction */

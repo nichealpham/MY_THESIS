@@ -167,47 +167,7 @@ for record = 1:length(recordings)
         fs = hea.freq;
         ts = 1/fs;
         t = [0:length(sig1)-1]/fs;
-    %------ LOAD ATTRIBUTES DATA ----------------------------------------------
-    full_path = [data_path filename '.atr'];      % attribute file with annotation data
-    fid3=fopen(full_path,'r');
-    A= fread(fid3, [2, length(sig1)], 'uint8')';
-    fclose(fid3);
-    ATRTIME=[];
-    ANNOT=[];
-    sa=size(A);
-    saa=sa(1);
-    i=1;
-    while i<=saa
-        annoth=bitshift(A(i,2),-2);
-        if annoth==59
-            ANNOT=[ANNOT;bitshift(A(i+3,2),-2)];
-            ATRTIME=[ATRTIME;A(i+2,1)+bitshift(A(i+2,2),8)+...
-                    bitshift(A(i+1,1),16)+bitshift(A(i+1,2),24)];
-            i=i+3;
-        elseif annoth==60
-            % nothing to do!
-        elseif annoth==61
-            % nothing to do!
-        elseif annoth==62
-            % nothing to do!
-        elseif annoth==63
-            hilfe=bitshift(bitand(A(i,2),3),8)+A(i,1);
-            hilfe=hilfe+mod(hilfe,2);
-            i=i+hilfe/2;
-        else
-            ATRTIME=[ATRTIME;bitshift(bitand(A(i,2),3),8)+A(i,1)];
-            ANNOT=[ANNOT;bitshift(A(i,2),-2)];
-       end;
-       i=i+1;
-    end;
-    ANNOT(length(ANNOT))=[];       % last line = EOF (=0)
-    ATRTIME(length(ATRTIME))=[];   % last line = EOF
-    clear A;
-    ATRTIME= cumsum(ATRTIME)/360;
-    ind= find(ATRTIME <= t(end));
-    ATRTIMED= ATRTIME(ind);
-    ANNOT=round(ANNOT);
-    ANNOTD= ANNOT(ind);
+
     
     % ====== feature extraction ======
     [R_value, R_loc, Q_value, Q_loc, S_value, S_loc, J_value, J_loc, T_value, T_loc, P_value, P_loc, RR, PR, QT, HRV, tqrs, trr, tpr, tqt] = ecg_extraction(sig1,fs);
@@ -219,37 +179,9 @@ for record = 1:length(recordings)
    
 %     plot(BPM_need)
     % ====== base on file annotation to collect the arrhythmia's peak ======
-    abnormal_sig = find((ANNOT ~= 1) & (ANNOT ~= 28) & (ANNOT ~= 14))';
+
     normal_sig = find((ANNOT == 1) | (ANNOT == 28) | (ANNOT == 14))';
-    for i = 1:length(abnormal_sig)
-        HRV_abnormal =  HRV(abnormal_sig <= length(HRV));
-        HRV_normal =    HRV(normal_sig <= length(HRV));
 
-        P_abnormal_value = P_value(abnormal_sig <= length(P_value));
-        P_abnormal_loc = P_loc(abnormal_sig <= length(P_loc));
-        P_normal_value = P_value(normal_sig <= length(P_value));
-        P_normal_value = P_value(abnormal_sig <= length(P_value));
-
-        R_abnormal_value = R_value(abnormal_sig <= length(R_value));
-        R_abnormal_loc = R_loc(abnormal_sig <= length(R_value));
-        R_normal_value = R_value(normal_sig <= length(R_value));
-        R_normal_loc = R_loc(normal_sig <= length(R_value));
-    end
-
-    % ====== checking for arrhythmia =====
-        % P/R ratio
-    PR_abnormal = [PR_abnormal;mean(P_abnormal_value)/mean(R_abnormal_value)]; 
-    PR_normal = [PR_normal;mean(P_normal_value)/mean(R_normal_value)];
-
-    min_HRV_abnormal = [min_HRV_abnormal;min(HRV_abnormal)];
-    max_HRV_abnormal = [max_HRV_abnormal;max(HRV_abnormal)];
-    std_HRV_abnormal = [std_HRV_abnormal;std(HRV_abnormal)];
-    changed_HRV_abnormal = [changed_HRV_abnormal;mean(abs(diff(HRV_abnormal)))];
-    
-    min_HRV_normal = [min_HRV_normal;min(HRV_normal)];
-    max_HRV_normal = [max_HRV_normal;max(HRV_normal)];
-    std_HRV_normal = [std_HRV_normal;std(HRV_normal)];
-    changed_HRV_normal = [changed_HRV_normal;mean(abs(diff(HRV_normal)))];
 %           try
 %             REPORT;
 %             %WAVELET;

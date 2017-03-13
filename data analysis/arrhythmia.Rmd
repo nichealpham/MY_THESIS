@@ -1,0 +1,25 @@
+---
+title: "arrhythmia"
+output: html_document
+---
+
+```{r}
+rm(list=ls())
+```
+This file is used to watch file sav.
+
+## Loading libs and data
+We first load some necessary libs
+```{r}
+library(ggplot2)
+library(data.table)
+library(readxl)
+source('multiplot.R')
+
+load file data
+```{r}
+oxy = read.csv('E:\MY_THESIS\RECORDINGS\08_12_stchange.sav')
+oxy = as.data.table(oxy)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

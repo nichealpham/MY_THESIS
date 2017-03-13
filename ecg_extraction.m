@@ -1,4 +1,4 @@
-function [R_value, R_loc, Q_value, Q_loc, S_value, S_loc, J_value, J_loc, T_value, T_loc, P_value, P_loc, RR, PR, QT, BPM, tqrs, trr, tpr, tqt] = ecg_extraction(data,fs)
+function [c,R_value, R_loc, Q_value, Q_loc, S_value, S_loc, J_value, J_loc, T_value, T_loc, P_value, P_loc, RR, PR, QT, HRV, tqrs, trr, tpr, tqt] = ecg_extraction(data,fs)
 %This function is used to extract features of ECG
 %Input:
 %   data:   ECG signal
@@ -34,14 +34,19 @@ end
 c = filtfilt(a,b,d);
 c = c + abs(min(c));
 c = c / max(c);
-%% ============================ bandpass filter =========================== 
+
+%% ============================ bandpass filter ===========================
+[a b]=butter(5,[5 15]/(Fs/2));
+x1 = filtfilt(a,b,c);
+
+%% ============================ low and high pass filter =========================== 
 
 %LPF
 b=[1 0 0 0 0 0 -2 0 0 0 0 0 1];
 a=[1 -2 1];
 h_LP=filter(b,a,[1 zeros(1,12)]);
 
-x2 = conv (c ,h_LP);
+x2 = conv (x1 ,h_LP);
 x2 = x2 (6+[1: length(d)]); %cancle delay
 x2 = x2 / max(x2);
 
@@ -65,10 +70,11 @@ x4 = x4 / max(x4);
 
 %% ============================== Squaring ================================ 
 x5 = x4 .^2;
-x5 = x5/ max( abs(x5 ));
+x5 = x5/ max(x5);
 
 %% ======================= Make impulse response ========================== 
-h = ones (1 ,31)/31;
+n = 31;
+h = ones (1 ,n)/n;
 Delay = 15; % Delay in samples
 
 % Apply filter
@@ -129,7 +135,7 @@ for i = 1:length(R_loc)
         trr(i-1) = RR(i-1)/Fs;
         
         % ====== BPM (vent rate) ====== 
-        BPM(i-1) = 60/trr(i-1);
+        HRV(i-1) = 60/trr(i-1);
 
         % ====== T peak ====== 
         [T_value(i-1) T_loc(i-1)] = max(c(floor(R_loc(i-1)+(0.15*RR(i-1))):floor(R_loc(i-1)+(0.55*RR(i-1)))));
@@ -140,7 +146,7 @@ for i = 1:length(R_loc)
         P_loc(i-1) = P_loc(i-1) + floor(left(i) - 0.15*RR(i-1)); % add offset
         
         % ====== PR interval ====== 
-        PR(i-1) = R_loc(i) - P_loc(i-1);
+        PR(i-1) = P_value(i-1)/R_value(i);
         tpr(i-1) = PR(i-1)/Fs;
         
         % ====== QT interval ====== 
@@ -149,4 +155,5 @@ for i = 1:length(R_loc)
         tqt(i-1) = tqt(i-1)/(Fs*sqrt(trr(i-1)));
     end   
 end
+
 
