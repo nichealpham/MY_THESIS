@@ -53,7 +53,7 @@ PRETHESIS REPORT.pdf, QUANTIFYING MYOCARDIAL DAMAGE USING ECG SIGNAL.pptx<br/>
 <p>+ Still underdevelopment and validation...</p>
 
 <b>6. Implementation:</b><br/>
-<p>+ Real time application web service will locate at: http://www.cassandra.com.vn/</p>
+<p>+ Real time application web service will locate at: http://cassandra.vn/</p>
 <p>+ Cross platform application development: Android, iOS</p>
 <p>+ Desktop application: Matlab runtime</p>
 
